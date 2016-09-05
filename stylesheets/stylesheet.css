@@ -18,9 +18,9 @@ a {
 .btn {
   display: inline-block;
   margin-bottom: 1rem;
-  color: rgba(255, 255, 255, 0.7);
-  background-color: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  background-color: #4DB2EE;
+  border-color: #4DB2EE;
   border-style: solid;
   border-width: 1px;
   border-radius: 0.3rem;
@@ -30,22 +30,20 @@ a {
 
 .btn:hover {
   color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.3); }
+  text-decoration: none; }
 
 @media screen and (min-width: 64em) {
   .btn {
-    padding: 0.75rem 1rem; } }
+    padding: 0.25rem 2.5rem; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .btn {
-    padding: 0.6rem 0.9rem;
+    padding: 0.1rem 1rem;
     font-size: 0.9rem; } }
 
 @media screen and (max-width: 42em) {
   .btn {
-    display: block;
+    display: inline-block;
     width: 100%;
     padding: 0.75rem;
     font-size: 0.9rem; }
@@ -243,3 +241,91 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+
+
+
+/* css3-Grid
+-----------------------------------------------------------------------------*/
+.ui-grid { display: -webkit-box; display: box; }
+.ui-grid-middle { -webkit-box-pack: center; -webkit-box-align: center; box-pack: center; box-align: center; }
+.ui-grid-vertical { -webkit-box-orient: vertical; box-orient: vertical; }
+.ui-grid-label { -webkit-box-flex: 0; box-flex: 0; width: 100px; font-weight: 600; }
+.ui-col-0 { -webkit-box-flex: 0; box-flex: 0; }
+.ui-col-1 { -webkit-box-flex: 1; box-flex: 1; }
+.ui-col-2 { -webkit-box-flex: 2; box-flex: 2; }
+.ui-col-3 { -webkit-box-flex: 3; box-flex: 3; }
+.ui-col-4 { -webkit-box-flex: 4; box-flex: 3; }
+.ui-col-5 { -webkit-box-flex: 5; box-flex: 5; }
+.ui-col-6 { -webkit-box-flex: 6; box-flex: 6; }
+
+.c-t-center {text-align: center}
+.mt30 {margin-top: 30px}
+
+div.icon {
+    position: relative;
+    margin: 15px;
+    display: inline-block;
+}
+
+div.icon div.phone {
+    position: relative;
+    width: 50px;
+    height: 92px;
+    background-color: #333;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin-left: 6px;
+}
+
+div.icon div.phone:before {
+    position: absolute;
+    content: '';
+    width: 42px;
+    height: 65px;
+    background: #eee;
+    left: 4px;
+    top: 10px;
+}
+
+div.icon div.phone:after {
+    position: absolute;
+    content: '';
+    background: #eee;
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    bottom: 2px;
+    left: 50%;
+    margin-left: -5px;
+}
+
+div.icon div.screen {
+    width: 224px;
+    height: 96px;
+    border: 2px solid #333;
+    background: #eee;
+}
+
+div.icon div.screen:before {
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 5px;
+    background: #333;
+    bottom: -5px;
+    left: 93px;
+}
+
+
+div.icon div.screen:after {
+    position: absolute;
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: #333;
+    bottom: -7px;
+    left: 72px;
+}
