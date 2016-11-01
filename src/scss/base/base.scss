@@ -1,0 +1,74 @@
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: ".";
+  clear: both;
+  height: 0;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.fl,.fr {
+  display: inline;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+.#{$namespace}hide {
+  @include display(none);
+}
+
+.#{$namespace}block {
+  @include display(block);
+}
+
+.#{$namespace}hidden {
+  overflow: hidden;
+  zoom: 1;
+}
+
+.#{$namespace}boxs {
+  @include box-sizing();
+}
+
+.#{$namespace}main {
+  margin: 0 auto;
+}
+
+.#{$namespace}nowrap {
+  max-width: 100%;
+  _width: 100%;
+  @include nowrap();
+}
+
+.#{$namespace}break {
+  @include word-break();
+}
+
+.#{$namespace}inline-block {
+  @include display();
+}
+
+.#{$namespace}auto {
+  overflow: auto;
+}
+
+.#{$namespace}auto-y {
+  overflow-y: auto;
+}
+
+.#{$namespace}auto-x {
+  overflow-x: auto;
+}
+
+.#{$namespace}cursor-p {
+  cursor: pointer;
+}

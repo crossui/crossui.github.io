@@ -1,0 +1,212 @@
+//
+// Mixins
+// --------------------------------------------------
+
+// General
+// --------------------------------------------------
+
+// z-index
+// --------------------------------------------------
+$z-index: (
+  "default":            1,
+  "below":             -1,
+  "max":            10000,
+  "bar": (
+    "bar":           10,
+    "btn":           20,
+    "icon":          20
+  ),
+  "backdrop":         998,
+  "modal":            999,
+  "popover":(
+    "popover":        999,
+    "arrow":          1000,
+  ),
+  "scroll": (
+    "scrollbar":      9998,
+   ),
+  "toast":            9999
+);
+
+// clearfix
+// --------------------------------------------------
+@mixin clearfix() {
+  &:before,
+  &:after {
+    display: table; // 2
+    content: " "; // 1
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+
+// word-break
+// --------------------------------------------------
+@mixin word-break(){
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+// display
+// --------------------------------------------------
+@mixin display($val:inline-block){
+  display: $val;
+}
+
+// nowrap
+// --------------------------------------------------
+@mixin nowrap(){
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+// box-shadow
+// --------------------------------------------------
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+      //-ms-box-shadow: $shadow;
+      //-moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+
+// position
+// --------------------------------------------------
+@mixin abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  position: absolute;
+}
+
+// text-shadow
+// --------------------------------------------------
+@function makelongshadow($color) {
+  $val: 0px 0px $color;
+  @for $i from 1 through 200 {
+    $val: #{$val}, #{$i}px #{$i}px #{$color};
+  }
+  @return $val;
+}
+
+@mixin longshadow($color) {
+  text-shadow: makelongshadow($color);
+}
+
+// box-sizing
+// --------------------------------------------------
+@mixin box-sizing($val:border-box){
+  -webkit-box-sizing: $val;
+  //-ms-box-sizing: $val;
+  //-moz-box-sizing: $val;
+  box-sizing: $val;
+}
+
+
+// btn
+// --------------------------------------------------
+@mixin btn($color){
+  color: #fff;
+  background-color: $color;
+  border: 1px solid $color;
+
+  &:enabled:active,
+  &.#{$namespace}active:enabled {
+    color: #fff;
+    background-color: darken($color, 10%);
+    border: 1px solid darken($color, 10%);
+  }
+}
+
+
+// border-radius
+// --------------------------------------------------
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+      //-ms-border-radius: $radius;
+      //-moz-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin border-top-radius($radius) {
+  border-top-right-radius: $radius;
+  border-top-left-radius: $radius;
+}
+@mixin border-right-radius($radius) {
+  border-bottom-right-radius: $radius;
+  border-top-right-radius: $radius;
+}
+@mixin border-bottom-radius($radius) {
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+@mixin border-left-radius($radius) {
+  border-bottom-left-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+// Transforms
+// --------------------------------------------------
+@mixin transform($transform...) {
+  -webkit-transform: $transform;
+      //-ms-transform: $transform;
+      //-moz-transform: $transform;
+          transform: $transform;
+}
+
+
+// Transitions
+// --------------------------------------------------
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+      //-ms-transition: $transition;
+      //-moz-transition: $transition;
+          transition: $transition;
+}
+@mixin transition-property($property...) {
+  -webkit-transition-property: $property;
+      //-ms-transition-property: $property;
+      //-moz-transition-property: $property;
+          transition-property: $property;
+}
+@mixin transition-duration($duration...) {
+  -webkit-transition-duration: $duration;
+      //-ms-transition-duration: $duration;
+      //-moz-transition-duration: $duration;
+          transition-duration: $duration;
+}
+@mixin transition-timing-function($function...) {
+  -webkit-transition-timing-function: $function;
+      //-ms-transition-timing-function: $function;
+      //-moz-transition-timing-function: $function;
+          transition-timing-function: $function;
+}
+
+
+// Animations
+// --------------------------------------------------
+@mixin animation-name($name) {
+  -webkit-animation-name: $name;
+      //-ms-animation-name: $name;
+      //-moz-animation-name: $name;
+          animation-name: $name;
+}
+@mixin animation-duration($duration) {
+  -webkit-animation-duration: $duration;
+      //-ms-animation-duration: $duration;
+      //-moz-animation-duration: $duration;
+          animation-duration: $duration;
+}
+@mixin animation-direction($direction) {
+  -webkit-animation-direction: $direction;
+      //-ms-animation-direction: $direction;
+      //-moz-animation-direction: $direction;
+          animation-direction: $direction;
+}
+
+
