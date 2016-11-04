@@ -28,6 +28,22 @@ var gulp        = require('gulp'),                                  // gulp
 	changed		= require('gulp-changed'),							// 实现文件拷贝--只拷贝变动过的文件 
 	stylish 	= require('jshint-stylish');						// js压缩过中错误的提示
 	
+	//path
+	//yargs
+	//fs
+	//gulp-header
+	//gulp-tap
+	//gulp-cssnano
+	//gulp-postcss
+	//autoprefixer
+	//gulp-sourcemaps
+	
+	
+	
+	
+	
+	
+	
 /**
  * 文件路径
 
