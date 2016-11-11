@@ -1,0 +1,47 @@
+// color
+.#{$namespace}red {
+  @include color(#f00);
+}
+.#{$namespace}pink {
+  @include color(#FFC0CB);
+}
+.#{$namespace}purple {
+  @include color(#800080);
+}
+.#{$namespace}blue {
+ @include color(#007cd9);
+}
+.#{$namespace}royalblue {
+  @include color(#37a6ed);
+}
+.#{$namespace}green {
+  @include color(#006400);
+}
+.#{$namespace}darkgreen {
+  @include color(#4dcd70);
+}
+.#{$namespace}yellow {
+  @include color(#ff0);
+}
+.#{$namespace}orange {
+ @include color(#ff8100);
+}
+.#{$namespace}black {
+  @include color(#000);
+}
+.#{$namespace}shallowblack {
+ @include color(#333);
+}
+.#{$namespace}gray {
+  @include color(#999);
+}
+.#{$namespace}darkgray {
+ @include color(#5b5b5b);
+}
+.#{$namespace}shallowgray {
+  @include color(#909090);
+}
+.#{$namespace}white {
+ @include color(#fff);
+}
+

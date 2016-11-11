@@ -150,6 +150,19 @@ $z-index: (
   border-top-left-radius: $radius;
 }
 
+// color
+// --------------------------------------------------
+@mixin color($val){
+  color: $val;
+}
+
+// 透明度
+// --------------------------------------------------
+@mixin transparency($val){
+  background-color:rgba(0, 0, 0, 0.7);
+  filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);
+}
+
 // Transforms
 // --------------------------------------------------
 @mixin transform($transform...) {
