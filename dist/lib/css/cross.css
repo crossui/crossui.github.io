@@ -489,3 +489,669 @@ body
 {
     text-align: justify;
 }
+
+.m-zero
+{
+    margin: 0;
+}
+
+.m-mini
+{
+    margin: 5px;
+}
+
+.m-tiny
+{
+    margin: 10px;
+}
+
+.m-small
+{
+    margin: 15px;
+}
+
+.m-medium
+{
+    margin: 20px;
+}
+
+.m-big
+{
+    margin: 30px;
+}
+
+.m-large
+{
+    margin: 40px;
+}
+
+.m-jumbo
+{
+    margin: 50px;
+}
+
+.m-giant
+{
+    margin: 100px;
+}
+
+.mt-zero
+{
+    margin-top: 0;
+}
+
+.mt-mini
+{
+    margin-top: 5px;
+}
+
+.mt-tiny
+{
+    margin-top: 10px;
+}
+
+.mt-small
+{
+    margin-top: 15px;
+}
+
+.mt-medium
+{
+    margin-top: 20px;
+}
+
+.mt-big
+{
+    margin-top: 30px;
+}
+
+.mt-large
+{
+    margin-top: 40px;
+}
+
+.mt-jumbo
+{
+    margin-top: 50px;
+}
+
+.mt-giant
+{
+    margin-top: 100px;
+}
+
+.mb-zero
+{
+    margin-bottom: 0;
+}
+
+.mb-mini
+{
+    margin-bottom: 5px;
+}
+
+.mb-tiny
+{
+    margin-bottom: 10px;
+}
+
+.mb-small
+{
+    margin-bottom: 15px;
+}
+
+.mb-medium
+{
+    margin-bottom: 20px;
+}
+
+.mb-big
+{
+    margin-bottom: 30px;
+}
+
+.mb-large
+{
+    margin-bottom: 40px;
+}
+
+.mb-jumbo
+{
+    margin-bottom: 50px;
+}
+
+.mb-giant
+{
+    margin-bottom: 100px;
+}
+
+.ml-zero
+{
+    margin-left: 0;
+}
+
+.ml-mini
+{
+    margin-left: 5px;
+}
+
+.ml-tiny
+{
+    margin-left: 10px;
+}
+
+.ml-small
+{
+    margin-left: 15px;
+}
+
+.ml-medium
+{
+    margin-left: 20px;
+}
+
+.ml-big
+{
+    margin-left: 30px;
+}
+
+.ml-large
+{
+    margin-left: 40px;
+}
+
+.ml-jumbo
+{
+    margin-left: 50px;
+}
+
+.ml-giant
+{
+    margin-left: 100px;
+}
+
+.mr-zero
+{
+    margin-right: 0;
+}
+
+.mr-mini
+{
+    margin-right: 5px;
+}
+
+.mr-tiny
+{
+    margin-right: 10px;
+}
+
+.mr-small
+{
+    margin-right: 15px;
+}
+
+.mr-medium
+{
+    margin-right: 20px;
+}
+
+.mr-big
+{
+    margin-right: 30px;
+}
+
+.mr-large
+{
+    margin-right: 40px;
+}
+
+.mr-jumbo
+{
+    margin-right: 50px;
+}
+
+.mr-giant
+{
+    margin-right: 100px;
+}
+
+.mlr-zero
+{
+    margin-right: 0; 
+    margin-left: 0;
+}
+
+.mlr-mini
+{
+    margin-right: 5px; 
+    margin-left: 5px;
+}
+
+.mlr-tiny
+{
+    margin-right: 10px; 
+    margin-left: 10px;
+}
+
+.mlr-small
+{
+    margin-right: 15px; 
+    margin-left: 15px;
+}
+
+.mlr-medium
+{
+    margin-right: 20px; 
+    margin-left: 20px;
+}
+
+.mlr-big
+{
+    margin-right: 30px; 
+    margin-left: 30px;
+}
+
+.mlr-large
+{
+    margin-right: 40px; 
+    margin-left: 40px;
+}
+
+.mlr-jumbo
+{
+    margin-right: 50px; 
+    margin-left: 50px;
+}
+
+.mlr-giant
+{
+    margin-right: 100px; 
+    margin-left: 100px;
+}
+
+.mtb-zero
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.mtb-mini
+{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.mtb-tiny
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mtb-small
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.mtb-medium
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.mtb-big
+{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.mtb-large
+{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.mtb-jumbo
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.mtb-giant
+{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.p-zero
+{
+    padding: 0;
+}
+
+.p-mini
+{
+    padding: 5px;
+}
+
+.p-tiny
+{
+    padding: 10px;
+}
+
+.p-small
+{
+    padding: 15px;
+}
+
+.p-medium
+{
+    padding: 20px;
+}
+
+.p-big
+{
+    padding: 30px;
+}
+
+.p-large
+{
+    padding: 40px;
+}
+
+.p-jumbo
+{
+    padding: 50px;
+}
+
+.p-giant
+{
+    padding: 100px;
+}
+
+.pt-zero
+{
+    padding-top: 0;
+}
+
+.pt-mini
+{
+    padding-top: 5px;
+}
+
+.pt-tiny
+{
+    padding-top: 10px;
+}
+
+.pt-small
+{
+    padding-top: 15px;
+}
+
+.pt-medium
+{
+    padding-top: 20px;
+}
+
+.pt-big
+{
+    padding-top: 30px;
+}
+
+.pt-large
+{
+    padding-top: 40px;
+}
+
+.pt-jumbo
+{
+    padding-top: 50px;
+}
+
+.pt-giant
+{
+    padding-top: 100px;
+}
+
+.pb-zero
+{
+    padding-bottom: 0;
+}
+
+.pb-mini
+{
+    padding-bottom: 5px;
+}
+
+.pb-tiny
+{
+    padding-bottom: 10px;
+}
+
+.pb-small
+{
+    padding-bottom: 15px;
+}
+
+.pb-medium
+{
+    padding-bottom: 20px;
+}
+
+.pb-big
+{
+    padding-bottom: 30px;
+}
+
+.pb-large
+{
+    padding-bottom: 40px;
+}
+
+.pb-jumbo
+{
+    padding-bottom: 50px;
+}
+
+.pb-giant
+{
+    padding-bottom: 100px;
+}
+
+.pl-zero
+{
+    padding-left: 0;
+}
+
+.pl-mini
+{
+    padding-left: 5px;
+}
+
+.pl-tiny
+{
+    padding-left: 10px;
+}
+
+.pl-small
+{
+    padding-left: 15px;
+}
+
+.pl-medium
+{
+    padding-left: 20px;
+}
+
+.pl-big
+{
+    padding-left: 30px;
+}
+
+.pl-large
+{
+    padding-left: 40px;
+}
+
+.pl-jumbo
+{
+    padding-left: 50px;
+}
+
+.pl-giant
+{
+    padding-left: 100px;
+}
+
+.pr-zero
+{
+    padding-right: 0;
+}
+
+.pr-mini
+{
+    padding-right: 5px;
+}
+
+.pr-tiny
+{
+    padding-right: 10px;
+}
+
+.pr-small
+{
+    padding-right: 15px;
+}
+
+.pr-medium
+{
+    padding-right: 20px;
+}
+
+.pr-big
+{
+    padding-right: 30px;
+}
+
+.pr-large
+{
+    padding-right: 40px;
+}
+
+.pr-jumbo
+{
+    padding-right: 50px;
+}
+
+.pr-giant
+{
+    padding-right: 100px;
+}
+
+.plr-zero
+{
+    padding-right: 0; 
+    padding-left: 0;
+}
+
+.plr-mini
+{
+    padding-right: 5px; 
+    padding-left: 5px;
+}
+
+.plr-tiny
+{
+    padding-right: 10px; 
+    padding-left: 10px;
+}
+
+.plr-small
+{
+    padding-right: 15px; 
+    padding-left: 15px;
+}
+
+.plr-medium
+{
+    padding-right: 20px; 
+    padding-left: 20px;
+}
+
+.plr-big
+{
+    padding-right: 30px; 
+    padding-left: 30px;
+}
+
+.plr-large
+{
+    padding-right: 40px; 
+    padding-left: 40px;
+}
+
+.plr-jumbo
+{
+    padding-right: 50px; 
+    padding-left: 50px;
+}
+
+.plr-giant
+{
+    padding-right: 100px; 
+    padding-left: 100px;
+}
+
+.ptb-zero
+{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.ptb-mini
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.ptb-tiny
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.ptb-small
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.ptb-medium
+{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.ptb-big
+{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.ptb-large
+{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.ptb-jumbo
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.ptb-giant
+{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
