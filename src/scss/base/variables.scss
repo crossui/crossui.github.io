@@ -10,6 +10,15 @@ $font-size-default: 12px !default;
 $line-height-default: 1.5 !default;
 $font-weight: 500 !default;
 $font-size-full: 100% !default;
+$font-family-arial:\5b8b\4f53 !default;
+
+
+$font-size-h1:            floor(($font-size-default * 4)) !default; // 48px
+$font-size-h2:            floor(($font-size-default * 3)) !default; // 36px
+$font-size-h3:            floor(($font-size-default * 2.5)) !default; // 30px
+$font-size-h4:            floor(($font-size-default * 2)) !default; // 24px
+$font-size-h5:            floor(($font-size-default * 1.5)) !default; // 18px
+$font-size-h6:            ceil(($font-size-default * 1.16)) !default; // 14px
 
 
 $filter:true !default;   //是否开启ie滤镜

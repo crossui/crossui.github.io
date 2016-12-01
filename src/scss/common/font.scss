@@ -1,0 +1,37 @@
+// font
+
+.#{$namespace}simsun {
+  font-family: $font-family-arial;
+}
+.#{$namespace}bold {
+  @include font-weight(bold);
+}
+.#{$namespace}normal {
+  @include font-weight(normal);
+}
+.fs1 {
+  font-size: $font-size-h1;
+}
+.fs2 {
+  font-size: $font-size-h2;
+}
+.fs3 {
+  font-size: $font-size-h3;
+}
+.fs4 {
+  font-size: $font-size-h4;
+}
+.fs5 {
+  font-size: $font-size-h5;
+}
+.fs6 {
+  font-size: $font-size-h6;
+}
+.#{$namespace}line-h1 {
+  line-height:1.8;
+  _line-height: 24px;
+}
+.#{$namespace}line-h2 {
+  line-height:2.2;
+  _line-height: 32px;
+}

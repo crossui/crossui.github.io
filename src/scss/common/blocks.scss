@@ -1,0 +1,77 @@
+// blocks
+$blockslist: 2 3 4 5 6;
+%blocks-plls{
+  padding-left:0;
+  list-style: none;
+}
+%blocks-clear{
+  content: "";
+  display:table;
+  clear:both;
+}
+%blocks-hf{
+  height:auto;
+  float:left;
+}
+@each $author in $blockslist {
+  .#{$namespace}blocks-#{$author}{
+    @extend %blocks-plls;
+  }
+}
+@each $author in $blockslist {
+  .#{$namespace}blocks-#{$author}:after{
+    @extend %blocks-clear;
+  }
+}
+@each $author in $blockslist {
+  .#{$namespace}blocks-#{$author} li{
+    @extend %blocks-hf;
+  }
+}
+@each $author in $blockslist {
+  .#{$namespace}blocks-#{$author} div{
+    @extend %blocks-hf;
+  }
+}
+.#{$namespace}blocks-2 li , .#{$namespace}blocks-2 div{
+  width:50%;
+}
+.#{$namespace}blocks-3 li , .#{$namespace}blocks-3 div {
+  width:33.333333333333332%;
+}
+.#{$namespace}blocks-4 li , .#{$namespace}blocks-4 div {
+  width:25%;
+}
+.#{$namespace}blocks-5 li , .#{$namespace}blocks-5 div {
+  width:20%;
+}
+.#{$namespace}blocks-6 li , .#{$namespace}blocks-6 div {
+  width:16.666666666666666%;
+}
+%blocks-fm{
+  float:none;
+  margin:0;
+}
+%blocks-w{
+  width: auto!important;
+}
+@each $author in $blockslist {
+  .#{$namespace}blocks-#{$author} li li{
+    @extend %blocks-fm;
+  }
+}
+@each $author in $blockslist {
+  .#{$namespace}blocks-#{$author} div div{
+    @extend %blocks-fm;
+  }
+}
+@each $author in $blockslist {
+  .#{$namespace}blocks-#{$author} li li{
+    @extend %blocks-w;
+  }
+}
+@each $author in $blockslist {
+  .#{$namespace}blocks-#{$author} div div{
+    @extend %blocks-w;
+  }
+}

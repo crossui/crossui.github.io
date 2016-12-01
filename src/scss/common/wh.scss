@@ -1,0 +1,19 @@
+// Width and height
+$whSize: 100 150 200 250 300 350 400 450 500;
+
+@each $author in $whSize {
+  .w#{$author} {
+    width: #{$author}px;
+  }
+}
+.w1000 {
+  width: 1000px;
+}
+.w1200 {
+  width: 1200px;
+}
+@each $author in $whSize {
+  .h#{$author} {
+    height: #{$author}px;
+  }
+}
