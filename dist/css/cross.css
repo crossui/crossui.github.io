@@ -135,6 +135,8 @@ select,
 textarea
 {
     font: 12px/1.5 \5FAE\8F6F\96C5\9ED1, tahoma, arial, \5b8b\4f53 ;
+
+    color: #666;
 }
 
 html,
@@ -263,11 +265,6 @@ img
     vertical-align: top;
 }
 
-a:hover
-{
-    text-decoration: none;
-}
-
 ins,
 a
 {
@@ -283,6 +280,11 @@ select,
 button
 {
     cursor: pointer;
+}
+
+a:hover
+{
+    text-decoration: none;
 }
 
 .iconfont,

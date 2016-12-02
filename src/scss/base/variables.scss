@@ -11,8 +11,24 @@ $line-height-default: 1.5 !default;
 $font-weight: 500 !default;
 $font-size-full: 100% !default;
 $font-family-arial:\5b8b\4f53 !default;
+// color
+// --------------------------------------------------
+$color-default: #666 !default;
 
+$color-gray-base:              #000 !default;
+$color-gray-darker:            lighten($color-gray-base, 13.5%) !default; // #222
+$color-gray-dark:              lighten($color-gray-base, 20%) !default;   // #333
+$color-gray:                   lighten($color-gray-base, 33.5%) !default; // #555
+$color-gray-light:             lighten($color-gray-base, 46.7%) !default; // #777
+$color-gray-lighter:           lighten($color-gray-base, 93.5%) !default; // #eee
 
+$color-primary:         #428bca !default;
+$color-success:         #5cb85c !default;
+$color-info:            #5bc0de !default;
+$color-warning:         #f0ad4e !default;
+$color-danger:          #d9534f !default;
+// font-size
+// --------------------------------------------------
 $font-size-h1:            floor(($font-size-default * 4)) !default; // 48px
 $font-size-h2:            floor(($font-size-default * 3)) !default; // 36px
 $font-size-h3:            floor(($font-size-default * 2.5)) !default; // 30px
@@ -20,5 +36,6 @@ $font-size-h4:            floor(($font-size-default * 2)) !default; // 24px
 $font-size-h5:            floor(($font-size-default * 1.5)) !default; // 18px
 $font-size-h6:            ceil(($font-size-default * 1.16)) !default; // 14px
 
-
+// ie hack
+// --------------------------------------------------
 $filter:true !default;   //是否开启ie滤镜

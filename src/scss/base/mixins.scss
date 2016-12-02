@@ -84,9 +84,6 @@ $z-index: (
   left: $left;
   position: absolute;
 }
-@mixin position($position){
-  position: $position;
-}
 // text-shadow
 // --------------------------------------------------
 @function makelongshadow($color) {
@@ -166,12 +163,6 @@ $z-index: (
           border-bottom-left-radius: $radius;
   //-webkit-border-top-left-radius: $radius;
           border-top-left-radius: $radius;
-}
-
-// color
-// --------------------------------------------------
-@mixin color($color){
-  color: $color;
 }
 
 // 背景色半透明

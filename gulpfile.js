@@ -25,7 +25,7 @@ var gulp        = require('gulp'),                                  // gulp
 	size 		= require('gulp-size'),								// 显示文件大小
 	clean		= require('gulp-clean'),							// 删除文件和文件夹		
 	spritesmith = require('gulp.spritesmith'),						// CSS Sprites	
-	runSequence = require('run-sequence'),							// 按顺序执行任务
+	run = require('run-sequence'),							        // 按顺序执行任务
 	changed		= require('gulp-changed'),							// 实现文件拷贝--只拷贝变动过的文件 
 	stylish 	= require('jshint-stylish'),						// js压缩过中错误的提示
     header      = require('gulp-header'),                           // 头注释
@@ -52,23 +52,76 @@ gulp.task('hello',function(){
 });
 
 /**
- * cross.css  cross.min.css
+ * all css
  */
-gulp.task('crossCss', function () {
-    return gulp.src(Asset.crossCss.src)
+gulp.task('css', function () {
+    return gulp.src(Asset.css.src)
         .pipe(sass().on('error', sass.logError))
         .pipe(header(banner))
         .pipe(csscomb())
-        .pipe(gulp.dest(Asset.crossCss.dist));
+        .pipe(gulp.dest(Asset.css.dist));
 });
+/*
 gulp.task('crossCssMin', function () {
     return gulp.src(Asset.crossCss.dist+'cross.css')
         .pipe(cssmin())
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(Asset.crossCss.dist));
 });
+*/
 
-/*
-gulp.task('default', ['clean'], function() {
-    gulp.start(['styles', 'scripts', 'sprites', 'images', 'fonts']);
-});*/
+/**
+ * iconfont
+ */
+gulp.task('iconfont',function(){
+    return gulp.src(Asset.iconfont.src)
+        .pipe(changed(Asset.iconfont.dist))
+        .pipe(gulp.dest(Asset.iconfont.dist))
+        .pipe(size());
+});
+
+/**
+ * json
+ */
+gulp.task('json',function(){
+    return gulp.src(Asset.json.src)
+        .pipe(changed(Asset.json.dist))
+        .pipe(gulp.dest(Asset.json.dist))
+        .pipe(size());
+});
+
+/**
+ * docsHtml
+ */
+gulp.task('docsHtml',function(){
+    return gulp.src(Asset.docs.html.src)
+        .pipe(changed(Asset.docs.html.dist))
+        .pipe(gulp.dest(Asset.docs.html.dist))
+        .pipe(size());
+});
+
+/**
+ * 项目开发进行时 执行的默认任务。
+ */
+gulp.task('start', function(){
+    run('css', 'iconfont', 'docsHtml', 'json');  //事先执行任务
+    // Watch cross.css files
+    gulp.watch(Asset.css.watch, ['css']);
+
+    // Watch iconfont files
+    gulp.watch(Asset.iconfont.src, ['iconfont']);
+
+    // Watch docsHtml files
+    gulp.watch(Asset.docs.html.src, ['docsHtml']);
+
+    // Watch json files
+    gulp.watch(Asset.json.src, ['json']);
+
+
+    /* 静态服务
+     */
+    browserSync.init([Asset.css.dist, Asset.iconfont.dist, Asset.docs.html.dist, Asset.json.dist], {
+        // 代理模式
+        proxy: "192.168.137.44:8181/git/crossui.github.io/dist/docs/"
+    });
+});

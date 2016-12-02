@@ -25,6 +25,7 @@ audio,canvas,video {
 
 body,button,input,select,textarea {
   font: #{$font-size-default}/#{$line-height-default} #{$font-family-default};
+  color: $color-default;
 }
 
 html,body,form,fieldset,p,div,h1,h2,h3,h4,h5,h6 {
@@ -93,23 +94,21 @@ sup {
 sub {
   bottom: -0.25em;
 }
-
 img {
   font-size: 0;
   vertical-align: top;
 }
+ins, a {
+  text-decoration: none;
+}
+input[type="reset"],input[type="submit"],input[type="file"],input[type="radio"],input[type="checkbox"],select,button {
+  cursor: pointer;
+}
+
 a{
   &:hover{
     text-decoration: none;
   }
-}
-
-ins, a {
-  text-decoration: none;
-}
-
-input[type="reset"],input[type="submit"],input[type="file"],input[type="radio"],input[type="checkbox"],select,button {
-  cursor: pointer;
 }
 
 .iconfont, body {

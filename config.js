@@ -3,12 +3,29 @@
  */
 module.exports = {
     Asset : {
-        crossCss :{
+        css :{
             'watch':'./src/scss/**',
             'src':[
-                './src/scss/base/cross.scss'
+                './src/scss/exports/**.scss'
             ],
-            'dist' :'./dist/lib/css'
+            'dist' :'./dist/css'
+        },
+        iconfont: {
+            'src':'./src/iconfont/**',
+            'dist':'./dist/iconfont'
+        },
+        json: {
+            'src':'./src/json/**',
+            'dist':'./dist/json'
+        },
+        docs: {
+            html : {
+                'src':'./src/docs/**',
+                'dist':'./dist/docs'
+            },
+            js : {
+
+            }
         }
     },
     banner: '/*!\n' +

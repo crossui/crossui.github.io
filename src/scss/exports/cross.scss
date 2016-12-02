@@ -1,14 +1,17 @@
 // Variables
-@import "variables.scss";
+@import "../base/variables.scss";
 
 // mixins
-@import "mixins.scss";
+@import "../base/mixins.scss";
+
+// skin
+@import "../base/skin.scss";
 
 // reset
-@import "reset.scss";
+@import "../base/reset.scss";
 
 // base
-@import "base.scss";
+@import "../base/base.scss";
 
 // color
 @import "../common/color.scss";
@@ -31,7 +34,7 @@
 // grid
 @import "../common/grid.scss";
 
-// grid
+// blocks
 @import "../common/blocks.scss";
 
 
