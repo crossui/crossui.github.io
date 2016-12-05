@@ -9,23 +9,8 @@
 // --------------------------------------------------
 $z-index: (
   "default":            1,
-  "below":             -1,
-  "max":            10000,
-  "bar": (
-    "bar":           10,
-    "btn":           20,
-    "icon":          20
-  ),
-  "backdrop":         998,
-  "modal":            999,
-  "popover":(
-    "popover":        999,
-    "arrow":          1000,
-  ),
-  "scroll": (
-    "scrollbar":      9998,
-   ),
-  "toast":            9999
+  "navli":            9001,
+  "navsubul":         9002
 );
 
 // clearfix
@@ -48,12 +33,6 @@ $z-index: (
 @mixin word-break(){
   word-wrap: break-word;
   word-break: break-all;
-}
-
-// display
-// --------------------------------------------------
-@mixin display($val:inline-block){
-  display: $val;
 }
 
 // nowrap
@@ -84,6 +63,8 @@ $z-index: (
   left: $left;
   position: absolute;
 }
+
+
 // text-shadow
 // --------------------------------------------------
 @function makelongshadow($color) {
@@ -105,31 +86,6 @@ $z-index: (
   //-ms-box-sizing: $val;
   //-moz-box-sizing: $val;
   box-sizing: $val;
-}
-
-
-// btn
-// --------------------------------------------------
-@mixin btn($color){
-  color: #fff;
-  background-color: $color;
-  border: 1px solid $color;
-
-  &:enabled:active,
-  &.#{$namespace}active:enabled {
-    color: #fff;
-    background-color: darken($color, 10%);
-    border: 1px solid darken($color, 10%);
-  }
-}
-
-// font
-// --------------------------------------------------
-@mixin font-weight($weight){
-  font-weight: $weight;
-}
-@mixin font-size($size){
-  font-size: #{$size}px;
 }
 
 // border-radius
@@ -175,12 +131,6 @@ $z-index: (
   }@else{
     background-color: #333;
   }
-}
-
-// border
-// --------------------------------------------------
-@mixin border($border...){
-  border: $border;
 }
 
 // Transforms

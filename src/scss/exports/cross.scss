@@ -4,8 +4,8 @@
 // mixins
 @import "../base/mixins.scss";
 
-// skin
-@import "../base/skin.scss";
+// common
+// --------------------------------------------------
 
 // reset
 @import "../base/reset.scss";
@@ -37,4 +37,11 @@
 // blocks
 @import "../common/blocks.scss";
 
+// arrow
+@import "../common/arrow.scss";
 
+// ui
+// --------------------------------------------------
+
+// nav
+@import "../ui/nav.scss";

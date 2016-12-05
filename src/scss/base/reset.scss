@@ -14,11 +14,11 @@ html,body,div,span,object,iframe,p,blockquote,pre,a,abbr,acronym,address,big,cit
 }
 
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
-  @include display(block);
+  display: block;
 }
 
 audio,canvas,video {
-  @include display();
+  display: inline-block;
   *display: inline;
   *zoom: 1;
 }
@@ -42,7 +42,7 @@ table {
 }
 
 iframe {
-  @include display(block);
+  display: block;
 }
 
 abbr,acronym {
@@ -113,4 +113,9 @@ a{
 
 .iconfont, body {
   -webkit-text-stroke-width: 0 !important;
+}
+.iconfont {
+  -webkit-transition: font-size 0.25s ease-out 0s;
+  -moz-transition: font-size 0.25s ease-out 0s;
+  transition: font-size 0.25s ease-out 0s;
 }

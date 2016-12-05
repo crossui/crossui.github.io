@@ -4,10 +4,10 @@
   font-family: $font-family-arial;
 }
 .#{$namespace}bold {
-  @include font-weight(bold);
+  font-weight: bold;
 }
 .#{$namespace}normal {
-  @include font-weight(normal);
+  font-weight: normal;
 }
 .fs1 {
   font-size: $font-size-h1;

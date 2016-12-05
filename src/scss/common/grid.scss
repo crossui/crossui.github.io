@@ -1,8 +1,6 @@
 // grid
-.#{$namespace}container:after,.#{$namespace}row:after {
-  content: "";
-  display:table;
-  clear:both;
+.#{$namespace}container,.#{$namespace}row {
+  @include clearfix();
 }
 .#{$namespace}container {
   padding-top:1px;

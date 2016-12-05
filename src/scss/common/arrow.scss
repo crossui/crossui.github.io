@@ -1,0 +1,130 @@
+// arrow
+.#{$namespace}arrow, .#{$namespace}arrow s {
+  position: relative;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: dashed;
+  border-width: 7px;
+}
+
+.#{$namespace}arrow-r, .#{$namespace}arrow-r s {
+  border-left-style: solid;
+  border-left-color: #cdcdcd;
+}
+
+.#{$namespace}arrow-r:empty {
+  border-left-color: #ddd;
+}
+
+.#{$namespace}arrow-l, .#{$namespace}arrow-l s {
+  border-right-style: solid;
+  border-right-color: #cdcdcd;
+}
+
+.#{$namespace}arrow-l:empty {
+  border-right-color: #ddd;
+}
+
+.#{$namespace}arrow-t, .#{$namespace}arrow-t s {
+  border-bottom-style: solid;
+  border-bottom-color: #cdcdcd;
+}
+
+.#{$namespace}arrow-t:empty {
+  border-bottom-color: #ddd;
+}
+
+.#{$namespace}arrow-b, .#{$namespace}arrow-b s {
+  border-top-style: solid;
+  border-top-color: #cdcdcd;
+}
+
+.#{$namespace}arrow-b:empty {
+  border-top-color: #ddd;
+}
+
+.#{$namespace}arrow-b s , .#{$namespace}arrow-r s , .#{$namespace}arrow-t s , .#{$namespace}arrow-l s{
+  position: absolute;
+}
+
+.#{$namespace}arrow-r s {
+  border-left-color: #fff;
+  left: -9px;
+  top: -7px;
+}
+
+.#{$namespace}arrow-l s {
+  border-right-color: #fff;
+  right: -9px;
+  top: -7px;
+}
+
+.#{$namespace}arrow-t s {
+  border-bottom-color: #fff;
+  left: -7px;
+  top: -5px;
+}
+
+.#{$namespace}arrow-b s {
+  border-top-color: #fff;
+  left: -7px;
+  bottom: -5px;
+}
+
+
+
+/*
+
+.#{$namespace}arrow, .#{$namespace}arrow s {
+  border-width: 7px;
+}
+.#{$namespace}arrow-r, .#{$namespace}arrow-r s {
+  border-left-color: #cdcdcd;
+}
+.#{$namespace}arrow-r:empty {
+  border-left-color: #ddd;
+}
+.#{$namespace}arrow-r s {
+  border-left-color: #fff;
+  left: -9px;
+  top: -7px;
+}
+.#{$namespace}arrow-l, .#{$namespace}arrow-l s {
+  border-right-color: #cdcdcd;
+}
+.#{$namespace}arrow-l:empty {
+  border-right-color: #ddd;
+}
+.#{$namespace}arrow-l s {
+  border-right-color: #fff;
+  right: -9px;
+  top: -7px;
+}
+.#{$namespace}arrow-t, .#{$namespace}arrow-t s {
+  border-bottom-color: #cdcdcd;
+}
+.#{$namespace}arrow-t:empty {
+  border-bottom-color: #ddd;
+}
+.#{$namespace}arrow-t s {
+  border-bottom-color: #fff;
+  left: -7px;
+  top: -5px;
+}
+.#{$namespace}arrow-b, .#{$namespace}arrow-b s {
+  border-top-color: #cdcdcd;
+}
+.#{$namespace}arrow-b:empty {
+  border-top-color: #ddd;
+}
+.#{$namespace}arrow-b s {
+  border-top-color: #fff;
+  left: -7px;
+  bottom: -5px;
+}
+
+*/

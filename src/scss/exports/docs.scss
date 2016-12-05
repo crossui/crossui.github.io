@@ -4,13 +4,39 @@
 // mixins
 @import "../base/mixins.scss";
 
-// skin
-@import "../base/skin.scss";
 // header
+$bgc-main: #212121 !default;
+$bgc-side: #3d3d3d !default;
+$h45 : 45px;
 
 .header-inner {
   width: 100%;
-  height: 45px;
-  background-color: $bgc-black-main;
+  height: $h45;
+  background-color: $bgc-main;
   position: relative;
+}
+.logo {
+  padding: 0 20px;
+}
+.logo .brand {
+  color: $color-white;
+  font-size: $font-size-h5;
+  line-height: $h45;
+}
+.sidebar {
+  position: fixed;
+  width: 225px;
+  @include abs-pos($h45,auto,0,0);
+  background-color: $bgc-side;
+}
+
+
+/* sidebar container */
+
+.c-nav-closed  .c-nav {
+  width: 35px;
+}
+
+.c-nav-closed  .page-content {
+  margin-left: 35px !important;
 }

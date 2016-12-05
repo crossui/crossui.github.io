@@ -23,11 +23,15 @@
   float: right;
 }
 .#{$namespace}hide {
-  @include display(none);
+  display: none;
 }
 
 .#{$namespace}block {
-  @include display(block);
+  display: block;
+}
+
+.#{$namespace}inline-block {
+  display: inline-block;
 }
 
 .#{$namespace}hidden {
@@ -53,10 +57,6 @@
   @include word-break();
 }
 
-.#{$namespace}inline-block {
-  @include display();
-}
-
 .#{$namespace}auto {
   overflow: auto;
 }
@@ -71,4 +71,8 @@
 
 .#{$namespace}cursor-p {
   cursor: pointer;
+}
+
+.#{$namespace}cursor-d {
+  cursor: default;
 }
