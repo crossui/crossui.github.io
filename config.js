@@ -26,6 +26,16 @@ module.exports = {
             js : {
 
             }
+        },
+        js : {
+            docs : {
+                'src':'./src/js/docs/**',
+                'dist':'./dist/js'
+            },
+            libs: {
+                'src':'./src/js/libs/**',
+                'dist':'./dist/js'
+            }
         }
     },
     banner: '/*!\n' +

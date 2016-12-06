@@ -91,7 +91,7 @@ gulp.task('json',function(){
 });
 
 /**
- * docsHtml
+ * docs html
  */
 gulp.task('docsHtml',function(){
     return gulp.src(Asset.docs.html.src)
@@ -100,11 +100,33 @@ gulp.task('docsHtml',function(){
         .pipe(size());
 });
 
+
+/**
+ * docs js
+ */
+gulp.task('docsJs',function(){
+    return gulp.src(Asset.js.docs.src)
+        .pipe(concat('docs.js'))				        //合并后的文件名
+        //.pipe(jshint())                             //先进行检测
+        //.pipe(uglify())                             //JS压缩
+        //.pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest(Asset.js.docs.dist));
+});
+
+/**
+ * libs js
+ */
+gulp.task('libsJs',function(){
+    gulp.src(Asset.js.libs.src)
+        .pipe(changed(Asset.js.libs.dist))
+        .pipe(gulp.dest(Asset.js.libs.dist))
+        .pipe(size());
+});
 /**
  * 项目开发进行时 执行的默认任务。
  */
 gulp.task('start', function(){
-    run('css', 'iconfont', 'docsHtml', 'json');  //事先执行任务
+    run('css', 'iconfont', 'docsHtml', 'json', 'docsJs', 'libsJs');  //事先执行任务
     // Watch cross.css files
     gulp.watch(Asset.css.watch, ['css']);
 
@@ -117,10 +139,15 @@ gulp.task('start', function(){
     // Watch json files
     gulp.watch(Asset.json.src, ['json']);
 
+    // Watch docsJs files
+    gulp.watch(Asset.js.docs.src, ['docsJs']);
+
+    // Watch libsJs files
+    gulp.watch(Asset.js.libs.src, ['libsJs']);
 
     /* 静态服务
      */
-    browserSync.init([Asset.css.dist, Asset.iconfont.dist, Asset.docs.html.dist, Asset.json.dist], {
+    browserSync.init([Asset.css.dist, Asset.iconfont.dist, Asset.docs.html.dist, Asset.json.dist, Asset.js.docs.dist, Asset.js.libs.dist], {
         // 代理模式
         proxy: "192.168.137.44:8181/git/crossui.github.io/dist/docs/"
     });
