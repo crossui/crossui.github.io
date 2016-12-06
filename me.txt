@@ -4,5 +4,55 @@ mixin:
 
 page wrap  页面布局
 
-menu-collapse 导航
+input  
+
+btn
+
+form 
+
+form 布局
+
+my97 日期控件
+
+数字加减
+
+TIPS提示
+
+zTree树插件
+
+搜索框
+
+radio  checkbox
+
+validation 表单验证
+
+tab
+
+select
+
+datatables
+
+alinks
+
+badge
+
+text 布局
+
+panel 面板
+
+tabs  选项卡
+
+step  步骤
+
+tables 常规表格
+
+pagination 分页
+
+
+alert 通知
+
+c-arrow 箭头
+
+登录页
+
 
