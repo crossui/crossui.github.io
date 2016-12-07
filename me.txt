@@ -22,11 +22,13 @@ zTree树插件
 
 搜索框
 
-radio  checkbox
+radio  checkbox    （icheck.js）
 
 validation 表单验证
 
 tab
+
+collapse
 
 select
 

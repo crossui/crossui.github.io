@@ -35,6 +35,10 @@ module.exports = {
             libs: {
                 'src':'./src/js/libs/**',
                 'dist':'./dist/js'
+            },
+            cross: {
+                'src':'./src/js/cross/**',
+                'dist':'./dist/js'
             }
         }
     },
