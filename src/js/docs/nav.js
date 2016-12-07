@@ -15,7 +15,7 @@
 
 
             parentUl.children('li.open').children('a').children('.arrow').removeClass('open');
-            parentUl.children('li.open').children('.sub-ul').stop(true,false).slideUp(200);
+            parentUl.children('li.open').children('.sub-ul').slideUp(200);
             parentUl.children('li.open').removeClass('open');
 
 
@@ -25,13 +25,13 @@
                 if (sub.is(":visible")) {
                     $('.arrow', $(this)).removeClass("open");
                     $(this).parent().removeClass("open");
-                    sub.stop(true,false).slideUp(200, function () {
+                    sub.slideUp(200, function () {
 
                     });
                 } else {
                     $('.arrow', $(this)).addClass("open");
                     $(this).parent().addClass("open");
-                    sub.stop(true,false).slideDown(200, function () {
+                    sub.slideDown(200, function () {
 
                     });
                 }
