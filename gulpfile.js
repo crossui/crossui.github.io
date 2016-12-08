@@ -30,6 +30,7 @@ var gulp        = require('gulp'),                                  // gulp
 	stylish 	= require('jshint-stylish'),						// js压缩过中错误的提示
     header      = require('gulp-header'),                           // 头注释
     banner      = require('./config').banner,                       // 样式banner
+    opts      = require('./config').opts,                           // config 配置参数
     Asset       = require('./config').Asset;                        // config 文件路径
 	//path
 	//yargs
@@ -58,6 +59,7 @@ gulp.task('css', function () {
     return gulp.src(Asset.css.src)
         .pipe(sass().on('error', sass.logError))
         .pipe(header(banner))
+        .pipe(base64(opts.base64))
         .pipe(csscomb())
         .pipe(gulp.dest(Asset.css.dist));
 });

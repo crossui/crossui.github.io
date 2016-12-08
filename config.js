@@ -1,25 +1,28 @@
 /**
  * 文件路径
  */
+
+
+
 module.exports = {
-    Asset : {
-        css :{
-            'watch':'./src/scss/**',
-            'src':[
+    Asset: {
+        css: {
+            'watch': './src/scss/**',
+            'src': [
                 './src/scss/exports/**.scss'
             ],
-            'dist' :'./dist/css'
+            'dist': './dist/css'
         },
         iconfont: {
-            'src':'./src/iconfont/**',
-            'dist':'./dist/iconfont'
+            'src': './src/iconfont/**',
+            'dist': './dist/iconfont'
         },
         json: {
-            'src':'./src/json/**',
-            'dist':'./dist/json'
+            'src': './src/json/**',
+            'dist': './dist/json'
         },
         docs: {
-            html : {
+            html: {
                 'src':'./src/docs/**',
                 'dist':'./dist/docs'
             },
@@ -27,8 +30,8 @@ module.exports = {
 
             }
         },
-        js : {
-            docs : {
+        js: {
+            docs: {
                 'src':'./src/js/docs/**',
                 'dist':'./dist/js'
             },
@@ -40,6 +43,14 @@ module.exports = {
                 'src':'./src/js/cross/**',
                 'dist':'./dist/js'
             }
+        }
+    },
+    opts: {
+        base64: {
+            baseDir: './src/images',
+            extensions: ['png','gif','jpg'],
+            maxImageSize: 20 * 1024,
+            debug: true
         }
     },
     banner: '/*!\n' +

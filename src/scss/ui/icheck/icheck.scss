@@ -1,0 +1,31 @@
+// icheck
+
+$icheckcheckbox: #{$namespace}checkbox- !default;
+$icheckradio: #{$namespace}radio- !default;
+
+$icheck-skin: 'black' !default;    //pngFile:  black,  aero,   blue,   green,   grey,   orange,   pink,   purple,   red,   yellow
+
+$icheck-list: (
+        black  : (
+          bg: #000,
+          hover: #909090,
+          disabled: #ccc
+        ),
+        aero  : 89.7%,
+        blue  : 89.7%,
+        green  : 89.7%,
+        grey  : 89.7%,
+        orange  : 89.7%,
+        pink  : 89.7%,
+        purple  : 89.7%,
+        red  : 89.7%,
+        yellow  : 89.7%
+);
+
+@import 'border.scss';
+
+@import 'square.scss';
+
+@import 'flat.scss';
+
+@import 'line.scss';

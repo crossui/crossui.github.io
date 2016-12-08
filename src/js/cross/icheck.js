@@ -506,4 +506,5 @@
       input[_callback]('ifChanged')[_callback]('if' + capitalize(callback));
     }
   }
+
 })(window.jQuery || window.Zepto);
