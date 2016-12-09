@@ -3,6 +3,11 @@
 // --------------------------------------------------
 $namespace: "c-" !default;
 
+$body-bg:               #fff !default;
+
+
+
+
 // Type
 // --------------------------------------------------
 $font-family-default: \5FAE\8F6F\96C5\9ED1,tahoma,arial,\5b8b\4f53 !default;
@@ -12,16 +17,14 @@ $font-weight: 500 !default;
 $font-size-full: 100% !default;
 $font-family-arial:\5b8b\4f53 !default;
 
-// color
+
+//== color
 // --------------------------------------------------
 $color-default: #666 !default;
+$color-main: #000 !default;
+$color-gray: #999 !default;
 $color-white: #fff !default;
-$color-gray-base:              #000 !default;
-$color-gray-darker:            lighten($color-gray-base, 13.5%) !default; // #222
-$color-gray-dark:              lighten($color-gray-base, 20%) !default;   // #333
-$color-gray:                   lighten($color-gray-base, 33.5%) !default; // #555
-$color-gray-light:             lighten($color-gray-base, 46.7%) !default; // #777
-$color-gray-lighter:           lighten($color-gray-base, 93.5%) !default; // #eee
+
 
 $color-primary:         #428bca !default;
 $color-success:         #5cb85c !default;
@@ -38,15 +41,69 @@ $font-size-h4:            floor(($font-size-default * 2)) !default; // 24px
 $font-size-h5:            floor(($font-size-default * 1.5)) !default; // 18px
 $font-size-h6:            ceil(($font-size-default * 1.16)) !default; // 14px
 
-// background-color
+// border-radius
 // --------------------------------------------------
-$body-bg:               #fff !default;
+$border-radius-base:        4px !default;
+$border-radius-large:       6px !default;
+$border-radius-small:       3px !default;
 
-// link
+
+//== link
 // --------------------------------------------------
-//$link-color:            $brand-primary !default;
-//$link-hover-color:      darken($link-color, 15%) !default;
-//$link-hover-decoration: underline !default;
+$link-color:            #000 !default;
+$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+
+//== Tables
+// --------------------------------------------------
+$table-cell-padding:            8px !default;
+$table-condensed-cell-padding:  5px !default;
+$table-bg:                      transparent !default;
+$table-bg-accent:               #f9f9f9 !default;
+$table-bg-hover:                #f5f5f5 !default;
+$table-bg-active:               $table-bg-hover !default;
+$table-border-color:            #ddd !default;
+
+
+//== form
+// --------------------------------------------------
+$form-mini:     (
+    height: 22px,
+    size: 12px
+) ;
+
+$form-small:     (
+    height: 28px,
+    size: 12px
+) ;
+$form-medium:     (
+    height: 32px,
+    size: 14px
+) ;
+$form-large:     (
+    height: 48px,
+    size: 16px
+) ;
+
+
+$form-bg-color:               #fff !default;
+$form-border-color:           #e5e5e5 !default;
+$form-placeholder-color:      $color-gray !default;
+$form-hover-color:            #d1d1d1 !default;
+$form-focus-color:            #999 !default;
+$form-disabled-bg-color:      #f4f4f4 !default;
+$form-disabled-text-color:    #f7f7f7 !default;
+$form-disabled-hover-color:   #e1e1e1 !default;
+$form-readonly-bg-color:      #f9f9f9 !default;
+
+//$form-group-addon-text-color
+
+//$form-group-addon-bg-color
+
+//$form-group-addon-border-color
+
+
 
 // ie hack
 // --------------------------------------------------

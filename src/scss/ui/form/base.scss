@@ -1,0 +1,76 @@
+// form
+
+.#{$namespace}input {
+  position: relative;
+  display: inline-block;
+  padding: 4px 7px;
+  width: 100%;
+  height: 28px;
+  cursor: text;
+  font-size: $font-size-default;
+  line-height: $line-height-default;
+  color: $color-default;
+  background-color: $form-bg-color;
+  background-image: none;
+  border: 1px solid $form-border-color;
+  border-radius: $border-radius-base;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  &::-moz-placeholder {
+    color: $form-placeholder-color;
+  }
+  &:-ms-input-placeholder {
+    color: $form-placeholder-color;
+  }
+  &::-webkit-input-placeholder {
+    color: $form-placeholder-color;
+  }
+  &:hover {
+    border-color: $form-hover-color;
+  }
+  &:focus {
+    border-color: $form-focus-color;
+    outline: 0;
+  }
+  &[readonly] {
+    background-color: $form-readonly-bg-color;
+    cursor: default;
+  }
+  &[disabled] {
+    background-color: $form-disabled-bg-color;
+    cursor: not-allowed;
+    color: $form-disabled-text-color;
+  }
+  &[disabled]:hover {
+    border-color: $form-disabled-hover-color;
+  }
+  &-mini {
+    padding: 1px 7px;
+    font-size: map-get($form-mini,size);
+    height: map-get($form-mini,height);
+    border-radius: $border-radius-small;
+  }
+  &-small {
+    padding: 2px 7px;
+    font-size: map-get($form-small,size);
+    height: map-get($form-small,height);
+    border-radius: $border-radius-small;
+  }
+  &-medium {
+    padding: 4px 7px;
+    font-size: map-get($form-medium,size);
+    height: map-get($form-medium,height);
+    border-radius: $border-radius-base;
+  }
+  &-large {
+    padding: 6px 7px;
+    font-size: map-get($form-large,size);
+    height: map-get($form-large,height);
+    border-radius: $border-radius-large;
+  }
+}
+textarea.#{$namespace}input {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}

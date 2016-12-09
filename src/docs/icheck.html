@@ -14,12 +14,22 @@
 <div class="p-medium">
 
     <label>
-        <input type="checkbox" name="quux" />
+        <input type="checkbox" name="quux" class="a" />
         Foo
     </label>
 
     <div class="p-medium">
+        <input type="checkbox" class="b">
+        <label>Checkbox 1</label>
 
+        <input type="checkbox" checked class="b">
+        <label>Checkbox 2</label>
+
+        <input type="radio" name="iCheck" class="b">
+        <label>Radio button 1</label>
+
+        <input type="radio" name="iCheck" checked class="b">
+        <label>Radio button 2</label>
     </div>
 
     <div class="p-medium"></div>
@@ -35,9 +45,24 @@
 <script type="text/javascript" src="../js/cross.js"></script>
 <script type="text/javascript">
     $(function(){
-        $('input').iCheck({
-            checkboxClass: 'icheckbox_minimal'
+        $('input.a').iCheck({
+            checkboxClass: 'c-checkbox-square'
         });
+
+        $('input.b').each(function(){
+            var self = $(this),
+                    label = self.next(),
+                    label_text = label.text();
+
+            label.remove();
+            self.iCheck({
+                checkboxClass: 'c-checkbox-line',
+                radioClass: 'c-radio-line',
+                insert: '<div class="line-icon"></div>' + label_text
+            });
+        });
+
+
     });
 </script>
 </body>

@@ -1,14 +1,5 @@
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: ".";
-  clear: both;
-  height: 0;
-}
-
 .clearfix {
-  zoom: 1;
+  @include clearfix();
 }
 
 .fl,.fr {
@@ -37,10 +28,6 @@
 .#{$namespace}hidden {
   overflow: hidden;
   zoom: 1;
-}
-
-.#{$namespace}boxs {
-  @include box-sizing();
 }
 
 .#{$namespace}main {

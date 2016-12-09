@@ -3,24 +3,71 @@
 $icheckcheckbox: #{$namespace}checkbox- !default;
 $icheckradio: #{$namespace}radio- !default;
 
-$icheck-skin: 'black' !default;    //pngFile:  black,  aero,   blue,   green,   grey,   orange,   pink,   purple,   red,   yellow
+$icheck-skin: black !default;    //pngFile:  black,  aero,   blue,   green,   grey,   orange,   pink,   purple,   red,   yellow
 
-$icheck-list: (
+$icheck-line-list: (
         black  : (
+          color: #fff,
           bg: #000,
-          hover: #909090,
+          hover: #444,
           disabled: #ccc
         ),
-        aero  : 89.7%,
-        blue  : 89.7%,
-        green  : 89.7%,
-        grey  : 89.7%,
-        orange  : 89.7%,
-        pink  : 89.7%,
-        purple  : 89.7%,
-        red  : 89.7%,
-        yellow  : 89.7%
+        aero  : (
+                color: #fff,
+                bg: #9cc2cb,
+                hover: #B5D1D8,
+                disabled: #D2E4E8
+        ),
+        blue  : (
+                color: #fff,
+                bg: #2489c5,
+                hover: #3DA0DB,
+                disabled: #ADD7F0
+        ),
+        green  : (
+                color: #fff,
+                bg: #1b7e5a,
+                hover: #24AA7A,
+                disabled: #89E6C4
+        ),
+        grey  : (
+                color: #fff,
+                bg: #73716e,
+                hover: #8B8986,
+                disabled: #D5D4D3
+        ),
+        orange  : (
+                color: #fff,
+                bg: #f70,
+                hover: #FF9233,
+                disabled: #FFD6B3
+        ),
+        pink  : (
+                color: #fff,
+                bg: #a77a94,
+                hover: #B995A9,
+                disabled: #E0D0DA
+        ),
+        purple  : (
+                color: #fff,
+                bg: #6a5a8c,
+                hover: #8677A7,
+                disabled: #D2CCDE
+        ),
+        red  : (
+                color: #fff,
+                bg: #e56c69,
+                hover: #E98582,
+                disabled: #F7D3D2
+        ),
+        yellow  : (
+                color: #fff,
+                bg: #FFC414,
+                hover: #FFD34F,
+                disabled: #FFE495
+        )
 );
+
 
 @import 'border.scss';
 

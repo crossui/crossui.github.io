@@ -79,14 +79,6 @@ $z-index: (
   text-shadow: makelongshadow($color);
 }
 
-// box-sizing
-// --------------------------------------------------
-@mixin box-sizing($val:border-box){
-  -webkit-box-sizing: $val;
-  //-ms-box-sizing: $val;
-  //-moz-box-sizing: $val;
-  box-sizing: $val;
-}
 
 // border-radius
 // --------------------------------------------------
