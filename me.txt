@@ -1,8 +1,6 @@
 mixin:
 
-.iconfont  会有描边
-
-page wrap  页面布局
+（已完成：  
 
 input  
 
@@ -12,27 +10,45 @@ form
 
 form 布局
 
-my97 日期控件
+radio  checkbox    （icheck.js）
+）
 
-数字加减
+（马上要完成的：  
+
+my97 日期控件
 
 TIPS提示
 
 zTree树插件
 
-搜索框
+select2
 
-radio  checkbox    （icheck.js）
+datatables
+
+）
+
+
+
+icheck  只改了 黑色边框 的 PNG  其它都没有改  成 14px的
+
+.iconfont  会有描边
+
+page wrap  页面布局
+
+
+
+
+
+数字加减
+
+
+搜索框
 
 validation 表单验证
 
 tab
 
 collapse
-
-select
-
-datatables
 
 alinks
 
@@ -50,10 +66,7 @@ tables 常规表格
 
 pagination 分页
 
-
 alert 通知
-
-c-arrow 箭头
 
 登录页
 

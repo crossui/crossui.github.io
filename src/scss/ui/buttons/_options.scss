@@ -30,8 +30,8 @@ $ubtn-namespace: '.button' !default; //prefix for all classes
 $ubtn-bgcolor: #EEE !default;
 $ubtn-font-color: #666 !default;
 $ubtn-font-weight: 300 !default;
-$ubtn-font-size: 16px !default;
-$ubtn-height: 40px !default;
+$ubtn-font-size: 12px !default;
+$ubtn-height: 32px !default;
 $ubtn-font-family: \5FAE\8F6F\96C5\9ED1,tahoma,arial,\5b8b\4f53 !default;
 
 
@@ -73,7 +73,7 @@ $ubtn-shapes: (square 0) (box 10px) (rounded 4px) (pill 200px) (circle 100%) !de
 * Each block contains the (name, size multiplier).
 * The class is generated using the name: (ex .button-giant).
 */
-$ubtn-sizes: (giant 1.75) (jumbo 1.5) (large 1.25) (normal 1) (small .75) (tiny .6) !default;
+$ubtn-sizes: (giant 2.5) (jumbo 1.875) (large 1.5) (normal 1) (small .875) (tiny .6875) !default;
 // Use a map if you prefer when running Sass 3.3+
 // $ubtn-sizes: (
 //   giant: 2,

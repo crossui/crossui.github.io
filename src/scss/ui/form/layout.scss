@@ -1,1 +1,113 @@
 // form
+
+.form-layout {
+  .control-sub {
+    font-size: 20px;
+    color: red;
+  }
+  .control-text {
+    padding-top: 8px;
+    vertical-align: middle;
+  }
+  .control-form label.icheck {
+    display: inline-block;
+    margin-top: 7px;
+  }
+  .control-label {
+    display: inline-block;
+    padding-top: 8px;
+    float: left;
+    color: $color-default;
+  }
+  &.form-horizontal {
+    .control-group {
+      margin-bottom: 20px;
+      *padding-bottom: 20px;
+      *margin-bottom: 0;
+    }
+    .control-line {
+      display: block;
+    }
+    .control-hlep {
+      display: inline-block;
+      padding-left: 5px;
+      color: $color-gray;
+    }
+    .control-help-line {
+      margin-top: 5px;
+      color: $color-gray;
+    }
+  }
+  &.form-horizontal-wider {
+    .control-label {
+      width: 160px;
+    }
+    .control-form , .control-text {
+      margin-left: 180px;
+    }
+  }
+  &.form-horizontal-narrow {
+    .control-label {
+      width: 100px;
+    }
+    .control-form , .control-text {
+      margin-left: 110px;
+    }
+  }
+  &.form-blocks {
+    .control-group {
+      margin-bottom: 20px;
+    }
+    .control-label {
+      padding-top: 5px;
+      font-weight: normal;
+      float: none;
+    }
+    .control-hlep {
+      display: inline-block;
+      padding-left: 5px;
+      color: $color-gray;
+    }
+    .control-help-line {
+      margin-top: 5px;
+      color: $color-gray;
+    }
+    .control-line {
+      display: block;
+    }
+  }
+  &.form-inline , .control-group , &.form-auto {
+    @include clearfix();
+  }
+  &.form-inline {
+    .control-group {
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      min-height: 32px;
+    }
+
+  }
+  &.form-inline .control-form , &.form-inline .control-text , &.form-auto .control-form , &.form-auto .control-text {
+    display: inline;
+    float: left;
+  }
+  &.form-mb-tiny .control-group {
+    margin-bottom: 5px;
+  }
+  &.form-mb-small .control-group {
+    margin-bottom: 10px;
+  }
+  &.form-mb-lagre .control-group {
+    margin-bottom: 30px;
+  }
+}
+
+
+
+
+
+
+
+
+

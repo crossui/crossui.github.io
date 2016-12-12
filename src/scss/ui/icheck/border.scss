@@ -1,16 +1,16 @@
 .#{$icheckcheckbox}border,
 .#{$icheckradio}border {
+  position: relative;
+  top: -1px;
   display: inline-block;
   *display: inline;
   vertical-align: middle;
   margin: 0;
   padding: 0;
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   background-image: url("iCheck_border_#{$icheck-skin}.png");
   background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
 }
 
 .#{$icheckcheckbox}border {
