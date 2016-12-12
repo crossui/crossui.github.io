@@ -40,6 +40,9 @@
                                             .end().removeClass('active');
                 parentLi.addClass('active').children('a').append('<span class="selected"></span>');
                 $(this).parent('li').addClass('active');
+
+                $('#iframe').find('iframe').attr('src',$(this).data('src'));
+
             }
 
             e.preventDefault();
