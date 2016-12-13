@@ -3,10 +3,13 @@
   display: inline-block;
   margin: 0;
   position: relative;
+  top: -2px;
   vertical-align: middle;
 
   @import "single";
   @import "multiple";
+
+  @import "size";
 }
 
 @import "dropdown";
@@ -46,3 +49,4 @@
 @import "theme/default/layout";
 
 //@import "theme/classic/layout";
+

@@ -7062,6 +7062,7 @@
 }));
 
 /*! Select2 4.0.3 | https://github.com/select2/select2/blob/master/LICENSE.md */
+/*
 
 (function() {
     if (jQuery && jQuery.fn && jQuery.fn.select2 && jQuery.fn.select2.amd) var e = jQuery.fn.select2.amd;
@@ -7098,4 +7099,4 @@
         define: e.define,
         require: e.require
     }
-})();
+})();*/

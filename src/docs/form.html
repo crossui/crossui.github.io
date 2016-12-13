@@ -14,22 +14,66 @@
 <div class="p-medium">
 
     <div class="p-medium">
-    	<input type="text" placeholder="mini size" class="c-input c-input-mini c-50" />
+    	<input type="text" placeholder="mini size" class="c-input c-input-mini c-30" />
+
+        <select class="c-30" id="a">
+            <option value="a">aa</option>
+            <option value="b">bb</option>
+            <option value="c">cc</option>
+            <option value="d">dd</option>
+            <option value="e">ee</option>
+            <option value="f">ff</option>
+            <option value="g">gg</option>
+        </select>
+
         <a class="button button-primary button-rounded button-tiny" href="#">确定</a>
     </div>
 
     <div class="p-medium">
-    	<input type="text" placeholder="small size" class="c-input c-input-small c-50" />
+    	<input type="text" placeholder="small size" class="c-input c-input-small c-30" />
+
+        <select class="c-30" id="b">
+            <option value="a">aa</option>
+            <option value="b">bb</option>
+            <option value="c">cc</option>
+            <option value="d">dd</option>
+            <option value="e">ee</option>
+            <option value="f">ff</option>
+            <option value="g">gg</option>
+        </select>
+
         <a class="button button-primary button-rounded button-small" href="#">确定</a>
     </div>
     
     <div class="p-medium">
     	<input type="text" placeholder="medium size" class="c-input c-input-medium c-50" />
+
+        <select class="c-30" id="c">
+            <option value="a">aa</option>
+            <option value="b">bb</option>
+            <option value="c">cc</option>
+            <option value="d">dd</option>
+            <option value="e">ee</option>
+            <option value="f">ff</option>
+            <option value="g">gg</option>
+        </select>
+
         <a class="button button-primary button-rounded" href="#">确定</a>
     </div>
     
     <div class="p-medium">
     	<input type="text" placeholder="large size" class="c-input c-input-large c-50" />
+
+        <select class="c-30" id="d">
+            <option value="a">aa</option>
+            <option value="b">bb</option>
+            <option value="c">cc</option>
+            <option value="d">dd</option>
+            <option value="e">ee</option>
+            <option value="f">ff</option>
+            <option value="g">gg</option>
+        </select>
+
         <a class="button button-primary button-rounded button-large" href="#">确定</a>
     </div>
     
@@ -240,7 +284,12 @@
             });
         });
 
+        $("#a").select2({
 
+        });
+        $("#b").select2();
+        $("#c").select2();
+        $("#d").select2();
     });
 </script>
 </body>
