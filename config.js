@@ -43,6 +43,10 @@ module.exports = {
                 'src':'./src/js/cross/**',
                 'dist':'./dist/js'
             }
+        },
+        widget:{
+            'src':'./src/widget/**/*.js',
+            'dist':'./dist/js/'
         }
     },
     opts: {
@@ -51,6 +55,16 @@ module.exports = {
             extensions: ['png','gif','jpg'],
             maxImageSize: 20 * 1024,
             debug: true
+        },
+        htmlmin: {
+            removeComments:true,                            //清除HTML注释
+            collapseWhitespace:false,                        //压缩HTML
+            collapseBooleanAttributes:false,                //省略布尔属性的值 <input checked="true"/> ==> <input />
+            removeEmptyAttributes:false,                    //删除所有空格作属性值 <input id="" /> ==> <input />
+            removeScriptTypeAttributes:false,               //删除<script>的type="text/javascript"
+            removeStyleLinkTypeAttributes:false,            //删除<style>和<link>的type="text/css"
+            minifyJS:false,                                  //压缩页面JS
+            minifyCSS:false                                  //压缩页面CSS
         }
     },
     banner: '/*!\n' +

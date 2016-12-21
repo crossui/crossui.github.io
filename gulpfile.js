@@ -29,6 +29,7 @@ var gulp        = require('gulp'),                                  // gulp
 	changed		= require('gulp-changed'),							// 实现文件拷贝--只拷贝变动过的文件 
 	stylish 	= require('jshint-stylish'),						// js压缩过中错误的提示
     header      = require('gulp-header'),                           // 头注释
+    htmlmin     = require('gulp-htmlmin'),                          // html压缩，删除注释
     banner      = require('./config').banner,                       // 样式banner
     opts      = require('./config').opts,                           // config 配置参数
     Asset       = require('./config').Asset;                        // config 文件路径
@@ -58,19 +59,12 @@ gulp.task('hello',function(){
 gulp.task('css', function () {
     return gulp.src(Asset.css.src)
         .pipe(sass().on('error', sass.logError))
-        .pipe(header(banner))
+        //.pipe(header(banner))
         .pipe(base64(opts.base64))
         .pipe(csscomb())
+        .pipe(cssmin())
         .pipe(gulp.dest(Asset.css.dist));
 });
-/*
-gulp.task('crossCssMin', function () {
-    return gulp.src(Asset.crossCss.dist+'cross.css')
-        .pipe(cssmin())
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest(Asset.crossCss.dist));
-});
-*/
 
 /**
  * iconfont
@@ -97,6 +91,7 @@ gulp.task('json',function(){
  */
 gulp.task('docsHtml',function(){
     return gulp.src(Asset.docs.html.src)
+        .pipe(htmlmin(opts.htmlmin))
         .pipe(changed(Asset.docs.html.dist))
         .pipe(gulp.dest(Asset.docs.html.dist))
         .pipe(size());
@@ -110,7 +105,7 @@ gulp.task('docsJs',function(){
     return gulp.src(Asset.js.docs.src)
         .pipe(concat('docs.js'))				        //合并后的文件名
         //.pipe(jshint())                             //先进行检测
-        //.pipe(uglify())                             //JS压缩
+        .pipe(uglify())                             //JS压缩
         //.pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(Asset.js.docs.dist));
 });
@@ -132,15 +127,26 @@ gulp.task('crossJs',function(){
     return gulp.src(Asset.js.cross.src)
         .pipe(concat('cross.js'))				        //合并后的文件名
         //.pipe(jshint())                             //先进行检测
-        //.pipe(uglify())                             //JS压缩
+        .pipe(uglify())                             //JS压缩
         //.pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(Asset.js.cross.dist));
+});
+
+
+/**
+ * widget js
+ */
+gulp.task('widgetJs',function(){
+    return gulp.src(Asset.widget.src)
+        .pipe(uglify())
+        .pipe(changed(Asset.js.libs.dist))
+        .pipe(gulp.dest(Asset.js.libs.dist));
 });
 /**
  * 项目开发进行时 执行的默认任务。
  */
 gulp.task('start', function(){
-    run('css', 'iconfont', 'docsHtml', 'json', 'docsJs', 'libsJs', 'crossJs');  //事先执行任务
+    run('css', 'iconfont', 'docsHtml', 'json', 'docsJs', 'libsJs', 'crossJs', 'widgetJs');  //事先执行任务
     // Watch cross.css files
     gulp.watch(Asset.css.watch, ['css']);
 
@@ -162,9 +168,12 @@ gulp.task('start', function(){
     // Watch crossJs files
     gulp.watch(Asset.js.cross.src, ['crossJs']);
 
+    // Watch widgetJs files
+    gulp.watch(Asset.widget.src, ['widgetJs']);
+
     /* 静态服务
      */
-    browserSync.init([Asset.css.dist, Asset.iconfont.dist, Asset.docs.html.dist, Asset.json.dist, Asset.js.docs.dist, Asset.js.libs.dist, Asset.js.cross.dist], {
+    browserSync.init([Asset.css.dist, Asset.iconfont.dist, Asset.docs.html.dist, Asset.json.dist, Asset.js.docs.dist, Asset.js.libs.dist, Asset.js.cross.dist, Asset.widget.dist], {
         // 代理模式
         proxy: "192.168.137.44:8181/git/crossui.github.io/dist/docs/"
     });

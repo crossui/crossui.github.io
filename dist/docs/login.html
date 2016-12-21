@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>登陆页</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/cross.css">
+    <link rel="stylesheet" href="../css/docs.css">
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+<div class="login-wrap login-wrap-small">
+    <div class="login-tit login-tit-mail c-t-center">Cross 后台管理系统</div>
+    <div class="login clearfix">
+        <div class="signin-area">
+            <div class="signin-area-bg">
+                <div class="padder">
+                    <div class="input-boxer clearfix">
+                        <span class="fl mr-tiny"><i class="iconfont">&#xe859;</i></span>
+                        <input type="text" placeholder="请输入用户名" class="c-input c-input-medium">
+                    </div>
+                    <div class="input-boxer clearfix mt-small mb-tiny">
+                        <span class="fl mr-tiny"><i class="iconfont">&#xe750;</i></span>
+                        <input type="password" placeholder="请输入密码" class="c-input c-input-medium">
+                    </div>
+                    <div class="remember-password clearfix mb-small">
+                        <div class="gou_boxer fl">
+                            <label class="icheck">
+                                <input type="checkbox" name="quux" class="a">
+                                下次自动登录
+                            </label>
+                        </div>
+                        <a href="javascript:;" class="fr forget">忘记密码？</a>
+                    </div>
+                    <div class="sign-input-a">
+                        <a href="#" class="button button-block button-rounded button-primary button-large">登录</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/docs.js"></script>
+<script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //登陆界面最小高度STAR
+        if($(window).height()>460) $('.login-wrap').addClass('login-wrap-fixed');
+        $(window).resize(function(){
+            if($(window).height()>460) $('.login-wrap').addClass('login-wrap-fixed');
+            else $('.login-wrap').removeClass('login-wrap-fixed');
+        });
+        //登陆界面最小高度END
+
+        $('input.a').iCheck({
+            checkboxClass: 'c-checkbox-border',
+            radioClass: 'c-radio-border'
+        });
+    });
+</script>
+</body>
+</html>
+

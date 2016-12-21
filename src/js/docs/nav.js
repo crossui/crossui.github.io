@@ -41,8 +41,11 @@
                 parentLi.addClass('active').children('a').append('<span class="selected"></span>');
                 $(this).parent('li').addClass('active');
 
-                $('#iframe').find('iframe').attr('src',$(this).data('src'));
-
+                if($(this).data('src')){
+                    $('#iframe').find('iframe').attr('src',$(this).data('src'));
+                }else{
+                    return;
+                }
             }
 
             e.preventDefault();
