@@ -53,7 +53,7 @@ module.exports = {
         base64: {
             baseDir: './src/images',
             extensions: ['png','gif','jpg'],
-            maxImageSize: 20 * 1024,
+            maxImageSize: 200 * 1024,
             debug: true
         },
         htmlmin: {

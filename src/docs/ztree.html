@@ -1,0 +1,423 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>ztree</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../iconfont/iconfont.css" />
+    <link rel="stylesheet" href="../css/cross.css" />
+    <link rel="stylesheet" href="../css/docs.css" />
+    <link rel="stylesheet" href="../css/ztree.css" />
+</head>
+<body>
+<div class="p-medium">
+    <div class="p-small">
+        <ul id="treeDemo" class="ztree"></ul>
+    </div>
+
+    <div class="p-small">
+        <ul id="treeDemoTop" class="ztree"></ul>
+    </div>
+
+    <div class="p-small">
+        <ul id="treeDemoSlack" class="ztree ztree-slack"></ul>
+    </div>
+
+    <div class="p-small">
+        <ul id="treeDemoSlackFun" class="ztree ztree-slack"></ul>
+    </div>
+
+    <div class="p-small">
+        <ul id="treeDemoPeople" class="ztree ztree-people"></ul>
+    </div>
+
+    <div class="p-small">
+        <ul id="treeDemoPeople1" class="ztree ztree-slack ztree-slack-people"></ul>
+    </div>
+
+
+
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/docs.js"></script>
+<script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/ztree/ztree.js"></script>
+<script type="text/javascript">
+    $(function(){
+        // 紧凑型（加减）
+        var setting = {	};
+
+        var zNodes =[
+            { name:"父节点1 - 展开", open:true,
+                children: [
+                    { name:"父节点11 - 折叠",
+                        children: [
+                            { name:"叶子节点111"},
+                            { name:"叶子节点112"},
+                            { name:"叶子节点113"},
+                            { name:"叶子节点114"}
+                        ]},
+                    { name:"父节点12 - 折叠",
+                        children: [
+                            { name:"叶子节点121"},
+                            { name:"叶子节点122"},
+                            { name:"叶子节点123"},
+                            { name:"叶子节点124"}
+                        ]},
+                    { name:"父节点13 - 没有子节点", isParent:true}
+                ]},
+            { name:"父节点2 - 折叠",
+                children: [
+                    { name:"父节点21 - 展开", open:true,
+                        children: [
+                            { name:"叶子节点211"},
+                            { name:"叶子节点212"},
+                            { name:"叶子节点213"},
+                            { name:"叶子节点214"}
+                        ]},
+                    { name:"父节点22 - 折叠",
+                        children: [
+                            { name:"叶子节点221"},
+                            { name:"叶子节点222"},
+                            { name:"叶子节点223"},
+                            { name:"叶子节点224"}
+                        ]},
+                    { name:"父节点23 - 折叠",
+                        children: [
+                            { name:"叶子节点231"},
+                            { name:"叶子节点232"},
+                            { name:"叶子节点233"},
+                            { name:"叶子节点234"}
+                        ]}
+                ]},
+            { name:"父节点3 - 没有子节点", isParent:true}
+
+        ];
+
+        $(document).ready(function(){
+            $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+        });
+
+    });
+
+    $(function(){
+
+        var setting = {
+            check: {
+                enable: true
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            }
+        };
+
+        var zNodes =[
+            { id:0, pId:0, name:"随意勾选 1", open:true},
+            { id:1, pId:0, name:"随意勾选 1", open:true},
+            { id:11, pId:1, name:"随意勾选 1-1", open:true},
+            { id:111, pId:11, name:"随意勾选 1-1-1"},
+            { id:112, pId:11, name:"随意勾选 1-1-2"},
+            { id:12, pId:1, name:"随意勾选 1-2", open:true},
+            { id:121, pId:12, name:"随意勾选 1-2-1"},
+            { id:122, pId:12, name:"随意勾选 1-2-2"},
+            { id:2, pId:0, name:"随意勾选 2", checked:true, open:true},
+            { id:21, pId:2, name:"随意勾选 2-1"},
+            { id:22, pId:2, name:"随意勾选 2-2", open:true},
+            { id:221, pId:22, name:"随意勾选 2-2-1", checked:true},
+            { id:222, pId:22, name:"随意勾选 2-2-2"},
+            { id:23, pId:2, name:"随意勾选 2-3"}
+        ];
+
+        var code;
+
+        function setCheck() {
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+                    py = $("#py").attr("checked")? "p":"",
+                    sy = $("#sy").attr("checked")? "s":"",
+                    pn = $("#pn").attr("checked")? "p":"",
+                    sn = $("#sn").attr("checked")? "s":"",
+                    type = { "Y":py + sy, "N":pn + sn};
+            zTree.setting.check.chkboxType = type;
+            showCode('setting.check.chkboxType = { "Y" : "' + type.Y + '", "N" : "' + type.N + '" };');
+        }
+        function showCode(str) {
+            if (!code) code = $("#code");
+            code.empty();
+            code.append("<li>"+str+"</li>");
+        }
+
+        $(document).ready(function(){
+            $.fn.zTree.init($("#treeDemoTop"), setting, zNodes);
+            setCheck();
+            $("#py").bind("change", setCheck);
+            $("#sy").bind("change", setCheck);
+            $("#pn").bind("change", setCheck);
+            $("#sn").bind("change", setCheck);
+        });
+    });
+
+    $(function(){
+        // 宽松型（加减）
+        var setting = {	};
+
+        var zNodes =[
+            {
+                name:"父节点0 - 展开", open:false,
+                children: [
+                    { name:"父节点1 - 展开", open:true,
+                        children: [
+                            { name:"父节点11 - 折叠",
+                                children: [
+                                    { name:"叶子节点111"},
+                                    { name:"叶子节点112"},
+                                    { name:"叶子节点113"},
+                                    { name:"叶子节点114"}
+                                ]},
+                            { name:"父节点12 - 折叠",
+                                children: [
+                                    { name:"叶子节点121"},
+                                    { name:"叶子节点122"},
+                                    { name:"叶子节点123"},
+                                    { name:"叶子节点124"}
+                                ]},
+                            { name:"父节点13 - 没有子节点", isParent:true}
+                        ]},
+                    { name:"父节点2 - 折叠",
+                        children: [
+                            { name:"父节点21 - 展开", open:true,
+                                children: [
+                                    { name:"叶子节点211"},
+                                    { name:"叶子节点212"},
+                                    { name:"叶子节点213"},
+                                    { name:"叶子节点214"}
+                                ]},
+                            { name:"父节点22 - 折叠",
+                                children: [
+                                    { name:"叶子节点221"},
+                                    { name:"叶子节点222"},
+                                    { name:"叶子节点223"},
+                                    { name:"叶子节点224"}
+                                ]},
+                            { name:"父节点23 - 折叠",
+                                children: [
+                                    { name:"叶子节点231"},
+                                    { name:"叶子节点232"},
+                                    { name:"叶子节点233"},
+                                    { name:"叶子节点234"}
+                                ]}
+                        ]},
+                    { name:"父节点3 - 没有子节点", isParent:true}
+                ]
+            }
+
+
+        ];
+
+        $(document).ready(function(){
+            $.fn.zTree.init($("#treeDemoSlack"), setting, zNodes);
+        });
+
+    });
+
+
+    $(function(){
+        var setting = {
+            check: {
+                enable: true
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            }
+        };
+
+        var zNodes =[
+            { id:0, pId:0, name:"随意勾选 0", open:true},
+            { id:1, pId:0, name:"随意勾选 1", open:true},
+            { id:11, pId:1, name:"随意勾选 1-1", open:true},
+            { id:111, pId:11, name:"随意勾选 1-1-1"},
+            { id:112, pId:11, name:"随意勾选 1-1-2"},
+            { id:12, pId:1, name:"随意勾选 1-2", open:true},
+            { id:121, pId:12, name:"随意勾选 1-2-1"},
+            { id:122, pId:12, name:"随意勾选 1-2-2"},
+            { id:2, pId:0, name:"随意勾选 2", checked:true, open:true},
+            { id:21, pId:2, name:"随意勾选 2-1"},
+            { id:22, pId:2, name:"随意勾选 2-2", open:true},
+            { id:221, pId:22, name:"随意勾选 2-2-1", checked:true},
+            { id:222, pId:22, name:"随意勾选 2-2-2"},
+            { id:23, pId:2, name:"随意勾选 2-3"}
+        ];
+
+        var code;
+
+        function setCheck() {
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+                    py = $("#py").attr("checked")? "p":"",
+                    sy = $("#sy").attr("checked")? "s":"",
+                    pn = $("#pn").attr("checked")? "p":"",
+                    sn = $("#sn").attr("checked")? "s":"",
+                    type = { "Y":py + sy, "N":pn + sn};
+            zTree.setting.check.chkboxType = type;
+            showCode('setting.check.chkboxType = { "Y" : "' + type.Y + '", "N" : "' + type.N + '" };');
+        }
+        function showCode(str) {
+            if (!code) code = $("#code");
+            code.empty();
+            code.append("<li>"+str+"</li>");
+        }
+
+        $(document).ready(function(){
+            $.fn.zTree.init($("#treeDemoSlackFun"), setting, zNodes);
+            setCheck();
+            $("#py").bind("change", setCheck);
+            $("#sy").bind("change", setCheck);
+            $("#pn").bind("change", setCheck);
+            $("#sn").bind("change", setCheck);
+        });
+    });
+
+    $(function(){
+        // 紧凑型（人物）
+        var setting = {
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            }
+        };
+
+        var zNodes =[
+            { name:"父节点1 - 展开", open:false, iconSkin: "company" ,
+                children: [
+                    { name:"父节点11 - 折叠", open:true,
+                        iconSkin: "branch" ,
+                        children: [
+                            { name:"叶子节点111" , iconSkin: "people"},
+                            { name:"叶子节点112" , iconSkin: "people"},
+                            { name:"叶子节点113" , iconSkin: "people"},
+                            { name:"叶子节点114" , iconSkin: "people"}
+                        ]},
+                    { name:"父节点12 - 折叠", open:true,
+                        iconSkin: "branch" ,
+                        children: [
+                            { name:"叶子节点121" , iconSkin: "people"},
+                            { name:"叶子节点122" , iconSkin: "people"},
+                            { name:"叶子节点123" , iconSkin: "people"},
+                            { name:"叶子节点124" , iconSkin: "people"}
+                        ]},
+                    { name:"父节点13 - 没有子节点", iconSkin: "branch" , isParent:true}
+                ]},
+            { name:"父节点2 - 折叠", iconSkin: "company" ,
+                children: [
+                    { name:"父节点21 - 展开", open:true,
+                        iconSkin: "branch" ,
+                        children: [
+                            { name:"叶子节点211" , iconSkin: "people"},
+                            { name:"叶子节点212" , iconSkin: "people"},
+                            { name:"叶子节点213" , iconSkin: "people"},
+                            { name:"叶子节点214" , iconSkin: "people"}
+                        ]},
+                    { name:"父节点22 - 折叠",
+                        iconSkin: "branch" ,
+                        children: [
+                            { name:"叶子节点221" , iconSkin: "people"},
+                            { name:"叶子节点222" , iconSkin: "people"},
+                            { name:"叶子节点223" , iconSkin: "people"},
+                            { name:"叶子节点224" , iconSkin: "people"}
+                        ]},
+                    { name:"父节点23 - 折叠", open:true,
+                        iconSkin: "branch" ,
+                        children: [
+                            { name:"叶子节点231" , iconSkin: "people"},
+                            { name:"叶子节点232" , iconSkin: "people"},
+                            { name:"叶子节点233" , iconSkin: "people"},
+                            { name:"叶子节点234" , iconSkin: "people"}
+                        ]}
+                ]},
+            { name:"父节点3 - 没有子节点", iconSkin: "company", isParent:true}
+
+        ];
+
+        $(document).ready(function(){
+            $.fn.zTree.init($("#treeDemoPeople"), setting, zNodes);
+        });
+
+    });
+
+    $(function(){
+        // 宽松型（人物）
+        var setting = {
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            }
+        };
+
+        var zNodes =[
+            { name:"父节点1 - 展开", open:false, iconSkin: "company" ,
+                children: [
+                    { name:"父节点11 - 折叠", open:true,
+                        iconSkin: "branch" ,
+                        children: [
+                            { name:"叶子节点111" , iconSkin: "people"},
+                            { name:"叶子节点112" , iconSkin: "people"},
+                            { name:"叶子节点113" , iconSkin: "people"},
+                            { name:"叶子节点114" , iconSkin: "people"}
+                        ]},
+                    { name:"父节点12 - 折叠", open:true,
+                        iconSkin: "branch" ,
+                        children: [
+                            { name:"叶子节点121" , iconSkin: "people"},
+                            { name:"叶子节点122" , iconSkin: "people"},
+                            { name:"叶子节点123" , iconSkin: "people"},
+                            { name:"叶子节点124" , iconSkin: "people"}
+                        ]},
+                    { name:"父节点13 - 没有子节点", iconSkin: "branch" , isParent:true}
+                ]},
+            { name:"父节点2 - 折叠", iconSkin: "company" ,
+                children: [
+                    { name:"父节点21 - 展开", open:true,
+                        iconSkin: "branch" ,
+                        children: [
+                            { name:"叶子节点211" , iconSkin: "people"},
+                            { name:"叶子节点212" , iconSkin: "people"},
+                            { name:"叶子节点213" , iconSkin: "people"},
+                            { name:"叶子节点214" , iconSkin: "people"}
+                        ]},
+                    { name:"父节点22 - 折叠",
+                        iconSkin: "branch" ,
+                        children: [
+                            { name:"叶子节点221" , iconSkin: "people"},
+                            { name:"叶子节点222" , iconSkin: "people"},
+                            { name:"叶子节点223" , iconSkin: "people"},
+                            { name:"叶子节点224" , iconSkin: "people"}
+                        ]},
+                    { name:"父节点23 - 折叠", open:true,
+                        iconSkin: "branch" ,
+                        children: [
+                            { name:"叶子节点231" , iconSkin: "people"},
+                            { name:"叶子节点232" , iconSkin: "people"},
+                            { name:"叶子节点233" , iconSkin: "people"},
+                            { name:"叶子节点234" , iconSkin: "people"}
+                        ]}
+                ]},
+            { name:"父节点3 - 没有子节点", iconSkin: "company", isParent:true}
+
+        ];
+
+        $(document).ready(function(){
+            $.fn.zTree.init($("#treeDemoPeople1"), setting, zNodes);
+        });
+
+    });
+
+</script>
+</body>
+</html>
+
