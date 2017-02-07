@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../iconfont/iconfont.css">
     <link rel="stylesheet" href="../css/cross.css">
     <link rel="stylesheet" href="../css/docs.css">
+    <link rel="stylesheet" href="../css/icheck.css">
+    <link rel="stylesheet" href="../css/select2.css">
 </head>
 <body>
 <div class="p-medium">
@@ -17,6 +19,7 @@
     	<input type="text" placeholder="mini size" class="c-input c-input-mini c-30">
 
         <select class="c-30" id="a">
+            <option value="">Select a state</option>
             <option value="a">aa</option>
             <option value="b">bb</option>
             <option value="c">cc</option>
@@ -33,6 +36,7 @@
     	<input type="text" placeholder="small size" class="c-input c-input-small c-30">
 
         <select class="c-30" id="b">
+            <option value="">Select a state</option>
             <option value="a">aa</option>
             <option value="b">bb</option>
             <option value="c">cc</option>
@@ -49,6 +53,7 @@
     	<input type="text" placeholder="medium size" class="c-input c-input-medium c-50">
 
         <select class="c-30" id="c">
+            <option value="">Select a state</option>
             <option value="a">aa</option>
             <option value="b">bb</option>
             <option value="c">cc</option>
@@ -65,6 +70,7 @@
     	<input type="text" placeholder="large size" class="c-input c-input-large c-50">
 
         <select class="c-30" id="d">
+            <option value="">Select a state</option>
             <option value="a">aa</option>
             <option value="b">bb</option>
             <option value="c">cc</option>
@@ -270,6 +276,8 @@
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/docs.js"></script>
 <script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/select2/select2.js"></script>
+<script type="text/javascript" src="../js/icheck/icheck.js"></script>
 <script type="text/javascript">
     $(function(){
 
@@ -285,11 +293,21 @@
         });
 
         $("#a").select2({
-
+            placeholder: "Select a state",
+            height:'mini'
         });
-        $("#b").select2();
-        $("#c").select2();
-        $("#d").select2();
+        $("#b").select2({
+            placeholder: "Select a state",
+            height:'small'
+        });
+        $("#c").select2({
+            placeholder: "Select a state",
+            height:'medium'
+        });
+        $("#d").select2({
+            placeholder: "Select a state",
+            height:'large'
+        });
     });
 </script>
 </body>

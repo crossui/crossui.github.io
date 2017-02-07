@@ -4883,7 +4883,8 @@
                             return selection.text;
                         },
                         theme: 'default',
-                        width: 'resolve'
+                        width: 'resolve',
+                        height: 'default'
                     };
                 };
 
@@ -5137,11 +5138,13 @@
                     $container.insertAfter(this.$element);
 
                     var width = this._resolveWidth(this.$element, this.options.get('width'));
-
+                    var height = this.options.get('height');
                     if (width != null) {
                         $container.css('width', width);
+                        $container.addClass('select2-height--'+height);
                     }
                 };
+
 
                 Select2.prototype._resolveWidth = function ($element, method) {
                     var WIDTH = /^width:(([-+]?([0-9]*\.)?[0-9]+)(px|em|ex|%|in|cm|mm|pt|pc))/i;

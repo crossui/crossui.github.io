@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../iconfont/iconfont.css" />
     <link rel="stylesheet" href="../css/cross.css" />
     <link rel="stylesheet" href="../css/docs.css" />
+    <link rel="stylesheet" href="../css/select2.css" />
 </head>
 <body>
 <div class="p-medium">
@@ -17,6 +18,7 @@
     <div class="pb-medium">
         <h2>单一的选择框:</h2>
         <select class="c-50" id="a">
+            <option value=""></option>
             <option value="a">aa</option>
             <option value="b">bb</option>
             <option value="c">cc</option>
@@ -140,15 +142,25 @@
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/docs.js"></script>
 <script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/select2/select2.js"></script>
 <script type="text/javascript">
     $(function(){
-        $("#a").select2();
+        $("#a").select2({
+            placeholder: "Select a state"
+        });
 
-        $("#b").select2();
+        $("#b").select2({
+            placeholder: "Select a state"
+        });
 
-        $("#c").select2();
+        $("#c").select2({
+            placeholder: "Select a state"
+        });
 
-        $("#d").select2({"disabled":true});
+        $("#d").select2({
+            placeholder: "Select a state",
+            "disabled":true
+        });
     });
 </script>
 </body>

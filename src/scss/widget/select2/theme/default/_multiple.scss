@@ -1,6 +1,6 @@
 .select2-selection--multiple {
   background-color: white;
-  border: 1px solid #aaa;
+  border: 1px solid #e5e5e5;
   border-radius: 4px;
   cursor: text;
 
@@ -17,7 +17,7 @@
   }
 
   .select2-selection__placeholder {
-    color: #999;
+    color: $form-placeholder-color;
 
     margin-top: 5px;
 
@@ -35,7 +35,7 @@
   .select2-selection__choice {
     background-color: #e4e4e4;
 
-    border: 1px solid #aaa;
+    border: 1px solid $form-border-color;
     border-radius: 4px;
     cursor: default;
 

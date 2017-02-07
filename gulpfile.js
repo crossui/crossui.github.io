@@ -175,6 +175,9 @@ gulp.task('start', function(){
      */
     browserSync.init([Asset.css.dist, Asset.iconfont.dist, Asset.docs.html.dist, Asset.json.dist, Asset.js.docs.dist, Asset.js.libs.dist, Asset.js.cross.dist, Asset.widget.dist], {
         // 代理模式
-        proxy: "192.168.137.44:8181/git/crossui.github.io/dist/docs/"
+        //proxy: "192.168.137.44:8181/git/crossui.github.io/dist/docs/"
+        server: {
+            baseDir: "./dist/"
+        }
     });
 });
