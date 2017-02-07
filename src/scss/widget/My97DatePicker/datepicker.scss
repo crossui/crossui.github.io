@@ -1,0 +1,219 @@
+.WdateDiv{
+	width:220px;
+	background-color:#FFFFFF;
+    border:1px solid #bbb;
+    padding:2px;
+  *{
+    font-size:9pt;
+  }
+  .NavImg a{
+    display:block;
+    cursor:pointer;
+    height:16px;
+    width:16px;
+    position: relative;
+    top: 8px;
+  }
+  .NavImgll a{
+    float:left;
+    background:transparent url(datePickerImg.gif) no-repeat scroll 0 0;
+  }
+  .NavImgl a{
+    float:left;
+    background:transparent url(datePickerImg.gif) no-repeat scroll -16px 0;
+  }
+  .NavImgr a{
+    float:right;
+    background:transparent url(datePickerImg.gif) no-repeat scroll -32px 0;
+  }
+  .NavImgrr a{
+    float:right;
+    background:transparent url(datePickerImg.gif) no-repeat scroll -48px 0;
+  }
+  #dpTitle{
+    height:24px;
+    margin-bottom:2px;
+    padding:1px;
+  }
+  .yminput{
+    margin-top:2px;
+    text-align:center;
+    height:30px;
+    border:0px;
+    width:50px;
+    cursor:pointer;
+    margin-left: 15px;
+  }
+  .yminputfocus{
+    margin-top:2px;
+    text-align:center;
+    font-weight:bold;
+    height:30px;
+    color:blue;
+    border:#ccc 1px solid;
+    width:50px;
+    margin-left: 15px;
+  }
+  .menuSel{
+    z-index:1;
+    position:absolute;
+    background-color:#FFFFFF;
+    border:#ccc 1px solid;
+    display:none;
+  }
+  .menu{
+    cursor:pointer;
+    background-color:#fff;
+  }
+  .menuOn{
+    cursor:pointer;
+    background-color:#178fe5;
+    color: #fff;
+  }
+  .invalidMenu{
+    color:#aaa;
+  }
+  .YMenu{
+    margin-top:20px;
+  }
+  .MMenu{
+    margin-top:20px;
+    *width:62px;
+  }
+  .hhMenu{
+    margin-top:-90px;
+    margin-left:26px;
+  }
+  .mmMenu{
+    margin-top:-46px;
+    margin-left:26px;
+  }
+  .ssMenu{
+    margin-top:-24px;
+    margin-left:26px;
+  }
+  .Wweek {
+    text-align:center;
+    background:#DAF3F5;
+    border-right:#BDEBEE 1px solid;
+  }
+  .MTitle td{
+    background-color:#f5f5f5;
+  }
+  .WdayTable2{
+    border-collapse:collapse;
+    border:#c5d9e8 1px solid;
+  }
+  .WdayTable2 table{
+    border:0;
+  }
+  .WdayTable{
+    line-height:30px;
+  }
+  .WdayTable td{
+    text-align:center;
+    /*background: #f5f5f5;*/
+  }
+  .Wday{
+    cursor:pointer;
+  }
+  .WdayOn{
+    cursor:pointer;
+    background-color:#178FE5;
+    color: #fff;
+  }
+  .Wwday{
+    cursor:pointer;
+    color:#FF2F2F;
+  }
+  .WwdayOn{
+    cursor:pointer;
+    color:#fff;
+    background-color:#178FE5;
+  }
+  .Wtoday{
+    cursor:pointer;
+    color:blue;
+  }
+  td.Wselday{
+    background-color:#33AAFF;
+    color: #fff;
+  }
+  td.WspecialDay{
+    background-color:#6A6AFF;
+  }
+  .WotherDay{
+    cursor:pointer;
+    color:#6A6AFF;
+  }
+  .WotherDayOn{
+    cursor:pointer;
+    background-color:#178FE5;
+    color: #fff;
+  }
+  .WinvalidDay{
+    color:#aaa;
+  }
+  #dpTime{
+    float:left;
+    margin-top:3px;
+    margin-right:30px;
+  }
+  #dpTime #dpTimeStr{
+    margin-left:1px;
+  }
+  #dpTime input{
+    width:26px;
+    height:30px;
+    text-align:center;
+    border:#ccc 1px solid;
+  }
+  #dpTime .tB{
+    border-right:0px;
+  }
+  #dpTime .tE{
+    border-left:0;
+    border-right:0;
+  }
+  #dpTime .tm{
+    width:7px;
+    border-left:0;
+    border-right:0;
+  }
+  #dpTime #dpTimeUp{
+    height:10px;
+    width:13px;
+    border:0px;
+    background:url(datePickerImg.gif) no-repeat -32px -16px;
+  }
+  #dpTime #dpTimeDown{
+    height:10px;
+    width:13px;
+    border:0px;
+    background:url(datePickerImg.gif) no-repeat -48px -16px;
+  }
+  #dpQS {
+    float:left;
+    margin-right:3px;
+    margin-top:3px;
+    background:url(datePickerImg.gif) no-repeat 0px -16px;
+    width:30px;
+    height:30px;
+    cursor:pointer;
+  }
+  #dpControl {
+    text-align:right;
+  }
+  .dpButton{
+    height:30px;
+    width:45px;
+    border:#ccc 1px solid;
+    margin-top:2px;
+    margin-right:1px;
+    cursor: pointer;
+  }
+}
+
+.WdateDiv2{
+	width:360px;
+}

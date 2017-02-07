@@ -1,3 +1,10 @@
+// Variables
+@import "../base/variables.scss";
+
+// mixins
+@import "../base/mixins.scss";
+
+
 // dataTables
 @import "../widget/datatables/dataTables.scss";
 
@@ -5,8 +12,6 @@
 @import "../widget/datatables/buttons.dataTables.scss";
 
 @import "../widget/datatables/autoFill.dataTables.scss";
-
-
 
 
 @import "../widget/datatables/colReorder.dataTables.scss";
