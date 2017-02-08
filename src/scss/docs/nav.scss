@@ -139,7 +139,7 @@ ul.c-nav-ul > li {
         display: block;
         margin: 0px 0px 0px 0px;
         padding: 5px 15px 5px 0px;
-        padding-left: 44px !important;
+        padding-left: 30px !important;
         text-decoration: none;
         font-size: $font-size-h6;
         font-weight: 300;
@@ -162,10 +162,10 @@ ul.c-nav-ul > li {
       > ul.sub-ul {
         > li {
           > a {
-            padding-left: 60px;
+            padding-left: 50px;
           }
           > ul.sub-ul > li > a {
-            padding-left: 80px;
+            padding-left: 70px;
           }
         }
       }

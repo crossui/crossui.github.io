@@ -2,7 +2,7 @@ $(function() {
     // 页面初始化
     function pageInit(){
         $('#iframe').height($(window).height()-45);
-        $('.sidebar').css('height',$(window).height()-45);
+        //$('.sidebar').css('height',$(window).height()-45);
         /*$('.sidebar').css('height',$(window).height()-45);
         $(".sidebar").niceScroll({autohidemode:false,cursorborder:"",cursorcolor:"#cccdd1"});*/
     }
@@ -20,4 +20,4 @@ function throttle(fn, delay){
             fn.apply(context, args);
         }, delay);
     };
-};
+}

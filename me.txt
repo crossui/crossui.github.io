@@ -1,62 +1,77 @@
-mixin:
+已完成的功能组件：
 
-（已完成：  
+grid systems 栅格系统
 
-input  
+blocks 矩阵排版
 
-btn
+my97   日期控件
 
-form 
+TIPS   提示
 
-form 布局
+zTree  树插件
 
-radio  checkbox    （icheck.js）
-）
+select2 下拉框
 
-（马上要完成的：  
+datatables  动态表格
 
-my97 日期控件
+input 表单
 
-TIPS提示
+formlayout  表单布局
 
-zTree树插件
+radio/checkbox   icheck 单、多选择框
 
-select2
+buttons  按钮
 
-datatables
+Dropdown 下拉菜单
 
-）
+badge 徽章
+
+alert 通知
+
+login  登录页
+
+IconFont 图标
+
+arrow 箭头
+
+menu  多级下拉导航
 
 
+本周完成 以上功能组件API文档说明
 
-icheck  只改了 黑色边框 的 PNG  其它都没有改  成 14px的
 
-.iconfont  会有描边
+未完成的功能组件：（加API文档说明）
+
 
 page wrap  页面布局
 
+Editor  图文编辑器
 
-c-border
+fileUpload  文件上传
 
+imgareaselect  图片裁剪
 
-数字加减
+autocomplete  文本框自动填充
 
+spinner   数字加减
 
-搜索框
+switch  开关
+
+inputMagnifier  表单放大镜
+
+input-search 搜索框
 
 validation 表单验证
 
-tab
+alinks  链接颜色
 
-collapse
+ColorPicker  拾色器
 
-alinks
-
-badge
-
-text 布局
+textlayout 文本布局
 
 panel 面板
+
+Collapse 折叠面板
 
 tabs  选项卡
 
@@ -64,10 +79,50 @@ step  步骤
 
 tables 常规表格
 
-pagination 分页
+pagination   分页样式  加   分页插件
 
-alert 通知
+crumbs  面包屑导航
 
-登录页
+tags 标签
 
+cityPicker  城市选择
 
+artDialog  弹出层
+
+nicescroll  自定义滚动条
+
+Lxslider  图片轮播插件
+
+dragsort 拖拽排序
+
+choosePerson  人员选择插件
+
+fullcalendar  日历备忘录
+
+Lightbox   图片展示插件
+
+BackTop  回到顶部
+
+Affix  固钉
+
+highlight  代码高亮
+
+timeaxis  时间轴
+
+jqzoom   图片放大镜
+
+jsonFormat  JSON数据格式化
+
+tablesMergeCell  表格合并
+
+内部架框页 （左右布局，左中右布局）
+
+无数据页面
+
+404页面
+
+500页面
+
+友情提醒页面
+
+主题 （三套）

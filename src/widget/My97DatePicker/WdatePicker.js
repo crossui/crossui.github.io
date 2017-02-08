@@ -6,7 +6,7 @@ var $dp, WdatePicker;
             charset: "UTF-8"
         }, {
             name: "zh-cn",
-            charset: "gb2312"
+            charset: "UTF-8"
         }, {
             name: "zh-tw",
             charset: "GBK"
