@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>artdialog</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/cross.css">
+    <link rel="stylesheet" href="../css/docs.css">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <link rel="stylesheet" href="../css/artdialog.css">
+</head>
+<body>
+<div class="p-medium">
+    <a href="javascript:;" id="artDialog1" class="button button-primary button-rounded button-small">提示自动关闭（3秒）</a>
+
+    <a href="javascript:;" id="artDialog2" class="button button-primary button-rounded button-small">数据加载中</a>
+
+    <div class="ptb-medium">
+        <a href="javascript:;" id="artDialogICON1" class="button button-primary button-rounded button-small">success</a>
+
+        <a href="javascript:;" id="artDialogICON2" class="button button-primary button-rounded button-small">error</a>
+
+        <a href="javascript:;" id="artDialogICON3" class="button button-primary button-rounded button-small">info</a>
+
+        <a href="javascript:;" id="artDialogICON4" class="button button-primary button-rounded button-small">warning</a>
+
+        <a href="javascript:;" id="artDialogICON5" class="button button-primary button-rounded button-small">tips</a>
+
+        <a href="javascript:;" id="artDialogICON6" class="button button-primary button-rounded button-small">自定义</a>
+    </div>
+
+    <div class="ptb-medium">
+        <a href="javascript:;" id="artDialogstatusbar" class="button button-primary button-rounded button-small">带复选框</a>
+    </div>
+
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
+<script type="text/javascript" src="../js/artdialog/artdialog.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+        $('#artDialog1').on('click',function(){
+            var d = dialog({
+                content : '<i class="iconfont icon-time fs5"></i> 提示自动关闭'
+            }).showModal().closedtime(3);
+
+        });
+
+        $('#artDialog2').on('click',function(){
+            var d = dialog({
+                content : '<span class="ui-dialog-loading"></span>数据加截中...'
+            }).showModal();
+
+            d.closedtime(3);
+        });
+
+        $('#artDialogICON1').on('click',function(){
+            var d = dialog({
+                title:'提示',
+                icon:'success',
+                content : '数据添加成功!!!',
+                ok:true
+            }).showModal();
+        });
+
+        $('#artDialogICON2').on('click',function(){
+            var d = dialog({
+                title:'提示',
+                icon:'error',
+                content : '数据提交失败!!!',
+                ok:true
+            }).showModal();
+        });
+
+        $('#artDialogICON3').on('click',function(){
+            var d = dialog({
+                title:'提示',
+                icon:'info',
+                content : '数据添加成功!!!',
+                ok:true
+            }).showModal();
+        });
+
+        $('#artDialogICON4').on('click',function(){
+            var d = dialog({
+                title:'提示',
+                icon:'warning',
+                content : '数据添加成功!!!',
+                ok:true
+            }).showModal();
+        });
+
+        $('#artDialogICON5').on('click',function(){
+            var d = dialog({
+                title:'提示',
+                icon:'tips',
+                content : '数据添加成功!!!',
+                ok:true
+            }).showModal();
+        });
+
+        $('#artDialogICON6').on('click',function(){
+            var d = dialog({
+                title:'提示',
+                icon:'<i class="iconfont icon-wangfill fs3"></i>',
+                content : '图标自定义的哦!!!',
+                ok:true
+            }).showModal();
+        });
+
+
+        $('#artDialogstatusbar').on('click',function(){
+            var d = dialog({
+                title: '欢迎',
+                content: '欢迎使用 artDialog 对话框组件！',
+                ok: function () {},
+                statusbar: '<label><input type="checkbox">不再提醒</label>'
+            });
+            d.showModal();
+        });
+
+
+
+    });
+</script>
+</body>
+</html>
+

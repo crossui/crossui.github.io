@@ -71,7 +71,7 @@ textlayout 文本布局
 
 panel 面板
 
-Collapse 折叠面板
+Collapse 折叠面板    http://www.runoob.com/bootstrap/bootstrap-collapse-plugin.html
 
 tabs  选项卡
 

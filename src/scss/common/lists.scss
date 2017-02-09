@@ -1,20 +1,31 @@
 // lists
+
+%ml20{
+  margin-left: 20px;
+}
+
 .#{$namespace}list-disc {
+  @extend %ml20;
   list-style-type:disc;
 }
 .#{$namespace}list-circle {
+  @extend %ml20;
   list-style-type:circle;
 }
 .#{$namespace}list-square {
+  @extend %ml20;
   list-style-type:square;
 }
 .#{$namespace}list-decimal {
+  @extend %ml20;
   list-style-type:decimal;
 }
 .#{$namespace}list-alpha {
+  @extend %ml20;
   list-style-type:lower-alpha;
 }
 .#{$namespace}list-roman {
+  @extend %ml20;
   list-style-type:lower-roman;
 }
 .#{$namespace}list-inline {
