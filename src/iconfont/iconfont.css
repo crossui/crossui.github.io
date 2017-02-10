@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1486632338550'); /* IE9*/
-  src: url('iconfont.eot?t=1486632338550#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1486632338550') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1486632338550') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1486632338550#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1486691587451'); /* IE9*/
+  src: url('iconfont.eot?t=1486691587451#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1486691587451') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1486691587451') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1486691587451#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -1064,6 +1064,8 @@
 .icon-loading1:before { content: "\e861"; }
 
 .icon-balance-scale:before { content: "\e668"; }
+
+.icon-chevron-circle-down:before { content: "\e667"; }
 
 .icon-star-o:before { content: "\e712"; }
 

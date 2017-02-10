@@ -1,0 +1,93 @@
+// collapse-panel
+.#{$namespace}panel {
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 0px 3px rgba(0,0,0,.05);
+  box-shadow: 0 0px 3px rgba(0,0,0,.05);
+}
+
+.#{$namespace}panel-hd {
+  padding: 0px 20px;
+  height: 44px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 2px;
+  border-top-left-radius: 2px;
+}
+
+.#{$namespace}panel-hd .title-t {
+   line-height: 2.4;
+ }
+
+.#{$namespace}panel-hd .tools .iconfont {
+  position: relative;
+  top: 4px;
+}
+
+.#{$namespace}panel-default {
+  border-color: #e1e1e1;
+}
+
+.#{$namespace}panel-default .#{$namespace}panel-hd a i.iconfont {
+  color: #333;
+}
+
+.#{$namespace}panel-default .#{$namespace}panel-hd a:hover i.iconfont {
+  color: #4DB2EE;
+}
+
+.#{$namespace}panel-default .#{$namespace}panel-hd {
+  background-color: #f5f5f5;
+  border-color: #e1e1e1;
+}
+
+.#{$namespace}panel-hd {
+  border-bottom: #eeeeee 1px solid;
+}
+
+.#{$namespace}panel-white {
+  border: 0px solid transparent;
+  box-shadow: 0 1px 6px rgba(0,0,0,.25);
+}
+
+.#{$namespace}panel-white .#{$namespace}panel-hd a i.iconfont {
+  color: #acb2b8;
+}
+
+.#{$namespace}panel-white .#{$namespace}panel-hd a:hover i.iconfont {
+  color: #e9634c;
+}
+
+.#{$namespace}panel-small .#{$namespace}panel-hd {
+  height: 32px;
+  padding: 0 10px;
+}
+
+.#{$namespace}panel-small .#{$namespace}panel-hd a i.iconfont {
+  font-size: 14px;
+}
+
+.#{$namespace}panel-min .#{$namespace}panel-hd {
+  height: 25px;
+  padding: 0 10px;
+}
+
+.#{$namespace}panel-min .#{$namespace}panel-hd a i.iconfont {
+  font-size: 12px;
+}
+
+.c-panel-collapse{
+  display:none;
+}
+
+.c-panel-collapse.in{
+  display:block;
+}
+
+.c-panel-collapsing{
+  position:relative;
+  height:0;
+  overflow:hidden;
+  -webkit-transition:height .35s ease;
+  transition:height .35s ease;
+}
