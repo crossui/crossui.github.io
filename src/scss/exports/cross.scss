@@ -25,6 +25,15 @@
 // Width and height
 @import "../common/wh.scss";
 
+// border
+@import "../common/border.scss";
+
+// alinks
+@import "../common/alinks.scss";
+
+// position
+@import "../common/position.scss";
+
 // lists
 @import "../common/lists.scss";
 
@@ -48,6 +57,9 @@
 
 // buttons
 @import "../ui/buttons/buttons.scss";
+
+// table
+@import "../ui/table/table.scss";
 
 // alerts
 @import "../common/alerts.scss";

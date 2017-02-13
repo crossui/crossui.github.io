@@ -1,0 +1,51 @@
+@charset "utf-8";
+.w420 {
+  width: 420px;
+}
+.auth-org-w {
+  width: 970px;
+}
+.add-del-w {
+  width: 100px;
+
+  margin:150px 10px 0;
+}
+
+.list-search-input {
+  display: block;
+  width: 100%;
+  border: 0
+}
+.list-search-icon , .list-search-clear {
+  position: absolute;
+  right: 10px;
+  top:5px;
+  cursor: pointer;
+}
+.list-search-clear {
+  right: 30px;
+  top: 5px;
+}
+.search-overlay {
+  display: none;
+  position: absolute;
+  left: 0px;
+  top:33px;
+  width: 100%;
+  height: 280px;
+  border:1px solid #e1e1e1;
+  border-top:0 none;
+  background-color:#fff;
+  z-index: 2;
+  overflow: auto;
+}
+.search-overlay input {
+  vertical-align: middle;
+}
+.search-overlay .tb th{
+  border-top: 0;
+}
+.selectedorg li {
+  padding:5px 15px;
+  font-size:14px;
+}

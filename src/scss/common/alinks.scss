@@ -1,0 +1,41 @@
+// alinks
+
+a.alinks,a.alinks-unline,a.alinks-line {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+a.alinks:hover,a.alinks-unline,a.alinks-line {
+  text-decoration: none;
+}
+
+a.alinks-unline:hover {
+  text-decoration: underline;
+}
+
+a.alinks-line:hover {
+  text-decoration: line-through;
+}
+
+a.alinks-black {
+  color: #333;
+}
+
+a.alinks-blue {
+  color: #4DB2EE;
+}
+
+a.alinks-green {
+  color: #40d0a7;
+}
+
+a.alinks-red {
+  color: #ee6a71;
+}
+
+a.alinks-gray {
+  color: #ddd;
+}

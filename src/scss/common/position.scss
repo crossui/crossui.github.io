@@ -1,0 +1,18 @@
+// position
+
+.#{$namespace}position-a {
+  position:absolute;
+}
+.#{$namespace}position-r {
+  position:relative;
+  *zoom:1;
+}
+.#{$namespace}position-f {
+  position:fixed;
+}
+.#{$namespace}position-all {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}

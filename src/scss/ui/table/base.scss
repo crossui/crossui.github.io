@@ -1,0 +1,104 @@
+// table
+
+.tb th {
+  padding: 10px 5px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background-color: #f4f5f6;
+  line-height: 20px;
+  color: #999;
+  vertical-align: middle;
+}
+
+.tb td {
+  padding: 10px 5px;
+  line-height: 25px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  word-wrap: break-word;
+  word-break: break-all;
+  color: #666;
+  vertical-align: middle;
+}
+
+.tb th.small {
+  padding: 5px;
+}
+
+.tb .hover td {
+  background-color: #fafafa;
+}
+
+.tb-b {
+  border: 1px solid #ddd;
+}
+
+.tb-b th , .tb-b td {
+  border-color: #ddd;
+  border-left: 1px solid #ddd;
+}
+
+.tb-n th , .tb-n td {
+  border: 0;
+  background: none;
+  vertical-align: middle;
+  padding: 10px;
+  color: #666;
+}
+
+tr.hover td {
+  background-color: #fcfcfc
+}
+
+.tb-s {
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+}
+
+.tb-s th {
+  background-color: #F8F8F8;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  padding: 15px 10px;
+  width: 120px;
+}
+
+.tb-s td {
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  padding: 15px 10px;
+}
+
+.tb-k th {
+  position: relative;
+  padding: 5px;
+  border-top: 0 none;
+  border-bottom: 0 none;
+  background-color: #f4f5f6;
+}
+
+.tb-k th:before {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 5px;
+  bottom: 5px;
+  display: block;
+  width: 1px;
+  background-color: #ddd;
+  font-size: 0;
+  z-index: 1;
+}
+
+.tb-k th:last-child {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.tb-min th , .tb-min td {
+  padding: 1px 4px;
+  line-height: 1.3;
+  color: #000;
+  font-size: 13px;
+}

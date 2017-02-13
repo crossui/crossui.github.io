@@ -1,0 +1,36 @@
+// border
+
+
+.#{$namespace}border , .#{$namespace}border-t , .#{$namespace}border-b , .#{$namespace}border-l , .#{$namespace}border-r , .#{$namespace}border-tb {
+  border-color: $border-color;
+  border-style: solid;
+}
+
+.#{$namespace}border {
+  border-width: 1px;
+}
+
+.#{$namespace}border-t {
+  border-top-width: 1px;
+}
+
+.#{$namespace}border-b {
+  border-bottom-width: 1px;
+}
+
+.#{$namespace}border-l {
+  border-left-width: 1px;
+}
+
+.#{$namespace}border-r {
+  border-right-width: 1px;
+}
+
+.#{$namespace}border-tb {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.#{$namespace}border-d {
+  border-style: dashed;
+}
