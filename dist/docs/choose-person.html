@@ -18,9 +18,9 @@
 <div class="p-medium">
     <div class="form-layout form-horizontal form-horizontal-narrow">
         <div class="control-group">
-            <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
+            <label class="control-label"><sub class="control-sub">*</sub> 人员选择：</label>
             <div class="control-form">
-                <textarea class="c-input" rows="5" cols="65" placeholder="请选择人员" data-parent="false,false" data-name="111,222" data-id="7D3142435A55472C850,7D3142435A55472C851" id="choose-person-input">111,222</textarea>
+                <textarea class="c-input" rows="5" cols="65" placeholder="请选择人员" data-name="林仙花,林毅" data-id="B06AAE3CB22D45BCB1F88F8CD6CD3C54,662ABB18D95542CF8979A53226AFA53B" id="choose-person-input">林仙花,林毅</textarea>
                 <a class="button button-primary button-rounded" href="javascript:;" id="choose-person-btn">确定</a>
             </div>
         </div>
@@ -48,16 +48,23 @@
                 initDataParent:$('#choose-person-input').attr('data-parent'),
                 ztreeJsonUrl:'../json/chooseperson/choosepersonztree.json',
                 searchJsonUrl:'../json/chooseperson/choosepersonsearch.json',
-                async:true,
-                callBack:function(id,name,parent){
-                    $('#choose-person-input').val(name).attr({
-                        'data-name'     :   name,
-                        'data-id'       :   id,
-                        'data-parent'   :   parent
-                    });
+                artDialogTitle: '请选择人员',
+                callBack:function(value){
+                    filledData(value,'#choose-person-input');
                 }
             });
         });
+
+        function filledData(value,dom){
+            var _name=_id='';
+            $(value).each(function(i,v){
+                _name+= v.name+",";
+                _id+= v.id+",";
+            });
+            _name=_name.substring(0,_name.length-1);
+            _id=_id.substring(0,_id.length-1);
+            $(dom).val(_name).attr({'data-name':_name,'data-id':_id});
+        }
     });
 </script>
 </body>

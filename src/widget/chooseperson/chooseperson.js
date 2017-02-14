@@ -98,15 +98,12 @@ chooseperson.ztreeFilter = function (treeId, parentNode, responseData) {
 };
 //----------选中的人员超出提示
 chooseperson.orerunDialog = function(){
-	dialog({
-		lock: true,
-		artIcon:'error',
-		opacity:0.4,
-		width: 250,
-		title:'报错',
-		content: chooseperson.opts.selectPrompt + chooseperson.opts.selectNumber,
-		ok: function () {}
-	});
+    dialog({
+        title:'提示',
+        icon:'error',
+        content : chooseperson.opts.selectPrompt + chooseperson.opts.selectNumber,
+        ok:true
+    }).showModal();
 };
 //----------勾选的值动态生成
 chooseperson.ztreeCheckNode = function(idData,Checked,nameData){
@@ -151,15 +148,15 @@ chooseperson.ztreeCheckNode = function(idData,Checked,nameData){
 			if($('#selecteBox>li').length>0){
 				var oldList=true;
 				for(var s=0;s<$('#selecteBox>li').length;s++){
-					if(listArray[n].rid==$('#selecteBox>li').eq(s).data('rid')){
+					if(listArray[n].id==$('#selecteBox>li').eq(s).data('id')){
 						oldList=false;
 					}
 				}
 				if(oldList){
-					listHtml+='<li data-rid="'+listArray[n].rid+'" data-name="'+listArray[n].name+'"><a href="javascript:;" class="alinks-line alinks-black" onclick="chooseperson.delAdminer(this)">'+listArray[n].name+'</a></li>';
+					listHtml+='<li data-id="'+listArray[n].id+'" data-name="'+listArray[n].name+'"><a href="javascript:;" class="alinks-line alinks-black" onclick="chooseperson.delselect(this)">'+listArray[n].name+'</a></li>';
 				}
 			}else{
-				listHtml+='<li data-rid="'+listArray[n].rid+'" data-name="'+listArray[n].name+'"><a href="javascript:;" class="alinks-line alinks-black" onclick="chooseperson.delAdminer(this)">'+listArray[n].name+'</a></li>';
+				listHtml+='<li data-id="'+listArray[n].id+'" data-name="'+listArray[n].name+'"><a href="javascript:;" class="alinks-line alinks-black" onclick="chooseperson.delselect(this)">'+listArray[n].name+'</a></li>';
 			}
 		}
 		$('#selecteBox').append(listHtml);
@@ -308,9 +305,9 @@ chooseperson.search = function(){
 				var Html='';
 				for(var i=0; i<data.Result.length; i++){
 					if(chooseperson.opts.checkType==1){
-						Html+='<tr><td><label><input type="radio" class="radio person-search-radio" data-name="'+data.Result[i].CNAME+'" data-rid="'+data.Result[i].USERID+'"></label></td><td class="c-t-center"><span class="c-nowrap">'+data.Result[i].CNAME+'</span></td><td><span class="c-nowrap">'+data.Result[i].JOBNUMBER+'</span></td><td><span class="c-nowrap">'+data.Result[i].ORGNAME+'</span></td></tr>';
+						Html+='<tr><td><label><input type="radio" class="radio person-search-radio" data-name="'+data.Result[i].CNAME+'" data-id="'+data.Result[i].USEid+'"></label></td><td class="c-t-center"><span class="c-nowrap">'+data.Result[i].CNAME+'</span></td><td><span class="c-nowrap">'+data.Result[i].JOBNUMBER+'</span></td><td><span class="c-nowrap">'+data.Result[i].ORGNAME+'</span></td></tr>';
 					}else{
-						Html+='<tr><td><label><input type="checkbox" class="checkbox person-search-checkbox" data-name="'+data.Result[i].CNAME+'" data-rid="'+data.Result[i].USERID+'"></label></td><td class="c-t-center"><span class="c-nowrap">'+data.Result[i].CNAME+'</span></td><td><span class="c-nowrap">'+data.Result[i].JOBNUMBER+'</span></td><td><span class="c-nowrap">'+data.Result[i].ORGNAME+'</span></td></tr>';
+						Html+='<tr><td><label><input type="checkbox" class="checkbox person-search-checkbox" data-name="'+data.Result[i].CNAME+'" data-id="'+data.Result[i].USEid+'"></label></td><td class="c-t-center"><span class="c-nowrap">'+data.Result[i].CNAME+'</span></td><td><span class="c-nowrap">'+data.Result[i].JOBNUMBER+'</span></td><td><span class="c-nowrap">'+data.Result[i].ORGNAME+'</span></td></tr>';
 					}
 				}
 				$('#adminSearchTbody').html(Html);
@@ -384,6 +381,7 @@ chooseperson.htmlWrap = '' +
 			'</div>'+
 			'<div class="fl add-del-w">'+
 				'<a class="button button-primary button-rounded button-tiny" href="javascript:;" onclick="chooseperson.rightShift()">选择右移<em class="c-simsun ml5">&gt;</em></a>'+
+                '<a class="button button-primary button-rounded button-tiny mt-small" href="javascript:;" onclick="chooseperson.delselectall()"><em class="c-simsun ml5">&lt;</em>清空已选</a>'+
 			'</div>'+
 			'<div class="fl w420 bgc-fff">'+
 				'<div class="c-border list">'+
@@ -401,18 +399,25 @@ chooseperson.rightShift=function(){
 	var _value=chooseperson.choosedPersonVal(),
 		_id='',_name='';
 	$(_value).each(function(i,v){
-		_id += v.rid + ',';
+		_id += v.id + ',';
 		_name += v.name + ',';
 	});
 	_id=_id.substring(0,_id.length-1);
 	_name=_name.substring(0,_name.length-1);
 	chooseperson.ztreeCheckNode(_id,false,_name);
 };
+//删除全部选择人员
+chooseperson.delselectall=function(){
+    $('#selecteBox>li').each(function(){
+        $(this).remove();
+    });
+
+};
 //----------删除选择人员
-chooseperson.delAdminer=function(dom) {
+chooseperson.delselect=function(dom) {
 	var treeObj = $.fn.zTree.getZTreeObj("choosepersonTree");
 	var	nodes_array = treeObj.transformToArray (treeObj.getNodes()[0].children);
-	idData=$(dom).parent().data("rid");
+	idData=$(dom).parent().data("id");
 	for(var i=0;i<nodes_array.length;i++){
 		if(idData==nodes_array[i].id){
 			treeObj.checkNode(nodes_array[i], false, true);
@@ -421,16 +426,16 @@ chooseperson.delAdminer=function(dom) {
 	$(dom).parent().remove();
 };
 //----------生成选中人员 数组
-chooseperson.makeArray=function (Rid,Name,personArray){
+chooseperson.makeArray=function (id,Name,personArray){
 	var repeated=true;
 	if(personArray.length>0){
 		$(personArray).each(function(i,v){
-			if(Rid == v.rid){repeated=false;}
+			if(id == v.id){repeated=false;}
 		});
 	}
 	if(repeated){
 		var	valArray=new Array();
-		valArray['rid']=Rid;
+		valArray['id']=id;
 		valArray['name']=Name;
 		personArray.push(valArray);
 	}
@@ -443,7 +448,7 @@ chooseperson.choosedPersonVal=function(){
 
 	$('#adminSearchTbody').find('input[type="checkbox"]').each(function(){
 		if($(this).is(':checked')){
-			personArray=chooseperson.makeArray($(this).data('rid'),$(this).data('name'),personArray);
+			personArray=chooseperson.makeArray($(this).data('id'),$(this).data('name'),personArray);
 		}
 	});
 
@@ -472,7 +477,7 @@ chooseperson.choosedPersonVal=function(){
 chooseperson.selectAdminer=function(){
 	var personArray=new Array(),$li=$('#selecteBox>li');
 	for(var i=0; i<$li.length;i++){
-		personArray=chooseperson.makeArray($li.eq(i).data('rid'),$li.eq(i).data('name'),personArray);
+		personArray=chooseperson.makeArray($li.eq(i).data('id'),$li.eq(i).data('name'),personArray);
 	}
 	return personArray;
 };

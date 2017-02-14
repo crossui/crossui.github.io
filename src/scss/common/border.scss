@@ -34,3 +34,15 @@
 .#{$namespace}border-d {
   border-style: dashed;
 }
+
+.border-radius-rounded {
+  border-radius:$border-radius-base;
+}
+
+.border-radius-circle{
+  border-radius:50%;
+}
+
+.border-radius-pill {
+  border-radius:1000px;
+}
