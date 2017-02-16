@@ -9,8 +9,6 @@
 .#{$namespace}row {
   zoom:1;
 }
-$gridlist: 100 90 80 75 70 66 65 60 50 40 35 33 30 25 20 10;
-$gridlist2: 90 80 75 70 66 65 60 50 40 35 33 30 25 20 10;
 $gridmulti:(
         100 : 100%,
         90  : 90%,
@@ -63,16 +61,20 @@ $gridpushmulti:(
         20  : 20.6%,
         10  : 10.3%
 );
-@each $author in $gridlist {
+$gridlistkey: map-keys($gridmulti);  //100 90 80 75 70 66 65 60 50 40 35 33 30 25 20 10;
+$gridlist2key: map-keys($gridrowmulti); //90 80 75 70 66 65 60 50 40 35 33 30 25 20 10;
+
+@each $author in $gridlistkey {
   .#{$namespace}#{$author} {
-    width: map-get($gridmulti,$author) ;
+    width: map-get($gridmulti,$author);
   }
 }
+
 %flml {
   float:left;
   margin-left:3%;
 }
-@each $author in $gridlist {
+@each $author in $gridlistkey {
   .#{$namespace}row .#{$namespace}#{$author}{
     @extend %flml;
   }
@@ -80,12 +82,12 @@ $gridpushmulti:(
 %ml0 {
   margin-left:0;
 }
-@each $author in $gridlist {
+@each $author in $gridlistkey {
   .#{$namespace}row .#{$namespace}#{$author}:first-child{
     @extend %ml0;
   }
 }
-@each $author in $gridlist2 {
+@each $author in $gridlist2key {
   .#{$namespace}row .#{$namespace}#{$author}{
     width: map-get($gridrowmulti,$author) ;
   }
@@ -93,12 +95,12 @@ $gridpushmulti:(
 %relative {
   position:relative;
 }
-@each $author in $gridlist2 {
+@each $author in $gridlist2key {
   .#{$namespace}push-#{$author}{
     @extend %relative;
   }
 }
-@each $author in $gridlist2 {
+@each $author in $gridlist2key {
   .#{$namespace}push-#{$author}{
     width: map-get($gridpushmulti,$author) ;
   }
@@ -121,17 +123,17 @@ $gridpushmulti:(
   padding:20px;
 }
 
-@each $author in $gridlist {
+@each $author in $gridlistkey {
   .#{$namespace}padding .#{$namespace}#{$author}{
     @extend .#{$namespace}padding;
   }
 }
-@each $author in $gridlist2 {
+@each $author in $gridlist2key {
   .#{$namespace}split .#{$namespace}#{$author}{
     @extend %ml0;
   }
 }
-@each $author in $gridlist2 {
+@each $author in $gridlist2key {
   .#{$namespace}split .#{$namespace}#{$author}{
     width: map-get($gridmulti,$author);
   }

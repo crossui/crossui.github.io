@@ -16,6 +16,9 @@
 // color
 @import "../common/color.scss";
 
+// bgc
+@import "../common/bgc.scss";
+
 // alignment
 @import "../common/alignment.scss";
 
@@ -49,6 +52,17 @@
 // arrow
 @import "../common/arrow.scss";
 
+// quote
+@import "../common/quote.scss";
+
+// alerts
+@import "../common/alerts.scss";
+
+// badge
+@import "../common/badge.scss";
+
+// collapse-panel
+@import "../common/collapse-panel.scss";
 // ui
 // --------------------------------------------------
 
@@ -61,17 +75,6 @@
 // table
 @import "../ui/table/table.scss";
 
-// alerts
-@import "../common/alerts.scss";
-
-// badge
-@import "../common/badge.scss";
-
 // tabs
-@import "../common/tabs.scss";
+@import "../ui/tabs/tabs.scss";
 
-// table
-@import "../common/table.scss";
-
-// collapse-panel
-@import "../common/collapse-panel.scss";

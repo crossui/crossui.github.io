@@ -48,6 +48,7 @@ $border-radius-large:       6px !default;
 $border-radius-small:       3px !default;
 
 $border-color: #e1e1e1 !default;
+
 //== link
 // --------------------------------------------------
 $link-color:            #000 !default;
@@ -57,13 +58,34 @@ $link-hover-decoration: underline !default;
 
 //== Tables
 // --------------------------------------------------
-$table-cell-padding:            8px !default;
+$table-cell-padding:            10px 5px !default;
 $table-condensed-cell-padding:  5px !default;
 $table-bg:                      transparent !default;
-$table-bg-accent:               #f9f9f9 !default;
+$table-th-bg:                   #f4f5f6 !default;
 $table-bg-hover:                #f5f5f5 !default;
 $table-bg-active:               $table-bg-hover !default;
 $table-border-color:            #ddd !default;
+$table-th-color:                #666 !default;
+
+
+//== bgc
+// --------------------------------------------------
+$bgc-color:     (
+    white:          #fff,
+    gray:           #f3f3f3,
+    darkgray:       #fdfdfd,
+    shallowgray:    #f9f9f9
+);
+
+//== quote
+// --------------------------------------------------
+$quote-border-color:     (
+        gray:           #e1e1e1,
+        blue:           #428bca,
+        red:            #d9534f,
+        green:          #5cb85c,
+        orange:         #f0ad4e
+);
 
 
 //== form

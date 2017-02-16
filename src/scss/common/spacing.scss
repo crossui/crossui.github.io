@@ -1,6 +1,5 @@
 // spacing
 $based : 5px;   //基数
-$spacinglist: zero mini tiny small medium big large jumbo giant;
 $spacingmulti:(
     zero:0,
     mini:1,
@@ -12,40 +11,40 @@ $spacingmulti:(
     jumbo:10,
     giant:20
 );
+$spacinglistkey: map-keys($spacingmulti);
 
-
-@each $author in $spacinglist {
+@each $author in $spacinglistkey {
   .m-#{$author} {
     margin: $based * map-get($spacingmulti,$author) !important;
   }
 }
-@each $author in $spacinglist {
+@each $author in $spacinglistkey {
   .mt-#{$author} {
     margin-top: $based * map-get($spacingmulti,$author) !important;
   }
 }
-@each $author in $spacinglist {
+@each $author in $spacinglistkey {
   .mb-#{$author} {
     margin-bottom: $based * map-get($spacingmulti,$author) !important;
   }
 }
-@each $author in $spacinglist {
+@each $author in $spacinglistkey {
   .ml-#{$author} {
     margin-left: $based * map-get($spacingmulti,$author) !important;
   }
 }
-@each $author in $spacinglist {
+@each $author in $spacinglistkey {
   .mr-#{$author} {
     margin-right: $based * map-get($spacingmulti,$author) !important;
   }
 }
-@each $author in $spacinglist {
+@each $author in $spacinglistkey {
   .mlr-#{$author} {
     margin-left: $based * map-get($spacingmulti,$author) !important;
     margin-right: $based * map-get($spacingmulti,$author) !important;
   }
 }
-@each $author in $spacinglist {
+@each $author in $spacinglistkey {
   .mtb-#{$author} {
     margin-top: $based * map-get($spacingmulti,$author) !important;
     margin-bottom: $based * map-get($spacingmulti,$author) !important;
@@ -54,38 +53,38 @@ $spacingmulti:(
 
 
 
-@each $author in $spacinglist {
+@each $author in $spacinglistkey {
   .p-#{$author} {
     padding: $based * map-get($spacingmulti,$author) !important;
   }
 }
-@each $author in $spacinglist {
+@each $author in $spacinglistkey {
   .pt-#{$author} {
     padding-top: $based * map-get($spacingmulti,$author) !important;
   }
 }
-@each $author in $spacinglist {
+@each $author in $spacinglistkey {
   .pb-#{$author} {
     padding-bottom: $based * map-get($spacingmulti,$author) !important;
   }
 }
-@each $author in $spacinglist {
+@each $author in $spacinglistkey {
   .pl-#{$author} {
     padding-left: $based * map-get($spacingmulti,$author) !important;
   }
 }
-@each $author in $spacinglist {
+@each $author in $spacinglistkey {
   .pr-#{$author} {
     padding-right: $based * map-get($spacingmulti,$author) !important;
   }
 }
-@each $author in $spacinglist {
+@each $author in $spacinglistkey {
   .plr-#{$author} {
     padding-left: $based * map-get($spacingmulti,$author) !important;
     padding-right: $based * map-get($spacingmulti,$author) !important;
   }
 }
-@each $author in $spacinglist {
+@each $author in $spacinglistkey {
   .ptb-#{$author} {
     padding-top: $based * map-get($spacingmulti,$author) !important;
     padding-bottom: $based * map-get($spacingmulti,$author) !important;

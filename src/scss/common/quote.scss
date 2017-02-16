@@ -1,0 +1,50 @@
+// quote
+$border-color-key: map-keys($quote-border-color);
+
+.#{$namespace}quote {
+  padding: 15px;
+  line-height: 22px;
+  border-left-width: 5px;
+  border-style: solid;
+  border-color: map-get($quote-border-color,blue);
+  border-radius: 0 $border-radius-small $border-radius-small 0;
+  background-color: map-get($bgc-color,gray);
+}
+
+.#{$namespace}quote-box {
+  border-style: solid;
+  border-width: 1px 1px 1px 5px;
+  background: 0 0
+}
+
+@each $author in $border-color-key {
+  .#{$namespace}quote-#{$author} {
+    border-color: map-get($quote-border-color,$author);
+  }
+}
+
+
+.#{$namespace}field {
+  padding: 0;
+  border: 1px solid $border-color
+}
+
+.#{$namespace}field legend {
+  margin-left: 20px;
+  padding: 0 10px;
+  font-size: 20px;
+  font-weight: 300
+}
+
+.#{$namespace}field-title {
+  border: none;
+  border-top: 1px solid $border-color
+}
+
+.#{$namespace}field-box {
+  padding: 10px 15px
+}
+
+.#{$namespace}field-title .#{$namespace}field-box {
+  padding: 10px 0
+}

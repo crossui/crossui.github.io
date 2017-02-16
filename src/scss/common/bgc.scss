@@ -1,0 +1,8 @@
+// bgc
+$color-key : map-keys($bgc-color);
+
+@each $author in $color-key {
+  .bgc-#{$author} {
+    background-color: map-get($bgc-color,$author) !important;
+  }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>blocks 矩阵排版</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/cross.css">
+    <link rel="stylesheet" href="../css/docs.css">
+    <link rel="stylesheet" href="../css/highlight.css">
+
+    <style type="text/css">
+        .grid-demo .c-row-end, .grid-demo .c-row {
+            background-color: #f0f0f0;
+        }
+
+        .grid-demo .c-row {
+            margin-top: 20px;
+        }
+
+        .grid-demo .c-100, .grid-demo .c-90, .grid-demo .c-80, .grid-demo .c-75, .grid-demo .c-70, .grid-demo .c-66, .grid-demo .c-65, .grid-demo .c-60, .grid-demo .c-50, .grid-demo .c-40, .grid-demo .c-35, .grid-demo .c-33, .grid-demo .c-30, .grid-demo .c-25, .grid-demo .c-20, .grid-demo .c-10, .c-blocks-demo .c-blocks-2 li, .c-blocks-demo .c-blocks-3 li, .c-blocks-demo .c-blocks-4 li, .c-blocks-demo .c-blocks-5 li, .c-blocks-demo .c-blocks-6 li {
+            text-align: center;
+            font-size: .85em;
+            background-color: #7e9ec7;
+            padding: 15px 0;
+            color: #fff;
+            line-height: 1;
+        }
+        .demo-head {margin-top: 20px;}
+    </style>
+</head>
+<body>
+<div class="p-medium">
+    <div class="c-blocks-demo">
+
+
+        <h2 class="demo-title">矩阵排版</h2>
+
+        <h4 class="demo-head">2排:</h4>
+        <ul class="c-blocks-2">
+            <li>50%</li>
+            <li>50%</li>
+        </ul>
+
+        <h4 class="demo-head">3排:</h4>
+        <ul class="c-blocks-3">
+            <li>33%</li>
+            <li>33%</li>
+            <li>33%</li>
+        </ul>
+
+        <h4 class="demo-head">4排:</h4>
+        <ul class="c-blocks-4">
+            <li>25%</li>
+            <li>25%</li>
+            <li>25%</li>
+            <li>25%</li>
+        </ul>
+
+        <h4 class="demo-head">5排:</h4>
+        <ul class="c-blocks-5">
+            <li>20%</li>
+            <li>20%</li>
+            <li>20%</li>
+            <li>20%</li>
+            <li>20%</li>
+        </ul>
+
+        <h4 class="demo-head">6排:</h4>
+        <ul class="c-blocks-6">
+            <li>16%</li>
+            <li>16%</li>
+            <li>16%</li>
+            <li>16%</li>
+            <li>16%</li>
+            <li>16%</li>
+        </ul>
+
+
+    </div>
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+
+    });
+</script>
+</body>
+</html>
+
