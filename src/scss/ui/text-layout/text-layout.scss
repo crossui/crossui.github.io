@@ -1,0 +1,47 @@
+// text-layout
+
+.#{$namespace}text li:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: ".";
+  clear: both;
+  height: 0;
+}
+
+.#{$namespace}text li {
+  zoom: 1;
+  margin-bottom: 10px;
+}
+
+.#{$namespace}text-title {
+  float: left;
+}
+
+.#{$namespace}text-content {
+  overflow: hidden;
+}
+
+.#{$namespace}text-title {
+  color: $color-gray;
+}
+
+.#{$namespace}text-content {
+  color: $color-default;
+}
+
+.#{$namespace}text-left .#{$namespace}text-title {
+  text-align: left;
+  min-width: 100px;
+  _width: 100px;
+}
+
+.#{$namespace}text-right .#{$namespace}text-title {
+  text-align: right;
+  min-width: 100px;
+  _width: 100px;
+}
+
+.#{$namespace}text-min li {
+  margin-bottom: 0;
+}

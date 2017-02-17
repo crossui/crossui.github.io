@@ -9,39 +9,97 @@
     <link rel="stylesheet" href="../iconfont/iconfont.css" />
     <link rel="stylesheet" href="../css/cross.css" />
     <link rel="stylesheet" href="../css/docs.css" />
+    <link rel="stylesheet" href="../css/highlight.css" />
 </head>
 <body>
 <div class="p-medium">
-    <div class="c-alert c-alert-warning mt-small">
-        <a class="close" data-toggle="alert">
-            <i class="iconfont icon-close"></i>
-        </a>
-        <strong>Warning!</strong> Your monthly traffic is reaching limit.
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div class="c-alert c-alert-warning mt-small">
+            <a class="close" data-toggle="alert">
+                <i class="iconfont icon-close"></i>
+            </a>
+            <strong>Warning!</strong> Your monthly traffic is reaching limit.
+        </div>
+
+        <div class="c-alert c-alert-success mt-small">
+            <a class="close" data-toggle="alert">
+                <i class="iconfont icon-close"></i>
+            </a>
+            <strong>Success!</strong> The page has been added.
+        </div>
+
+        <div class="c-alert c-alert-info mt-small">
+            <a class="close" data-toggle="alert">
+                <i class="iconfont icon-close"></i>
+            </a>
+            <strong>Info!</strong> You have 198 unread messages.
+        </div>
+
+        <div class="c-alert c-alert-error mt-small">
+            <a class="close" data-toggle="alert">
+                <i class="iconfont icon-close"></i>
+            </a>
+            <strong>Error!</strong> The daily cronjob has failed.
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">通知</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                适用于简短的警告提示。 共有四种样式 success、info、warning、error。
+            </div>
+        </div>
+
+        <div id="collapseOne" class="c-panel-bd c-panel-collapse mt-medium">
+<pre><code class="html c-break">
+    &lt;div class="c-alert c-alert-warning mt-small"&gt;
+        &lt;a class="close" data-toggle="alert"&gt;
+            &lt;i class="iconfont icon-close"&gt;&lt;/i&gt;
+        &lt;/a&gt;
+        &lt;strong&gt;Warning!&lt;/strong&gt; Your monthly traffic is reaching limit.
+    &lt;/div&gt;
+
+    &lt;div class="c-alert c-alert-success mt-small"&gt;
+        &lt;a class="close" data-toggle="alert"&gt;
+            &lt;i class="iconfont icon-close"&gt;&lt;/i&gt;
+        &lt;/a&gt;
+        &lt;strong&gt;Success!&lt;/strong&gt; The page has been added.
+    &lt;/div&gt;
+
+    &lt;div class="c-alert c-alert-info mt-small"&gt;
+        &lt;a class="close" data-toggle="alert"&gt;
+            &lt;i class="iconfont icon-close"&gt;&lt;/i&gt;
+        &lt;/a&gt;
+        &lt;strong&gt;Info!&lt;/strong&gt; You have 198 unread messages.
+    &lt;/div&gt;
+
+    &lt;div class="c-alert c-alert-error mt-small"&gt;
+        &lt;a class="close" data-toggle="alert"&gt;
+            &lt;i class="iconfont icon-close"&gt;&lt;/i&gt;
+        &lt;/a&gt;
+        &lt;strong&gt;Error!&lt;/strong&gt; The daily cronjob has failed.
+    &lt;/div&gt;
+</code></pre>
+        </div>
     </div>
 
-    <div class="c-alert c-alert-success mt-small">
-        <a class="close" data-toggle="alert">
-            <i class="iconfont icon-close"></i>
-        </a>
-        <strong>Success!</strong> The page has been added.
-    </div>
-
-    <div class="c-alert c-alert-info mt-small">
-        <a class="close" data-toggle="alert">
-            <i class="iconfont icon-close"></i>
-        </a>
-        <strong>Info!</strong> You have 198 unread messages.
-    </div>
-
-    <div class="c-alert c-alert-error mt-small">
-        <a class="close" data-toggle="alert">
-            <i class="iconfont icon-close"></i>
-        </a>
-        <strong>Error!</strong> The daily cronjob has failed.
-    </div>
 </div>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
 <script type="text/javascript">
     $(function(){
 

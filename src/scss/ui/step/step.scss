@@ -1,0 +1,149 @@
+// step
+
+.#{$namespace}step {
+  padding: 0 40px;
+  margin: 0 auto;
+  font-size: 14px;
+  list-style: none;
+  zoom: 1;
+  position: relative;
+  color: #b7b7b7;
+  overflow: hidden;
+}
+
+.#{$namespace}step:after {
+  clear: both;
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.#{$namespace}step li {
+  float: left;
+  height: 54px;
+  margin: 0;
+  width: 50%;
+  position: relative;
+}
+
+.#{$namespace}step li .#{$namespace}step-icon {
+  height: 50px;
+  position: absolute;
+  top: 0;
+  width: 150px;
+  text-align: center;
+  left: -25px;
+  font-family: tahoma;
+}
+
+.#{$namespace}step-icon .iconfont {
+  font-size: 30px;
+  margin: 0;
+  color: #b7b7b7;
+  color: rgba(0, 0, 0, 0.25);
+  *color: #b7b7b7;
+  line-height: 30px;
+  background: #fff;
+  padding: 0 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-shadow: 1px 1px 2px #fff, 0 0 0 #ccc, 1px 1px 2px #fff;
+}
+
+.#{$namespace}step-icon .#{$namespace}step-number {
+  line-height: 20px;
+  font-style: normal;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  top: 4px;
+  left: 0;
+  padding: 0 20px;
+  color: #fff;
+}
+
+.#{$namespace}step .#{$namespace}step-active i.#{$namespace}step-number {
+  color: #FFF;
+}
+
+.#{$namespace}step-end .#{$namespace}step-number {
+  background: transparent;
+  font-size: 12px;
+  font-style: normal;
+  left: 19px;
+  line-height: 12px;
+  padding: 0;
+  text-shadow: none;
+  top: 9px;
+}
+
+.#{$namespace}step-icon .#{$namespace}step-text {
+  height: 20px;
+  line-height: 20px;
+  position: relative;
+  color: #666;
+  top: 34px;
+  left: -50px;
+}
+
+.#{$namespace}step .#{$namespace}step-active .#{$namespace}step-icon .#{$namespace}step-text {
+  color: #4DB2EE;
+}
+
+.#{$namespace}step li .#{$namespace}step-line {
+  height: 3px;
+  background: #b9b9b9;
+  display: block;
+  margin-top: 14px;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.#{$namespace}step li.#{$namespace}step-end {
+  position: absolute;
+  top: 0;
+  right: -110px;
+  width: 150px;
+  zoom: 1;
+  _clear: both;
+}
+
+.#{$namespace}step li.#{$namespace}step-end .#{$namespace}step-line {
+  display: none;
+}
+
+.#{$namespace}step-2 li {
+  width: 100%;
+}
+
+.#{$namespace}step-3 li {
+  width: 50%;
+  *width: 49.5%;
+  *_width: 50%;
+}
+
+.#{$namespace}step-4 li {
+  width: 33%;
+}
+
+.#{$namespace}step-5 li {
+  width: 25%;
+}
+
+.#{$namespace}step .#{$namespace}step-active {
+  color: #4DB2EE;
+}
+
+.#{$namespace}step .#{$namespace}step-active .iconfont {
+  color: #4DB2EE;
+}
+
+.#{$namespace}step .#{$namespace}step-done .iconfont {
+  color: #4DB2EE;
+}
+
+.#{$namespace}step .#{$namespace}step-done .#{$namespace}step-line {
+  background: #4DB2EE;
+}
