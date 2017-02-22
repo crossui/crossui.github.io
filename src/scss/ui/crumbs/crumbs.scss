@@ -1,1 +1,36 @@
 // crumbs
+.crumbs {
+  height: 41px;
+  line-height: 41px;
+  vertical-align: middle;
+  border-bottom: 1px solid $border-color;
+  padding-left: 30px;
+}
+
+.crumbs a {
+  color: $color-default;
+}
+
+.crumbs span {
+  padding: 0 10px;
+  font-size: 12px;
+  color: $color-gray;
+  font-family: "\5b8b\4f53";
+}
+
+.crumbs b {
+  font-weight: normal;
+  color: $color-active;
+}
+
+.crumbs-two {
+  border-bottom: 0;
+  padding-left: 0;
+  font-size: 14px;
+  height: 35px;
+  line-height: 35px;
+}
+
+.crumbs-two span {
+  font-size: 14px;
+}

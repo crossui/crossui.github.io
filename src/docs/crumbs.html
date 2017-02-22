@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>tpl</title>
+    <title>crumbs</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,78 +16,51 @@
 
 
     <div class="c-border p-small border-radius-rounded mt-medium">
-        <blockquote class="c-quote">引用区块 - 默认风格</blockquote>
 
+        <div class="crumbs"><a href="#">糖尿病</a><span>&gt;</span><a href="#">患者管理</a><span>&gt;</span><b>患者列表</b></div>
 
         <fieldset class="c-field c-field-title mt-medium">
-            <legend class="fs6">标题</legend>
+            <legend class="fs6">面包屑</legend>
         </fieldset>
         <div class="c-field-box c-position-r">
             <div class="c-position-a" style="top: 0; right: 0">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                <a data-toggle="collapse" data-parent="#accordion" href="#crumbs1" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
             </div>
             <div class="introduce">
-                内容区域
+                风格1
             </div>
         </div>
 
-        <div id="collapseOne" class="c-panel-bd c-panel-collapse mt-medium">
+        <div id="crumbs1" class="c-panel-bd c-panel-collapse mt-medium">
 <pre><code class="html c-break">
-    &lt;blockquote class="c-quote"&gt;引用区块 - 默认风格&lt;/blockquote&gt;
+    &lt;div class="crumbs"&gt;&lt;a href="#"&gt;糖尿病&lt;/a&gt;&lt;span&gt;&gt;&lt;/span&gt;&lt;a href="#"&gt;患者管理&lt;/a&gt;&lt;span&gt;&gt;&lt;/span&gt;&lt;b&gt;患者列表&lt;/b&gt;&lt;/div&gt;
 </code></pre>
         </div>
     </div>
-
-
-
-
-
-
-
 
 
     <div class="c-border p-small border-radius-rounded mt-medium">
-        <blockquote class="c-quote">引用区块 - 默认风格</blockquote>
 
+        <div class="crumbs crumbs-two"><a href="#">糖尿病</a><span>&gt;</span><a href="#">患者管理</a><span>&gt;</span><b>患者列表</b></div>
 
         <fieldset class="c-field c-field-title mt-medium">
-            <legend class="fs6">标题</legend>
+            <legend class="fs6">面包屑</legend>
         </fieldset>
         <div class="c-field-box c-position-r">
             <div class="c-position-a" style="top: 0; right: 0">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                <a data-toggle="collapse" data-parent="#accordion" href="#crumbs2" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
             </div>
             <div class="introduce">
-                内容区域
+                风格2
             </div>
         </div>
 
-        <div id="collapseTwo" class="c-panel-bd c-panel-collapse mt-medium">
-            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
-                <div class="tabs-hd clearfix">
-                    <a href="javascript:;" class="curr"><span>HTML</span></a>
-                    <a href="javascript:;"><span>Javascript</span></a>
-                </div>
-                <div class="tabs-bd">
-                    <div class="tabs-bd-box c-hide curr p-small">
+        <div id="crumbs2" class="c-panel-bd c-panel-collapse mt-medium">
 <pre><code class="html c-break">
-    &lt;blockquote class="c-quote"&gt;引用区块 - 默认风格&lt;/blockquote&gt;
+    &lt;div class="crumbs crumbs-two"&gt;&lt;a href="#"&gt;糖尿病&lt;/a&gt;&lt;span&gt;&gt;&lt;/span&gt;&lt;a href="#"&gt;患者管理&lt;/a&gt;&lt;span&gt;&gt;&lt;/span&gt;&lt;b&gt;患者列表&lt;/b&gt;&lt;/div&gt;
 </code></pre>
-                    </div>
-                    <div class="tabs-bd-box c-hide p-small">
-<pre><code class="javascript">
-    $(function() {
-    if($.browser.msie && ($.browser.version=='6.0')) {
-    alert("this is msie 6.0");
-    }
-    });
-</code></pre>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-
 
 </div>
 <script type="text/javascript" src="../js/jquery.js"></script>

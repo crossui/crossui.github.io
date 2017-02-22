@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>tpl</title>
+    <title>arrow</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,81 +10,74 @@
     <link rel="stylesheet" href="../css/cross.css">
     <link rel="stylesheet" href="../css/docs.css">
     <link rel="stylesheet" href="../css/highlight.css">
+    <style>
+        .css-arrow-demo i.c-arrow {
+            display: block;
+            margin-bottom: 20px;
+        }
+    </style>
+
 </head>
 <body>
 <div class="p-medium">
 
 
-    <div class="c-border p-small border-radius-rounded mt-medium">
-        <blockquote class="c-quote">引用区块 - 默认风格</blockquote>
+    <div class="c-border p-small border-radius-rounded mt-medium css-arrow-demo">
 
+        <i class="c-arrow c-arrow-r"></i>
+        <i class="c-arrow c-arrow-l"></i>
+        <i class="c-arrow c-arrow-t"></i>
+        <i class="c-arrow c-arrow-b"></i>
 
         <fieldset class="c-field c-field-title mt-medium">
-            <legend class="fs6">标题</legend>
+            <legend class="fs6">箭头</legend>
         </fieldset>
         <div class="c-field-box c-position-r">
             <div class="c-position-a" style="top: 0; right: 0">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+                <a data-toggle="collapse" data-parent="#accordion" href="#arrow1" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
             </div>
             <div class="introduce">
-                内容区域
+                实心
             </div>
         </div>
 
-        <div id="collapseOne" class="c-panel-bd c-panel-collapse mt-medium">
+        <div id="arrow1" class="c-panel-bd c-panel-collapse mt-medium">
 <pre><code class="html c-break">
-    &lt;blockquote class="c-quote"&gt;引用区块 - 默认风格&lt;/blockquote&gt;
+    &lt;i class="c-arrow c-arrow-r"&gt;&lt;/i&gt;
+    &lt;i class="c-arrow c-arrow-l"&gt;&lt;/i&gt;
+    &lt;i class="c-arrow c-arrow-t"&gt;&lt;/i&gt;
+    &lt;i class="c-arrow c-arrow-b"&gt;&lt;/i&gt;
 </code></pre>
         </div>
     </div>
 
 
+    <div class="c-border p-small border-radius-rounded mt-medium css-arrow-demo">
 
-
-
-
-
-
-
-    <div class="c-border p-small border-radius-rounded mt-medium">
-        <blockquote class="c-quote">引用区块 - 默认风格</blockquote>
-
+        <i class="c-arrow c-arrow-r"><s></s></i>
+        <i class="c-arrow c-arrow-l"><s></s></i>
+        <i class="c-arrow c-arrow-b"><s></s></i>
+        <i class="c-arrow c-arrow-b"><s></s></i>
 
         <fieldset class="c-field c-field-title mt-medium">
-            <legend class="fs6">标题</legend>
+            <legend class="fs6">箭头</legend>
         </fieldset>
         <div class="c-field-box c-position-r">
             <div class="c-position-a" style="top: 0; right: 0">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+                <a data-toggle="collapse" data-parent="#accordion" href="#arrow2" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
             </div>
             <div class="introduce">
-                内容区域
+                空心
             </div>
         </div>
 
-        <div id="collapseTwo" class="c-panel-bd c-panel-collapse mt-medium">
-            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
-                <div class="tabs-hd clearfix">
-                    <a href="javascript:;" class="curr"><span>HTML</span></a>
-                    <a href="javascript:;"><span>Javascript</span></a>
-                </div>
-                <div class="tabs-bd">
-                    <div class="tabs-bd-box c-hide curr p-small">
+        <div id="arrow2" class="c-panel-bd c-panel-collapse mt-medium">
 <pre><code class="html c-break">
-    &lt;blockquote class="c-quote"&gt;引用区块 - 默认风格&lt;/blockquote&gt;
+    &lt;i class="c-arrow c-arrow-r"&gt;&lt;s&gt;&lt;/s&gt;&lt;/i&gt;
+    &lt;i class="c-arrow c-arrow-l"&gt;&lt;s&gt;&lt;/s&gt;&lt;/i&gt;
+    &lt;i class="c-arrow c-arrow-b"&gt;&lt;s&gt;&lt;/s&gt;&lt;/i&gt;
+    &lt;i class="c-arrow c-arrow-b"&gt;&lt;s&gt;&lt;/s&gt;&lt;/i&gt;
 </code></pre>
-                    </div>
-                    <div class="tabs-bd-box c-hide p-small">
-<pre><code class="javascript">
-    $(function() {
-    if($.browser.msie && ($.browser.version=='6.0')) {
-    alert("this is msie 6.0");
-    }
-    });
-</code></pre>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
