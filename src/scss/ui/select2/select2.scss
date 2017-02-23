@@ -1,8 +1,8 @@
 // Variables
-@import "../base/variables.scss";
+@import "../../base/variables.scss";
 
 // mixins
-@import "../base/mixins.scss";
+@import "../../base/mixins.scss";
 
 .select2-container {
   box-sizing: border-box;
@@ -10,13 +10,13 @@
   position: relative;
   vertical-align: top;
 
-  @import "../widget/select2/single";
-  @import "../widget/select2/multiple";
+  @import "single";
+  @import "multiple";
 
 
 }
 
-@import "../widget/select2/dropdown";
+@import "dropdown";
 
 .select2-close-mask {
   border: 0;
@@ -50,7 +50,7 @@
   width: 1px !important;
 }
 
-@import "../widget/select2/theme/default/layout";
-@import "../widget/select2/size";
+@import "theme/default/layout";
+@import "size";
 //@import "theme/classic/layout";
 

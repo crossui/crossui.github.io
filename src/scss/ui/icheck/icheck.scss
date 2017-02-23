@@ -1,8 +1,8 @@
 // Variables
-@import "../base/variables.scss";
+@import "../../base/variables.scss";
 
 // mixins
-@import "../base/mixins.scss";
+@import "../../base/mixins.scss";
 
 // icheck
 
@@ -83,10 +83,10 @@ label.icheck {
       -ms-user-select: none;
           user-select: none;
 }
-@import '../widget/icheck/border.scss';
+@import 'border';
 
-//@import '../widget/icheck/square.scss';
+//@import 'square';
 
-//@import '../widget/icheck/flat.scss';
+//@import 'flat';
 
-@import '../widget/icheck/line.scss';
+@import 'line';
