@@ -30,6 +30,10 @@ module.exports = {
 
             }
         },
+        images: {
+            'src':'./src/img/**',
+            'dist':'./dist/images/'
+        },
         js: {
             docs: {
                 'src':'./src/js/docs/**',
