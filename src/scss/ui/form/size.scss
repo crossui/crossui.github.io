@@ -1,0 +1,48 @@
+// size
+
+.#{$namespace}input-mini , .#{$namespace}search-mini .#{$namespace}search-input{
+  padding: 1px 7px;
+  font-size: map-get($form-mini,size);
+  height: map-get($form-mini,height);
+  border-radius: $border-radius-small;
+}
+.#{$namespace}input-small , .#{$namespace}search-small .#{$namespace}search-input{
+  padding: 2px 7px;
+  font-size: map-get($form-small,size);
+  height: map-get($form-small,height);
+  border-radius: $border-radius-small;
+}
+.#{$namespace}input-medium , .#{$namespace}search-medium .#{$namespace}search-input{
+  padding: 4px 7px;
+  font-size: map-get($form-medium,size);
+  height: map-get($form-medium,height);
+  border-radius: $border-radius-base;
+}
+.#{$namespace}input-large , .#{$namespace}search-large .#{$namespace}search-input{
+  padding: 6px 7px;
+  font-size: map-get($form-large,size);
+  height: map-get($form-large,height);
+  border-radius: $border-radius-large;
+}
+
+
+.#{$namespace}search-mini .#{$namespace}search-btn{
+  background-size: map-get($form-mini,height)/2+7 map-get($form-mini,height)/2+7;
+  width: map-get($form-mini,height);
+  height: map-get($form-mini,height);
+}
+.#{$namespace}search-small .#{$namespace}search-btn{
+  background-size: map-get($form-small,height)/2+7 map-get($form-small,height)/2+7;
+  width: map-get($form-small,height);
+  height: map-get($form-small,height);
+}
+.#{$namespace}search-medium .#{$namespace}search-btn{
+  background-size: map-get($form-medium,height)/2+7 map-get($form-medium,height)/2+7;
+  width: map-get($form-medium,height);
+  height: map-get($form-medium,height);
+}
+.#{$namespace}search-large .#{$namespace}search-btn{
+  background-size: map-get($form-large,height)/2+7 map-get($form-large,height)/2+7;
+  width: map-get($form-large,height);
+  height: map-get($form-large,height);
+}

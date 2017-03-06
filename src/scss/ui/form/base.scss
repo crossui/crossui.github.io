@@ -1,6 +1,11 @@
 // form
+.#{$namespace}search {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
 
-.#{$namespace}input {
+.#{$namespace}input , .#{$namespace}search-input{
   position: relative;
   display: inline-block;
   padding: 4px 7px;
@@ -43,33 +48,25 @@
   &[disabled]:hover {
     border-color: $form-disabled-hover-color;
   }
-  &-mini {
-    padding: 1px 7px;
-    font-size: map-get($form-mini,size);
-    height: map-get($form-mini,height);
-    border-radius: $border-radius-small;
-  }
-  &-small {
-    padding: 2px 7px;
-    font-size: map-get($form-small,size);
-    height: map-get($form-small,height);
-    border-radius: $border-radius-small;
-  }
-  &-medium {
-    padding: 4px 7px;
-    font-size: map-get($form-medium,size);
-    height: map-get($form-medium,height);
-    border-radius: $border-radius-base;
-  }
-  &-large {
-    padding: 6px 7px;
-    font-size: map-get($form-large,size);
-    height: map-get($form-large,height);
-    border-radius: $border-radius-large;
-  }
 }
+
 textarea.#{$namespace}input {
   max-width: 100%;
   height: auto;
   vertical-align: bottom;
+}
+
+.#{$namespace}search-btn {
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  display: inline-block;
+  background-image: url("search.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: map-get($form-medium,height)/2+7 map-get($form-medium,height)/2+7;
+  width: map-get($form-medium,height);
+  height: map-get($form-medium,height);
 }
