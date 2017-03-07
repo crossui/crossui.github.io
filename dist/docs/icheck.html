@@ -9,50 +9,442 @@
     <link rel="stylesheet" href="../iconfont/iconfont.css">
     <link rel="stylesheet" href="../css/cross.css">
     <link rel="stylesheet" href="../css/docs.css">
+    <link rel="stylesheet" href="../css/highlight.css">
 </head>
 <body>
 <div class="p-medium">
 
-    <label class="icheck">
-        <input type="checkbox" name="quux" class="a">
-        文字
-    </label>
+    <div class="c-border p-small border-radius-rounded mt-medium">
 
-    <label class="icheck">
-        <input type="radio" name="quux" class="a">
-        文字
-    </label>
+        <div class="c-row">
+            <div class="c-50">
 
-    <div class="p-medium">
-        <input type="checkbox" class="b">
-        <label>Checkbox 1</label>
+                <div class="p-tiny">
+                    <label class="icheck">
+                        <input type="checkbox" name="checkbox" class="a">
+                        checkbox 1
+                    </label>
+                </div>
 
-        <input type="checkbox" checked="checked" class="b">
-        <label>Checkbox 2</label>
+                <div class="p-tiny">
+                    <label class="icheck">
+                        <input type="checkbox" name="checkbox" class="a">
+                        checkbox 2
+                    </label>
+                </div>
 
-        <input type="radio" name="iCheck" class="b">
-        <label>Radio button 1</label>
+                <div class="p-tiny">
+                    <label class="icheck">
+                        <input type="checkbox" name="checkbox" class="a" disabled="disabled">
+                        disabled
+                    </label>
+                </div>
 
-        <input type="radio" name="iCheck" checked="checked" class="b">
-        <label>Radio button 2</label>
+                <div class="p-tiny">
+                    <label class="icheck">
+                        <input type="checkbox" name="checkbox" class="a" disabled="disabled" checked="checked">
+                        disabled & checked
+                    </label>
+                </div>
+
+            </div>
+            <div class="c-50">
+                <div class="p-tiny">
+                    <label class="icheck">
+                        <input type="radio" name="radio" class="a">
+                        radio 1
+                    </label>
+                </div>
+
+                <div class="p-tiny">
+                    <label class="icheck">
+                        <input type="radio" name="radio" class="a">
+                        radio 2
+                    </label>
+                </div>
+
+                <div class="p-tiny">
+                    <label class="icheck">
+                        <input type="radio" name="radio" class="a" disabled="disabled">
+                        disabled
+                    </label>
+                </div>
+
+                <div class="p-tiny">
+                    <label class="icheck">
+                        <input type="radio" name="radio" class="a" disabled="disabled" checked="checked">
+                        disabled & checked
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">icheck</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#icheck1" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                边框类型的
+            </div>
+        </div>
+
+        <div id="icheck1" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+
+    &lt;label class="icheck"&gt;
+        &lt;input type="checkbox" name="checkbox" class="a" /&gt;
+        checkbox 1
+    &lt;/label&gt;
+    
+    &lt;label class="icheck"&gt;
+        &lt;input type="checkbox" name="checkbox" class="a" /&gt;
+        checkbox 2
+    &lt;/label&gt;
+    
+    &lt;label class="icheck"&gt;
+        &lt;input type="checkbox" name="checkbox" class="a" disabled /&gt;
+        disabled
+    &lt;/label&gt;
+    
+    &lt;label class="icheck"&gt;
+        &lt;input type="checkbox" name="checkbox" class="a" disabled checked /&gt;
+        disabled & checked
+    &lt;/label&gt;
+    
+    &lt;label class="icheck"&gt;
+        &lt;input type="radio" name="radio" class="a" /&gt;
+        radio 1
+    &lt;/label&gt;
+    
+    &lt;label class="icheck"&gt;
+        &lt;input type="radio" name="radio" class="a" /&gt;
+        radio 2
+    &lt;/label&gt;
+    
+    &lt;label class="icheck"&gt;
+        &lt;input type="radio" name="radio" class="a" disabled /&gt;
+        disabled
+    &lt;/label&gt;
+    
+    &lt;label class="icheck"&gt;
+        &lt;input type="radio" name="radio" class="a" disabled checked /&gt;
+        disabled & checked
+    &lt;/label&gt;
+    
+
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('input.a').iCheck({
+        checkboxClass: 'c-checkbox-border',
+        radioClass: 'c-radio-border'
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="p-medium"></div>
 
 
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div class="c-row">
+            <div class="c-50">
+
+                <div class="p-tiny">
+                    <input type="checkbox" class="b">
+                    <label>Checkbox 1</label>
+                </div>
+
+                <div class="p-tiny">
+                    <input type="checkbox" checked="checked" class="b">
+                    <label>Checkbox 2</label>
+                </div>
+
+                <div class="p-tiny">
+                    <input type="checkbox" class="b" disabled="disabled">
+                    <label>disabled</label>
+                </div>
+
+                <div class="p-tiny">
+                    <input type="checkbox" class="b" disabled="disabled" checked="checked">
+                    <label>disabled & checked</label>
+                </div>
+
+            </div>
+            <div class="c-50">
+                <div class="p-tiny">
+                    <input type="radio" name="iCheck" class="b">
+                    <label>Radio button 1</label>
+                </div>
+
+                <div class="p-tiny">
+                    <input type="radio" name="iCheck" checked="checked" class="b">
+                    <label>Radio button 2</label>
+                </div>
+
+                <div class="p-tiny">
+                    <input type="radio" name="iCheck" disabled="disabled" class="b">
+                    <label>disabled</label>
+                </div>
+
+                <div class="p-tiny">
 
 
+                    <input type="radio" name="iCheck" checked="checked" disabled="disabled" class="b">
+                    <label>checked & disabled</label>
+                </div>
+            </div>
+        </div>
 
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">icheck</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#icheck2" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                行内类型的
+            </div>
+        </div>
+
+        <div id="icheck2" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+
+    &lt;input type="checkbox" class="b" /&gt;
+    &lt;label&gt;Checkbox 1&lt;/label&gt;
+    
+    &lt;input type="checkbox" checked class="b" /&gt;
+    &lt;label&gt;Checkbox 2&lt;/label&gt;
+    
+    &lt;input type="checkbox" class="b" disabled /&gt;
+    &lt;label&gt;disabled&lt;/label&gt;
+    
+    &lt;input type="checkbox" class="b" disabled checked /&gt;
+    &lt;label&gt;disabled & checked&lt;/label&gt;
+    
+    &lt;input type="radio" name="iCheck" class="b"&gt;
+    &lt;label&gt;Radio button 1&lt;/label&gt;
+    
+    &lt;input type="radio" name="iCheck" checked class="b"&gt;
+    &lt;label&gt;Radio button 2&lt;/label&gt;
+    
+    &lt;input type="radio" name="iCheck" disabled class="b"&gt;
+    &lt;label&gt;disabled&lt;/label&gt;
+
+    &lt;input type="radio" name="iCheck" checked disabled class="b"&gt;
+    &lt;label&gt;checked & disabled&lt;/label&gt;
+    
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('input.b').each(function(){
+        var self = $(this),
+        label = self.next(),
+        label_text = label.text();
+
+        label.remove();
+        self.iCheck({
+            checkboxClass: 'c-checkbox-line',
+            radioClass: 'c-radio-line',
+            insert: '&lt;div class="line-icon"&gt;&lt;/div&gt;' + label_text
+        });
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mtb-medium">
+        <blockquote class="c-quote c-quote-red">
+            皮肤：（请到variables.scss修改配置，默认是“black”）
+            共有： black,  aero,   blue,   green,   grey,   orange,   pink,   purple,   red,   yellow
+        </blockquote>
+    </div>
+
+
+    <div class="c-panel c-panel-default mt-medium">
+        <div class="c-panel-hd clearfix">
+            <div class="title fl"><span class="title-t fs5">参数</span></div>
+            <div class="tools fr">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><i class="iconfont icon-angledown fs4 c-gray"></i></a>
+            </div>
+        </div>
+        <div id="collapseOne" class="c-panel-bd c-panel-collapse in">
+<pre><code class="javascript">
+    {
+        handle: '',
+        checkboxClass: 'icheckbox',
+        radioClass: 'iradio',
+        checkedClass: 'checked',
+        checkedCheckboxClass: '',
+        checkedRadioClass: '',
+        uncheckedClass: '',
+        uncheckedCheckboxClass: '',
+        uncheckedRadioClass: '',
+        disabledClass: 'disabled',
+        disabledCheckboxClass: '',
+        disabledRadioClass: '',
+        enabledClass: '',
+        enabledCheckboxClass: '',
+        enabledRadioClass: '',
+        hoverClass: 'hover',
+        focusClass: 'focus',
+        activeClass: 'active',
+        labelHover: true,
+        labelHoverClass: 'hover',
+        increaseArea: '',
+        cursor: false,
+        inheritClass: false,
+        inheritID: false,
+        insert: ''
+    }
+</code></pre>
+        </div>
+    </div>
+
+    <div class="mt-big">
+        <h2 class="mb-small">方法</h2>
+        <table class="tb tb-b c-100">
+            <tbody>
+            <tr>
+                <th>用法</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>$('input').iCheck('check');</td>
+                <td>将输入框的状态设置为checked</td>
+            </tr>
+            <tr>
+                <td>$('input').iCheck('uncheck'); </td>
+                <td>移除 checked 状态</td>
+            </tr>
+            <tr>
+                <td>$('input').iCheck('toggle');</td>
+                <td>切换 checked 状态</td>
+            </tr>
+            <tr>
+                <td>$('input').iCheck('disable'); </td>
+                <td>将输入框的状态设置为 disabled</td>
+            </tr>
+            <tr>
+                <td>$('input').iCheck('enable'); </td>
+                <td>移除 disabled 状态</td>
+            </tr>
+            <tr>
+                <td>$('input').iCheck('indeterminate'); </td>
+                <td>改变 indeterminate 状态</td>
+            </tr>
+            <tr>
+                <td>$('input').iCheck('determinate'); </td>
+                <td>删除 indeterminate 状态</td>
+            </tr>
+            <tr>
+                <td>$('input').iCheck('update'); </td>
+                <td>应用输入更改，在插件外完成</td>
+            </tr>
+            <tr>
+                <td>$('input').iCheck('destroy');</td>
+                <td>移除iCheck样式</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-big">
+        <h2 class="mb-small">回调事件</h2>
+        <table class="tb tb-b c-100">
+            <tbody>
+                <tr>
+                    <th>事件名称</th>
+                    <th>使用时机</th>
+                </tr>
+                <tr>
+                    <td>ifClicked</td>
+                    <td>用户点击了自定义的输入框或与其相关联的label</td>
+                </tr>
+                <tr>
+                    <td>ifChanged</td>
+                    <td>输入框的 <span class="mark">checked</span> 或 <span class="mark">disabled</span> 状态改变了</td>
+                </tr>
+                <tr>
+                    <td>ifChecked</td>
+                    <td>输入框的状态变为 <span class="mark">checked</span></td>
+                </tr>
+                <tr>
+                    <td>ifUnchecked</td>
+                    <td><span class="mark">checked</span> 状态被移除</td>
+                </tr>
+                <tr>
+                    <td>ifDisabled</td>
+                    <td>输入框状态变为 <span class="mark">disabled</span></td>
+                </tr>
+                <tr>
+                    <td>ifEnabled</td>
+                    <td><span class="mark">disabled</span> 状态被移除</td>
+                </tr>
+                <tr>
+                    <td>ifCreated</td>
+                    <td>输入框被应用了iCheck样式</td>
+                </tr>
+                <tr>
+                    <td>ifDestroyed</td>
+                    <td>iCheck样式被移除</td>
+                </tr>
+            </tbody>
+        </table>
+        <blockquote class="c-quote c-quote-gray">
+            使用on()方法绑定事件：
+<pre><code class="javascript">
+    $('input').on('ifChecked', function(event){
+        alert(event.type + ' callback');
+    });
+</code></pre>
+        </blockquote>
+    </div>
 
 </div>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
 <script type="text/javascript">
     $(function(){
         $('input.a').iCheck({
             checkboxClass: 'c-checkbox-border',
             radioClass: 'c-radio-border'
         });
+
 
         $('input.b').each(function(){
             var self = $(this),

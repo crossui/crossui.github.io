@@ -139,6 +139,12 @@ $form-readonly-bg-color:      #f9f9f9 !default;
 //$form-group-addon-border-color
 
 
+//== icheck
+// --------------------------------------------------
+$icheckcheckbox: #{$namespace}checkbox- !default;
+$icheckradio: #{$namespace}radio- !default;
+
+$icheck-skin: black !default;    //pngFile:  black,  aero,   blue,   green,   grey,   orange,   pink,   purple,   red,   yellow
 
 // ie hack
 // --------------------------------------------------

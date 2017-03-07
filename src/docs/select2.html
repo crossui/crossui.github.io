@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="../iconfont/iconfont.css" />
     <link rel="stylesheet" href="../css/cross.css" />
     <link rel="stylesheet" href="../css/docs.css" />
+    <link rel="stylesheet" href="../css/highlight.css" />
 </head>
 <body>
 <div class="p-medium">
 
+    <div class="c-border p-small border-radius-rounded mt-medium">
 
-    <div class="pb-medium">
-        <h2>单一的选择框:</h2>
         <select class="c-50" id="a">
             <option value=""></option>
             <option value="a">aa</option>
@@ -26,10 +26,53 @@
             <option value="f">ff</option>
             <option value="g">gg</option>
         </select>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">下拉框 select2</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#select21" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                单一的选择框
+            </div>
+        </div>
+
+        <div id="select21" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;select class="c-50" id="a"&gt;
+        &lt;option value=""&gt;&lt;/option&gt;
+        &lt;option value="a"&gt;aa&lt;/option&gt;
+        &lt;option value="b"&gt;bb&lt;/option&gt;
+        &lt;option value="c"&gt;cc&lt;/option&gt;
+        &lt;option value="d"&gt;dd&lt;/option&gt;
+        &lt;option value="e"&gt;ee&lt;/option&gt;
+        &lt;option value="f"&gt;ff&lt;/option&gt;
+        &lt;option value="g"&gt;gg&lt;/option&gt;
+    &lt;/select&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $("#a").select2();
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="pb-medium">
-        <h2>单一多级的选择框:</h2>
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
         <select class="c-50" id="b">
             <optgroup label="Alaskan/Hawaiian Time Zone">
                 <option value="AK">Alaska</option>
@@ -92,20 +135,155 @@
                 <option value="WV">West Virginia</option>
             </optgroup>
         </select>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">下拉框 select2</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#select22" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                单一多级的选择框
+            </div>
+        </div>
+
+        <div id="select22" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;select class="c-50" id="b"&gt;
+        &lt;optgroup label="Alaskan/Hawaiian Time Zone"&gt;
+            &lt;option value="AK"&gt;Alaska&lt;/option&gt;
+            &lt;option value="HI"&gt;Hawaii&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label="Pacific Time Zone"&gt;
+            &lt;option value="CA"&gt;California&lt;/option&gt;
+            &lt;option value="NV"&gt;Nevada&lt;/option&gt;
+            &lt;option value="OR"&gt;Oregon&lt;/option&gt;
+            &lt;option value="WA"&gt;Washington&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label="Mountain Time Zone"&gt;
+            &lt;option value="AZ"&gt;Arizona&lt;/option&gt;
+            &lt;option value="CO"&gt;Colorado&lt;/option&gt;
+            &lt;option value="ID"&gt;Idaho&lt;/option&gt;
+            &lt;option value="MT"&gt;Montana&lt;/option&gt;
+            &lt;option value="NE"&gt;Nebraska&lt;/option&gt;
+            &lt;option value="NM"&gt;New Mexico&lt;/option&gt;
+            &lt;option value="ND"&gt;North Dakota&lt;/option&gt;
+            &lt;option value="UT"&gt;Utah&lt;/option&gt;
+            &lt;option value="WY"&gt;Wyoming&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label="Central Time Zone"&gt;
+            &lt;option value="AL"&gt;Alabama&lt;/option&gt;
+            &lt;option value="AR"&gt;Arkansas&lt;/option&gt;
+            &lt;option value="IL"&gt;Illinois&lt;/option&gt;
+            &lt;option value="IA"&gt;Iowa&lt;/option&gt;
+            &lt;option value="KS"&gt;Kansas&lt;/option&gt;
+            &lt;option value="KY"&gt;Kentucky&lt;/option&gt;
+            &lt;option value="LA"&gt;Louisiana&lt;/option&gt;
+            &lt;option value="MN"&gt;Minnesota&lt;/option&gt;
+            &lt;option value="MS"&gt;Mississippi&lt;/option&gt;
+            &lt;option value="MO"&gt;Missouri&lt;/option&gt;
+            &lt;option value="OK"&gt;Oklahoma&lt;/option&gt;
+            &lt;option value="SD"&gt;South Dakota&lt;/option&gt;
+            &lt;option value="TX"&gt;Texas&lt;/option&gt;
+            &lt;option value="TN"&gt;Tennessee&lt;/option&gt;
+            &lt;option value="WI"&gt;Wisconsin&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label="Eastern Time Zone"&gt;
+            &lt;option value="CT"&gt;Connecticut&lt;/option&gt;
+            &lt;option value="DE"&gt;Delaware&lt;/option&gt;
+            &lt;option value="FL"&gt;Florida&lt;/option&gt;
+            &lt;option value="GA"&gt;Georgia&lt;/option&gt;
+            &lt;option value="IN"&gt;Indiana&lt;/option&gt;
+            &lt;option value="ME"&gt;Maine&lt;/option&gt;
+            &lt;option value="MD"&gt;Maryland&lt;/option&gt;
+            &lt;option value="MA"&gt;Massachusetts&lt;/option&gt;
+            &lt;option value="MI"&gt;Michigan&lt;/option&gt;
+            &lt;option value="NH"&gt;New Hampshire&lt;/option&gt;
+            &lt;option value="NJ"&gt;New Jersey&lt;/option&gt;
+            &lt;option value="NY"&gt;New York&lt;/option&gt;
+            &lt;option value="NC"&gt;North Carolina&lt;/option&gt;
+            &lt;option value="OH"&gt;Ohio&lt;/option&gt;
+            &lt;option value="PA"&gt;Pennsylvania&lt;/option&gt;
+            &lt;option value="RI"&gt;Rhode Island&lt;/option&gt;
+            &lt;option value="SC"&gt;South Carolina&lt;/option&gt;
+            &lt;option value="VT"&gt;Vermont&lt;/option&gt;
+            &lt;option value="VA"&gt;Virginia&lt;/option&gt;
+            &lt;option value="WV"&gt;West Virginia&lt;/option&gt;
+        &lt;/optgroup&gt;
+    &lt;/select&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $("#b").select2({
+        placeholder: "Select a state"
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="pb-medium">
-        <h2>多个选择框:</h2>
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
         <select class="c-50" multiple="multiple" id="c">
             <option value="AL">Alabama</option>
             <option value="b">bbbbbb</option>
             <option value="c">cccccc</option>
             <option value="WY">Wyoming</option>
         </select>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">下拉框 select2</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#select23" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                多个选择框 （最大选择多少参数：maximumSelectionLength）
+            </div>
+        </div>
+
+        <div id="select23" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;select class="c-50" multiple="multiple" id="c"&gt;
+        &lt;option value="AL"&gt;Alabama&lt;/option&gt;
+        &lt;option value="b"&gt;bbbbbb&lt;/option&gt;
+        &lt;option value="c"&gt;cccccc&lt;/option&gt;
+        &lt;option value="WY"&gt;Wyoming&lt;/option&gt;
+    &lt;/select&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $("#c").select2({maximumSelectionLength:2});
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="pb-medium">
-        <h2>禁用的选择框:</h2>
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
         <select class="c-50" id="d">
             <option value="a">aa</option>
             <option value="b">bb</option>
@@ -115,49 +293,174 @@
             <option value="f">ff</option>
             <option value="g">gg</option>
         </select>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">下拉框 select2</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#select24" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                禁用的选择框
+            </div>
+        </div>
+
+        <div id="select24" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;select class="c-50" id="d"&gt;
+        &lt;option value="a"&gt;aa&lt;/option&gt;
+        &lt;option value="b"&gt;bb&lt;/option&gt;
+        &lt;option value="c"&gt;cc&lt;/option&gt;
+        &lt;option value="d"&gt;dd&lt;/option&gt;
+        &lt;option value="e"&gt;ee&lt;/option&gt;
+        &lt;option value="f"&gt;ff&lt;/option&gt;
+        &lt;option value="g"&gt;gg&lt;/option&gt;
+    &lt;/select&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $("#d").select2({
+        "disabled":true
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="pb-medium">
+
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <select id="e" multiple="multiple" class="c-50">
+            <optgroup label="系统设置">
+                <option value="1" data-icon="icon-cut">用户管理</option>
+                <option value="2" data-icon="icon-tips">角色管理</option>
+                <option value="3" data-icon="icon-time">部门管理</option>
+                <option value="4" data-icon="icon-time1">菜单管理</option>
+            </optgroup>
+            <optgroup label="订单管理">
+                <option value="5" data-icon="icon-taxi">订单查询</option>
+                <option value="6" data-icon="icon-diamond">订单导入</option>
+                <option value="7" data-icon="icon-angellist">订单删除</option>
+                <option value="8" data-icon="icon-bello">订单撤销</option>
+            </optgroup>
+            <optgroup label="基础数据">
+                <option value="9" data-icon="icon-barcode">基础数据维护</option>
+            </optgroup>
+        </select>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">下拉框 select2</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#select25" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                带iconfont的下拉框
+            </div>
+        </div>
+
+        <div id="select25" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;select id="e" multiple="multiple" class="c-50"&gt;
+        &lt;optgroup label="系统设置"&gt;
+            &lt;option value="1" data-icon="icon-cut"&gt;用户管理&lt;/option&gt;
+            &lt;option value="2" data-icon="icon-tips"&gt;角色管理&lt;/option&gt;
+            &lt;option value="3" data-icon="icon-time"&gt;部门管理&lt;/option&gt;
+            &lt;option value="4" data-icon="icon-time1"&gt;菜单管理&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label="订单管理"&gt;
+            &lt;option value="5" data-icon="icon-taxi"&gt;订单查询&lt;/option&gt;
+            &lt;option value="6" data-icon="icon-diamond"&gt;订单导入&lt;/option&gt;
+            &lt;option value="7" data-icon="icon-angellist"&gt;订单删除&lt;/option&gt;
+            &lt;option value="8" data-icon="icon-bello"&gt;订单撤销&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label="基础数据"&gt;
+            &lt;option value="9" data-icon="icon-barcode"&gt;基础数据维护&lt;/option&gt;
+        &lt;/optgroup&gt;
+    &lt;/select&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $("#e").select2({
+        templateResult: formatState,
+        templateSelection: formatState
+    });
+
+    function formatState(state) {
+        if (!state.id) { return state.text; }
+        var $state = $(
+            '&lt;span&gt;&lt;i class="fs6 c-gray iconfont ' + $(state.element).data('icon') + '"&gt;&lt;/i&gt; ' + state.text + '&lt;/span&gt;'
+        );
+        return $state;
+    };
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="pb-medium">
-    </div>
-
-    <div class="pb-medium">
-    </div>
-
-    <div class="pb-medium">
-    </div>
-
-    <div class="pb-medium">
-    </div>
-
-    <div class="pb-medium">
-    </div>
-
-    <div class="pb-medium" style="height: 500px">
-    </div>
 </div>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
 <script type="text/javascript">
     $(function(){
-        $("#a").select2({
-            placeholder: "Select a state"
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
         });
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+        $("#a").select2();
 
         $("#b").select2({
             placeholder: "Select a state"
         });
 
-        $("#c").select2({
-            placeholder: "Select a state"
-        });
+        $("#c").select2({maximumSelectionLength:2});
 
         $("#d").select2({
-            placeholder: "Select a state",
             "disabled":true
         });
+
+
+        $("#e").select2({
+            templateResult: formatState,
+            templateSelection: formatState
+        });
+
+        function formatState(state) {
+            if (!state.id) { return state.text; }
+            console.info(state);
+            var $state = $(
+                    '<span><i class="fs6 c-gray iconfont ' + $(state.element).data('icon') + '"></i> ' + state.text + '</span>'
+            );
+            return $state;
+        };
     });
 </script>
 </body>

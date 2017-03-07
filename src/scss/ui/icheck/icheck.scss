@@ -4,13 +4,6 @@
 // mixins
 @import "../../base/mixins.scss";
 
-// icheck
-
-$icheckcheckbox: #{$namespace}checkbox- !default;
-$icheckradio: #{$namespace}radio- !default;
-
-$icheck-skin: black !default;    //pngFile:  black,  aero,   blue,   green,   grey,   orange,   pink,   purple,   red,   yellow
-
 $icheck-line-list: (
         black  : (
           color: #fff,

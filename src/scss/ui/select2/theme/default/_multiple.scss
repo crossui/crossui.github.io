@@ -81,7 +81,7 @@
 
 &.select2-container--focus {
   .select2-selection--multiple {
-    border: solid black 1px;
+    border: solid $form-focus-color 1px;
     outline: 0;
   }
 }
