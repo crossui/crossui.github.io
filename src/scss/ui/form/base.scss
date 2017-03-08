@@ -70,3 +70,11 @@ textarea.#{$namespace}input {
   width: map-get($form-medium,height);
   height: map-get($form-medium,height);
 }
+
+
+.date-picker {
+  background-image: url("date.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: map-get($form-medium,height)/2+7 map-get($form-medium,height)/2+7;
+}

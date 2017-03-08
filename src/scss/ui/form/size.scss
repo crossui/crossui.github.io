@@ -27,22 +27,32 @@
 
 
 .#{$namespace}search-mini .#{$namespace}search-btn{
-  background-size: map-get($form-mini,height)/2+7 map-get($form-mini,height)/2+7;
   width: map-get($form-mini,height);
   height: map-get($form-mini,height);
 }
 .#{$namespace}search-small .#{$namespace}search-btn{
-  background-size: map-get($form-small,height)/2+7 map-get($form-small,height)/2+7;
   width: map-get($form-small,height);
   height: map-get($form-small,height);
 }
 .#{$namespace}search-medium .#{$namespace}search-btn{
-  background-size: map-get($form-medium,height)/2+7 map-get($form-medium,height)/2+7;
   width: map-get($form-medium,height);
   height: map-get($form-medium,height);
 }
 .#{$namespace}search-large .#{$namespace}search-btn{
-  background-size: map-get($form-large,height)/2+7 map-get($form-large,height)/2+7;
   width: map-get($form-large,height);
   height: map-get($form-large,height);
+}
+
+
+.#{$namespace}search-mini .#{$namespace}search-btn , .#{$namespace}input-mini.date-picker{
+  background-size: map-get($form-mini,height)/2+7 map-get($form-mini,height)/2+7;
+}
+.#{$namespace}search-small .#{$namespace}search-btn , .#{$namespace}input-small.date-picker{
+  background-size: map-get($form-small,height)/2+7 map-get($form-small,height)/2+7;
+}
+.#{$namespace}search-medium .#{$namespace}search-btn , .#{$namespace}input-medium.date-picker{
+  background-size: map-get($form-medium,height)/2+7 map-get($form-medium,height)/2+7;
+}
+.#{$namespace}search-large .#{$namespace}search-btn , .#{$namespace}input-large.date-picker{
+  background-size: map-get($form-large,height)/2+7 map-get($form-large,height)/2+7;
 }

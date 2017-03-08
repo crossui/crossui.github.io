@@ -1,63 +1,424 @@
 /* tip-yellowsimple
 -----------------------------------------------------------------------------*/
-.tip-yellowsimple {z-index:10000;text-align:left;border:1px solid #c7bf93;border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;min-width:50px;max-width:300px;color:#000;background-color:#fff9c9;}
-.tip-yellowsimple .tip-inner {}
-.tip-yellowsimple .tip-arrow-top {margin-top:-6px;margin-left:-5px; top:0;left:50%;width:9px;height:6px;background:url(tip-yellowsimple_arrows.gif) no-repeat;}
-.tip-yellowsimple .tip-arrow-right {margin-top:-4px; margin-left:0;	top:50%;left:100%;width:6px;height:9px;background:url(tip-yellowsimple_arrows.gif) no-repeat -9px 0;}
-.tip-yellowsimple .tip-arrow-bottom {margin-top:0;margin-left:-5px;top:100%;left:50%;width:9px;height:6px;background:url(tip-yellowsimple_arrows.gif) no-repeat -18px 0;}
-.tip-yellowsimple .tip-arrow-left {margin-top:-4px;margin-left:-6px;top:50%;left:0;width:6px;height:9px;background:url(tip-yellowsimple_arrows.gif) no-repeat -27px 0;}
+.tip-yellowsimple {
+  z-index: 10000;
+  text-align: left;
+  border: 1px solid #c7bf93;
+  border-radius: 2px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  min-width: 50px;
+  max-width: 300px;
+  color: #000;
+  background-color: #fff9c9;
+}
+
+.tip-yellowsimple .tip-arrow-top , .tip-yellowsimple .tip-arrow-right , .tip-yellowsimple .tip-arrow-bottom , .tip-yellowsimple .tip-arrow-left{
+  background-image: url("tip-yellowsimple_arrows.gif");
+  background-repeat: no-repeat;
+}
+
+.tip-yellowsimple .tip-arrow-top {
+  margin-top: -6px;
+  margin-left: -5px;
+  top: 0;
+  left: 50%;
+  width: 9px;
+  height: 6px;
+}
+
+.tip-yellowsimple .tip-arrow-right {
+  margin-top: -4px;
+  margin-left: 0;
+  top: 50%;
+  left: 100%;
+  width: 6px;
+  height: 9px;
+  background-position: -9px 0;
+}
+
+.tip-yellowsimple .tip-arrow-bottom {
+  margin-top: 0;
+  margin-left: -5px;
+  top: 100%;
+  left: 50%;
+  width: 9px;
+  height: 6px;
+  background-position: -18px 0;
+}
+
+.tip-yellowsimple .tip-arrow-left {
+  margin-top: -4px;
+  margin-left: -6px;
+  top: 50%;
+  left: 0;
+  width: 6px;
+  height: 9px;
+  background-position: -27px 0;
+}
 
 /* tip-yellow
 -----------------------------------------------------------------------------*/
-.tip-yellow{z-index:10000;text-align:left;border:1px solid #939393;min-width:50px;max-width:530px;color:#8c3901;background-color:#fef9d9;background-image:url(tip-yellow.png);}
-.tip-yellow .tip-inner{font:bold 13px/18px 'trebuchet ms',arial,helvetica,sans-serif;margin-top:-2px;padding:0 3px 1px;}
-.tip-yellow .tip-arrow-top{margin-top:-7px;margin-left:15px;top:0;left:0;width:16px;height:10px;background:url(tip-yellow_arrows.png) no-repeat;}
-.tip-yellow .tip-arrow-right{margin-top:-9px;margin-left:-4px;top:50%;left:100%;width:10px;height:20px;background:url(tip-yellow_arrows.png) no-repeat -16px 0;}
-.tip-yellow .tip-arrow-bottom{margin-top:-6px;margin-left:16px;top:100%;left:0;width:16px;height:13px;background:url(tip-yellow_arrows.png) no-repeat -32px 0;}
-.tip-yellow .tip-arrow-left{margin-top:-9px;margin-left:-6px;top:50%;left:0;width:10px;height:20px;background:url(tip-yellow_arrows.png) no-repeat -48px 0;}
+.tip-yellow {
+  z-index: 10000;
+  text-align: left;
+  border: 1px solid #939393;
+  min-width: 50px;
+  max-width: 530px;
+  color: #8c3901;
+  background-color: #fef9d9;
+  background-image: url(tip-yellow.png);
+}
+
+.tip-yellow .tip-inner {
+  margin-top: -2px;
+  padding: 0 3px 1px;
+}
+
+.tip-yellow .tip-arrow-top , .tip-yellow .tip-arrow-right , .tip-yellow .tip-arrow-bottom , .tip-yellow .tip-arrow-left {
+  background-image: url("tip-yellow_arrows.png");
+  background-repeat: no-repeat;
+}
+
+.tip-yellow .tip-arrow-top {
+  margin-top: -7px;
+  margin-left: 15px;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 10px;
+}
+
+.tip-yellow .tip-arrow-right {
+  margin-top: -9px;
+  margin-left: -4px;
+  top: 50%;
+  left: 100%;
+  width: 10px;
+  height: 20px;
+  background-position: -16px 0;
+}
+
+.tip-yellow .tip-arrow-bottom {
+  margin-top: -6px;
+  margin-left: 16px;
+  top: 100%;
+  left: 0;
+  width: 16px;
+  height: 13px;
+  background-position: -32px 0;
+}
+
+.tip-yellow .tip-arrow-left {
+  margin-top: -9px;
+  margin-left: -6px;
+  top: 50%;
+  left: 0;
+  width: 10px;
+  height: 20px;
+  background-position: -48px 0;
+}
 
 /* tip-violet
 -----------------------------------------------------------------------------*/
-.tip-violet{z-index:10000;text-align:left;border:1px solid #afafaf;min-width:50px;max-width:530px;color:#860404;background-color:#f2e7fd;background-image:url(tip-violet.png);}
-.tip-violet .tip-inner{font:bold 12px/18px 'trebuchet ms',arial,helvetica,sans-serif;margin-top:-1px;padding:0 3px 2px;}
-.tip-violet .tip-arrow-top{margin-top:-7px;margin-left:15px;top:0;left:0;width:16px;height:10px;background:url(tip-violet_arrows.png) no-repeat;}
-.tip-violet .tip-arrow-right{margin-top:-9px;margin-left:-4px;top:50%;left:100%;width:10px;height:20px;background:url(tip-violet_arrows.png) no-repeat -16px 0;}
-.tip-violet .tip-arrow-bottom{margin-top:-6px;margin-left:15px;top:100%;left:0;width:16px;height:13px;background:url(tip-violet_arrows.png) no-repeat -32px 0;}
-.tip-violet .tip-arrow-left{margin-top:-9px;margin-left:-6px;top:50%;left:0;width:10px;height:20px;background:url(tip-violet_arrows.png) no-repeat -48px 0;}
+.tip-violet {
+  z-index: 10000;
+  text-align: left;
+  border: 1px solid #afafaf;
+  min-width: 50px;
+  max-width: 530px;
+  color: #860404;
+  background-color: #f2e7fd;
+  background-image: url(tip-violet.png);
+}
+
+.tip-violet .tip-inner {
+  margin-top: -1px;
+  padding: 0 3px 2px;
+}
+
+.tip-violet .tip-arrow-top , .tip-violet .tip-arrow-right , .tip-violet .tip-arrow-bottom , .tip-violet .tip-arrow-left {
+  background-image: url("tip-violet_arrows.png");
+  background-repeat: no-repeat;
+}
+
+.tip-violet .tip-arrow-top {
+  margin-top: -7px;
+  margin-left: 15px;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 10px;
+}
+
+.tip-violet .tip-arrow-right {
+  margin-top: -9px;
+  margin-left: -4px;
+  top: 50%;
+  left: 100%;
+  width: 10px;
+  height: 20px;
+  background-position: -16px 0;
+}
+
+.tip-violet .tip-arrow-bottom {
+  margin-top: -6px;
+  margin-left: 15px;
+  top: 100%;
+  left: 0;
+  width: 16px;
+  height: 13px;
+  background-position: -32px 0;
+}
+
+.tip-violet .tip-arrow-left {
+  margin-top: -9px;
+  margin-left: -6px;
+  top: 50%;
+  left: 0;
+  width: 10px;
+  height: 20px;
+  background-position: -48px 0;
+}
 
 /* tip-twitter
 -----------------------------------------------------------------------------*/
-.tip-twitter{opacity:0.8;z-index:10000;text-align:left;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;max-width:200px;color:#fff;background-color:#000;}
-.tip-twitter .tip-inner{font:bold 11px/14px 'Lucida Grande',sans-serif;}
-.tip-twitter .tip-arrow-top{margin-top:-5px;margin-left:-5px;top:0;left:50%;width:9px;height:5px;background:url(tip-twitter_arrows.gif) no-repeat;}
-.tip-twitter .tip-arrow-right{margin-top:-4px;margin-left:0;top:50%;left:100%;width:5px;height:9px;background:url(tip-twitter_arrows.gif) no-repeat -9px 0;}
-.tip-twitter .tip-arrow-bottom{margin-top:0;margin-left:-5px;top:100%;left:50%;width:9px;height:5px;background:url(tip-twitter_arrows.gif) no-repeat -18px 0;}
-.tip-twitter .tip-arrow-left{margin-top:-4px;margin-left:-5px;top:50%;left:0;width:5px;height:9px;background:url(tip-twitter_arrows.gif) no-repeat -27px 0;}
+.tip-twitter {
+  opacity: 0.8;
+  z-index: 10000;
+  text-align: left;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  max-width: 200px;
+  color: #fff;
+  background-color: #000;
+}
+
+
+.tip-twitter .tip-arrow-top , .tip-twitter .tip-arrow-right , .tip-twitter .tip-arrow-bottom , .tip-twitter .tip-arrow-left {
+  background-image: url("tip-twitter_arrows.gif");
+  background-repeat: no-repeat;
+}
+
+.tip-twitter .tip-arrow-top {
+  margin-top: -5px;
+  margin-left: -5px;
+  top: 0;
+  left: 50%;
+  width: 9px;
+  height: 5px;
+}
+
+.tip-twitter .tip-arrow-right {
+  margin-top: -4px;
+  margin-left: 0;
+  top: 50%;
+  left: 100%;
+  width: 5px;
+  height: 9px;
+  background-position: -9px 0;
+}
+
+.tip-twitter .tip-arrow-bottom {
+  margin-top: 0;
+  margin-left: -5px;
+  top: 100%;
+  left: 50%;
+  width: 9px;
+  height: 5px;
+  background-position: -18px 0;
+}
+
+.tip-twitter .tip-arrow-left {
+  margin-top: -4px;
+  margin-left: -5px;
+  top: 50%;
+  left: 0;
+  width: 5px;
+  height: 9px;
+  background-position: -27px 0;
+}
 
 /* tip-green
 -----------------------------------------------------------------------------*/
-.tip-green{z-index:10000;text-align:left;border:1px solid #bdde98;min-width:50px;max-width:300px;color:#860404;background-color:#dff6c6;}
-.tip-green .tip-inner{font:bold 12px/14px arial,helvetica,sans-serif;}
-.tip-green .tip-arrow-top{margin-top:-10px;margin-left:6px;top:0;left:0;width:10px;height:10px;background:url(tip-green_arrows.gif) no-repeat;}
-.tip-green .tip-arrow-right{margin-top:6px;margin-left:0;top:0;left:100%;width:10px;height:10px;background:url(tip-green_arrows.gif) no-repeat -10px 0;}
-.tip-green .tip-arrow-bottom{margin-top:0;margin-left:6px;top:100%;left:0;width:10px;height:10px;background:url(tip-green_arrows.gif) no-repeat -20px 0;}
-.tip-green .tip-arrow-left{margin-top:6px;margin-left:-10px;top:0;left:0;width:10px;height:10px;background:url(tip-green_arrows.gif) no-repeat -30px 0;}
+.tip-green {
+  z-index: 10000;
+  text-align: left;
+  border: 1px solid #bdde98;
+  min-width: 50px;
+  max-width: 300px;
+  color: #860404;
+  background-color: #dff6c6;
+}
+
+.tip-green .tip-arrow-top , .tip-green .tip-arrow-right , .tip-green .tip-arrow-bottom , .tip-green .tip-arrow-left {
+  background-image: url("tip-green_arrows.gif");
+  background-repeat: no-repeat;
+}
+
+.tip-green .tip-arrow-top {
+  margin-top: -10px;
+  margin-left: 6px;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+}
+
+.tip-green .tip-arrow-right {
+  margin-top: 6px;
+  margin-left: 0;
+  top: 0;
+  left: 100%;
+  width: 10px;
+  height: 10px;
+  background-position: -10px 0;
+}
+
+.tip-green .tip-arrow-bottom {
+  margin-top: 0;
+  margin-left: 6px;
+  top: 100%;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-position: -20px 0;
+}
+
+.tip-green .tip-arrow-left {
+  margin-top: 6px;
+  margin-left: -10px;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-position: -30px 0;
+}
 
 /* tip-darkgray
 -----------------------------------------------------------------------------*/
-.tip-darkgray{opacity:0.95;z-index:10000;text-align:left;text-shadow:#444 0 1px 1px;border:1px solid #888;min-width:50px;max-width:530px;color:#fff;background-color:#999;background-image:url(tip-darkgray.png);}
-.tip-darkgray .tip-inner{font:bold 12px/18px arial,helvetica,sans-serif;margin-top:-1px;padding:0 4px 3px;}
-.tip-darkgray .tip-arrow-top{margin-top:-7px;margin-left:15px;top:0;left:0;width:16px;height:10px;background:url(tip-darkgray_arrows.png) no-repeat;}
-.tip-darkgray .tip-arrow-right{margin-top:-9px;margin-left:-7px;top:50%;left:100%;width:11px;height:21px;background:url(tip-darkgray_arrows.png) no-repeat -22px 0;}
-.tip-darkgray .tip-arrow-bottom{margin-top:-7px;margin-left:15px;top:100%;left:0;width:22px;height:13px;background:url(tip-darkgray_arrows.png) no-repeat -44px 0;}
-.tip-darkgray .tip-arrow-left{margin-top:-9px;margin-left:-6px;top:50%;left:0;width:11px;height:21px;background:url(tip-darkgray_arrows.png) no-repeat -66px 0;}
+.tip-darkgray {
+  opacity: 0.95;
+  z-index: 10000;
+  text-align: left;
+  text-shadow: #444 0 1px 1px;
+  border: 1px solid #888;
+  min-width: 50px;
+  max-width: 530px;
+  color: #fff;
+  background-color: #999;
+  background-image: url(tip-darkgray.png);
+}
+
+.tip-darkgray .tip-inner {
+  margin-top: -1px;
+  padding: 0 4px 3px;
+}
+
+.tip-darkgray .tip-arrow-top , .tip-darkgray .tip-arrow-right , .tip-darkgray .tip-arrow-bottom , .tip-darkgray .tip-arrow-left{
+  background-image: url("tip-darkgray_arrows.png");
+  background-repeat: no-repeat;
+}
+
+.tip-darkgray .tip-arrow-top {
+  margin-top: -7px;
+  margin-left: 15px;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 10px;
+}
+
+.tip-darkgray .tip-arrow-right {
+  margin-top: -9px;
+  margin-left: -5px;
+  top: 50%;
+  left: 100%;
+  width: 11px;
+  height: 21px;
+  background-position: -22px 0;
+}
+
+.tip-darkgray .tip-arrow-bottom {
+  margin-top: -7px;
+  margin-left: 15px;
+  top: 100%;
+  left: 0;
+  width: 22px;
+  height: 13px;
+  background-position: -44px 0;
+}
+
+.tip-darkgray .tip-arrow-left {
+  margin-top: -9px;
+  margin-left: -6px;
+  top: 50%;
+  left: 0;
+  width: 11px;
+  height: 21px;
+  background-position: -66px 0;
+}
 
 /* tip-white
 -----------------------------------------------------------------------------*/
-.tip-white{z-index:10000;text-align:left;border:1px solid #c4c4c4;min-width:50px;max-width:530px;color:#666;background-color:#fff;}
-.tip-white .tip-inner{font:bold 12px/18px 'trebuchet ms',arial,helvetica,sans-serif;margin-top:-1px;padding:0 3px 2px;}
-.tip-white .tip-arrow-top{margin-top:-6px;margin-left:15px;top:0;left:0;width:12px;height:6px;background:url(tip-white_arrows.png) no-repeat -2px 0;}
-.tip-white .tip-arrow-right{margin-top:-9px;margin-left:-4px;top:50%;left:100%;width:6px;height:20px;background:url(tip-white_arrows.png) no-repeat -14px 0;}
-.tip-white .tip-arrow-bottom{margin-top:-4px;margin-left:15px;top:100%;left:0;width:12px;height:13px;background:url(tip-white_arrows.png) no-repeat -34px 0;}
-.tip-white .tip-arrow-left{margin-top:-9px;margin-left:-6px;top:50%;left:0;width:12px;height:20px;background:url(tip-white_arrows.png) no-repeat -49px 0;}
+.tip-white {
+  z-index: 10000;
+  text-align: left;
+  border: 1px solid #c4c4c4;
+  min-width: 50px;
+  max-width: 530px;
+  color: #666;
+  background-color: #fff;
+}
+
+.tip-white .tip-inner {
+  margin-top: -1px;
+  padding: 0 3px 2px;
+}
+
+.tip-white .tip-arrow-top , .tip-white .tip-arrow-right , .tip-white .tip-arrow-bottom , .tip-white .tip-arrow-left {
+  background-image: url("tip-white_arrows.png");
+  background-repeat: no-repeat;
+}
+
+.tip-white .tip-arrow-top {
+  margin-top: -6px;
+  margin-left: 15px;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 6px;
+  background-position: -2px 0;
+}
+
+.tip-white .tip-arrow-right {
+  margin-top: -9px;
+  margin-left: 0px;
+  top: 50%;
+  left: 100%;
+  width: 12px;
+  height: 20px;
+  background-position: -22px 0;
+}
+
+.tip-white .tip-arrow-bottom {
+  margin-top: -4px;
+  margin-left: 15px;
+  top: 100%;
+  left: 0;
+  width: 12px;
+  height: 13px;
+  background-position: -34px 0;
+}
+
+.tip-white .tip-arrow-left {
+  margin-top: -9px;
+  margin-left: -6px;
+  top: 50%;
+  left: 0;
+  width: 12px;
+  height: 20px;
+  background-position: -49px 0;
+}
 

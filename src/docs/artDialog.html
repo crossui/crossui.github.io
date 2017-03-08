@@ -8,39 +8,356 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../iconfont/iconfont.css" />
     <link rel="stylesheet" href="../css/cross.css" />
-    <link rel="stylesheet" href="../css/docs.css" />
     <link rel="stylesheet" href="../css/highlight.css" />
     <link rel="stylesheet" href="../css/artdialog.css" />
 </head>
 <body>
 <div class="p-medium">
-    <a href="javascript:;" id="artDialog1" class="button button-primary button-rounded button-small">提示自动关闭（3秒）</a>
 
-    <a href="javascript:;" id="artDialog2" class="button button-primary button-rounded button-small">数据加载中</a>
+    <div class="c-row">
+        <div class="c-50">
+            <div class="c-border p-small border-radius-rounded mt-medium">
 
-    <div class="ptb-medium">
-        <a href="javascript:;" id="artDialogICON1" class="button button-primary button-rounded button-small">success</a>
+                <a href="javascript:;" id="artDialog1" class="button button-primary button-rounded button-small">测试</a>
 
-        <a href="javascript:;" id="artDialogICON2" class="button button-primary button-rounded button-small">error</a>
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">弹出层</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#art1" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        提示自动关闭（3秒）
+                    </div>
+                </div>
 
-        <a href="javascript:;" id="artDialogICON3" class="button button-primary button-rounded button-small">info</a>
+                <div id="art1" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>HTML</span></a>
+                            <a href="javascript:;"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;a href="javascript:;" id="artDialog1" class="button button-primary button-rounded button-small"&gt;测试&lt;/a&gt;
+</code></pre>
+                            </div>
+                            <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    var d = dialog({
+        content : '&lt;i class="iconfont icon-time fs5"&gt;&lt;/i&gt; 提示自动关闭'
+    }).showModal().closedtime(3);
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <a href="javascript:;" id="artDialogICON4" class="button button-primary button-rounded button-small">warning</a>
+            <div class="c-border p-small border-radius-rounded mt-medium">
 
-        <a href="javascript:;" id="artDialogICON5" class="button button-primary button-rounded button-small">tips</a>
+                <a href="javascript:;" id="artDialogICON1" class="button button-primary button-rounded button-small">success</a>
+                <a href="javascript:;" id="artDialogICON2" class="button button-primary button-rounded button-small">error</a>
+                <a href="javascript:;" id="artDialogICON3" class="button button-primary button-rounded button-small">info</a>
+                <a href="javascript:;" id="artDialogICON4" class="button button-primary button-rounded button-small">warning</a>
+                <a href="javascript:;" id="artDialogICON5" class="button button-primary button-rounded button-small">tips</a>
+                <a href="javascript:;" id="artDialogICON6" class="button button-primary button-rounded button-small">自定义</a>
 
-        <a href="javascript:;" id="artDialogICON6" class="button button-primary button-rounded button-small">自定义</a>
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">弹出层</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#art3" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        带iconfont的
+                    </div>
+                </div>
+
+                <div id="art3" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>HTML</span></a>
+                            <a href="javascript:;"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;a href="javascript:;" id="artDialogICON1" class="button button-primary button-rounded button-small"&gt;success&lt;/a&gt;
+    &lt;a href="javascript:;" id="artDialogICON2" class="button button-primary button-rounded button-small"&gt;error&lt;/a&gt;
+    &lt;a href="javascript:;" id="artDialogICON3" class="button button-primary button-rounded button-small"&gt;info&lt;/a&gt;
+    &lt;a href="javascript:;" id="artDialogICON4" class="button button-primary button-rounded button-small"&gt;warning&lt;/a&gt;
+    &lt;a href="javascript:;" id="artDialogICON5" class="button button-primary button-rounded button-small"&gt;tips&lt;/a&gt;
+    &lt;a href="javascript:;" id="artDialogICON6" class="button button-primary button-rounded button-small"&gt;自定义&lt;/a&gt;
+</code></pre>
+                            </div>
+                            <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#artDialogICON1').on('click',function(){
+        var d = dialog({
+            title:'提示',
+            icon:'success',
+            content : '数据添加成功!!!',
+            ok:true
+        }).showModal();
+    });
+
+    $('#artDialogICON2').on('click',function(){
+        var d = dialog({
+            title:'提示',
+            icon:'error',
+            content : '数据提交失败!!!',
+            ok:true
+        }).showModal();
+    });
+
+    $('#artDialogICON3').on('click',function(){
+        var d = dialog({
+            title:'提示',
+            icon:'info',
+            content : '数据添加成功!!!',
+            ok:true
+        }).showModal();
+    });
+
+    $('#artDialogICON4').on('click',function(){
+        var d = dialog({
+            title:'提示',
+            icon:'warning',
+            content : '数据添加成功!!!',
+            ok:true
+        }).showModal();
+    });
+
+    $('#artDialogICON5').on('click',function(){
+        var d = dialog({
+            title:'提示',
+            icon:'tips',
+            content : '数据添加成功!!!',
+            ok:true
+        }).showModal();
+    });
+
+    $('#artDialogICON6').on('click',function(){
+        var d = dialog({
+            title:'提示',
+            icon:'&lt;i class="iconfont icon-wangfill fs3"&gt;&lt;/i&gt;',
+            content : '图标自定义的哦!!!',
+            ok:true
+        }).showModal();
+    });
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-border p-small border-radius-rounded mt-medium">
+
+                <a href="javascript:;" id="artDialogDom" class="button button-primary button-rounded button-small">测试</a>
+                <div class="c-hide" id="artDialogDom-demo"><input type="text" class="c-input" /></div>
+
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">弹出层</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#art5" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        内容为DOM节点
+                    </div>
+                </div>
+
+                <div id="art5" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>HTML</span></a>
+                            <a href="javascript:;"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;a href="javascript:;" id="artDialogDom" class="button button-primary button-rounded button-small"&gt;测试&lt;/a&gt;
+    &lt;div class="c-hide"&gt;&lt;input type="text" class="c-input" /&gt;&lt;/div&gt;
+</code></pre>
+                            </div>
+                            <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    var contents=$('#artDialogDom-demo').get(0);
+    var d = dialog({
+        title: '请输入姓名',
+        content: contents,
+        ok: function () {},
+        cancel: function () {
+            alert('取消');
+        }
+    });
+    d.showModal();
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="c-50">
+            <div class="c-border p-small border-radius-rounded mt-medium">
+
+                <a href="javascript:;" id="artDialog2" class="button button-primary button-rounded button-small">测试</a>
+
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">弹出层</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#art2" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        数据加载中
+                    </div>
+                </div>
+
+                <div id="art2" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>HTML</span></a>
+                            <a href="javascript:;"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;a href="javascript:;" id="artDialog2" class="button button-primary button-rounded button-small"&gt;测试&lt;/a&gt;
+</code></pre>
+                            </div>
+                            <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    var d = dialog({
+        content : '&lt;span class="ui-dialog-loading"&gt;&lt;/span&gt;数据加截中...'
+    }).showModal();
+
+    d.closedtime(3);
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-border p-small border-radius-rounded mt-medium">
+
+                <a href="javascript:;" id="artDialogstatusbar" class="button button-primary button-rounded button-small">测试</a>
+
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">弹出层</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#art4" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        带复选框
+                    </div>
+                </div>
+
+                <div id="art4" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>HTML</span></a>
+                            <a href="javascript:;"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;a href="javascript:;" id="artDialogstatusbar" class="button button-primary button-rounded button-small"&gt;测试&lt;/a&gt;
+</code></pre>
+                            </div>
+                            <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    var d = dialog({
+        title: '欢迎',
+        content: '欢迎使用 artDialog 对话框组件！',
+        ok: function () {},
+        statusbar: '&lt;label&gt;&lt;input type="checkbox"&gt;不再提醒&lt;/label&gt;'
+    });
+    d.showModal();
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="c-border p-small border-radius-rounded mt-medium">
+
+                <a href="javascript:;" id="artDialogTopiframe" class="button button-primary button-rounded button-small">测试</a>
+
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">弹出层</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#art6" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        弹出主iframe
+                    </div>
+                </div>
+
+                <div id="art6" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>HTML</span></a>
+                            <a href="javascript:;"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;a href="javascript:;" id="artDialogDom" class="button button-primary button-rounded button-small"&gt;测试&lt;/a&gt;
+</code></pre>
+                            </div>
+                            <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
     </div>
 
-    <div class="ptb-medium">
-        <a href="javascript:;" id="artDialogstatusbar" class="button button-primary button-rounded button-small">带复选框</a>
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </div>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/cross.js"></script>
 <script type="text/javascript" src="../js/highlight/highlight.js"></script>
 <script type="text/javascript" src="../js/artdialog/artdialog.js"></script>
+<!--<script type="text/javascript" src="../js/artdialog/artdialog-plus.js"></script>-->
 <script type="text/javascript">
     $(function(){
         $('pre code').each(function(i, block) {
@@ -130,6 +447,23 @@
             d.showModal();
         });
 
+
+        $('#artDialogDom').on('click',function(){
+            var contents=$('#artDialogDom-demo').get(0);
+            var d = dialog({
+                title: '请输入姓名',
+                content: contents,
+                ok: function () {},
+                cancel: function () {
+                    alert('取消');
+                }
+            });
+            d.showModal();
+        });
+
+        $('#artDialogTopiframe').on('click',function(){
+
+        });
 
 
     });
