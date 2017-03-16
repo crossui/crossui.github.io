@@ -1,0 +1,1028 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>switch</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../iconfont/iconfont.css" />
+    <link rel="stylesheet" href="../css/cross.css" />
+    <link rel="stylesheet" href="../css/highlight.css" />
+    <link rel="stylesheet" href="../css/cswitch.css" />
+</head>
+<body>
+<div class="p-medium">
+
+    <fieldset class="c-field">
+        <legend>引用</legend>
+        <div class="c-field-box">
+<pre><code class="html c-break">
+    &lt;link rel="stylesheet" href="../css/switch.css" /&gt;
+    &lt;script type="text/javascript" src="../js/switch/switch.js"&gt;&lt;/script&gt;
+</code></pre>
+        </div>
+    </fieldset>
+
+    <div class="c-row  mt-small">
+        <div class="c-50">
+            <div class="c-border p-small border-radius-rounded mt-medium">
+
+                <p>
+                    <input id="switch-state" type="checkbox" checked>
+                </p>
+                <div class="btn-group mt-tiny">
+                    <button type="button" data-switch-toggle="state" class="button button-tiny">Toggle</button>
+                    <button type="button" data-switch-set="state" data-switch-value="true" class="button button-tiny">Set true</button>
+                    <button type="button" data-switch-set="state" data-switch-value="false" class="button button-tiny">Set false</button>
+                    <button type="button" data-switch-get="state" class="button button-tiny">Get</button>
+                </div>
+
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">switch 开关</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#switch1" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        基本使用
+                    </div>
+                </div>
+
+                <div id="switch1" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>HTML</span></a>
+                            <a href="javascript:;"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input id="switch-state" type="checkbox" checked /&gt;
+</code></pre>
+                            </div>
+                            <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    //初始化
+    $('#switch-state').cswitch();
+
+    //切换状态
+    $('#switch-state').cswitch('toggleState');
+
+    //切换状态为true
+    $('#switch-state').cswitch('state',true);
+
+    //切换状态为false
+    $('#switch-state').cswitch('state',false);
+
+    //获得状态
+    alert($('#switch-state').cswitch('state'));
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="c-border p-small border-radius-rounded mt-medium">
+
+                <p>
+                    <input id="switch-animate" type="checkbox" checked>
+                </p>
+                <div class="mt-tiny">
+                    <button type="button" data-switch-toggle="animate" class="button button-tiny">Toggle</button>
+                    <button type="button" data-switch-get="animate" class="button button-tiny">Get</button>
+                </div>
+
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">switch 开关</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#switch3" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        动画切换
+                    </div>
+                </div>
+
+                <div id="switch3" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>HTML</span></a>
+                            <a href="javascript:;"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input id="switch-animate" type="checkbox" checked&gt;
+</code></pre>
+                            </div>
+                            <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    //切换动画
+    $('#switch-animate').cswitch('toggleAnimate');
+
+    //获得切换动画状态
+    alert($('#switch-animate').cswitch('animate'));
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="c-border p-small border-radius-rounded mt-medium">
+
+                <p>
+                    <input id="switch-indeterminate" type="checkbox" checked data-indeterminate="true">
+                </p>
+                <div class="mt-tiny">
+                    <button type="button" data-switch-toggle="indeterminate" class="button button-tiny">Toggle</button>
+                    <button type="button" data-switch-get="indeterminate" class="button button-tiny">Get</button>
+                </div>
+
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">switch 开关</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#switch5" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        状态不确定的时候
+                    </div>
+                </div>
+
+                <div id="switch5" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>HTML</span></a>
+                            <a href="javascript:;"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input id="switch-indeterminate" type="checkbox" checked data-indeterminate="true"&gt;
+</code></pre>
+                            </div>
+                            <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#switch-indeterminate').cswitch();
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="c-border p-small border-radius-rounded mt-medium">
+
+                <div class="c-row">
+                    <div class="c-33">
+                        <div class="mt-medium">
+                            <h2 class="fs6">On Text</h2>
+                            <p>
+                                <input id="switch-onText" type="checkbox" checked data-on-text="Yes">
+                            </p>
+                            <div class="mt-tiny">
+                                <input type="text" data-switch-set-value="onText" value="Yes" class="c-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-33">
+                        <div class="mt-medium">
+                            <h2 class="fs6">Off Text</h2>
+                            <p>
+                                <input id="switch-offText" type="checkbox" data-off-text="No">
+                            </p>
+                            <div class="mt-tiny">
+                                <input type="text" data-switch-set-value="offText" value="No" class="c-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-33">
+                        <div class="mt-medium">
+                            <h2 class="fs6">Label Text</h2>
+                            <p>
+                                <input id="switch-labelText" type="checkbox" data-label-text="Label">
+                            </p>
+                            <div class=" mt-tiny">
+                                <input type="text" data-switch-set-value="labelText" class="c-input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">switch 开关</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#switch7" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        文本
+                    </div>
+                </div>
+
+                <div id="switch7" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>HTML</span></a>
+                            <a href="javascript:;"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input id="switch-onText" type="checkbox" checked data-on-text="Yes"&gt;
+
+    &lt;input id="switch-offText" type="checkbox" data-off-text="No"&gt;
+
+    &lt;input id="switch-labelText" type="checkbox" data-label-text="Label"&gt;
+</code></pre>
+                            </div>
+                            <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#switch-offText').cswitch('onText',"yes");
+
+    $('#switch-offText').cswitch('offText',"no");
+
+    $('#switch-offText').cswitch('labelText',"label");
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-border p-small border-radius-rounded mt-medium">
+
+                <div class="c-row">
+                    <div class="c-100">
+                        <div class="mt-medium">
+                            <div class="c-row">
+                                <div class="c-50">
+                                    <h3 class="h6">base</h3>
+                                    <input type="radio" name="radio1" data-size="mini" checked class="switch-radio1">
+                                    <input type="radio" name="radio1" data-size="mini" class="switch-radio1">
+                                    <input type="radio" name="radio1" data-size="mini" class="switch-radio1">
+                                </div>
+                                <div class="c-50">
+                                    <h3 class="h6">Radio All Off</h3>
+                                    <input type="radio" name="radio2" data-size="mini" checked data-radio-all-off="true" class="switch-radio2">
+                                    <input type="radio" name="radio2" data-size="mini" data-radio-all-off="true" class="switch-radio2">
+                                    <input type="radio" name="radio2" data-size="mini" data-radio-all-off="true" class="switch-radio2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">switch 开关</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#switch9" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        radio
+                    </div>
+                </div>
+
+                <div id="switch9" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>HTML</span></a>
+                            <a href="javascript:;"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    //base
+    &lt;input type="radio" name="radio1" data-size="mini" checked class="switch-radio1"&gt;
+    &lt;input type="radio" name="radio1" data-size="mini" class="switch-radio1"&gt;
+    &lt;input type="radio" name="radio1" data-size="mini" class="switch-radio1"&gt;
+    
+    //Radio All Off
+    &lt;input type="radio" name="radio2" data-size="mini" checked data-radio-all-off="true" class="switch-radio2"&gt;
+    &lt;input type="radio" name="radio2" data-size="mini" data-radio-all-off="true" class="switch-radio2"&gt;
+    &lt;input type="radio" name="radio2" data-size="mini" data-radio-all-off="true" class="switch-radio2"&gt;
+</code></pre>
+                            </div>
+                            <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="c-50">
+            <div class="c-border p-small border-radius-rounded mt-medium">
+
+                <p>
+                    <input id="switch-size" type="checkbox" checked data-size="mini">
+                </p>
+                <div class="btn-group mt-tiny">
+                    <button type="button" data-switch-set="size" data-switch-value="mini" class="button button-tiny">Mini</button>
+                    <button type="button" data-switch-set="size" data-switch-value="small" class="button button-tiny">Small</button>
+                    <button type="button" data-switch-set="size" data-switch-value="normal" class="button button-tiny">Normal</button>
+                    <button type="button" data-switch-set="size" data-switch-value="large" class="button button-tiny">Large</button>
+                    <button type="button" data-switch-get="size" class="button button-tiny">Get</button>
+                </div>
+
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">switch 开关</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#switch2" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        尺寸
+                    </div>
+                </div>
+
+                <div id="switch2" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>HTML</span></a>
+                            <a href="javascript:;"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input id="switch-size" type="checkbox" checked data-size="mini"&gt;
+</code></pre>
+                            </div>
+                            <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    //尺寸mini
+    $('#switch-size').cswitch('size',"mini");
+
+    //尺寸small
+    $('#switch-size').cswitch('size',"small");
+
+    //尺寸normal
+    $('#switch-size').cswitch('size',"normal");
+
+    //尺寸large
+    $('#switch-size').cswitch('size',"large");
+
+    //获得尺寸
+    alert($('#switch-size').cswitch('size')) ;
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="c-border p-small border-radius-rounded mt-medium">
+
+                <div class="c-row  mt-small">
+                    <div class="c-50">
+                        <h2 class="fs6">Disabled</h2>
+                        <p>
+                            <input id="switch-disabled" type="checkbox" checked disabled>
+                        </p>
+                        <div class="mt-tiny">
+                            <button type="button" data-switch-toggle="disabled" class="button button-tiny">Toggle</button>
+                            <button type="button" data-switch-get="disabled" class="button button-tiny">Get</button>
+                        </div>
+                    </div>
+                    <div class="c-50">
+                        <h2 class="fs6">Readonly</h2>
+                        <p>
+                            <input id="switch-readonly" type="checkbox" checked readonly>
+                        </p>
+                        <div class="mt-tiny">
+                            <button type="button" data-switch-toggle="readonly" class="button button-tiny">Toggle</button>
+                            <button type="button" data-switch-get="readonly" class="button button-tiny">Get</button>
+                        </div>
+                    </div>
+                </div>
+
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">switch 开关</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#switch4" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        状态 Disabled 、 Readonly
+                    </div>
+                </div>
+
+                <div id="switch4" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>HTML</span></a>
+                            <a href="javascript:;"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input id="switch-disabled" type="checkbox" checked disabled&gt;
+    
+    &lt;input id="switch-readonly" type="checkbox" checked readonly&gt;
+</code></pre>
+                            </div>
+                            <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#switch-disabled').cswitch('toggleDisabled');
+
+    $('#switch-readonly').cswitch('toggleReadonly');
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="c-border p-small border-radius-rounded mt-medium">
+
+                <div class="c-row">
+                    <div class="c-50">
+                        <p>
+                            <input id="switch-onColor" type="checkbox" checked data-on-color="info">
+                        </p>
+                        <div class="btn-group mt-tiny">
+                            <div class="mt-tiny">
+                                <a class="button button-tiny button-primary" data-switch-set="onColor" data-switch-value="primary">Primary</a>
+                                <a class="button button-tiny button-primary" data-switch-set="onColor" data-switch-value="info">Info</a>
+                                <a class="button button-tiny button-primary" data-switch-set="onColor" data-switch-value="success">Success</a>
+                                <a class="button button-tiny button-primary" data-switch-set="onColor" data-switch-value="warning">Warning</a>
+                                <a class="button button-tiny button-primary" data-switch-set="onColor" data-switch-value="default">Default</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-50">
+                        <p>
+                            <input id="switch-offColor" type="checkbox" data-off-color="warning">
+                        </p>
+
+                        <div class="btn-group mt-tiny">
+                            <div role="menu" class="mt-tiny">
+                                <a class="button button-tiny button-primary" data-switch-set="offColor" data-switch-value="primary">Primary</a>
+                                <a class="button button-tiny button-primary" data-switch-set="offColor" data-switch-value="info">Info</a>
+                                <a class="button button-tiny button-primary" data-switch-set="offColor" data-switch-value="success">Success</a>
+                                <a class="button button-tiny button-primary" data-switch-set="offColor" data-switch-value="warning">Warning</a>
+                                <a class="button button-tiny button-primary" data-switch-set="offColor" data-switch-value="default">Default</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">switch 开关</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#switch6" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        风格
+                    </div>
+                </div>
+
+                <div id="switch6" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>HTML</span></a>
+                            <a href="javascript:;"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input id="switch-onColor" type="checkbox" checked data-on-color="info"&gt;
+
+    &lt;input id="switch-offColor" type="checkbox" data-off-color="warning"&gt;
+</code></pre>
+                            </div>
+                            <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    //onColor
+    $('#switch-onColor').cswitch('onColor','primary');
+
+    $('#switch-onColor').cswitch('onColor','info');
+
+    $('#switch-onColor').cswitch('onColor','success');
+
+    $('#switch-onColor').cswitch('onColor','warning');
+
+    $('#switch-onColor').cswitch('onColor','default');
+
+    //offColor
+    $('#switch-onColor').cswitch('offColor','primary');
+
+    $('#switch-onColor').cswitch('offColor','info');
+
+    $('#switch-onColor').cswitch('offColor','success');
+
+    $('#switch-onColor').cswitch('offColor','warning');
+
+    $('#switch-onColor').cswitch('offColor','default');
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-border p-small border-radius-rounded mt-medium">
+
+                <div class="c-row">
+                    <div class="c-50">
+                        <h2 class="fs6">Handle Width</h2>
+                        <p>
+                            <input id="switch-handleWidth" type="checkbox" data-handle-width="100">
+                        </p>
+                        <div class="mt-tiny">
+                            <input type="number" data-switch-set-value="handleWidth" value="100" class="c-input">
+                        </div>
+                    </div>
+                    <div class="c-50">
+                        <h2 class="fs6">Label Width</h2>
+                        <p>
+                            <input id="switch-labelWidth" type="checkbox" data-label-width="100">
+                        </p>
+                        <div class="mt-tiny">
+                            <input type="number" data-switch-set-value="labelWidth" value="100" class="c-input">
+                        </div>
+                    </div>
+                </div>
+
+
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">switch 开关</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#switch8" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        宽度
+                    </div>
+                </div>
+
+                <div id="switch8" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>HTML</span></a>
+                            <a href="javascript:;"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input id="switch-handleWidth" type="checkbox" data-handle-width="100"&gt;
+
+    &lt;input id="switch-labelWidth" type="checkbox" data-label-width="100"&gt;
+</code></pre>
+                            </div>
+                            <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#switch-handleWidth').cswitch('handleWidth',100);
+
+    $('#switch-labelWidth').cswitch('labelWidth',100);
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-border p-small border-radius-rounded mt-medium">
+
+                <p>
+                    <input id="switch-create-destroy" type="checkbox" checked data-switch-no-init>
+                </p>
+                <div class="mt-tiny">
+                    <button type="button" data-switch-create-destroy data-destroy-text="Destroy" class="button button-tiny">Create</button>
+                </div>
+
+
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">switch 开关</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#switch8" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        消毁
+                    </div>
+                </div>
+
+                <div id="switch8" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>HTML</span></a>
+                            <a href="javascript:;"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input id="switch-create-destroy" type="checkbox" checked data-switch-no-init&gt;
+</code></pre>
+                            </div>
+                            <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#switch-create-destroy').cswitch('destroy');
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mt-big">
+        <h2>参数</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>属性值</th>
+                <th>类型</th>
+                <th>描述</th>
+                <th>可选值</th>
+                <th>默认值</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>state</td>
+                <td>checked</td>
+                <td>Boolean</td>
+                <td>选中状态</td>
+                <td>true、false</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>size</td>
+                <td>data-size</td>
+                <td>String</td>
+                <td>开关大小</td>
+                <td>null、mini、small、normal、large</td>
+                <td>null</td>
+            </tr>
+            <tr>
+                <td>animate</td>
+                <td>data-animate</td>
+                <td>Boolean</td>
+                <td>动画效果</td>
+                <td>true、false</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>disabled</td>
+                <td>disabled</td>
+                <td>Boolean</td>
+                <td>禁用开关</td>
+                <td>ture、false</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>readonly</td>
+                <td>readonly</td>
+                <td>Boolean</td>
+                <td>开关状态只读，不能修改</td>
+                <td>true、false</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>indeterminate</td>
+                <td>data-indeterminate</td>
+                <td>Boolean</td>
+                <td>模态</td>
+                <td>true、false</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>inverse</td>
+                <td>data-inverse</td>
+                <td>Boolean</td>
+                <td>颠倒开关顺序</td>
+                <td>true、false</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>radioAllOff</td>
+                <td>data-radio-all-off</td>
+                <td>Boolean</td>
+                <td>允许单选按钮被用户取消选中</td>
+                <td>true、false</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>onColor</td>
+                <td>data-on-color</td>
+                <td>String</td>
+                <td>左侧开关颜色</td>
+                <td>primary、info、success、warning、danger、default</td>
+                <td>primary</td>
+            </tr>
+            <tr>
+                <td>offColor</td>
+                <td>data-off-color</td>
+                <td>String</td>
+                <td>右侧开关颜色</td>
+                <td>primary、info、success、warning、danger、default</td>
+                <td>default</td>
+            </tr>
+            <tr>
+                <td>onText</td>
+                <td>data-on-text</td>
+                <td>String</td>
+                <td>左侧开关显示文本</td>
+                <td>String</td>
+                <td>ON</td>
+            </tr>
+            <tr>
+                <td>offText</td>
+                <td>data-off-text</td>
+                <td>String</td>
+                <td>右侧开关显示文本</td>
+                <td>String</td>
+                <td>OFF</td>
+            </tr>
+            <tr>
+                <td>labelText</td>
+                <td>data-label-text</td>
+                <td>String</td>
+                <td>开关中间显示文本</td>
+                <td>String</td>
+                <td>&amp;nbsp;</td>
+            </tr>
+            <tr>
+                <td>handleWidth</td>
+                <td>data-handle-width</td>
+                <td>String|Number</td>
+                <td>开关左右2侧的宽度</td>
+                <td>String|Number</td>
+                <td>auto</td>
+            </tr>
+            <tr>
+                <td>labelWidth</td>
+                <td>data-label-width</td>
+                <td>String|Number</td>
+                <td>开关中间的宽度</td>
+                <td>String|Number</td>
+                <td>auto</td>
+            </tr>
+            <tr>
+                <td>baseClass</td>
+                <td>data-base-class</td>
+                <td>String</td>
+                <td>开关基础样式</td>
+                <td>String</td>
+                <td>bootstrap-switch</td>
+            </tr>
+            <tr>
+                <td>wrapperClass</td>
+                <td>data-wrapper-class</td>
+                <td>String | Array</td>
+                <td>元素样式容器</td>
+                <td>String | Array</td>
+                <td>wrapper</td>
+            </tr>
+            <tr>
+                <td>onInit</td>
+                <td>&nbsp;</td>
+                <td>function</td>
+                <td>初始化开关</td>
+                <td>Function</td>
+                <td>function（event，state）｛｝</td>
+            </tr>
+            <tr>
+                <td>onSwitchChange</td>
+                <td>&nbsp;</td>
+                <td>function</td>
+                <td>当开关状态改变时触发</td>
+                <td>Function</td>
+                <td>function（event，state）｛｝</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-big">
+        <h2>扩展方法</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>描述</th>
+                <th>可接受的值</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>state</td>
+                <td>得到复选框的状态</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>setState</td>
+                <td>设置复选框的状态</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>toggleRadioState</td>
+                <td>切换单选框状态</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>toggleRadioStateAllowUncheck</td>
+                <td>切换全部单选框状态</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>setSizeClass</td>
+                <td>设置开关大小</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>toggleState</td>
+                <td>切换开关状态</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>toggleAnimate</td>
+                <td>切换动画选项</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>setAnimated</td>
+                <td>启动动画选项</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>isDisabled</td>
+                <td>得到禁用状态</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>setDisabled</td>
+                <td>设置禁用状态</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>toggleDisabled</td>
+                <td>切换禁用状态</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>setReadOnly</td>
+                <td>设置只读状态</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>isReadOnly</td>
+                <td>得到只读状态</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>toggleReadonly</td>
+                <td>切换只读状态</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>setOnClass</td>
+                <td>设置左侧的颜色</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>setOffClass</td>
+                <td>设置右侧的颜色</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>setOnLabel</td>
+                <td>开关左侧的文本</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>setOffLabel</td>
+                <td>开关右侧的文本</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>setTextLabel</td>
+                <td>设置开关的中心手柄的文本</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>setTextIcon</td>
+                <td>开关的中心手柄的文本。使用包括外部服务图标</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>toggleIndeterminate</td>
+                <td>切换不确定状态</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>toggleInverse</td>
+                <td>切换逆选择</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>destroy</td>
+                <td>销毁开关</td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
+<script type="text/javascript" src="../js/cswitch/cswitch.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+<script type="text/javascript">
+    var $confirm;
+
+    $confirm = null;
+
+    $(function() {
+        var $createDestroy, $window, sectionTop;
+        $window = $(window);
+        sectionTop = $(".top").outerHeight() + 20;
+        $createDestroy = $("#switch-create-destroy");
+        //hljs.initHighlightingOnLoad();
+        $("a[href*=\"#\"]").on("click", function(event) {
+            var $target;
+            event.preventDefault();
+            $target = $($(this).attr("href").slice("#"));
+            if ($target.length) {
+                return $window.scrollTop($target.offset().top - sectionTop);
+            }
+        });
+        $("input[type=\"checkbox\"], input[type=\"radio\"]").not("[data-switch-no-init]").cswitch();
+        $("[data-switch-get]").on("click", function() {
+            var type;
+            type = $(this).data("switch-get");
+            return alert($("#switch-" + type).cswitch(type));
+        });
+        $("[data-switch-set]").on("click", function() {
+            var type;
+            type = $(this).data("switch-set");
+            return $("#switch-" + type).cswitch(type, $(this).data("switch-value"));
+        });
+        $("[data-switch-toggle]").on("click", function() {
+            var type;
+            type = $(this).data("switch-toggle");
+            return $("#switch-" + type).cswitch("toggle" + type.charAt(0).toUpperCase() + type.slice(1));
+        });
+        $("[data-switch-set-value]").on("input", function(event) {
+            var type, value;
+            event.preventDefault();
+            type = $(this).data("switch-set-value");
+            value = $.trim($(this).val());
+            if ($(this).data("value") === value) {
+                return;
+            }
+            return $("#switch-" + type).cswitch(type, value);
+        });
+        $("[data-switch-create-destroy]").on("click", function() {
+            var isSwitch;
+            isSwitch = $createDestroy.data("c-switch");
+            $createDestroy.cswitch((isSwitch ? "destroy" : null));
+        });
+        return $confirm = $("#confirm").cswitch({
+            size: "large",
+            onSwitchChange: function(event, state) {
+                event.preventDefault();
+                return console.log(state, event.isDefaultPrevented());
+            }
+        });
+
+
+    });
+</script>
+</body>
+</html>
+

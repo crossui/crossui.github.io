@@ -17,7 +17,6 @@
     <div class="c-border p-small border-radius-rounded mt-medium">
 
         <select class="c-50" id="a">
-            <option value=""></option>
             <option value="a">aa</option>
             <option value="b">bb</option>
             <option value="c">cc</option>
@@ -35,7 +34,7 @@
                 <a data-toggle="collapse" data-parent="#accordion" href="#select21" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
             </div>
             <div class="introduce">
-                单一的选择框
+                单一的选择框， <span class="c-blue">大小参数 "height"（mini，small，medium，large）</span>
             </div>
         </div>
 
@@ -422,6 +421,758 @@
         </div>
     </div>
 
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+        <div class="mb-small">
+            <select id="access-a" class="c-50">
+                <optgroup label="系统设置">
+                    <option value="1">用户管理</option>
+                    <option value="2">角色管理</option>
+                    <option value="3">部门管理</option>
+                    <option value="4">菜单管理</option>
+                </optgroup>
+                <optgroup label="订单管理">
+                    <option value="5">订单查询</option>
+                    <option value="6">订单导入</option>
+                    <option value="7">订单删除</option>
+                    <option value="8">订单撤销</option>
+                </optgroup>
+                <optgroup label="基础数据">
+                    <option value="9">基础数据维护</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="mb-small">
+            <div class="button-group">
+                <button type="button" class="button button-tiny button-royal button-rounded button-raised" id="access-btn-int">初始化</button>
+                <button type="button" class="button button-tiny button-royal button-rounded button-raised" id="access-btn-destroy">消毁</button>
+                <button type="button" class="button button-tiny button-royal button-rounded button-raised" id="access-btn-open">打开</button>
+                <button type="button" class="button button-tiny button-royal button-rounded button-raised" id="access-btn-close">关闭</button>
+                <button type="button" class="button button-tiny button-royal button-rounded button-raised" id="access-btn-get">取值</button>
+                <button type="button" class="button button-tiny button-royal button-rounded button-raised" id="access-btn-set">设值</button>
+            </div>
+        </div>
+
+        <div class="mb-small">
+            <select class="c-50" multiple="multiple" id="access-b">
+                <option value="a">Alabama</option>
+                <option value="b">bbbbbb</option>
+                <option value="c">cccccc</option>
+                <option value="d">Wyoming</option>
+            </select>
+        </div>
+
+        <div class="mb-small">
+            <div class="button-group">
+                <button type="button" class="button button-tiny button-royal button-rounded button-raised" id="access-btn-set2">设值</button>
+                <button type="button" class="button button-tiny button-royal button-rounded button-raised" id="access-btn-clear">清空</button>
+            </div>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">下拉框 select2</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#select26" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                方法
+            </div>
+        </div>
+
+        <div id="select26" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;select id="access-a" class="c-50"&gt;
+        &lt;optgroup label="系统设置"&gt;
+            &lt;option value="1"&gt;用户管理&lt;/option&gt;
+            &lt;option value="2"&gt;角色管理&lt;/option&gt;
+            &lt;option value="3"&gt;部门管理&lt;/option&gt;
+            &lt;option value="4"&gt;菜单管理&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label="订单管理"&gt;
+            &lt;option value="5"&gt;订单查询&lt;/option&gt;
+            &lt;option value="6"&gt;订单导入&lt;/option&gt;
+            &lt;option value="7"&gt;订单删除&lt;/option&gt;
+            &lt;option value="8"&gt;订单撤销&lt;/option&gt;
+        &lt;/optgroup&gt;
+        &lt;optgroup label="基础数据"&gt;
+            &lt;option value="9"&gt;基础数据维护&lt;/option&gt;
+        &lt;/optgroup&gt;
+    &lt;/select&gt;
+
+
+    &lt;select class="c-50" multiple="multiple" id="access-b"&gt;
+        &lt;option value="a"&gt;Alabama&lt;/option&gt;
+        &lt;option value="b"&gt;bbbbbb&lt;/option&gt;
+        &lt;option value="c"&gt;cccccc&lt;/option&gt;
+        &lt;option value="d"&gt;Wyoming&lt;/option&gt;
+    &lt;/select&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    var $example = $("#access-a").select2();
+    var $exampleMulti = $("#access-b").select2();
+    
+    //设值
+    $("#access-btn-set").on("click", function () { $example.val("2").trigger("change"); });
+    //取值
+    $("#access-btn-get").on("click", function () { alert($example.select2("val"));});
+    //打开
+    $("#access-btn-open").on("click", function () { $example.select2("open"); });
+    //关闭
+    $("#access-btn-close").on("click", function () { $example.select2("close"); });
+    //初始化
+    $("#access-btn-int").on("click", function () { $example.select2(); });
+    //消毁
+    $("#access-btn-destroy").on("click", function () { $example.select2("destroy"); });
+
+    //设值
+    $("#access-btn-set2").on("click", function () { $exampleMulti.val(["c", "d"]).trigger("change"); });
+    //清空
+    $("#access-btn-clear").on("click", function () { $exampleMulti.val(null).trigger("change"); });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-big">
+        <h2>参数</h2>
+        <table class="tb tb-b c-100 mt-small">
+
+            <tr>
+                <th width="200">
+                    参数
+                </th>
+                <th width="100">
+                    类型
+                </th>
+                <th>
+                    描述
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <p>height <span class="c-red">（改造后）</span></p>
+                </td>
+                <td>
+                    <p>字符串</p>
+                </td>
+                <td>
+                    <p>控制&nbsp;高度&nbsp;样式属性的Select2容器div （mini，small，medium，large）</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>width</p>
+                </td>
+                <td>
+                    <p>字符串</p>
+                </td>
+                <td>
+                    <p>控制&nbsp;宽度&nbsp;样式属性的Select2容器div</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>minimumInputLength</p>
+                </td>
+                <td>
+                    <p>int</p>
+                </td>
+                <td>
+                    <p>最小数量的字符</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>maximumInputLength</p>
+                </td>
+                <td>
+                    <p>int</p>
+                </td>
+                <td>
+                    <p>最大数量的字符</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>minimumResultsForSearch</p>
+                </td>
+                <td>
+                    <p>Int</p>
+                </td>
+                <td>
+                    <p>最小数量的结果</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>maximumSelectionSize</p>
+                </td>
+                <td>
+                    <p>int</p>
+                </td>
+                <td>
+                    <p>可选择的最大条目数</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>placeholder</p>
+                </td>
+                <td>
+                    <p>字符串</p>
+                </td>
+                <td>
+                    <p>选择初始值</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>separator</p>
+                </td>
+                <td>
+                    <p>字符串</p>
+                </td>
+                <td>
+                    <p>分隔符字符或字符串用来划定id</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>allowClear</p>
+                </td>
+                <td>
+                    <p>布尔</p>
+                </td>
+                <td>
+                    <p>此选项只指定占位符</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>multiple</p>
+                </td>
+                <td>
+                    <p>布尔</p>
+                </td>
+                <td>
+                    <p>Select2是否允许选择多个值</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>openOnEnter</p>
+                </td>
+                <td>
+                    <p>&nbsp;</p>
+                </td>
+                <td>
+                    <p>打开下拉如果设置为true,当用户按下回车键,Select2关闭。&nbsp;默认情况下启用这个选项。</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>id</p>
+                </td>
+                <td>
+                    <p>函数</p>
+                </td>
+                <td>
+                    <p>函数用于获取id从选择对象或字符串id存储代表的关键</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>matcher</p>
+                </td>
+                <td>
+                    <p>函数</p>
+                </td>
+                <td>
+                    <p>用于确定是否搜索词匹配一个选项时使用一个内置的查询功能</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>sortResults</p>
+                </td>
+                <td>
+                    <p>函数</p>
+                </td>
+                <td>
+                    <p>用于排序列表搜索之前显示的结果。</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>formatSelection</p>
+                </td>
+                <td>
+                    <p>函数</p>
+                </td>
+                <td>
+                    <p>函数用于呈现当前的选择</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>formatResult</p>
+                </td>
+                <td>
+                    <p>函数</p>
+                </td>
+                <td>
+                    <p>函数用来渲染结果,</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>formatResultCssClass</p>
+                </td>
+                <td>
+                    <p>函数</p>
+                </td>
+                <td>
+                    <p>函数用于添加css类结果元素</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>formatNoMatches</p>
+                </td>
+                <td>
+                    <p>字符串/函数</p>
+                </td>
+                <td>
+                    <p>字符串包含“不匹配”消息,或&nbsp;<br>函数用于呈现信息</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>formatSearching</p>
+
+                </td>
+                <td>
+                    <p>字符串/函数</p>
+
+                </td>
+                <td>
+                    <p>字符串包含“搜索…&nbsp;“消息,或&nbsp;<br>函数用于呈现显示的消息&nbsp;正在进行搜索。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>formatAjaxError</p>
+
+                </td>
+                <td>
+                    <p>字符串/函数</p>
+
+                </td>
+                <td>
+                    <p>字符串包含消息“加载失败”,或&nbsp;<br>函数用于呈现信息</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>formatInputTooShort</p>
+
+                </td>
+                <td>
+                    <p>字符串/函数</p>
+
+                </td>
+                <td>
+                    <p>包含“搜索”输入太短消息的字符串,或&nbsp;<br>函数用于呈现信息。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>formatInputTooLong</p>
+
+                </td>
+                <td>
+                    <p>字符串/函数</p>
+
+                </td>
+                <td>
+                    <p>包含“搜索”输入太短消息的字符串,或&nbsp;<br>函数用于呈现信息</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>formatInputTooLong</p>
+
+                </td>
+                <td>
+                    <p>字符串/函数</p>
+
+                </td>
+                <td>
+                    <p>包含“搜索输入字符串太长”消息,或&nbsp;<br>函数用于呈现信息。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>formatSelectionTooBig</p>
+
+                </td>
+                <td>
+                    <p>字符串/函数</p>
+
+                </td>
+                <td>
+                    <p>字符串包含“你不能选择任何更多的选择”消息,或&nbsp;<br>函数用于呈现信息</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>formatLoadMore</p>
+
+                </td>
+                <td>
+                    <p>字符串/函数</p>
+
+                </td>
+                <td>
+                    <p>字符串/函数</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>createSearchChoice</p>
+
+                </td>
+                <td>
+                    <p>函数</p>
+
+                </td>
+                <td>
+                    <p>创建一个新的可选选择从用户的搜索词。&nbsp;允许创建通过查询选择不可用&nbsp;功能。&nbsp;有用的用户可以创建动态的选择时,如“标签”usecase。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>createSearchChoicePosition</p>
+
+                </td>
+                <td>
+                    <p>函数/字符串</p>
+
+                </td>
+                <td>
+                    <p>定义的位置插入元素</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>initSelection</p>
+
+                </td>
+                <td>
+                    <p>函数</p>
+
+                </td>
+                <td>
+                    <p>调用Select2创建允许用户初始化选择的值&nbsp;select2附加到元素</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>tokenizer</p>
+
+                </td>
+                <td>
+                    <p>函数</p>
+
+                </td>
+                <td>
+                    <p>记号赋予器函数可以处理后输入搜索框的输入每一个按键和提取&nbsp;并选择选择。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>tokenSeparators</p>
+
+                </td>
+                <td>
+                    <p>函数</p>
+
+                </td>
+                <td>
+                    <p>一个字符串数组定义标记为默认的分隔符&nbsp;<a href="http://select2.github.io/select2/doc-tokenizer" rel="nofollow" target="_blank">分词器&nbsp;</a>功能。&nbsp;默认情况下,此选项设置为一个空数组标记这意味着使用默认&nbsp;编译器是禁用的。&nbsp;通常是明智的,设置该选项值相似&nbsp;[',','&nbsp;']&nbsp;。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>query</p>
+
+                </td>
+                <td>
+                    <p>函数</p>
+
+                </td>
+                <td>
+                    <p>函数用于搜索词的查询结果。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>ajax</p>
+
+                </td>
+                <td>
+                    <p>对象</p>
+
+                </td>
+                <td>
+                    <p>选择内置的ajax查询功能。&nbsp;这个对象作为快捷方式有手动编写一个函数,执行ajax请求。&nbsp;内置函数支持更高级的特性,比如节流和无序的反应。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>data</p>
+
+                </td>
+                <td>
+                    <p>数组/对象</p>
+
+                </td>
+                <td>
+                    <p>择建在查询功能,使用数组。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>tags</p>
+
+                </td>
+                <td>
+                    <p>数组/函数</p>
+
+                </td>
+                <td>
+                    <p>将Select2放入“标签'mode,用户可以添加新的选择和预先存在的标签是通过提供&nbsp;这个选项的属性是一个&nbsp;数组&nbsp;或者一个&nbsp;函数&nbsp;返回一个&nbsp;数组的&nbsp;对象&nbsp;或&nbsp;字符串&nbsp;。&nbsp;如果&nbsp;字符串&nbsp;而不是使用&nbsp;对象&nbsp;他们将有一个被转换成一个对象&nbsp;id&nbsp;和&nbsp;文本&nbsp;属性相等&nbsp;的值&nbsp;字符串&nbsp;。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>containerCss</p>
+
+                </td>
+                <td>
+                    <p>函数/对象</p>
+
+                </td>
+                <td>
+                    <p>内联css将被添加到select2的容器。&nbsp;一个对象包含css属性/值密钥对或一个函数,这个函数返回一个对象。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>containerCssClass</p>
+
+                </td>
+                <td>
+                    <p>函数/字符串</p>
+
+                </td>
+                <td>
+                    <p>Css类将被添加到select2容器的标签。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>dropdownCss</p>
+
+                </td>
+                <td>
+                    <p>函数/对象</p>
+
+                </td>
+                <td>
+                    <p>内联css将被添加到select2下拉的容器。&nbsp;一个对象包含css属性/值密钥对或一个函数,这个函数返回一个对象。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>dropdownCssClass</p>
+
+                </td>
+                <td>
+                    <p>函数/字符串</p>
+
+                </td>
+                <td>
+                    <p>Css类将被添加到select2下拉的容器。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>dropdownAutoWidth</p>
+
+                </td>
+                <td>
+                    <p>布尔</p>
+
+                </td>
+                <td>
+                    <p>当设置为&nbsp;真正的&nbsp;尝试自动尺寸下拉基于内容的宽度。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>adaptContainerCssClass</p>
+
+                </td>
+                <td>
+                    <p>函数</p>
+
+                </td>
+                <td>
+                    <p>过滤器/重命名的css类,因为他们被复制从源标签select2容器标签</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>adaptDropdownCssClass</p>
+
+                </td>
+                <td>
+                    <p>函数</p>
+
+                </td>
+                <td>
+                    <p>滤器/重命名的css类,因为他们被复制从源标签select2拉标签</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>escapeMarkup</p>
+
+                </td>
+                <td>
+                    <p>函数</p>
+
+                </td>
+                <td>
+                    <p>函数用于后处理标记从格式化程序返回功能。&nbsp;默认情况下这个功能转义的html实体,以防止javascript注入。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>selectOnBlur</p>
+
+                </td>
+                <td>
+                    <p>布尔</p>
+
+                </td>
+                <td>
+                    <p>设置为&nbsp;真正的&nbsp;如果你想要Select2选择当前高亮选项时模糊。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>loadMorePadding</p>
+
+                </td>
+                <td>
+                    <p>整数</p>
+
+                </td>
+                <td>
+                    <p>定义了多少像素需要加载下一页前折以下。&nbsp;默认值是&nbsp;0&nbsp;这意味着结果列表需要滚动到下一个页面的底部加载的结果。&nbsp;这个选项可以用来触发加载更快,可能导致更流畅的用户体验。</p>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <p>nextSearchTerm</p>
+
+                </td>
+                <td>
+                    <p>函数</p>
+
+                </td>
+                <td>
+                    <p>函数用于确定下一个搜索词应该是什么</p>
+
+                </td>
+
+            </tr>
+        </table>
+        <blockquote class="c-quote">
+            <p>更多案例请查看 <a href="http://select2.github.io/select2/" class="alinks alinks-blue" target="_blank">官网DEMO</a></p>
+            <p>更多API请查看 <a href="http://select2.github.io/select2/#documentation" class="alinks alinks-blue" target="_blank">官网API</a></p>
+        </blockquote>
+    </div>
 </div>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/cross.js"></script>
@@ -461,6 +1212,28 @@
             );
             return $state;
         };
+
+
+
+        var $example = $("#access-a").select2();
+        var $exampleMulti = $("#access-b").select2();
+        //设值
+        $("#access-btn-set").on("click", function () { $example.val("2").trigger("change"); });
+        //取值
+        $("#access-btn-get").on("click", function () { alert($example.select2("val"));});
+        //打开
+        $("#access-btn-open").on("click", function () { $example.select2("open"); });
+        //关闭
+        $("#access-btn-close").on("click", function () { $example.select2("close"); });
+        //初始化
+        $("#access-btn-int").on("click", function () { $example.select2(); });
+        //消毁
+        $("#access-btn-destroy").on("click", function () { $example.select2("destroy"); });
+
+        //设值
+        $("#access-btn-set2").on("click", function () { $exampleMulti.val(["c", "d"]).trigger("change"); });
+        //清空
+        $("#access-btn-clear").on("click", function () { $exampleMulti.val(null).trigger("change"); });
     });
 </script>
 </body>

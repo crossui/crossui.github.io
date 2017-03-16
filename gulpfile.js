@@ -9,17 +9,17 @@
  */
 var gulp        = require('gulp'),                                  // gulp
     sass        = require('gulp-sass'),                             // gulp-sass
-	sourcemaps	= require('gulp-sourcemaps'),            			// sass maps
+	//sourcemaps	= require('gulp-sourcemaps'),            			// sass maps
     cssmin      = require('gulp-minify-css'),                       // css min
     csslint     = require('gulp-csslint'),       	                // 检查css的语法错误。
 	csscomb    	= require('gulp-csscomb'),							// 格式化css代码，美化css代码，更容易阅读。
-    notify      = require('gulp-notify'),                           // watch 监听 错误提示
-    plumber     = require('gulp-plumber'),                          // watch 出现异常并不终止监听
-    rev         = require('gulp-rev-append'),                       // 给URL自动添加MD5版本号 (注： 将html和css中包含url,src等资源链接加上 ?v=@@hash )
+    //notify      = require('gulp-notify'),                           // watch 监听 错误提示
+    //plumber     = require('gulp-plumber'),                          // watch 出现异常并不终止监听
+    //rev         = require('gulp-rev-append'),                       // 给URL自动添加MD5版本号 (注： 将html和css中包含url,src等资源链接加上 ?v=@@hash )
 	uglify		= require('gulp-uglify'),							// 压缩javascript文件，减小文件大小。
 	concat		= require('gulp-concat'),							// 合并javascript文件，减少网络请求。
 	rename 		= require('gulp-rename'),							// 重命名
-	jshint		= require('gulp-jshint'),							// js代码检测
+	//jshint		= require('gulp-jshint'),							// js代码检测
 	browserSync = require('browser-sync').create(),					// 自动刷新，释放你的F5
 	base64 		= require('gulp-base64'),							// 图片转换成Base64编码
 	size 		= require('gulp-size'),								// 显示文件大小

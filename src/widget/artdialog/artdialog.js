@@ -733,7 +733,7 @@ define("dialog-config", {
 
     // css 文件路径，留空则不会使用 js 自动加载样式
     // 注意：css 只允许加载一个
-    cssUri: '../css/artdialog.css',
+    cssUri: '../css/ui-dialog.css',
 
     // 模板（使用 table 解决 IE7 宽度自适应的 BUG）
     // js 使用 i="***" 属性识别结构，其余的均可自定义
@@ -840,7 +840,7 @@ var artDialog = function (options, ok, cancel) {
     // 快捷关闭支持：点击对话框外快速关闭对话框
     if (options.quickClose) {
         options.modal = true;
-        options.backdropOpacity = 0;
+        //options.backdropOpacity = 0;
     }
     
 
@@ -923,7 +923,7 @@ artDialog.create = function (options) {
             .attr('id', 'content:' + this.id).attr('id')
     });
 
-    if(options.icon!=''){
+    if(options.icon!=''&&options.icon!=undefined){
         var _iconHtml = '<div class="ui-dialog-iconfont"></div>';
         this._$('icon').html(_iconHtml);
         this._$('body').addClass('iconfont');
@@ -948,8 +948,6 @@ artDialog.create = function (options) {
                 break;
         }
     }
-
-
     // 关闭按钮
     this._$('close')
     .css('display', this.cancel === false ? 'none' : '')
@@ -1246,7 +1244,6 @@ $.extend(prototype, {
         },1000*second);
     },
 
-
     _$: function (i) {
         return this._popup.find('[i=' + i + ']');
     },
@@ -1304,6 +1301,377 @@ return artDialog;
 
 
 
-window.dialog = require("dialog");
+/*!
+ * drag.js
+ * Date: 2013-12-06
+ * https://github.com/aui/artDialog
+ * (c) 2009-2014 TangBin, http://www.planeArt.cn
+ *
+ * This is licensed under the GNU LGPL, version 2.1 or later.
+ * For details, see: http://www.gnu.org/licenses/lgpl-2.1.html
+ */
+define("drag", function (require) {
+
+var $ = require("jquery");
+
+
+var $window = $(window);
+var $document = $(document);
+var isTouch = 'createTouch' in document;
+var html = document.documentElement;
+var isIE6 = !('minWidth' in html.style);
+var isLosecapture = !isIE6 && 'onlosecapture' in html;
+var isSetCapture = 'setCapture' in html;
+
+
+var types = {
+    start: isTouch ? 'touchstart' : 'mousedown',
+    over: isTouch ? 'touchmove' : 'mousemove',
+    end: isTouch ? 'touchend' : 'mouseup'
+};
+
+
+var getEvent = isTouch ? function (event) {
+    if (!event.touches) {
+        event = event.originalEvent.touches.item(0);
+    }
+    return event;
+} : function (event) {
+    return event;
+};
+
+
+var DragEvent = function () {
+    this.start = $.proxy(this.start, this);
+    this.over = $.proxy(this.over, this);
+    this.end = $.proxy(this.end, this);
+    this.onstart = this.onover = this.onend = $.noop;
+};
+
+DragEvent.types = types;
+
+DragEvent.prototype = {
+
+    start: function (event) {
+        event = this.startFix(event);
+
+        $document
+        .on(types.over, this.over)
+        .on(types.end, this.end);
+        
+        this.onstart(event);
+        return false;
+    },
+
+    over: function (event) {
+        event = this.overFix(event);
+        this.onover(event);
+        return false;
+    },
+
+    end: function (event) {
+        event = this.endFix(event);
+
+        $document
+        .off(types.over, this.over)
+        .off(types.end, this.end);
+
+        this.onend(event);
+        return false;
+    },
+
+    startFix: function (event) {
+        event = getEvent(event);
+
+        this.target = $(event.target);
+        this.selectstart = function () {
+            return false;
+        };
+
+        $document
+        .on('selectstart', this.selectstart)
+        .on('dblclick', this.end);
+
+        if (isLosecapture) {
+            this.target.on('losecapture', this.end);
+        } else {
+            $window.on('blur', this.end);
+        }
+
+        if (isSetCapture) {
+            this.target[0].setCapture();
+        }
+
+        return event;
+    },
+
+    overFix: function (event) {
+        event = getEvent(event);
+        return event;
+    },
+
+    endFix: function (event) {
+        event = getEvent(event);
+
+        $document
+        .off('selectstart', this.selectstart)
+        .off('dblclick', this.end);
+
+        if (isLosecapture) {
+            this.target.off('losecapture', this.end);
+        } else {
+            $window.off('blur', this.end);
+        }
+
+        if (isSetCapture) {
+            this.target[0].releaseCapture();
+        }
+
+        return event;
+    }
+    
+};
+
+
+/**
+ * 启动拖拽
+ * @param   {HTMLElement}   被拖拽的元素
+ * @param   {Event} 触发拖拽的事件对象。可选，若无则监听 elem 的按下事件启动
+ */
+DragEvent.create = function (elem, event) {
+    var $elem = $(elem);
+    var dragEvent = new DragEvent();
+    var startType = DragEvent.types.start;
+    var noop = function () {};
+    var className = elem.className
+        .replace(/^\s|\s.*/g, '') + '-drag-start';
+
+    var minX;
+    var minY;
+    var maxX;
+    var maxY;
+
+    var api = {
+        onstart: noop,
+        onover: noop,
+        onend: noop,
+        off: function () {
+            $elem.off(startType, dragEvent.start);
+        }
+    };
+
+
+    dragEvent.onstart = function (event) {
+        var isFixed = $elem.css('position') === 'fixed';
+        var dl = $document.scrollLeft();
+        var dt = $document.scrollTop();
+        var w = $elem.width();
+        var h = $elem.height();
+
+        minX = 0;
+        minY = 0;
+        maxX = isFixed ? $window.width() - w + minX : $document.width() - w;
+        maxY = isFixed ? $window.height() - h + minY : $document.height() - h;
+
+        var offset = $elem.offset();
+        var left = this.startLeft = isFixed ? offset.left - dl : offset.left;
+        var top = this.startTop = isFixed ? offset.top - dt  : offset.top;
+
+        this.clientX = event.clientX;
+        this.clientY = event.clientY;
+
+        $elem.addClass(className);
+        api.onstart.call(elem, event, left, top);
+    };
+    
+
+    dragEvent.onover = function (event) {
+        var left = event.clientX - this.clientX + this.startLeft;
+        var top = event.clientY - this.clientY + this.startTop;
+        var style = $elem[0].style;
+
+        left = Math.max(minX, Math.min(maxX, left));
+        top = Math.max(minY, Math.min(maxY, top));
+
+        style.left = left + 'px';
+        style.top = top + 'px';
+        
+        api.onover.call(elem, event, left, top);
+    };
+    
+
+    dragEvent.onend = function (event) {
+        var position = $elem.position();
+        var left = position.left;
+        var top = position.top;
+        $elem.removeClass(className);
+        api.onend.call(elem, event, left, top);
+    };
+
+
+    dragEvent.off = function () {
+        $elem.off(startType, dragEvent.start);
+    };
+
+
+    if (event) {
+        dragEvent.start(event);
+    } else {
+        $elem.on(startType, dragEvent.start);
+    }
+
+    return api;
+};
+
+return DragEvent;
+
+});
+
+/*!
+ * artDialog-plus
+ * Date: 2013-11-09
+ * https://github.com/aui/artDialog
+ * (c) 2009-2014 TangBin, http://www.planeArt.cn
+ *
+ * This is licensed under the GNU LGPL, version 2.1 or later.
+ * For details, see: http://www.gnu.org/licenses/lgpl-2.1.html
+ */
+define("dialog-plus", function (require) {
+
+var $ = require("jquery");
+var dialog = require("dialog");
+var drag = require("drag");
+
+dialog.oncreate = function (api) {
+
+    var options = api.options;
+    var originalOptions = options.original;
+
+    // 页面地址
+    var url = options.url;
+    // 页面加载完毕的事件
+    var oniframeload = options.oniframeload;
+
+    var $iframe;
+
+
+    if (url) {
+        this.padding = options.padding = 0;
+
+        $iframe = $('<iframe />');
+
+        $iframe.attr({
+            src: url,
+            name: api.id,
+            width: '100%',
+            height: '100%',
+            allowtransparency: 'yes',
+            frameborder: 'no',
+            scrolling: 'no'
+        })
+        .on('load', function () {
+            var test;
+            
+            try {
+                // 跨域测试
+                test = $iframe[0].contentWindow.frameElement;
+            } catch (e) {}
+
+            if (test) {
+
+                if (!options.width) {
+                    api.width($iframe.contents().width());
+                }
+                
+                if (!options.height) {
+                    api.height($iframe.contents().height());
+                }
+            }
+
+            if (oniframeload) {
+                oniframeload.call(api);
+            }
+
+        });
+
+        api.addEventListener('beforeremove', function () {
+
+            // 重要！需要重置iframe地址，否则下次出现的对话框在IE6、7无法聚焦input
+            // IE删除iframe后，iframe仍然会留在内存中出现上述问题，置换src是最容易解决的方法
+            $iframe.attr('src', 'about:blank').remove();
+
+
+        }, false);
+
+        api.content($iframe[0]);
+
+        api.iframeNode = $iframe[0];
+
+    }
+
+
+    // 对于子页面呼出的对话框特殊处理
+    // 如果对话框配置来自 iframe
+    if (!(originalOptions instanceof Object)) {
+
+        var un = function () {
+            api.close().remove();
+        };
+
+        // 找到那个 iframe
+        for (var i = 0; i < frames.length; i ++) {
+            try {
+                if (originalOptions instanceof frames[i].Object) {
+                    // 让 iframe 刷新的时候也关闭对话框，
+                    // 防止要执行的对象被强制收回导致 IE 报错：“不能执行已释放 Script 的代码”
+                    $(frames[i]).one('unload', un);
+                    break;
+                }
+            } catch (e) {} 
+        }
+    }
+
+
+    // 拖拽支持
+    $(api.node).on(drag.types.start, '[i=title]', function (event) {
+        // 排除气泡类型的对话框
+        if (!api.follow) {
+            api.focus();
+            drag.create(api.node, event);
+        }
+    });
+
+};
+
+
+
+dialog.get = function (id) {
+
+    // 从 iframe 传入 window 对象
+    if (id && id.frameElement) {
+        var iframe = id.frameElement;
+        var list = dialog.list;
+        var api;
+        for (var i in list) {
+            api = list[i];
+            if (api.node.getElementsByTagName('iframe')[0] === iframe) {
+                return api;
+            }
+        }
+    // 直接传入 id 的情况
+    } else if (id) {
+        return dialog.list[id];
+    }
+
+};
+
+
+
+return dialog;
+
+});
+
+
+window.dialog = require("dialog-plus");
 
 })();
