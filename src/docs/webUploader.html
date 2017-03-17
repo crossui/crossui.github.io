@@ -1,0 +1,2846 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>uploader</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../iconfont/iconfont.css" />
+    <link rel="stylesheet" href="../css/cross.css" />
+    <link rel="stylesheet" href="../css/highlight.css" />
+    <link rel="stylesheet" href="../css/webUploader.css" />
+</head>
+<body>
+<div class="p-medium">
+
+    <fieldset class="c-field">
+        <legend>引用</legend>
+        <div class="c-field-box">
+<pre><code class="html c-break">
+    &lt;link rel="stylesheet" href="../css/webUploader.css" /&gt;
+    &lt;script type="text/javascript" src="../js/webUploader/webUploader.js"&gt;&lt;/script&gt;
+</code></pre>
+        </div>
+    </fieldset>
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <input type="text" class="c-input c-30" id="uploader-base-input" readonly placeholder="请选择文件" />
+        <a class="button button-primary button-rounded" id="uploader-base-select"  href="javascript:;">选择</a>
+        <a class="button button-primary button-rounded disabled" id="uploader-base-submit" href="javascript:;">上传</a>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">文件上传</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#uploader1" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                普通文件上传 （案例上传类型为doc,xls,pdf）
+            </div>
+        </div>
+
+        <div id="uploader1" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input type="text" class="c-input c-30" id="uploader-base-input" readonly placeholder="请选择文件" /&gt;
+    &lt;a class="button button-primary button-rounded" id="uploader-base-select"  href="javascript:;"&gt;选择&lt;/a&gt;
+    &lt;a class="button button-primary button-rounded disabled" id="uploader-base-submit" href="javascript:;"&gt;上传&lt;/a&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    /**
+    * 初始化
+    */
+    var baseUploader = WebUploader.create({
+        auto: false,                            // 选完文件后，是否自动上传。
+        swf: '../images/uploader.swf',          // swf文件路径
+        server: 'url',                          // 文件接收服务端。
+        pick: '#uploader-base-select',          // 选择文件的按钮。可选。
+        fileSingleSizeLimit:1*1024*1024,       // 设定单个文件大小
+        accept: {                               // 只允许选择图片文件。
+            title: 'file',
+            extensions: 'doc,xls,pdf',
+            mimeTypes: 'application/msword,application/vnd.ms-excel,application/pdf'
+        }
+    });
+
+    /**
+    * 验证文件格式以及文件大小
+    */
+    baseUploader.on("error",function (type){
+        if (type=="Q_TYPE_DENIED"){
+            alert("请上传doc,xls,pdf格式文件");
+        }else if(type=="F_EXCEED_SIZE"){
+            alert("文件大小不能超过1M");
+        }
+    });
+
+    /**
+    * 当有文件添加进来的时候
+    */
+    baseUploader.on( 'fileQueued', function(file) {
+        $('#uploader-base-input').val(file.name);
+        $('#uploader-base-submit').removeClass('disabled');
+    });
+
+    $('#uploader-base-submit').on('click',function(){
+        if(!$(this).is('.disabled')){
+            baseUploader.upload();
+        }
+    });
+
+    /**
+    * 上传成功事件
+    */
+    baseUploader.on('uploadSuccess', function (file, response) {
+        if(response.status) {
+            alert('上传成功');
+        } else {
+            alert('文件上传失败');
+        }
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div id="imgUploader">
+            <div class="queueList">
+                <div id="dndArea" class="placeholder">
+                    <span class="button button-large button-primary button-rounded mtb-small" id="filePicker"></span>
+                    <p class="fs5 c-gray">或将照片拖到这里，单次最多可选300张</p>
+                </div>
+            </div>
+            <div class="statusBar" style="display:none;">
+                <div class="progress">
+                    <span class="text">0%</span>
+                    <span class="percentage"></span>
+                </div><div class="info"></div>
+                <div class="btns">
+                    <div id="filePicker2"></div><div class="uploadBtn">开始上传</div>
+                </div>
+            </div>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">文件上传</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#uploader2" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                图片文件批量上传
+            </div>
+        </div>
+
+        <div id="uploader2" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div id="imgUploader"&gt;
+        &lt;div class="queueList"&gt;
+            &lt;div id="dndArea" class="placeholder"&gt;
+                &lt;span class="button button-large button-primary button-rounded mtb-small" id="filePicker"&gt;&lt;/span&gt;
+                &lt;p class="fs5 c-gray"&gt;或将照片拖到这里，单次最多可选300张&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="statusBar" style="display:none;"&gt;
+            &lt;div class="progress"&gt;
+                &lt;span class="text"&gt;0%&lt;/span&gt;
+                &lt;span class="percentage"&gt;&lt;/span&gt;
+            &lt;/div&gt;&lt;div class="info"&gt;&lt;/div&gt;
+            &lt;div class="btns"&gt;
+                &lt;div id="filePicker2"&gt;&lt;/div&gt;&lt;div class="uploadBtn"&gt;开始上传&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    var $wrap = $('#imgUploader'),
+
+    // 图片容器
+    $queue = $( '&lt;ul class="filelist"&gt;&lt;/ul&gt;' ).appendTo( $wrap.find( '.queueList' ) ),
+
+    // 状态栏，包括进度和控制按钮
+    $statusBar = $wrap.find( '.statusBar' ),
+
+    // 文件总体选择信息。
+    $info = $statusBar.find( '.info' ),
+
+    // 上传按钮
+    $upload = $wrap.find( '.uploadBtn' ),
+
+    // 没选择文件之前的内容。
+    $placeHolder = $wrap.find( '.placeholder' ),
+
+    $progress = $statusBar.find( '.progress' ).hide(),
+
+    // 添加的文件数量
+    fileCount = 0,
+
+    // 添加的文件总大小
+    fileSize = 0,
+
+    // 优化retina, 在retina下这个值是2
+    ratio = window.devicePixelRatio || 1,
+
+    // 缩略图大小
+    thumbnailWidth = 110 * ratio,
+    thumbnailHeight = 110 * ratio,
+
+    // 可能有pedding, ready, uploading, confirm, done.
+    state = 'pedding',
+
+    // 所有文件的进度信息，key为file id
+    percentages = {},
+    // 判断浏览器是否支持图片的base64
+    isSupportBase64 = ( function() {
+        var data = new Image();
+        var support = true;
+
+        data.onload = data.onerror = function() {
+            if( this.width != 1 || this.height != 1 ) {
+                support = false;
+            }
+        }
+        data.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+        return support;
+    })(),
+
+    // 检测是否已经安装flash，检测flash的版本
+    flashVersion = (function() {
+        var version;
+
+        try {
+            version = navigator.plugins[ 'Shockwave Flash' ];
+            version = version.description;
+        } catch ( ex ) {
+            try {
+                version = new ActiveXObject('ShockwaveFlash.ShockwaveFlash').GetVariable('$version');
+            } catch ( ex2 ) {
+                version = '0.0';
+            }
+        }
+        version = version.match( /\d+/g );
+        return parseFloat( version[ 0 ] + '.' + version[ 1 ], 10 );
+    })(),
+
+    supportTransition = (function(){
+        var s = document.createElement('p').style,
+        r = 'transition' in s ||
+            'WebkitTransition' in s ||
+            'MozTransition' in s ||
+            'msTransition' in s ||
+            'OTransition' in s;
+        s = null;
+        return r;
+    })(),
+
+    // WebUploader实例
+    uploader;
+
+    if ( !WebUploader.Uploader.support('flash') && WebUploader.browser.ie ) {
+
+    // flash 安装了但是版本过低。
+    if (flashVersion) {
+        (function(container) {
+            window['expressinstallcallback'] = function( state ) {
+            switch(state) {
+                case 'Download.Cancelled':
+                    alert('您取消了更新！')
+                break;
+            
+                case 'Download.Failed':
+                    alert('安装失败')
+                break;
+            
+                default:
+                    alert('安装已成功，请刷新！');
+                break;
+            }
+            delete window['expressinstallcallback'];
+        };
+
+        var swf = '../images/expressInstall.swf';
+        // insert flash object
+        var html = '&lt;object type="application/' +
+                            'x-shockwave-flash" data="' +  swf + '" ';
+
+        if (WebUploader.browser.ie) {
+            html += 'classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" ';
+        }
+
+        html += 'width="100%" height="100%" style="outline:0"&gt;'  +
+            '&lt;param name="movie" value="' + swf + '" /&gt;' +
+            '&lt;param name="wmode" value="transparent" /&gt;' +
+            '&lt;param name="allowscriptaccess" value="always" /&gt;' +
+            '&lt;/object&gt;';
+    
+        container.html(html);
+    })($wrap);
+
+    // 压根就没有安转。
+    } else {
+        $wrap.html('&lt;a href="http://www.adobe.com/go/getflashplayer" target="_blank" border="0"&gt;&lt;img alt="get flash player" src="http://www.adobe.com/macromedia/style_guide/images/160x41_Get_Flash_Player.jpg" /&gt;&lt;/a&gt;');
+    }
+
+        return;
+    } else if (!WebUploader.Uploader.support()) {
+        alert( 'Web Uploader 不支持您的浏览器！');
+        return;
+    }
+
+    // 实例化
+    uploader = WebUploader.create({
+        pick: {
+            id: '#filePicker',
+            label: '点击选择图片'
+        },
+        formData: {
+            uid: 123
+        },
+        dnd: '#dndArea',
+        paste: '#imgUploader',
+        swf: '../images/uploader.swf',
+        chunked: false,
+        chunkSize: 512 * 1024,
+        server: '../../server/fileupload.php',
+    
+        // 禁掉全局的拖拽功能。这样不会出现图片拖进页面的时候，把图片打开。
+        disableGlobalDnd: true,
+        fileNumLimit: 300,
+        fileSizeLimit: 200 * 1024 * 1024,    // 200 M
+        fileSingleSizeLimit: 50 * 1024 * 1024    // 50 M
+    });
+
+    // 拖拽时不接受 js, txt 文件。
+    uploader.on( 'dndAccept', function( items ) {
+        var denied = false,
+            len = items.length,
+            // 修改js类型
+            unAllowed = 'text/plain;application/javascript ';
+
+        for ( var i=0; i&lt;len; i++ ) {
+            // 如果在列表里面
+            if ( ~unAllowed.indexOf( items[ i ].type ) ) {
+                denied = true;
+                break;
+            }
+        }
+
+        return !denied;
+    });
+
+    uploader.on('dialogOpen', function() {
+        console.log('here');
+    });
+
+    // 添加“添加文件”的按钮，
+    uploader.addButton({
+        id: '#filePicker2',
+        label: '继续添加'
+    });
+
+    uploader.on('ready', function() {
+        window.uploader = uploader;
+    });
+
+    // 当有文件添加进来时执行，负责view的创建
+    function addFile( file ) {
+        var $li = $( '&lt;li id="' + file.id + '"&gt;' +
+                '&lt;p class="title"&gt;' + file.name + '&lt;/p&gt;' +
+                '&lt;p class="imgWrap"&gt;&lt;/p&gt;'+
+                '&lt;p class="progress"&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;' +
+            '&lt;/li&gt;' ),
+    
+        $btns = $('&lt;div class="file-panel"&gt;' +
+                '&lt;span class="cancel"&gt;删除&lt;/span&gt;' +
+                '&lt;span class="rotateRight"&gt;向右旋转&lt;/span&gt;' +
+                '&lt;span class="rotateLeft"&gt;向左旋转&lt;/span&gt;&lt;/div&gt;').appendTo( $li ),
+        $prgress = $li.find('p.progress span'),
+        $wrap = $li.find( 'p.imgWrap' ),
+        $info = $('&lt;p class="error"&gt;&lt;/p&gt;'),
+    
+        showError = function( code ) {
+            switch( code ) {
+                case 'exceed_size':
+                    text = '文件大小超出';
+                break;
+        
+                case 'interrupt':
+                    text = '上传暂停';
+                break;
+        
+                default:
+                    text = '上传失败，请重试';
+                break;
+            }
+    
+            $info.text( text ).appendTo( $li );
+        };
+    
+        if ( file.getStatus() === 'invalid' ) {
+            showError( file.statusText );
+        } else {
+            // @todo lazyload
+            $wrap.text( '预览中' );
+            uploader.makeThumb( file, function( error, src ) {
+            var img;
+    
+            if ( error ) {
+                $wrap.text( '不能预览' );
+                return;
+            }
+    
+            if( isSupportBase64 ) {
+                img = $('&lt;img src="'+src+'"&gt;');
+                $wrap.empty().append( img );
+            } else {
+                $.ajax('../../server/preview.php', {
+                    method: 'POST',
+                    data: src,
+                    dataType:'json'
+                }).done(function( response ) {
+                    if (response.result) {
+                        img = $('&lt;img src="'+response.result+'"&gt;');
+                        $wrap.empty().append( img );
+                    } else {
+                        $wrap.text("预览出错");
+                    }
+                });
+            }
+        }, thumbnailWidth, thumbnailHeight );
+    
+        percentages[ file.id ] = [ file.size, 0 ];
+        file.rotation = 0;
+        }
+    
+        file.on('statuschange', function( cur, prev ) {
+            if ( prev === 'progress' ) {
+                $prgress.hide().width(0);
+            } else if ( prev === 'queued' ) {
+                $li.off( 'mouseenter mouseleave' );
+                $btns.remove();
+            }
+    
+            // 成功
+            if ( cur === 'error' || cur === 'invalid' ) {
+                console.log( file.statusText );
+                showError( file.statusText );
+                percentages[ file.id ][ 1 ] = 1;
+            } else if ( cur === 'interrupt' ) {
+                showError( 'interrupt' );
+            } else if ( cur === 'queued' ) {
+                $info.remove();
+                $prgress.css('display', 'block');
+                percentages[ file.id ][ 1 ] = 0;
+            } else if ( cur === 'progress' ) {
+                $info.remove();
+                $prgress.css('display', 'block');
+            } else if ( cur === 'complete' ) {
+                $prgress.hide().width(0);
+                $li.append( '&lt;span class="success"&gt;&lt;/span&gt;' );
+            }
+    
+            $li.removeClass( 'state-' + prev ).addClass( 'state-' + cur );
+        });
+    
+        $li.on( 'mouseenter', function() {
+            $btns.stop().animate({height: 30});
+        });
+    
+        $li.on( 'mouseleave', function() {
+            $btns.stop().animate({height: 0});
+        });
+    
+        $btns.on( 'click', 'span', function() {
+            var index = $(this).index(),
+                deg;
+    
+            switch ( index ) {
+            case 0:
+                uploader.removeFile( file );
+                return;
+            case 1:
+                file.rotation += 90;
+                break;
+            case 2:
+                file.rotation -= 90;
+                break;
+            }
+    
+            if ( supportTransition ) {
+                deg = 'rotate(' + file.rotation + 'deg)';
+                $wrap.css({
+                    '-webkit-transform': deg,
+                    '-mos-transform': deg,
+                    '-o-transform': deg,
+                    'transform': deg
+                });
+            } else {
+                $wrap.css( 'filter', 'progid:DXImageTransform.Microsoft.BasicImage(rotation='+ (~~((file.rotation/90)%4 + 4)%4) +')');
+            }
+        });
+
+        $li.appendTo( $queue );
+    }
+
+    // 负责view的销毁
+    function removeFile( file ) {
+        var $li = $('#'+file.id);
+    
+        delete percentages[ file.id ];
+        updateTotalProgress();
+        $li.off().find('.file-panel').off().end().remove();
+    }
+
+    function updateTotalProgress() {
+        var loaded = 0,
+        total = 0,
+        spans = $progress.children(),
+        percent;
+    
+        $.each( percentages, function( k, v ) {
+            total += v[ 0 ];
+            loaded += v[ 0 ] * v[ 1 ];
+        } );
+    
+        percent = total ? loaded / total : 0;
+    
+    
+        spans.eq( 0 ).text( Math.round( percent * 100 ) + '%' );
+        spans.eq( 1 ).css( 'width', Math.round( percent * 100 ) + '%' );
+        updateStatus();
+    }
+
+    function updateStatus() {
+        var text = '', stats;
+    
+        if ( state === 'ready' ) {
+            text = '选中' + fileCount + '张图片，共' +
+            WebUploader.formatSize( fileSize ) + '。';
+        } else if ( state === 'confirm' ) {
+            stats = uploader.getStats();
+            if ( stats.uploadFailNum ) {
+                text = '已成功上传' + stats.successNum+ '张照片至XX相册，'+
+                stats.uploadFailNum + '张照片上传失败，<a class="retry" href="#">重新上传</a>失败图片或<a class="ignore" href="#">忽略</a>'
+            }
+    
+        } else {
+            stats = uploader.getStats();
+            text = '共' + fileCount + '张（' +
+                WebUploader.formatSize( fileSize )  +
+            '），已上传' + stats.successNum + '张';
+        
+            if ( stats.uploadFailNum ) {
+                text += '，失败' + stats.uploadFailNum + '张';
+            }
+        }
+    
+        $info.html( text );
+        }
+    
+        function setState( val ) {
+        var file, stats;
+    
+        if ( val === state ) {
+        return;
+        }
+    
+        $upload.removeClass( 'state-' + state );
+        $upload.addClass( 'state-' + val );
+        state = val;
+    
+        switch ( state ) {
+        case 'pedding':
+        $placeHolder.removeClass( 'element-invisible' );
+        $queue.hide();
+        $statusBar.addClass( 'element-invisible' );
+        uploader.refresh();
+        break;
+    
+        case 'ready':
+        $placeHolder.addClass( 'element-invisible' );
+        $( '#filePicker2' ).removeClass( 'element-invisible');
+        $queue.show();
+        $statusBar.removeClass('element-invisible');
+        uploader.refresh();
+        break;
+    
+        case 'uploading':
+        $( '#filePicker2' ).addClass( 'element-invisible' );
+        $progress.show();
+        $upload.text( '暂停上传' );
+        break;
+    
+        case 'paused':
+        $progress.show();
+        $upload.text( '继续上传' );
+        break;
+    
+        case 'confirm':
+        $progress.hide();
+        $( '#filePicker2' ).removeClass( 'element-invisible' );
+        $upload.text( '开始上传' );
+    
+        stats = uploader.getStats();
+        if ( stats.successNum && !stats.uploadFailNum ) {
+        setState( 'finish' );
+        return;
+        }
+        break;
+        case 'finish':
+        stats = uploader.getStats();
+        if ( stats.successNum ) {
+        alert( '上传成功' );
+        } else {
+        // 没有成功的图片，重设
+        state = 'done';
+        location.reload();
+        }
+        break;
+        }
+    
+        updateStatus();
+    }
+
+    uploader.onUploadProgress = function( file, percentage ) {
+        var $li = $('#'+file.id),
+        $percent = $li.find('.progress span');
+    
+        $percent.css( 'width', percentage * 100 + '%' );
+        percentages[ file.id ][ 1 ] = percentage;
+        updateTotalProgress();
+    };
+
+    uploader.onFileQueued = function( file ) {
+        fileCount++;
+        fileSize += file.size;
+    
+        if ( fileCount === 1 ) {
+            $placeHolder.addClass( 'element-invisible' );
+            $statusBar.show();
+        }
+    
+        addFile( file );
+        setState( 'ready' );
+        updateTotalProgress();
+    };
+
+    uploader.onFileDequeued = function( file ) {
+        fileCount--;
+        fileSize -= file.size;
+    
+        if ( !fileCount ) {
+            setState( 'pedding' );
+        }
+    
+        removeFile( file );
+        updateTotalProgress();
+
+    };
+
+    uploader.on( 'all', function( type ) {
+        var stats;
+        switch( type ) {
+            case 'uploadFinished':
+                setState( 'confirm' );
+            break;
+            case 'startUpload':
+                setState( 'uploading' );
+            break;
+            case 'stopUpload':
+                setState( 'paused' );
+            break;
+        }
+    });
+
+    uploader.onError = function( code ) {
+        alert( 'Eroor: ' + code );
+    };
+
+    $upload.on('click', function() {
+        if ( $(this).hasClass( 'disabled' ) ) {
+            return false;
+        }
+
+        if ( state === 'ready' ) {
+            uploader.upload();
+        } else if ( state === 'paused' ) {
+            uploader.upload();
+        } else if ( state === 'uploading' ) {
+            uploader.stop();
+        }
+    });
+
+    $info.on( 'click', '.retry', function() {
+        uploader.retry();
+    } );
+
+    $info.on( 'click', '.ignore', function() {
+        alert( 'todo' );
+    } );
+
+    $upload.addClass( 'state-' + state );
+    updateTotalProgress();
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-big">
+        <h2>参数</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <tbody>
+            <tr>
+                <th>参数</th>
+                <th>数据类型</th>
+                <th>默认值</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>dnd </td>
+                <td>{Selector} </td>
+                <td>undefined</td>
+                <td>指定Drag And Drop拖拽的容器，如果不指定，则不启动。</td>
+            </tr>
+            <tr>
+                <td>disableGlobalDnd </td>
+                <td>{Selector} </td>
+                <td>false</td>
+                <td>是否禁掉整个页面的拖拽功能，如果不禁用，图片拖进来的时候会默认被浏览器打开。</td>
+            </tr>
+            <tr>
+                <td>paste </td>
+                <td>{Selector} </td>
+                <td>undefined</td>
+                <td>指定监听paste事件的容器，如果不指定，不启用此功能。此功能为通过粘贴来添加截屏的图片。建议设置为document.body.</td>
+            </tr>
+            <tr>
+                <td>pick </td>
+                <td> {Selector, Object} </td>
+                <td>undefined</td>
+                <td>指定选择文件的按钮容器，不指定则不创建按钮。
+                    <ul class="c-list-disc">
+                        <li><code>id</code> {Seletor|dom} 指定选择文件的按钮容器，不指定则不创建按钮。<strong>注意</strong> 这里虽然写的是 id, 但是不是只支持 id, 还支持 class, 或者 dom 节点。</li>
+                        <li><code>label</code> {String} 请采用 <code>innerHTML</code> 代替</li>
+                        <li><code>innerHTML</code> {String} 指定按钮文字。不指定时优先从指定的容器中看是否自带文字。</li>
+                        <li><code>multiple</code> {Boolean} 是否开起同时选择多个文件能力。</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>accept </td>
+                <td>{Arroy}</td>
+                <td>null</td>
+                <td>指定接受哪些类型的文件。 由于目前还有ext转mimeType表，所以这里需要分开指定。
+                    <ul class="c-list-disc">
+                        <li><code>title</code> {String} 文字描述</li>
+                        <li><code>extensions</code> {String} 允许的文件后缀，不带点，多个用逗号分割。</li>
+                        <li><code>mimeTypes</code> {String} 多个用逗号分割。</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>thumb </td>
+                <td>{Object}</td>
+                <td></td>
+                <td>配置生成缩略图的选项。
+                    <p>默认为：</p>
+<pre><code class="javascript">
+    {
+        width: 110,
+        height: 110,
+
+        // 图片质量，只有type为`image/jpeg`的时候才有效。
+        quality: 70,
+
+        // 是否允许放大，如果想要生成小图的时候不失真，此选项应该设置为false.
+        allowMagnify: true,
+
+        // 是否允许裁剪。
+        crop: true,
+
+        // 为空的话则保留原有图片格式。
+        // 否则强制转换成指定的类型。
+        type: 'image/jpeg'
+    }
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>compress </td>
+                <td>{Object}</td>
+                <td></td>
+                <td>配置压缩的图片的选项。如果此选项为false, 则图片在上传前不进行压缩。
+                    <p>默认为：</p>
+<pre><code class="javascript">
+    {
+        width: 1600,
+        height: 1600,
+
+        // 图片质量，只有type为`image/jpeg`的时候才有效。
+        quality: 90,
+
+        // 是否允许放大，如果想要生成小图的时候不失真，此选项应该设置为false.
+        allowMagnify: false,
+
+        // 是否允许裁剪。
+        crop: false,
+
+        // 是否保留头部meta信息。
+        preserveHeaders: true,
+
+        // 如果发现压缩后文件大小比原来还大，则使用原来图片
+        // 此属性可能会影响图片自动纠正功能
+        noCompressIfLarger: false,
+
+        // 单位字节，如果图片大小小于此值，不会采用压缩。
+        compressSize: 0
+    }
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>auto </td>
+                <td>Boolean</td>
+                <td>false</td>
+                <td>设置为 true 后，不需要手动调用上传，有文件选择即开始上传。</td>
+            </tr>
+            <tr>
+                <td>runtimeOrder </td>
+                <td>Object</td>
+                <td>html5,flash</td>
+                <td>指定运行时启动顺序。默认会想尝试 html5 是否支持，如果支持则使用 html5, 否则则使用 flash.（可以将此值设置成 flash，来强制使用 flash 运行时。）</td>
+            </tr>
+            <tr>
+                <td>prepareNextFile </td>
+                <td>Boolean</td>
+                <td>false</td>
+                <td>是否允许在文件传输时提前把下一个文件准备好。 对于一个文件的准备工作比较耗时，比如图片压缩，md5序列化。 如果能提前在当前文件传输期处理，可以节省总体耗时。</td>
+            </tr>
+            <tr>
+                <td>chunked </td>
+                <td>Boolean</td>
+                <td>false</td>
+                <td>是否要分片处理大文件上传。</td>
+            </tr>
+            <tr>
+                <td>chunkSize </td>
+                <td>Boolean</td>
+                <td>5242880</td>
+                <td>如果要分片，分多大一片？ 默认大小为5M.</td>
+            </tr>
+            <tr>
+                <td>chunkRetry </td>
+                <td>Boolean</td>
+                <td>2</td>
+                <td>如果某个分片由于网络问题出错，允许自动重传多少次？</td>
+            </tr>
+            <tr>
+                <td>threads </td>
+                <td>Boolean</td>
+                <td>3</td>
+                <td>上传并发数。允许同时最大上传进程数。</td>
+            </tr>
+            <tr>
+                <td>formData </td>
+                <td>Object</td>
+                <td>{}</td>
+                <td>文件上传请求的参数表，每次发送都会发送此对象中的参数。</td>
+            </tr>
+            <tr>
+                <td>fileVal </td>
+                <td>Object</td>
+                <td>'file'</td>
+                <td>设置文件上传域的name。</td>
+            </tr>
+            <tr>
+                <td>method </td>
+                <td>Object</td>
+                <td>'POST'</td>
+                <td>文件上传方式，POST或者GET。</td>
+            </tr>
+            <tr>
+                <td>sendAsBinary </td>
+                <td>Object</td>
+                <td>false</td>
+                <td>是否已二进制的流的方式发送文件，这样整个上传内容php://input都为文件内容， 其他参数在$_GET数组中。</td>
+            </tr>
+            <tr>
+                <td>fileNumLimit </td>
+                <td>int</td>
+                <td>undefined</td>
+                <td>验证文件总数量, 超出则不允许加入队列。</td>
+            </tr>
+            <tr>
+                <td>fileSizeLimit </td>
+                <td>int</td>
+                <td>undefined</td>
+                <td>验证文件总大小是否超出限制, 超出则不允许加入队列。</td>
+            </tr>
+            <tr>
+                <td>fileSingleSizeLimit </td>
+                <td>int</td>
+                <td>undefined</td>
+                <td>验证单个文件大小是否超出限制, 超出则不允许加入队列。</td>
+            </tr>
+            <tr>
+                <td>duplicate </td>
+                <td>Boolean</td>
+                <td>undefined</td>
+                <td>去重， 根据文件名字、文件大小和最后修改时间来生成hash Key。</td>
+            </tr>
+            <tr>
+                <td>disableWidgets </td>
+                <td>String, Array</td>
+                <td>undefined</td>
+                <td>默认所有 Uploader.register 了的 widget 都会被加载，如果禁用某一部分，请通过此 option 指定黑名单。</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-big">
+        <h2>事件</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <tbody><tr>
+                <th>事件名</th>
+                <th class="events-tb-desc">参数说明</th>
+                <th>描述</th>
+            </tr>
+
+
+            <tr>
+                <td><code>dndAccept</code></td>
+                <td class="events-tb-desc">
+
+                    <ul class="params-list"><li><span class="meta"><code>items</code> {DataTransferItemList}</span><p>DataTransferItem</p>
+                    </li></ul>
+
+                </td>
+                <td><p>阻止此事件可以拒绝某些类型的文件拖入进来。目前只有 chrome 提供这样的 API，且只能通过 mime-type 验证。</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>beforeFileQueued</code></td>
+                <td class="events-tb-desc">
+
+                    <ul class="params-list"><li><span class="meta"><code>file</code> {File}</span><p>File对象</p>
+                    </li></ul>
+
+                </td>
+                <td><p>当文件被加入队列之前触发，此事件的handler返回值为<code>false</code>，则此文件不会被添加进入队列。</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>fileQueued</code></td>
+                <td class="events-tb-desc">
+
+                    <ul class="params-list"><li><span class="meta"><code>file</code> {File}</span><p>File对象</p>
+                    </li></ul>
+
+                </td>
+                <td><p>当文件被加入队列以后触发。</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>filesQueued</code></td>
+                <td class="events-tb-desc">
+
+                    <ul class="params-list"><li><span class="meta"><code>files</code> {File}</span><p>数组，内容为原始File(lib/File）对象。</p>
+                    </li></ul>
+
+                </td>
+                <td><p>当一批文件添加进队列以后触发。</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>fileDequeued</code></td>
+                <td class="events-tb-desc">
+
+                    <ul class="params-list"><li><span class="meta"><code>file</code> {File}</span><p>File对象</p>
+                    </li></ul>
+
+                </td>
+                <td><p>当文件被移除队列后触发。</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>reset</code></td>
+                <td class="events-tb-desc">
+
+                </td>
+                <td><p>当 uploader 被重置的时候触发。</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>startUpload</code></td>
+                <td class="events-tb-desc">
+
+                </td>
+                <td><p>当开始上传流程时触发。</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>stopUpload</code></td>
+                <td class="events-tb-desc">
+
+                </td>
+                <td><p>当开始上传流程暂停时触发。</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>uploadFinished</code></td>
+                <td class="events-tb-desc">
+
+                </td>
+                <td><p>当所有文件上传结束时触发。</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>uploadStart</code></td>
+                <td class="events-tb-desc">
+
+                    <ul class="params-list"><li><span class="meta"><code>file</code> {File}</span><p>File对象</p>
+                    </li></ul>
+
+                </td>
+                <td><p>某个文件开始上传前触发，一个文件只会触发一次。</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>uploadBeforeSend</code></td>
+                <td class="events-tb-desc">
+
+                    <ul class="params-list"><li><span class="meta"><code>object</code> {Object}</span></li><li><span class="meta"><code>data</code> {Object}</span><p>默认的上传参数，可以扩展此对象来控制上传参数。</p>
+                    </li><li><span class="meta"><code>headers</code> {Object}</span><p>可以扩展此对象来控制上传头部。</p>
+                    </li></ul>
+
+                </td>
+                <td><p>当某个文件的分块在发送前触发，主要用来询问是否要添加附带参数，大文件在开起分片上传的前提下此事件可能会触发多次。</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>uploadAccept</code></td>
+                <td class="events-tb-desc">
+
+                    <ul class="params-list"><li><span class="meta"><code>object</code> {Object}</span></li><li><span class="meta"><code>ret</code> {Object}</span><p>服务端的返回数据，json格式，如果服务端不是json格式，从ret._raw中取数据，自行解析。</p>
+                    </li></ul>
+
+                </td>
+                <td><p>当某个文件上传到服务端响应后，会派送此事件来询问服务端响应是否有效。如果此事件handler返回值为<code>false</code>, 则此文件将派送<code>server</code>类型的<code>uploadError</code>事件。</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>uploadProgress</code></td>
+                <td class="events-tb-desc">
+
+                    <ul class="params-list"><li><span class="meta"><code>file</code> {File}</span><p>File对象</p>
+                    </li><li><span class="meta"><code>percentage</code> {Number}</span><p>上传进度</p>
+                    </li></ul>
+
+                </td>
+                <td><p>上传过程中触发，携带上传进度。</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>uploadError</code></td>
+                <td class="events-tb-desc">
+
+                    <ul class="params-list"><li><span class="meta"><code>file</code> {File}</span><p>File对象</p>
+                    </li><li><span class="meta"><code>reason</code> {String}</span><p>出错的code</p>
+                    </li></ul>
+
+                </td>
+                <td><p>当文件上传出错时触发。</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>uploadSuccess</code></td>
+                <td class="events-tb-desc">
+
+                    <ul class="params-list"><li><span class="meta"><code>file</code> {File}</span><p>File对象</p>
+                    </li><li><span class="meta"><code>response</code> {Object}</span><p>服务端返回的数据</p>
+                    </li></ul>
+
+                </td>
+                <td><p>当文件上传成功时触发。</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>uploadComplete</code></td>
+                <td class="events-tb-desc">
+
+                    <ul class="params-list"><li><span class="meta"><code>file</code> {File} [可选]</span><p>File对象</p>
+                    </li></ul>
+
+                </td>
+                <td><p>不管成功或者失败，文件上传完成时触发。</p>
+                </td>
+            </tr>
+
+            <tr>
+                <td><code>error</code></td>
+                <td class="events-tb-desc">
+
+                    <ul class="params-list"><li><span class="meta"><code>type</code> {String}</span><p>错误类型。</p>
+                    </li></ul>
+
+                </td>
+                <td><p>当validate不通过时，会以派送错误事件的形式通知调用者。通过<code>upload.on('error', handler)</code>可以捕获到此类错误，目前有以下错误会在特定的情况下派送错来。</p>
+                    <ul>
+                        <li><code>Q_EXCEED_NUM_LIMIT</code> 在设置了<code>fileNumLimit</code>且尝试给<code>uploader</code>添加的文件数量超出这个值时派送。</li>
+                        <li><code>Q_EXCEED_SIZE_LIMIT</code> 在设置了<code>Q_EXCEED_SIZE_LIMIT</code>且尝试给<code>uploader</code>添加的文件总大小超出这个值时派送。</li>
+                        <li><code>Q_TYPE_DENIED</code> 当文件类型不满足时触发。。</li>
+                    </ul>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="mt-big">
+        <h2>方法</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <tbody>
+            <tr>
+                <th>方法名</th>
+                <th>描述</th>
+                <th>案例</th>
+            </tr>
+            <tr>
+                <td>option</td>
+                <td>获取或者设置Uploader配置项。</td>
+                <td>
+<pre><code class="javascript">
+    // 初始状态图片上传前不会压缩
+    var uploader = new WebUploader.Uploader({
+        compress: null;
+    });
+
+    // 修改后图片上传前，尝试将图片压缩到1600 * 1600
+    uploader.option( 'compress', {
+        width: 1600,
+        height: 1600
+    });
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>getStats</td>
+                <td>获取文件统计信息。返回一个包含一下信息的对象。</td>
+                <td>
+                    <ul class="c-list-disc">
+                        <li><code>successNum</code> 上传成功的文件数</li>
+                        <li><code>progressNum</code> 上传中的文件数</li>
+                        <li><code>cancelNum</code> 被删除的文件数</li>
+                        <li><code>invalidNum</code> 无效的文件数</li>
+                        <li><code>uploadFailNum</code> 上传失败的文件数</li>
+                        <li><code>queueNum</code> 还在队列中的文件数</li>
+                        <li><code>interruptNum</code> 被暂停的文件数</li>
+                    </ul>
+<pre><code class="javascript">
+    stats = uploader.getStats();
+    if ( stats.uploadFailNum ) {
+        text = '已成功上传' + stats.successNum+ '张照片至XX相册，'+
+        stats.uploadFailNum + '张照片上传失败，<a class="retry" href="#">重新上传</a>失败图片或<a class="ignore" href="#">忽略</a>'
+    }
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>destroy</td>
+                <td>销毁 webuploader 实例</td>
+                <td>
+<pre><code class="javascript">
+    uploader.destroy();
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>addButton</td>
+                <td>添加文件选择按钮，如果一个按钮不够，需要调用此方法来添加。参数跟options.pick一致。</td>
+                <td>
+<pre><code class="javascript">
+    uploader.addButton({
+        id: '#btnContainer',
+        innerHTML: '选择文件'
+    });
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>makeThumb</td>
+                <td>生成缩略图，此过程为异步，所以需要传入callback。 通常情况在图片加入队里后调用此方法来生成预览图以增强交互效果。</td>
+                <td>
+                    <p>当 width 或者 height 的值介于 0 - 1 时，被当成百分比使用。</p>
+                    <p>callback中可以接收到两个参数。</p>
+                    <ul class="c-list-disc">
+                        <li>第一个为error，如果生成缩略图有错误，此error将为真。</li>
+                        <li>第二个为ret, 缩略图的Data URL值。</li>
+                    </ul>
+<pre><code class="javascript">
+    uploader.on( 'fileQueued', function( file ) {
+        var $li = ...;
+        uploader.makeThumb( file, function( error, ret ) {
+            if ( error ) {
+                $li.text('预览错误');
+            } else {
+                $li.append('&lt;img alt="" src="' + ret + '" />');
+            }
+        });
+    });
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>md5File</td>
+                <td>计算文件 md5 值，返回一个 promise 对象，可以监听 progress 进度。</td>
+                <td>
+<pre><code class="javascript">
+    uploader.on( 'fileQueued', function( file ) {
+        var $li = ...;
+        uploader.md5File( file )
+
+        // 及时显示进度
+        .progress(function(percentage) {
+            console.log('Percentage:', percentage);
+        })
+
+        // 完成
+        .then(function(val) {
+            console.log('md5 result:', val);
+        });
+    });
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>addFiles</td>
+                <td>添加文件到队列</td>
+                <td>
+                    <p>参数: </p>
+                    <ul class="c-list-disc">
+                        <li><span class="meta"><code>files</code> {Array of File or File} [可选]</span><p>Files 对象 数组</p></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>removeFile</td>
+                <td>移除某一文件, 默认只会标记文件状态为已取消，如果第二个参数为 true 则会从 queue 中移除。</td>
+                <td>
+                    <p>参数: </p>
+                    <ul class="c-list-disc">
+                        <li><span class="meta"><code>file</code> {File, id}</span><p>File对象或这File对象的id</p></li>
+                    </ul>
+<pre><code class="javascript">
+    $li.on('click', '.remove-this', function() {
+        uploader.removeFile( file );
+    })
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>getFiles</td>
+                <td>返回指定状态的文件集合，不传参数将返回所有状态的文件。</td>
+                <td>
+<pre><code class="javascript">
+    console.log( uploader.getFiles() );    // => all files
+    console.log( uploader.getFiles('error') )    // => all error files.
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>retry</td>
+                <td>重试上传，重试指定文件，或者从出错的文件开始重新上传。</td>
+                <td>
+<pre><code class="javascript">
+    function retry() {
+        uploader.retry();
+    }
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>sort</td>
+                <td>排序队列中的文件，在上传之前调整可以控制上传顺序。</td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>reset</td>
+                <td>重置uploader。目前只重置了队列。</td>
+                <td>
+<pre><code class="javascript">
+    uploader.reset();
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>predictRuntimeType</td>
+                <td>预测Uploader将采用哪个Runtime</td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>upload</td>
+                <td>开始上传。此方法可以从初始状态调用开始上传流程，也可以从暂停状态调用，继续上传流程。可以指定开始某一个文件。</td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>stop</td>
+                <td>暂停上传。第一个参数为是否中断上传当前正在上传的文件。
+
+                    如果第一个参数是文件，则只暂停指定文件。
+
+                    </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>cancelFile</td>
+                <td>标记文件状态为已取消, 同时将中断文件传输。</td>
+                <td>
+                    <p>参数: </p>
+                    <ul class="c-list-disc">
+                        <li><span class="meta"><code>file</code> {File, id}</span><p>File对象或这File对象的id</p></li>
+                    </ul>
+<pre><code class="javascript">
+    $li.on('click', '.remove-this', function() {
+        uploader.cancelFile( file );
+    })
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>isInProgress</td>
+                <td>判断Uplaoder是否正在上传中。</td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>skipFile</td>
+                <td>掉过一个文件上传，直接标记指定文件为已上传状态。</td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>request</td>
+                <td>发送命令。当传入callback或者handler中返回promise时。返回一个当所有handler中的promise都完成后完成的新promise。</td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>Uploader.register</td>
+                <td>添加组件</td>
+                <td>
+                    <p>参数: </p>
+                    <ul class="c-list-disc">
+                        <li><span class="meta"><code>responseMap</code> {object}</span><p>API 名称与函数实现的映射</p></li>
+                        <li><span class="meta"><code>proto</code> {object}</span><p>组件原型，构造函数通过 constructor 属性定义</p></li>
+                    </ul>
+<pre><code class="javascript">
+    Uploader.register({
+        'make-thumb': 'makeThumb'
+    }, {
+        init: function( options ) {},
+        makeThumb: function() {}
+    });
+
+    Uploader.register({
+        'make-thumb': function() {
+        }
+    });
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>Uploader.unRegister</td>
+                <td>删除插件，只有在注册时指定了名字的才能被删除。</td>
+                <td>
+                    <p>参数: </p>
+                    <ul class="c-list-disc">
+                        <li><span class="meta"><code>name</code> {string}</span><p>组件名字</p></li>
+                    </ul>
+<pre><code class="javascript">
+    Uploader.register({
+        name: 'custom',
+        'make-thumb': function() {
+
+        }
+    });
+
+    Uploader.unRegister('custom');
+</code></pre>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="mt-big">
+        <h2>常见MIME类型: <span class="c-red fs6">禁止使用(mimeTypes: 'img/*')，否则会webuploader点击反应太慢</span></h2>
+        <table class="tb tb-b c-100 mt-small">
+            <tbody>
+            <tr>
+                <th>类型/子类型</th>
+                <th>扩展名</th>
+            </tr>
+            <tr>
+                <td>application/envoy</td>
+                <td>evy</td>
+            </tr>
+            <tr>
+                <td>application/fractals</td>
+                <td>fif</td>
+            </tr>
+            <tr>
+                <td>application/futuresplash</td>
+                <td>spl</td>
+            </tr>
+            <tr>
+                <td>application/hta</td>
+                <td>hta</td>
+            </tr>
+            <tr>
+                <td>application/internet-property-stream</td>
+                <td>acx</td>
+            </tr>
+            <tr>
+                <td>application/mac-binhex40</td>
+                <td>hqx</td>
+            </tr>
+            <tr>
+                <td>application/msword</td>
+                <td>doc</td>
+            </tr>
+            <tr>
+                <td>application/msword</td>
+                <td>dot</td>
+            </tr>
+            <tr>
+                <td>application/octet-stream</td>
+                <td>*</td>
+            </tr>
+            <tr>
+                <td>application/octet-stream</td>
+                <td>bin</td>
+            </tr>
+            <tr>
+                <td>application/octet-stream</td>
+                <td>class</td>
+            </tr>
+            <tr>
+                <td>application/octet-stream</td>
+                <td>dms</td>
+            </tr>
+            <tr>
+                <td>application/octet-stream</td>
+                <td>exe</td>
+            </tr>
+            <tr>
+                <td>application/octet-stream</td>
+                <td>lha</td>
+            </tr>
+            <tr>
+                <td>application/octet-stream</td>
+                <td>lzh</td>
+            </tr>
+            <tr>
+                <td>application/oda</td>
+                <td>oda</td>
+            </tr>
+            <tr>
+                <td>application/olescript</td>
+                <td>axs</td>
+            </tr>
+            <tr>
+                <td>application/pdf</td>
+                <td>pdf</td>
+            </tr>
+            <tr>
+                <td>application/pics-rules</td>
+                <td>prf</td>
+            </tr>
+            <tr>
+                <td>application/pkcs10</td>
+                <td>p10</td>
+            </tr>
+            <tr>
+                <td>application/pkix-crl</td>
+                <td>crl</td>
+            </tr>
+            <tr>
+                <td>application/postscript</td>
+                <td>ai</td>
+            </tr>
+            <tr>
+                <td>application/postscript</td>
+                <td>eps</td>
+            </tr>
+            <tr>
+                <td>application/postscript</td>
+                <td>ps</td>
+            </tr>
+            <tr>
+                <td>application/rtf</td>
+                <td>rtf</td>
+            </tr>
+            <tr>
+                <td>application/set-payment-initiation</td>
+                <td>setpay</td>
+            </tr>
+            <tr>
+                <td>application/set-registration-initiation</td>
+                <td>setreg</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-excel</td>
+                <td>xla</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-excel</td>
+                <td>xlc</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-excel</td>
+                <td>xlm</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-excel</td>
+                <td>xls</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-excel</td>
+                <td>xlt</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-excel</td>
+                <td>xlw</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-outlook</td>
+                <td>msg</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-pkicertstore</td>
+                <td>sst</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-pkiseccat</td>
+                <td>cat</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-pkistl</td>
+                <td>stl</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-powerpoint</td>
+                <td>pot</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-powerpoint</td>
+                <td>pps</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-powerpoint</td>
+                <td>ppt</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-project</td>
+                <td>mpp</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-works</td>
+                <td>wcm</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-works</td>
+                <td>wdb</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-works</td>
+                <td>wks</td>
+            </tr>
+            <tr>
+                <td>application/vnd.ms-works</td>
+                <td>wps</td>
+            </tr>
+            <tr>
+                <td>application/winhlp</td>
+                <td>hlp</td>
+            </tr>
+            <tr>
+                <td>application/x-bcpio</td>
+                <td>bcpio</td>
+            </tr>
+            <tr>
+                <td>application/x-cdf</td>
+                <td>cdf</td>
+            </tr>
+            <tr>
+                <td>application/x-compress</td>
+                <td>z</td>
+            </tr>
+            <tr>
+                <td>application/x-compressed</td>
+                <td>tgz</td>
+            </tr>
+            <tr>
+                <td>application/x-cpio</td>
+                <td>cpio</td>
+            </tr>
+            <tr>
+                <td>application/x-csh</td>
+                <td>csh</td>
+            </tr>
+            <tr>
+                <td>application/x-director</td>
+                <td>dcr</td>
+            </tr>
+            <tr>
+                <td>application/x-director</td>
+                <td>dir</td>
+            </tr>
+            <tr>
+                <td>application/x-director</td>
+                <td>dxr</td>
+            </tr>
+            <tr>
+                <td>application/x-dvi</td>
+                <td>dvi</td>
+            </tr>
+            <tr>
+                <td>application/x-gtar</td>
+                <td>gtar</td>
+            </tr>
+            <tr>
+                <td>application/x-gzip</td>
+                <td>gz</td>
+            </tr>
+            <tr>
+                <td>application/x-hdf</td>
+                <td>hdf</td>
+            </tr>
+            <tr>
+                <td>application/x-internet-signup</td>
+                <td>ins</td>
+            </tr>
+            <tr>
+                <td>application/x-internet-signup</td>
+                <td>isp</td>
+            </tr>
+            <tr>
+                <td>application/x-iphone</td>
+                <td>iii</td>
+            </tr>
+            <tr>
+                <td>application/x-javascript</td>
+                <td>js</td>
+            </tr>
+            <tr>
+                <td>application/x-latex</td>
+                <td>latex</td>
+            </tr>
+            <tr>
+                <td>application/x-msaccess</td>
+                <td>mdb</td>
+            </tr>
+            <tr>
+                <td>application/x-mscardfile</td>
+                <td>crd</td>
+            </tr>
+            <tr>
+                <td>application/x-msclip</td>
+                <td>clp</td>
+            </tr>
+            <tr>
+                <td>application/x-msdownload</td>
+                <td>dll</td>
+            </tr>
+            <tr>
+                <td>application/x-msmediaview</td>
+                <td>m13</td>
+            </tr>
+            <tr>
+                <td>application/x-msmediaview</td>
+                <td>m14</td>
+            </tr>
+            <tr>
+                <td>application/x-msmediaview</td>
+                <td>mvb</td>
+            </tr>
+            <tr>
+                <td>application/x-msmetafile</td>
+                <td>wmf</td>
+            </tr>
+            <tr>
+                <td>application/x-msmoney</td>
+                <td>mny</td>
+            </tr>
+            <tr>
+                <td>application/x-mspublisher</td>
+                <td>pub</td>
+            </tr>
+            <tr>
+                <td>application/x-msschedule</td>
+                <td>scd</td>
+            </tr>
+            <tr>
+                <td>application/x-msterminal</td>
+                <td>trm</td>
+            </tr>
+            <tr>
+                <td>application/x-mswrite</td>
+                <td>wri</td>
+            </tr>
+            <tr>
+                <td>application/x-netcdf</td>
+                <td>cdf</td>
+            </tr>
+            <tr>
+                <td>application/x-netcdf</td>
+                <td>nc</td>
+            </tr>
+            <tr>
+                <td>application/x-perfmon</td>
+                <td>pma</td>
+            </tr>
+            <tr>
+                <td>application/x-perfmon</td>
+                <td>pmc</td>
+            </tr>
+            <tr>
+                <td>application/x-perfmon</td>
+                <td>pml</td>
+            </tr>
+            <tr>
+                <td>application/x-perfmon</td>
+                <td>pmr</td>
+            </tr>
+            <tr>
+                <td>application/x-perfmon</td>
+                <td>pmw</td>
+            </tr>
+            <tr>
+                <td>application/x-pkcs12</td>
+                <td>p12</td>
+            </tr>
+            <tr>
+                <td>application/x-pkcs12</td>
+                <td>pfx</td>
+            </tr>
+            <tr>
+                <td>application/x-pkcs7-certificates</td>
+                <td>p7b</td>
+            </tr>
+            <tr>
+                <td>application/x-pkcs7-certificates</td>
+                <td>spc</td>
+            </tr>
+            <tr>
+                <td>application/x-pkcs7-certreqresp</td>
+                <td>p7r</td>
+            </tr>
+            <tr>
+                <td>application/x-pkcs7-mime</td>
+                <td>p7c</td>
+            </tr>
+            <tr>
+                <td>application/x-pkcs7-mime</td>
+                <td>p7m</td>
+            </tr>
+            <tr>
+                <td>application/x-pkcs7-signature</td>
+                <td>p7s</td>
+            </tr>
+            <tr>
+                <td>application/x-sh</td>
+                <td>sh</td>
+            </tr>
+            <tr>
+                <td>application/x-shar</td>
+                <td>shar</td>
+            </tr>
+            <tr>
+                <td>application/x-shockwave-flash</td>
+                <td>swf</td>
+            </tr>
+            <tr>
+                <td>application/x-stuffit</td>
+                <td>sit</td>
+            </tr>
+            <tr>
+                <td>application/x-sv4cpio</td>
+                <td>sv4cpio</td>
+            </tr>
+            <tr>
+                <td>application/x-sv4crc</td>
+                <td>sv4crc</td>
+            </tr>
+            <tr>
+                <td>application/x-tar</td>
+                <td>tar</td>
+            </tr>
+            <tr>
+                <td>application/x-tcl</td>
+                <td>tcl</td>
+            </tr>
+            <tr>
+                <td>application/x-tex</td>
+                <td>tex</td>
+            </tr>
+            <tr>
+                <td>application/x-texinfo</td>
+                <td>texi</td>
+            </tr>
+            <tr>
+                <td>application/x-texinfo</td>
+                <td>texinfo</td>
+            </tr>
+            <tr>
+                <td>application/x-troff</td>
+                <td>roff</td>
+            </tr>
+            <tr>
+                <td>application/x-troff</td>
+                <td>t</td>
+            </tr>
+            <tr>
+                <td>application/x-troff</td>
+                <td>tr</td>
+            </tr>
+            <tr>
+                <td>application/x-troff-man</td>
+                <td>man</td>
+            </tr>
+            <tr>
+                <td>application/x-troff-me</td>
+                <td>me</td>
+            </tr>
+            <tr>
+                <td>application/x-troff-ms</td>
+                <td>ms</td>
+            </tr>
+            <tr>
+                <td>application/x-ustar</td>
+                <td>ustar</td>
+            </tr>
+            <tr>
+                <td>application/x-wais-source</td>
+                <td>src</td>
+            </tr>
+            <tr>
+                <td>application/x-x509-ca-cert</td>
+                <td>cer</td>
+            </tr>
+            <tr>
+                <td>application/x-x509-ca-cert</td>
+                <td>crt</td>
+            </tr>
+            <tr>
+                <td>application/x-x509-ca-cert</td>
+                <td>der</td>
+            </tr>
+            <tr>
+                <td>application/ynd.ms-pkipko</td>
+                <td>pko</td>
+            </tr>
+            <tr>
+                <td>application/zip</td>
+                <td>zip</td>
+            </tr>
+            <tr>
+                <td>audio/basic</td>
+                <td>au</td>
+            </tr>
+            <tr>
+                <td>audio/basic</td>
+                <td>snd</td>
+            </tr>
+            <tr>
+                <td>audio/mid</td>
+                <td>mid</td>
+            </tr>
+            <tr>
+                <td>audio/mid</td>
+                <td>rmi</td>
+            </tr>
+            <tr>
+                <td>audio/mpeg</td>
+                <td>mp3</td>
+            </tr>
+            <tr>
+                <td>audio/x-aiff</td>
+                <td>aif</td>
+            </tr>
+            <tr>
+                <td>audio/x-aiff</td>
+                <td>aifc</td>
+            </tr>
+            <tr>
+                <td>audio/x-aiff</td>
+                <td>aiff</td>
+            </tr>
+            <tr>
+                <td>audio/x-mpegurl</td>
+                <td>m3u</td>
+            </tr>
+            <tr>
+                <td>audio/x-pn-realaudio</td>
+                <td>ra</td>
+            </tr>
+            <tr>
+                <td>audio/x-pn-realaudio</td>
+                <td>ram</td>
+            </tr>
+            <tr>
+                <td>audio/x-wav</td>
+                <td>wav</td>
+            </tr>
+            <tr>
+                <td>image/bmp</td>
+                <td>bmp</td>
+            </tr>
+            <tr>
+                <td>image/cis-cod</td>
+                <td>cod</td>
+            </tr>
+            <tr>
+                <td>image/gif</td>
+                <td>gif</td>
+            </tr>
+            <tr>
+                <td>image/ief</td>
+                <td>ief</td>
+            </tr>
+            <tr>
+                <td>image/jpeg</td>
+                <td>jpe</td>
+            </tr>
+            <tr>
+                <td>image/jpeg</td>
+                <td>jpeg</td>
+            </tr>
+            <tr>
+                <td>image/jpeg</td>
+                <td>jpg</td>
+            </tr>
+            <tr>
+                <td>image/pipeg</td>
+                <td>jfif</td>
+            </tr>
+            <tr>
+                <td>image/svg+xml</td>
+                <td>svg</td>
+            </tr>
+            <tr>
+                <td>image/tiff</td>
+                <td>tif</td>
+            </tr>
+            <tr>
+                <td>image/tiff</td>
+                <td>tiff</td>
+            </tr>
+            <tr>
+                <td>image/x-cmu-raster</td>
+                <td>ras</td>
+            </tr>
+            <tr>
+                <td>image/x-cmx</td>
+                <td>cmx</td>
+            </tr>
+            <tr>
+                <td>image/x-icon</td>
+                <td>ico</td>
+            </tr>
+            <tr>
+                <td>image/x-portable-anymap</td>
+                <td>pnm</td>
+            </tr>
+            <tr>
+                <td>image/x-portable-bitmap</td>
+                <td>pbm</td>
+            </tr>
+            <tr>
+                <td>image/x-portable-graymap</td>
+                <td>pgm</td>
+            </tr>
+            <tr>
+                <td>image/x-portable-pixmap</td>
+                <td>ppm</td>
+            </tr>
+            <tr>
+                <td>image/x-rgb</td>
+                <td>rgb</td>
+            </tr>
+            <tr>
+                <td>image/x-xbitmap</td>
+                <td>xbm</td>
+            </tr>
+            <tr>
+                <td>image/x-xpixmap</td>
+                <td>xpm</td>
+            </tr>
+            <tr>
+                <td>image/x-xwindowdump</td>
+                <td>xwd</td>
+            </tr>
+            <tr>
+                <td>message/rfc822</td>
+                <td>mht</td>
+            </tr>
+            <tr>
+                <td>message/rfc822</td>
+                <td>mhtml</td>
+            </tr>
+            <tr>
+                <td>message/rfc822</td>
+                <td>nws</td>
+            </tr>
+            <tr>
+                <td>text/css <a href="http://www.dreamdu.com/">http://www.dreamdu.com</a></td>
+                <td>css</td>
+            </tr>
+            <tr>
+                <td>text/h323</td>
+                <td>323</td>
+            </tr>
+            <tr>
+                <td>text/html</td>
+                <td>htm</td>
+            </tr>
+            <tr>
+                <td>text/html</td>
+                <td>html</td>
+            </tr>
+            <tr>
+                <td>text/html</td>
+                <td>stm</td>
+            </tr>
+            <tr>
+                <td>text/iuls</td>
+                <td>uls</td>
+            </tr>
+            <tr>
+                <td>text/plain</td>
+                <td>bas</td>
+            </tr>
+            <tr>
+                <td>text/plain</td>
+                <td>c</td>
+            </tr>
+            <tr>
+                <td>text/plain</td>
+                <td>h</td>
+            </tr>
+            <tr>
+                <td>text/plain</td>
+                <td>txt</td>
+            </tr>
+            <tr>
+                <td>text/richtext</td>
+                <td>rtx</td>
+            </tr>
+            <tr>
+                <td>text/scriptlet</td>
+                <td>sct</td>
+            </tr>
+            <tr>
+                <td>text/tab-separated-values</td>
+                <td>tsv</td>
+            </tr>
+            <tr>
+                <td>text/webviewhtml</td>
+                <td>htt</td>
+            </tr>
+            <tr>
+                <td>text/x-component</td>
+                <td>htc</td>
+            </tr>
+            <tr>
+                <td>text/x-setext</td>
+                <td>etx</td>
+            </tr>
+            <tr>
+                <td>text/x-vcard</td>
+                <td>vcf</td>
+            </tr>
+            <tr>
+                <td>video/mpeg</td>
+                <td>mp2</td>
+            </tr>
+            <tr>
+                <td>video/mpeg</td>
+                <td>mpa</td>
+            </tr>
+            <tr>
+                <td>video/mpeg</td>
+                <td>mpe</td>
+            </tr>
+            <tr>
+                <td>video/mpeg</td>
+                <td>mpeg</td>
+            </tr>
+            <tr>
+                <td>video/mpeg</td>
+                <td>mpg</td>
+            </tr>
+            <tr>
+                <td>video/mpeg</td>
+                <td>mpv2</td>
+            </tr>
+            <tr>
+                <td>video/quicktime</td>
+                <td>mov</td>
+            </tr>
+            <tr>
+                <td>video/quicktime</td>
+                <td>qt</td>
+            </tr>
+            <tr>
+                <td>video/x-la-asf</td>
+                <td>lsf</td>
+            </tr>
+            <tr>
+                <td>video/x-la-asf</td>
+                <td>lsx</td>
+            </tr>
+            <tr>
+                <td>video/x-ms-asf</td>
+                <td>asf</td>
+            </tr>
+            <tr>
+                <td>video/x-ms-asf</td>
+                <td>asr</td>
+            </tr>
+            <tr>
+                <td>video/x-ms-asf</td>
+                <td>asx</td>
+            </tr>
+            <tr>
+                <td>video/x-msvideo</td>
+                <td>avi</td>
+            </tr>
+            <tr>
+                <td>video/x-sgi-movie</td>
+                <td>movie</td>
+            </tr>
+            <tr>
+                <td>x-world/x-vrml</td>
+                <td>flr</td>
+            </tr>
+            <tr>
+                <td>x-world/x-vrml</td>
+                <td>vrml</td>
+            </tr>
+            <tr>
+                <td>x-world/x-vrml</td>
+                <td>wrl</td>
+            </tr>
+            <tr>
+                <td>x-world/x-vrml</td>
+                <td>wrz</td>
+            </tr>
+            <tr>
+                <td>x-world/x-vrml</td>
+                <td>xaf</td>
+            </tr>
+            <tr>
+                <td>x-world/x-vrml</td>
+                <td>xof</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
+<script type="text/javascript" src="../js/webUploader/webUploader.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+        /**
+         * 初始化
+         */
+        var baseUploader = WebUploader.create({
+            auto: false,                            // 选完文件后，是否自动上传。
+            swf: '../images/uploader.swf',          // swf文件路径
+            server: 'url',                          // 文件接收服务端。
+            pick: '#uploader-base-select',          // 选择文件的按钮。可选。
+            fileSingleSizeLimit:1*1024*1024,       // 设定单个文件大小
+            accept: {                               // 只允许选择图片文件。
+                title: 'file',
+                extensions: 'doc,xls,pdf',
+                mimeTypes: 'application/msword,application/vnd.ms-excel,application/pdf'
+            }
+        });
+
+        /**
+         * 验证文件格式以及文件大小
+         */
+        baseUploader.on("error",function (type){
+            if (type=="Q_TYPE_DENIED"){
+                alert("请上传doc,xls,pdf格式文件");
+            }else if(type=="F_EXCEED_SIZE"){
+                alert("文件大小不能超过1M");
+            }
+        });
+
+        /**
+         * 当有文件添加进来的时候
+         */
+        baseUploader.on( 'fileQueued', function(file) {
+            $('#uploader-base-input').val(file.name);
+            $('#uploader-base-submit').removeClass('disabled');
+        });
+
+        $('#uploader-base-submit').on('click',function(){
+            if(!$(this).is('.disabled')){
+                baseUploader.upload();
+            }
+        });
+
+        /**
+         * 上传成功事件
+         */
+        baseUploader.on('uploadSuccess', function (file, response) {
+            if(response.status) {
+                alert('上传成功');
+            } else {
+                alert('文件上传失败');
+            }
+        });
+
+    });
+
+
+    $(function() {
+        var $wrap = $('#imgUploader'),
+
+        // 图片容器
+        $queue = $( '<ul class="filelist"></ul>' )
+                .appendTo( $wrap.find( '.queueList' ) ),
+
+        // 状态栏，包括进度和控制按钮
+                $statusBar = $wrap.find( '.statusBar' ),
+
+        // 文件总体选择信息。
+                $info = $statusBar.find( '.info' ),
+
+        // 上传按钮
+                $upload = $wrap.find( '.uploadBtn' ),
+
+        // 没选择文件之前的内容。
+                $placeHolder = $wrap.find( '.placeholder' ),
+
+                $progress = $statusBar.find( '.progress' ).hide(),
+
+        // 添加的文件数量
+                fileCount = 0,
+
+        // 添加的文件总大小
+                fileSize = 0,
+
+        // 优化retina, 在retina下这个值是2
+                ratio = window.devicePixelRatio || 1,
+
+        // 缩略图大小
+                thumbnailWidth = 110 * ratio,
+                thumbnailHeight = 110 * ratio,
+
+        // 可能有pedding, ready, uploading, confirm, done.
+                state = 'pedding',
+
+        // 所有文件的进度信息，key为file id
+                percentages = {},
+        // 判断浏览器是否支持图片的base64
+                isSupportBase64 = ( function() {
+                    var data = new Image();
+                    var support = true;
+                    data.onload = data.onerror = function() {
+                        if( this.width != 1 || this.height != 1 ) {
+                            support = false;
+                        }
+                    }
+                    data.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
+                    return support;
+                } )(),
+
+        // 检测是否已经安装flash，检测flash的版本
+                flashVersion = ( function() {
+                    var version;
+
+                    try {
+                        version = navigator.plugins[ 'Shockwave Flash' ];
+                        version = version.description;
+                    } catch ( ex ) {
+                        try {
+                            version = new ActiveXObject('ShockwaveFlash.ShockwaveFlash')
+                                    .GetVariable('$version');
+                        } catch ( ex2 ) {
+                            version = '0.0';
+                        }
+                    }
+                    version = version.match( /\d+/g );
+                    return parseFloat( version[ 0 ] + '.' + version[ 1 ], 10 );
+                } )(),
+
+                supportTransition = (function(){
+                    var s = document.createElement('p').style,
+                            r = 'transition' in s ||
+                                    'WebkitTransition' in s ||
+                                    'MozTransition' in s ||
+                                    'msTransition' in s ||
+                                    'OTransition' in s;
+                    s = null;
+                    return r;
+                })(),
+
+        // WebUploader实例
+                uploader;
+
+        if ( !WebUploader.Uploader.support('flash') && WebUploader.browser.ie ) {
+
+            // flash 安装了但是版本过低。
+            if (flashVersion) {
+                (function(container) {
+                    window['expressinstallcallback'] = function( state ) {
+                        switch(state) {
+                            case 'Download.Cancelled':
+                                alert('您取消了更新！')
+                                break;
+
+                            case 'Download.Failed':
+                                alert('安装失败')
+                                break;
+
+                            default:
+                                alert('安装已成功，请刷新！');
+                                break;
+                        }
+                        delete window['expressinstallcallback'];
+                    };
+
+                    var swf = '../images/expressInstall.swf';
+                    // insert flash object
+                    var html = '<object type="application/' +
+                            'x-shockwave-flash" data="' +  swf + '" ';
+
+                    if (WebUploader.browser.ie) {
+                        html += 'classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" ';
+                    }
+
+                    html += 'width="100%" height="100%" style="outline:0">'  +
+                    '<param name="movie" value="' + swf + '" />' +
+                    '<param name="wmode" value="transparent" />' +
+                    '<param name="allowscriptaccess" value="always" />' +
+                    '</object>';
+
+                    container.html(html);
+
+                })($wrap);
+
+                // 压根就没有安转。
+            } else {
+                $wrap.html('<a href="http://www.adobe.com/go/getflashplayer" target="_blank" border="0"><img alt="get flash player" src="http://www.adobe.com/macromedia/style_guide/images/160x41_Get_Flash_Player.jpg" /></a>');
+            }
+
+            return;
+        } else if (!WebUploader.Uploader.support()) {
+            alert( 'Web Uploader 不支持您的浏览器！');
+            return;
+        }
+
+        // 实例化
+        uploader = WebUploader.create({
+            pick: {
+                id: '#filePicker',
+                label: '点击选择图片'
+            },
+            formData: {
+                uid: 123
+            },
+            dnd: '#dndArea',
+            paste: '#imgUploader',
+            swf: '../images/uploader.swf',
+            chunked: false,
+            chunkSize: 512 * 1024,
+            server: '../../server/fileupload.php',
+            // runtimeOrder: 'flash',
+
+            // accept: {
+            //     title: 'Images',
+            //     extensions: 'gif,jpg,jpeg,bmp,png',
+            //     mimeTypes: 'image/*'
+            // },
+
+            // 禁掉全局的拖拽功能。这样不会出现图片拖进页面的时候，把图片打开。
+            disableGlobalDnd: true,
+            fileNumLimit: 300,
+            fileSizeLimit: 200 * 1024 * 1024,    // 200 M
+            fileSingleSizeLimit: 50 * 1024 * 1024    // 50 M
+        });
+
+        // 拖拽时不接受 js, txt 文件。
+        uploader.on( 'dndAccept', function( items ) {
+            var denied = false,
+                    len = items.length,
+                    //i = 0,
+            // 修改js类型
+                    unAllowed = 'text/plain;application/javascript ';
+
+            for ( var i=0; i<len; i++ ) {
+                // 如果在列表里面
+                if ( ~unAllowed.indexOf( items[ i ].type ) ) {
+                    denied = true;
+                    break;
+                }
+            }
+
+            return !denied;
+        });
+
+        uploader.on('dialogOpen', function() {
+            console.log('here');
+        });
+
+        // uploader.on('filesQueued', function() {
+        //     uploader.sort(function( a, b ) {
+        //         if ( a.name < b.name )
+        //           return -1;
+        //         if ( a.name > b.name )
+        //           return 1;
+        //         return 0;
+        //     });
+        // });
+
+        // 添加“添加文件”的按钮，
+        uploader.addButton({
+            id: '#filePicker2',
+            label: '继续添加'
+        });
+
+        uploader.on('ready', function() {
+            window.uploader = uploader;
+        });
+
+        // 当有文件添加进来时执行，负责view的创建
+        function addFile( file ) {
+            var $li = $( '<li id="' + file.id + '">' +
+                    '<p class="title">' + file.name + '</p>' +
+                    '<p class="imgWrap"></p>'+
+                    '<p class="progress"><span></span></p>' +
+                    '</li>' ),
+
+                    $btns = $('<div class="file-panel">' +
+                    '<span class="cancel">删除</span>' +
+                    '<span class="rotateRight">向右旋转</span>' +
+                    '<span class="rotateLeft">向左旋转</span></div>').appendTo( $li ),
+                    $prgress = $li.find('p.progress span'),
+                    $wrap = $li.find( 'p.imgWrap' ),
+                    $info = $('<p class="error"></p>'),
+
+                    showError = function( code ) {
+                        switch( code ) {
+                            case 'exceed_size':
+                                text = '文件大小超出';
+                                break;
+
+                            case 'interrupt':
+                                text = '上传暂停';
+                                break;
+
+                            default:
+                                text = '上传失败，请重试';
+                                break;
+                        }
+
+                        $info.text( text ).appendTo( $li );
+                    };
+
+            if ( file.getStatus() === 'invalid' ) {
+                showError( file.statusText );
+            } else {
+                // @todo lazyload
+                $wrap.text( '预览中' );
+                uploader.makeThumb( file, function( error, src ) {
+                    var img;
+
+                    if ( error ) {
+                        $wrap.text( '不能预览' );
+                        return;
+                    }
+
+                    if( isSupportBase64 ) {
+                        img = $('<img src="'+src+'">');
+                        $wrap.empty().append( img );
+                    } else {
+                        $.ajax('../../server/preview.php', {
+                            method: 'POST',
+                            data: src,
+                            dataType:'json'
+                        }).done(function( response ) {
+                            if (response.result) {
+                                img = $('<img src="'+response.result+'">');
+                                $wrap.empty().append( img );
+                            } else {
+                                $wrap.text("预览出错");
+                            }
+                        });
+                    }
+                }, thumbnailWidth, thumbnailHeight );
+
+                percentages[ file.id ] = [ file.size, 0 ];
+                file.rotation = 0;
+            }
+
+            file.on('statuschange', function( cur, prev ) {
+                if ( prev === 'progress' ) {
+                    $prgress.hide().width(0);
+                } else if ( prev === 'queued' ) {
+                    $li.off( 'mouseenter mouseleave' );
+                    $btns.remove();
+                }
+
+                // 成功
+                if ( cur === 'error' || cur === 'invalid' ) {
+                    console.log( file.statusText );
+                    showError( file.statusText );
+                    percentages[ file.id ][ 1 ] = 1;
+                } else if ( cur === 'interrupt' ) {
+                    showError( 'interrupt' );
+                } else if ( cur === 'queued' ) {
+                    $info.remove();
+                    $prgress.css('display', 'block');
+                    percentages[ file.id ][ 1 ] = 0;
+                } else if ( cur === 'progress' ) {
+                    $info.remove();
+                    $prgress.css('display', 'block');
+                } else if ( cur === 'complete' ) {
+                    $prgress.hide().width(0);
+                    $li.append( '<span class="success"></span>' );
+                }
+
+                $li.removeClass( 'state-' + prev ).addClass( 'state-' + cur );
+            });
+
+            $li.on( 'mouseenter', function() {
+                $btns.stop().animate({height: 30});
+            });
+
+            $li.on( 'mouseleave', function() {
+                $btns.stop().animate({height: 0});
+            });
+
+            $btns.on( 'click', 'span', function() {
+                var index = $(this).index(),
+                        deg;
+
+                switch ( index ) {
+                    case 0:
+                        uploader.removeFile( file );
+                        return;
+
+                    case 1:
+                        file.rotation += 90;
+                        break;
+
+                    case 2:
+                        file.rotation -= 90;
+                        break;
+                }
+
+                if ( supportTransition ) {
+                    deg = 'rotate(' + file.rotation + 'deg)';
+                    $wrap.css({
+                        '-webkit-transform': deg,
+                        '-mos-transform': deg,
+                        '-o-transform': deg,
+                        'transform': deg
+                    });
+                } else {
+                    $wrap.css( 'filter', 'progid:DXImageTransform.Microsoft.BasicImage(rotation='+ (~~((file.rotation/90)%4 + 4)%4) +')');
+                    // use jquery animate to rotation
+                    // $({
+                    //     rotation: rotation
+                    // }).animate({
+                    //     rotation: file.rotation
+                    // }, {
+                    //     easing: 'linear',
+                    //     step: function( now ) {
+                    //         now = now * Math.PI / 180;
+
+                    //         var cos = Math.cos( now ),
+                    //             sin = Math.sin( now );
+
+                    //         $wrap.css( 'filter', "progid:DXImageTransform.Microsoft.Matrix(M11=" + cos + ",M12=" + (-sin) + ",M21=" + sin + ",M22=" + cos + ",SizingMethod='auto expand')");
+                    //     }
+                    // });
+                }
+
+
+            });
+
+            $li.appendTo( $queue );
+        }
+
+        // 负责view的销毁
+        function removeFile( file ) {
+            var $li = $('#'+file.id);
+
+            delete percentages[ file.id ];
+            updateTotalProgress();
+            $li.off().find('.file-panel').off().end().remove();
+        }
+
+        function updateTotalProgress() {
+            var loaded = 0,
+                    total = 0,
+                    spans = $progress.children(),
+                    percent;
+
+            $.each( percentages, function( k, v ) {
+                total += v[ 0 ];
+                loaded += v[ 0 ] * v[ 1 ];
+            } );
+
+            percent = total ? loaded / total : 0;
+
+
+            spans.eq( 0 ).text( Math.round( percent * 100 ) + '%' );
+            spans.eq( 1 ).css( 'width', Math.round( percent * 100 ) + '%' );
+            updateStatus();
+        }
+
+        function updateStatus() {
+            var text = '', stats;
+
+            if ( state === 'ready' ) {
+                text = '选中' + fileCount + '张图片，共' +
+                WebUploader.formatSize( fileSize ) + '。';
+            } else if ( state === 'confirm' ) {
+                stats = uploader.getStats();
+                if ( stats.uploadFailNum ) {
+                    text = '已成功上传' + stats.successNum+ '张照片至XX相册，'+
+                    stats.uploadFailNum + '张照片上传失败，<a class="retry" href="#">重新上传</a>失败图片或<a class="ignore" href="#">忽略</a>'
+                }
+
+            } else {
+                stats = uploader.getStats();
+                text = '共' + fileCount + '张（' +
+                WebUploader.formatSize( fileSize )  +
+                '），已上传' + stats.successNum + '张';
+
+                if ( stats.uploadFailNum ) {
+                    text += '，失败' + stats.uploadFailNum + '张';
+                }
+            }
+
+            $info.html( text );
+        }
+
+        function setState( val ) {
+            var file, stats;
+
+            if ( val === state ) {
+                return;
+            }
+
+            $upload.removeClass( 'state-' + state );
+            $upload.addClass( 'state-' + val );
+            state = val;
+
+            switch ( state ) {
+                case 'pedding':
+                    $placeHolder.removeClass( 'element-invisible' );
+                    $queue.hide();
+                    $statusBar.addClass( 'element-invisible' );
+                    uploader.refresh();
+                    break;
+
+                case 'ready':
+                    $placeHolder.addClass( 'element-invisible' );
+                    $( '#filePicker2' ).removeClass( 'element-invisible');
+                    $queue.show();
+                    $statusBar.removeClass('element-invisible');
+                    uploader.refresh();
+                    break;
+
+                case 'uploading':
+                    $( '#filePicker2' ).addClass( 'element-invisible' );
+                    $progress.show();
+                    $upload.text( '暂停上传' );
+                    break;
+
+                case 'paused':
+                    $progress.show();
+                    $upload.text( '继续上传' );
+                    break;
+
+                case 'confirm':
+                    $progress.hide();
+                    $( '#filePicker2' ).removeClass( 'element-invisible' );
+                    $upload.text( '开始上传' );
+
+                    stats = uploader.getStats();
+                    if ( stats.successNum && !stats.uploadFailNum ) {
+                        setState( 'finish' );
+                        return;
+                    }
+                    break;
+                case 'finish':
+                    stats = uploader.getStats();
+                    if ( stats.successNum ) {
+                        alert( '上传成功' );
+                    } else {
+                        // 没有成功的图片，重设
+                        state = 'done';
+                        location.reload();
+                    }
+                    break;
+            }
+
+            updateStatus();
+        }
+
+        uploader.onUploadProgress = function( file, percentage ) {
+            var $li = $('#'+file.id),
+                    $percent = $li.find('.progress span');
+
+            $percent.css( 'width', percentage * 100 + '%' );
+            percentages[ file.id ][ 1 ] = percentage;
+            updateTotalProgress();
+        };
+
+        uploader.onFileQueued = function( file ) {
+            fileCount++;
+            fileSize += file.size;
+
+            if ( fileCount === 1 ) {
+                $placeHolder.addClass( 'element-invisible' );
+                $statusBar.show();
+            }
+
+            addFile( file );
+            setState( 'ready' );
+            updateTotalProgress();
+        };
+
+        uploader.onFileDequeued = function( file ) {
+            fileCount--;
+            fileSize -= file.size;
+
+            if ( !fileCount ) {
+                setState( 'pedding' );
+            }
+
+            removeFile( file );
+            updateTotalProgress();
+
+        };
+
+        uploader.on( 'all', function( type ) {
+            var stats;
+            switch( type ) {
+                case 'uploadFinished':
+                    setState( 'confirm' );
+                    break;
+
+                case 'startUpload':
+                    setState( 'uploading' );
+                    break;
+
+                case 'stopUpload':
+                    setState( 'paused' );
+                    break;
+
+            }
+        });
+
+        uploader.onError = function( code ) {
+            alert( 'Eroor: ' + code );
+        };
+
+        $upload.on('click', function() {
+            if ( $(this).hasClass( 'disabled' ) ) {
+                return false;
+            }
+
+            if ( state === 'ready' ) {
+                uploader.upload();
+            } else if ( state === 'paused' ) {
+                uploader.upload();
+            } else if ( state === 'uploading' ) {
+                uploader.stop();
+            }
+        });
+
+        $info.on( 'click', '.retry', function() {
+            uploader.retry();
+        } );
+
+        $info.on( 'click', '.ignore', function() {
+            alert( 'todo' );
+        } );
+
+        $upload.addClass( 'state-' + state );
+        updateTotalProgress();
+    });
+</script>
+</body>
+</html>
+
