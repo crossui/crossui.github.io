@@ -1,0 +1,91 @@
+
+.#{$namespace}spinner , .#{$namespace}spinner-addon {
+  display: inline-block;
+}
+.#{$namespace}spinner .c-input{
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.#{$namespace}spinner .#{$namespace}spinner-addon {
+  padding: 5px 10px;
+  text-align: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-left: 0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius:2px;
+  vertical-align: middle;
+}
+.#{$namespace}spinner .#{$namespace}spinner-addon .#{$namespace}spinner-up,
+.#{$namespace}spinner .#{$namespace}spinner-addon .#{$namespace}spinner-down {
+  height: 10px;
+  width: 10px;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+}
+.#{$namespace}spinner .#{$namespace}spinner-addon .#{$namespace}arrow-t,
+.#{$namespace}spinner .#{$namespace}spinner-addon .#{$namespace}arrow-b{
+  border-width: 5px;
+}
+.#{$namespace}spinner .#{$namespace}spinner-addon .#{$namespace}arrow-t {
+  top: -7px;
+  border-bottom-color:#bdbdbd;
+}
+.#{$namespace}spinner .#{$namespace}spinner-addon .#{$namespace}arrow-b {
+  bottom: 0px;
+  border-top-color:#bdbdbd;
+}
+.#{$namespace}spinner .#{$namespace}spinner-addon .#{$namespace}spinner-up:hover .#{$namespace}arrow-t {
+  border-bottom-color:#999;
+}
+.#{$namespace}spinner .#{$namespace}spinner-addon .#{$namespace}spinner-down:hover .#{$namespace}arrow-b {
+  border-top-color:#999;
+}
+.#{$namespace}spinner-min .#{$namespace}spinner-addon {
+  padding:1px 3px 1px 5px;
+}
+.#{$namespace}spinner-min .#{$namespace}spinner-addon .#{$namespace}arrow-t,
+.#{$namespace}spinner-min .#{$namespace}spinner-addon .#{$namespace}arrow-b{
+  border-width: 4px;
+}
+.#{$namespace}spinner-min .#{$namespace}spinner-addon .#{$namespace}arrow-t {
+  top: 0px;
+}
+.#{$namespace}spinner-min .#{$namespace}spinner-addon .#{$namespace}arrow-b {
+  bottom: -1px;
+}
+
+
+
+
+/* c-spinner-box */
+.#{$namespace}spinner .#{$namespace}spinner-box .c-input {
+  border-radius: 0;
+}
+.#{$namespace}spinner .#{$namespace}spinner-box .#{$namespace}spinner-up,
+.#{$namespace}spinner .#{$namespace}spinner-box .#{$namespace}spinner-down {
+  height: 32px;
+  width: 30px;
+  line-height: 32px;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+  background-color: #f0f0f0;
+  border: 1px #ddd solid;
+  color: #bdbdbd;
+}
+.#{$namespace}spinner .#{$namespace}spinner-box .#{$namespace}spinner-up {
+  border-left: 0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.#{$namespace}spinner .#{$namespace}spinner-box .#{$namespace}spinner-down {
+  border-right: 0;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.#{$namespace}spinner .#{$namespace}spinner-box .#{$namespace}spinner-up:hover,
+.#{$namespace}spinner .#{$namespace}spinner-box .#{$namespace}spinner-down:hover{
+  color: #999;
+}

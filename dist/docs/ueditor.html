@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>富文本编辑器</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/cross.css">
+    <link rel="stylesheet" href="../css/highlight.css">
+</head>
+<body>
+<div class="p-medium">
+
+    <fieldset class="c-field">
+        <legend>引用</legend>
+        <div class="c-field-box">
+<pre><code class="html c-break">
+    &lt;script type="text/javascript" src="../js/ueditor/ueditor.all.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="../js/ueditor/ueditor.config.js"&gt;&lt;/script&gt;
+</code></pre>
+        </div>
+    </fieldset>
+
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <script id="editor" type="text/plain" style="width:100%;height:500px"></script>
+        <div class="mt-small">
+            <a class="button button-primary button-rounded button-small" onclick="getAllHtml()">获得整个html的内容</a>
+            <a class="button button-primary button-rounded button-small" onclick="getContent()">获得内容</a>
+            <a class="button button-primary button-rounded button-small" onclick="setContent()">写入内容</a>
+            <a class="button button-primary button-rounded button-small" onclick="setContent(true)">追加内容</a>
+            <a class="button button-primary button-rounded button-small" onclick="getContentTxt()">获得纯文本</a>
+            <a class="button button-primary button-rounded button-small" onclick="getPlainTxt()">获得带格式的纯文本</a>
+            <a class="button button-primary button-rounded button-small" onclick="hasContent()">判断是否有内容</a>
+            <a class="button button-primary button-rounded button-small" onclick="setFocus()">使编辑器获得焦点</a>
+        </div>
+        <div class="mt-small">
+            <a class="button button-primary button-rounded button-small" onclick="getText()">获得当前选中的文本</a>
+            <a class="button button-primary button-rounded button-small" onclick="insertHtml()">插入给定的内容</a>
+            <a class="button button-primary button-rounded button-small" id="enable" onclick="setEnabled()">可以编辑</a>
+            <a class="button button-primary button-rounded button-small" onclick="setDisabled()">不可编辑</a>
+            <a class="button button-primary button-rounded button-small" onclick="UE.getEditor('editor').setHide()">隐藏编辑器</a>
+            <a class="button button-primary button-rounded button-small" onclick="UE.getEditor('editor').setShow()">显示编辑器</a>
+            <a class="button button-primary button-rounded button-small" onclick="UE.getEditor('editor').setHeight(300)">设置编辑器的高度为300</a>
+        </div>
+        <div class="mt-small">
+            <a class="button button-primary button-rounded button-small" type="button" onclick="createEditor()">创建编辑器</a>
+            <a class="button button-primary button-rounded button-small" type="button" onclick="deleteEditor()">删除编辑器</a>
+            <a class="button button-primary button-rounded button-small" onmousedown="isFocus(event)">编辑器是否获得焦点</a>
+            <a class="button button-primary button-rounded button-small" onmousedown="setblur(event)">编辑器失去焦点</a>
+            <a class="button button-primary button-rounded button-small" onclick="getLocalData()">获取草稿箱内容</a>
+            <a class="button button-primary button-rounded button-small" onclick="clearLocalData()">清空草稿箱</a>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">富文本编辑器</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#ueditor1" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                请根据你的自己的需求新建一个ueditor.config.js
+            </div>
+        </div>
+
+        <div id="ueditor1" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;script id="editor" type="text/plain" style="width:1024px;height:500px;"&gt;&lt;/script&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    var ue = UE.getEditor('editor');
+
+    function isFocus(e) {
+        alert(UE.getEditor('editor').isFocus());
+        UE.dom.domUtils.preventDefault(e)
+    }
+
+    function setblur(e) {
+        UE.getEditor('editor').blur();
+        UE.dom.domUtils.preventDefault(e)
+    }
+
+    function insertHtml() {
+        var value = prompt('插入html代码', '');
+        UE.getEditor('editor').execCommand('insertHtml', value)
+    }
+
+    function createEditor() {
+        enableBtn();
+        UE.getEditor('editor');
+    }
+
+    function getAllHtml() {
+        alert(UE.getEditor('editor').getAllHtml())
+    }
+
+    function getContent() {
+        var arr = [];
+        arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+        arr.push("内容为：");
+        arr.push(UE.getEditor('editor').getContent());
+        alert(arr.join("\n"));
+    }
+
+    function getPlainTxt() {
+        var arr = [];
+        arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
+        arr.push("内容为：");
+        arr.push(UE.getEditor('editor').getPlainTxt());
+        alert(arr.join('\n'))
+    }
+
+    function setContent(isAppendTo) {
+        var arr = [];
+        arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
+        UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
+        alert(arr.join("\n"));
+    }
+
+    function setDisabled() {
+        UE.getEditor('editor').setDisabled('fullscreen');
+        disableBtn("enable");
+    }
+
+    function setEnabled() {
+        UE.getEditor('editor').setEnabled();
+        enableBtn();
+    }
+
+    function getText() {
+        //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
+        var range = UE.getEditor('editor').selection.getRange();
+        range.select();
+        var txt = UE.getEditor('editor').selection.getText();
+        alert(txt)
+    }
+
+    function getContentTxt() {
+        var arr = [];
+        arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
+        arr.push("编辑器的纯文本内容为：");
+        arr.push(UE.getEditor('editor').getContentTxt());
+        alert(arr.join("\n"));
+    }
+
+    function hasContent() {
+        var arr = [];
+        arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
+        arr.push("判断结果为：");
+        arr.push(UE.getEditor('editor').hasContents());
+        alert(arr.join("\n"));
+    }
+
+    function setFocus() {
+        UE.getEditor('editor').focus();
+    }
+
+    function deleteEditor() {
+        disableBtn();
+        UE.getEditor('editor').destroy();
+    }
+
+    function disableBtn(str) {
+        var div = document.getElementById('btns');
+        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+        for (var i = 0, btn; btn = btns[i++];) {
+            if (btn.id == str) {
+                UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+            } else {
+                btn.setAttribute("disabled", "true");
+            }
+        }
+    }
+
+    function enableBtn() {
+        var div = document.getElementById('btns');
+        var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+        for (var i = 0, btn; btn = btns[i++];) {
+            UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+        }
+    }
+
+    function getLocalData() {
+        alert(UE.getEditor('editor').execCommand("getlocaldata"));
+    }
+
+    function clearLocalData() {
+        UE.getEditor('editor').execCommand("clearlocaldata");
+        alert("已清空草稿箱")
+    }
+
+    // editor准备好之后才可以使用 赋值
+    ue.addListener("ready", function () {
+        ue.setContent(objJson.Data.ContentVal);
+    });
+
+    // mini editor
+    UE.getEditor('myEditor',{
+        //这里可以选择自己需要的工具按钮名称,此处仅选择如下五个
+        toolbars:[['FullScreen', 'Source', 'Undo', 'Redo','Bold','test']],
+        //focus时自动清空初始化时的内容
+        autoClearinitialContent:true,
+        //关闭字数统计
+        wordCount:false,
+        //关闭elementPath
+        elementPathEnabled:false,
+        //默认的编辑区域高度
+        initialFrameHeight:300
+        //更多其他参数，请参考ueditor.config.js中的配置项
+    })
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <blockquote class="c-quote c-quote-box">
+        以下为 UEditor 相关资源网站：
+        <ul class="c-list-disc">
+            <li>官方定制：<a target="_blank" class="alinks alinks-blue" href="http://ueditor.baidu.com/website/download.html#ubuilder">http://ueditor.baidu.com/website/download.html#ubuilder</a></li>
+            <li>官方下载：<a target="_blank" class="alinks alinks-blue" href="http://ueditor.baidu.com/website/download.html">http://ueditor.baidu.com/website/download.html</a></li>
+            <li>官方文档：<a target="_blank" class="alinks alinks-blue" href="http://fex.baidu.com/ueditor/">http://fex.baidu.com/ueditor/</a></li>
+            <li>项目地址：<a target="_blank" class="alinks alinks-blue" href="https://github.com/fex-team/ueditor">https://github.com/fex-team/ueditor</a></li>
+        </ul>
+    </blockquote>
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
+<script type="text/javascript" src="../js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="../js/ueditor/ueditor.all.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+<script type="text/javascript">
+        var ue = UE.getEditor('editor');
+
+
+        function isFocus(e) {
+            alert(UE.getEditor('editor').isFocus());
+            UE.dom.domUtils.preventDefault(e)
+        }
+
+        function setblur(e) {
+            UE.getEditor('editor').blur();
+            UE.dom.domUtils.preventDefault(e)
+        }
+
+        function insertHtml() {
+            var value = prompt('插入html代码', '');
+            UE.getEditor('editor').execCommand('insertHtml', value)
+        }
+
+        function createEditor() {
+            enableBtn();
+            UE.getEditor('editor');
+        }
+
+        function getAllHtml() {
+            alert(UE.getEditor('editor').getAllHtml())
+        }
+
+        function getContent() {
+            var arr = [];
+            arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+            arr.push("内容为：");
+            arr.push(UE.getEditor('editor').getContent());
+            alert(arr.join("\n"));
+        }
+
+        function getPlainTxt() {
+            var arr = [];
+            arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
+            arr.push("内容为：");
+            arr.push(UE.getEditor('editor').getPlainTxt());
+            alert(arr.join('\n'))
+        }
+
+        function setContent(isAppendTo) {
+            var arr = [];
+            arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
+            UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
+            alert(arr.join("\n"));
+        }
+
+        function setDisabled() {
+            UE.getEditor('editor').setDisabled('fullscreen');
+            disableBtn("enable");
+        }
+
+        function setEnabled() {
+            UE.getEditor('editor').setEnabled();
+            enableBtn();
+        }
+
+        function getText() {
+            //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
+            var range = UE.getEditor('editor').selection.getRange();
+            range.select();
+            var txt = UE.getEditor('editor').selection.getText();
+            alert(txt)
+        }
+
+        function getContentTxt() {
+            var arr = [];
+            arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
+            arr.push("编辑器的纯文本内容为：");
+            arr.push(UE.getEditor('editor').getContentTxt());
+            alert(arr.join("\n"));
+        }
+
+        function hasContent() {
+            var arr = [];
+            arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
+            arr.push("判断结果为：");
+            arr.push(UE.getEditor('editor').hasContents());
+            alert(arr.join("\n"));
+        }
+
+        function setFocus() {
+            UE.getEditor('editor').focus();
+        }
+
+        function deleteEditor() {
+            disableBtn();
+            UE.getEditor('editor').destroy();
+        }
+
+        function disableBtn(str) {
+            var div = document.getElementById('btns');
+            var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+            for (var i = 0, btn; btn = btns[i++];) {
+                if (btn.id == str) {
+                    UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+                } else {
+                    btn.setAttribute("disabled", "true");
+                }
+            }
+        }
+
+        function enableBtn() {
+            var div = document.getElementById('btns');
+            var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+            for (var i = 0, btn; btn = btns[i++];) {
+                UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+            }
+        }
+
+        function getLocalData() {
+            alert(UE.getEditor('editor').execCommand("getlocaldata"));
+        }
+
+        function clearLocalData() {
+            UE.getEditor('editor').execCommand("clearlocaldata");
+            alert("已清空草稿箱")
+        }
+
+</script>
+</body>
+</html>
+

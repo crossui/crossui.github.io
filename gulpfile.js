@@ -144,6 +144,15 @@ gulp.task('widgetJs',function(){
 });
 
 /**
+ * js all exports
+ */
+gulp.task('jsAllExports',function(){
+    return gulp.src(Asset.jsAllExports.src)
+        .pipe(changed(Asset.jsAllExports.dist))
+        .pipe(gulp.dest(Asset.jsAllExports.dist));
+});
+
+/**
  * images
  */
 gulp.task('images',function(){
@@ -155,7 +164,7 @@ gulp.task('images',function(){
  * 项目开发进行时 执行的默认任务。
  */
 gulp.task('start', function(){
-    run('css', 'iconfont', 'docsHtml', 'json', 'docsJs', 'libsJs', 'crossJs', 'widgetJs','images');  //事先执行任务
+    run('css', 'iconfont', 'docsHtml', 'json', 'docsJs', 'libsJs', 'crossJs', 'widgetJs','images','jsAllExports');  //事先执行任务
     // Watch cross.css files
     gulp.watch(Asset.css.watch, ['css']);
 
@@ -183,9 +192,12 @@ gulp.task('start', function(){
     // Watch images
     gulp.watch(Asset.images.src, ['images']);
 
+    // Watch jsAllExports
+    gulp.watch(Asset.jsAllExports.src, ['jsAllExports']);
+
     /* 静态服务
      */
-    browserSync.init([Asset.css.dist, Asset.iconfont.dist, Asset.docs.html.dist, Asset.json.dist, Asset.js.docs.dist, Asset.js.libs.dist, Asset.js.cross.dist, Asset.widget.dist,Asset.images.dist], {
+    browserSync.init([Asset.css.dist, Asset.iconfont.dist, Asset.docs.html.dist, Asset.json.dist, Asset.js.docs.dist, Asset.js.libs.dist, Asset.js.cross.dist, Asset.widget.dist,Asset.images.dist,Asset.jsAllExports.dist], {
         // 代理模式
         //proxy: "192.168.137.44:8181/git/crossui.github.io/dist/docs/"
         server: {

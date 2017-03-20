@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>validation</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/cross.css">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <link rel="stylesheet" href="../css/validation.css">
+</head>
+<body>
+<div class="p-medium">
+
+    <fieldset class="c-field">
+        <legend>引用</legend>
+        <div class="c-field-box">
+<pre><code class="html c-break">
+    &lt;link rel="stylesheet" href="../css/validation.css" /&gt;
+    &lt;script type="text/javascript" src="../js/validation/validation.js"&gt;&lt;/script&gt;
+</code></pre>
+        </div>
+    </fieldset>
+
+    <div class="c-border p-small border-radius-rounded mt-small">
+
+        <div class="mb-medium">
+            <a class="button button-primary button-rounded button-small" href="javascript:;" onclick="alert('表单是否验证通过？结果：'+jQuery('#formID').validationEngine('validate'))">验证表单</a>
+            <a class="button button-primary button-rounded button-small" href="javascript:;" onclick="jQuery('#formID').validationEngine('hide')">隐藏表单内所有提示信息</a>
+            <a class="button button-primary button-rounded button-small" href="javascript:;" onclick="jQuery('#formID').validationEngine('showPrompt','信息示例','pass')">在表单上显示提示信息</a>
+            <a class="button button-primary button-rounded button-small" href="javascript:;" onclick="jQuery('#formID').validationEngine('updatePromptsPosition')">更新表单内所有提示信息的位置</a>
+        </div>
+        <div class="mb-medium">
+            <a class="button button-primary button-rounded button-small" href="javascript:;" onclick="jQuery('#sport').validationEngine('validate')">验证 #sport</a>
+            <a class="button button-primary button-rounded button-small" href="javascript:;" onclick="jQuery('#sport').validationEngine('hide')">隐藏 #sport 的提示信息</a>
+            <a class="button button-primary button-rounded button-small" href="javascript:;" onclick="jQuery('#test').validationEngine('showPrompt','信息示例','pass')">在 #test 上显示提示信息</a>
+            <a class="button button-primary button-rounded button-small" href="javascript:;" onclick="jQuery('#test').validationEngine('hide')">隐藏 #test 的提示信息</a>
+        </div>
+        <div class="ptb-medium">
+            <div id="test" class="test bgc-gray mtb-medium p-small">div#test 元素</div>
+            <form id="formID" class="formular" method="post">
+                <div class="form-layout form-blocks">
+                    <div class="control-group">
+                        <label class="control-label"><sub class="control-sub">*</sub> 必填项：</label>
+                        <div class="control-form">
+                            <input type="text" placeholder="请输入用户名" class="validate[required] c-input" type="text" name="req" id="req">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">可选项：</label>
+                        <div class="control-form">
+                            <input type="text" placeholder="请输入用户名" class="validate[custom[url]] c-input" type="text" name="optional" id="optional">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">占位符 &amp; 必填（输入内容不能为占位符内容）：</label>
+                        <div class="control-form">
+                            <input value="占位符" data-validation-placeholder="占位符" class="validate[required] c-input" type="text" name="reqplaceholder" id="reqplaceholder">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">最喜欢的运动 1：</label>
+                        <div class="control-form">
+                            <div class="form-select">
+                                <select class="validate[required] select select-w170" id="sport">
+                                    <option value="">选择一项运动</option>
+                                    <option value="option1">网球</option>
+                                    <option value="option2">足球</option>
+                                    <option value="option3">高尔夫</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">最喜欢的运动 2：</label>
+                        <div class="control-form">
+                            <div class="form-select">
+                                <select class="validate[required] select select-w170" name="sport2" id="sport2" multiple="multiple">
+                                    <option value="">选择一项运动</option>
+                                    <option value="option1">网球</option>
+                                    <option value="option2">足球</option>
+                                    <option value="option3">高尔夫</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">自带常用的正则验证（电话号码、网址、IP 地址、E-mail 地址等） {<code>validate[required,custom[url]]</code>}：</label>
+                        <div class="control-form">
+                            <input value="http://" class="validate[required,custom[url]] c-input" type="text" name="url" id="url">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">密码：</label>
+                        <div class="control-form">
+                            <input value="karnius" class="validate[required] c-input" type="password" name="password" id="password">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">确认密码：</label>
+                        <div class="control-form">
+                            <input value="kaniusBAD" class="validate[required,equals[password]] c-input" type="password" name="password2" id="password2">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">限制最小字符数（必填项）：</label>
+                        <div class="control-form">
+                            <input value="" class="validate[required,minSize[6]] c-input" type="text" name="minsize" id="minsize">
+                            <span class="control-hlep">validate[required,minSize[6]]</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">限制最大字符数（可选项，不填写时不会提示错误）：</label>
+                        <div class="control-form">
+                            <input value="0123456789" class="validate[optional,maxSize[6]] c-input" type="text" name="maxsize" id="maxsize">
+                            <span class="control-hlep">validate[maxSize[6]]</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">输入整数（必须大于或等于 -5）：</label>
+                        <div class="control-form">
+                            <input value="-7" class="validate[required,custom[integer],min[-5]] c-input" type="text" name="min" id="min">
+                            <span class="control-hlep">validate[required,custom[integer],min[-5]]</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">输入整数（必须小于或等于 50）：</label>
+                        <div class="control-form">
+                            <input value="55" class="validate[required,custom[integer],max[50]] c-input" type="text" name="max" id="max">
+                            <span class="control-hlep">validate[required,custom[integer],max[50]]</span>
+                        </div>
+                    </div>
+
+                    <div class="tips c-line-h2 mb10 mt30">
+                        <p>检查信用卡号码，理论上是有效的，格式标准参照 <a href="http://en.wikipedia.org/wiki/Luhn_algorithm">Luhn 算法</a>，但最终还是要看银行的脸。</p>
+                        <p>鉴于信用卡号码的格式，空格和连字符（' ','-'）将被忽略。</p>
+                        <p>示例：</p>
+                        <ul>
+                            <li>4111 1111 1111 1111</li>
+                            <li>3737-321345-610004</li>
+                        </ul>
+                        <a href="http://www.paypalobjects.com/en_US/vhelp/paypalmanager_help/credit_card_numbers.htm">更多示例</a>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label"></label>
+                        <div class="control-form">
+                            <input value="" class="validate[required,creditCard] c-input" type="text" name="creditcard2" id="creditcard2">
+                            <span class="control-hlep">validate[[required,creditCard]</span>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group">
+                        <label class="control-label">调用外部函数进行验证（只能输入“HELLO”）：</label>
+                        <div class="control-form">
+                            <input value="" class="validate[required,funcCall[checkHELLO]] c-input" type="text" id="lastname" name="lastname">
+                            <span class="control-hlep">validate[required,funcCall[checkHELLO]]</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">自定义验证规则：</label>
+                        <div class="control-form">
+                            <input value="" class="validate[required, custom[requiredInFunction]] c-input" type="text" name="req3" id="req3">
+                        </div>
+                    </div>
+
+                </div>
+
+                <input class="submit button button-primary button-rounded button-small" type="submit" value="验证 & 提交表单">
+                <input id="skipbutton" class="submit validate-skip button button-primary button-rounded button-small" type="submit" value="跳过验证 &amp; 提交表单">
+            </form>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-small">
+            <legend class="fs6">表单验证</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#validation1" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                更多DEMO <a href="http://code.ciaoca.com/jquery/validation-engine/demo/" target="_blank">http://code.ciaoca.com/jquery/validation-engine/demo/</a>
+            </div>
+        </div>
+
+        <div id="validation1" class="c-panel-bd c-panel-collapse mt-small">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $(function(){
+        jQuery('#formID').validationEngine();
+    });
+
+    function checkHELLO(field, rules, i, options){
+        if (field.val() != 'HELLO') {
+            // this allows to use i18 for the error msgs
+            return options.allrules.validate2fields.alertText;
+        };
+    }
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mt-small">
+        <h2 class="">给表单加上 ID:</h2>
+        <div class="mt-small">
+<pre><code class="html c-break">
+    &lt;!-- ID 须设置在 form 标签中 --&gt;
+    &lt;form id="form_id" ...&gt;
+    ...
+    &lt;/form&gt;
+</code></pre>
+        </div>
+    </div>
+
+    <div class="mt-small">
+        <h2 class="">给控件添加验证类型:</h2>
+        <div class="mt-small">
+<pre><code class="html c-break">
+    &lt;!-- 验证规则默认使用 class 属性,validate[required] 表示该项必须填写 --&gt;
+
+    &lt;input type="text" class="validate[required]"&gt;
+    &lt;input type="checkbox" class="validate[required]"&gt;
+    &lt;select class="validate[required]"&gt;&lt;/select&gt;;
+    &lt;textarea class="validate[required]"&gt;&lt;/textarea&gt;
+</code></pre>
+        </div>
+    </div>
+
+    <div class="mt-small">
+        <h2 class="">设置验证:</h2>
+        <div class="mt-small">
+<pre><code class="javascript">
+    // 直接调用
+    $('#form_id').validationEngine();
+
+    // 自定义参数调用
+    $('#form_id').validationEngine('attach', {
+    promptPosition: 'centerRight',
+    scroll: false
+    });
+</code></pre>
+        </div>
+    </div>
+
+
+    <div class="mt-small">
+        <h2 class="">支持链式操作:</h2>
+        <div class="mt-small">
+<pre><code class="javascript">
+    $('#form_id').validationEngine().css({border:'2px solid #000'});
+</code></pre>
+        </div>
+    </div>
+
+    <h2 class="mt-small"> 验证类型</h2>
+    <div class="c-line-h2 mt-small">
+        <p>注：验证规则均写在 validate[] 中，如有多条规则，用英文逗号(,)分割。</p>
+        <p>例：validate[required,minSize[6],custom[onlyLetterNumber]]</p>
+    </div>
+
+    <div class="mt-small">
+        <table class="tb tb-b c-100">
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>示例</th>
+                <th>说明</th>
+            </tr>
+            </thead>
+            
+            <tbody>
+            <tr>
+                <td>required</td>
+                <td>validate[required]</td>
+                <td>表示必填项</td>
+            </tr>
+            <tr>
+                <td>groupRequired[string]</td>
+                <td>validate[groupRequired[grp]]</td>
+                <td>在验证组为 grp 的群组，中至少输入或选择一项</td>
+            </tr>
+            <tr>
+                <td>condRequired[string]</td>
+                <td>validate[condRequired[ids]]</td>
+                <td>当 ids 的某个控件不为空时，那么该控件也为必填项。
+                    <p>可以依赖多项，如：validate[condRequired[id1,id2]]</p>
+                </td>
+            </tr>
+
+            
+            <tr>
+                <td>minSize[int]</td>
+                <td>validate[minSize[6]]</td>
+                <td>最少输入字符数</td>
+            </tr>
+            <tr>
+                <td>maxSize[int]</td>
+                <td>validate[maxSize[20]]</td>
+                <td>最多输入字符数</td>
+            </tr>
+            <tr>
+                <td>min[int]</td>
+                <td>validate[min[1]]</td>
+                <td>最小值（该项为数字的最小值，注意与 minSize 的区分）</td>
+            </tr>
+            <tr>
+                <td>max[int]</td>
+                <td>validate[max[9999]]</td>
+                <td>最大值（该项为数字的最大值，注意与 maxSize 的区分）</td>
+            </tr>
+
+            
+            <tr>
+                <td>minCheckbox[int]</td>
+                <td>validate[minCheckbox[2]]</td>
+                <td>最少选取的项目数（用于 Checkbox）</td>
+            </tr>
+            <tr>
+                <td>maxCheckbox[int]</td>
+                <td>validate[maxCheckbox[2]]</td>
+                <td>最多选取的项目数（用于 Checkbox）</td>
+            </tr>
+
+            
+            <tr>
+                <td>date[string]</td>
+                <td>validate[custom[date]]</td>
+                <td>验证日期，格式为 YYYY/MM/DD、YYYY/M/D、YYYY-MM-DD、YYYY-M-D</td>
+            </tr>
+            <tr>
+                <td>dateFormat[string]</td>
+                <td>validate[custom[dateFormat]]</td>
+                <td>验证日期格式，格式为 YYYY/MM/DD、YYYY/M/D、YYYY-MM-DD、YYYY-M-D</td>
+            </tr>
+            <tr>
+                <td>dateTimeFormat[string]</td>
+                <td>validate[custom[dateTimeFormat]]</td>
+                <td>验证日期及时间格式，格式为：YYYY/MM/DD hh:mm:ss AM|PM</td>
+            </tr>
+            <tr>
+                <td>dateRange[string]</td>
+                <td>validate[dateRange[grp1]]</td>
+                <td>验证 grp1 的值是否符合日期范围（开始日期与结束日期）
+                    <p>根据控件的前后位置，如果当前控件在 grp1 元素之后，输入的日期不能是 grp1 日期的过去。</p>
+                    <p>如果当前控件在 grp1 控件之前，输入的日期不能是 grp1 日期的未来。</p>
+                </td>
+            </tr>
+            <tr>
+                <td>dateTimeRange[string]</td>
+                <td>validate[dateTimeRange[grp1]]</td>
+                <td>验证日期及时间范围，增加了时间的对比，其他的和 dateRange 一样。</td>
+            </tr>
+            <tr>
+                <td>past[string]</td>
+                <td>validate[past[2012/12/20]]</td>
+                <td>日期必需是 date 或 date 的过去。date 格式可写作 YYYY/MM/DD、YYYY/M/D、YYYY-MM-DD、YYYY-M-D 或 now</td>
+            </tr>
+            <tr>
+                <td>future[string]</td>
+                <td>validate[future[now]]</td>
+                <td>日期必须是 data 或 date 的未来。date 格式可写作 YYYY/MM/DD、YYYY/M/D、YYYY-MM-DD、YYYY-M-D 或 now</td>
+            </tr>
+
+            
+            <tr>
+                <td>equals[string]</td>
+                <td>validate[equals[id]]</td>
+                <td>当前控件的值需与控件 id 的值相同</td>
+            </tr>
+
+            
+            <tr>
+                <td>number</td>
+                <td>validate[custom[number]]</td>
+                <td>验证数字</td>
+            </tr>
+            <tr>
+                <td>integer</td>
+                <td>validate[custom[integer]]</td>
+                <td>验证整数</td>
+            </tr>
+            <tr>
+                <td>phone</td>
+                <td>validate[custom[phone]]</td>
+                <td>验证电话号码</td>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>validate[custom[email]]</td>
+                <td>验证 E-mail 地址</td>
+            </tr>
+            <tr>
+                <td>url</td>
+                <td>validate[custom[url]]</td>
+                <td>验证 url 地址，需以 http://、https:// 或 ftp:// 开头</td>
+            </tr>
+            <tr>
+                <td>ipv4</td>
+                <td>validate[custom[ipv4]]</td>
+                <td>验证 ipv4 地址</td>
+            </tr>
+            <tr>
+                <td>onlyNumberSp</td>
+                <td>validate[custom[onlyNumberSp]]</td>
+                <td>只接受填数字和空格</td>
+            </tr>
+            <tr>
+                <td>onlyLetterSp</td>
+                <td>validate[custom[onlyLetterSp]]</td>
+                <td>只接受填英文字母、单引号（'）和空格</td>
+            </tr>
+            <tr>
+                <td>onlyLetterNumber</td>
+                <td>validate[custom[onlyLetterNumber]]</td>
+                <td>只接受数字和英文字母</td>
+            </tr>
+            <tr>
+                <td>custom[自定义规则]</td>
+                <td>validate[custom[ruleName]]</td>
+                <td>自定义规则验证
+                    <pre><code class="js"><span class="js__string">'ruleName'</span>:&nbsp;<span class="js__brace">{</span>&nbsp;<br>&nbsp;&nbsp;<span class="js__string">'regex'</span>:&nbsp;<span class="js__object">RegExp</span>,&nbsp;<span class="js__ml_comment">/*&nbsp;正则表达式，如果正则能匹配内容表示通过&nbsp;*/</span>&nbsp;<br>&nbsp;&nbsp;<span class="js__string">'alertText'</span>:&nbsp;<span class="js__string">'验证不通过时的提示信息'</span>&nbsp;<br><span class="js__brace">}</span></code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>ajax</td>
+                <td>validate[ajax[ajaxName]]</td>
+                <td>自定义 ajax 验证
+                    <pre><code class="js"><span class="js__string">'ajaxName'</span>:&nbsp;<span class="js__brace">{</span>&nbsp;<br>&nbsp;&nbsp;<span class="js__string">'url'</span>:&nbsp;<span class="js__string">'phpajax/ajaxValidateFieldUser.php'</span>,&nbsp;<span class="js__ml_comment">/*&nbsp;验证程序地址&nbsp;*/</span>&nbsp;<br>&nbsp;&nbsp;<span class="js__string">'extraData'</span>:&nbsp;<span class="js__string">'name=eric'</span>,&nbsp;<span class="js__ml_comment">/*&nbsp;额外参数&nbsp;*/</span>&nbsp;<br>&nbsp;&nbsp;<span class="js__string">'alertTextOk'</span>:&nbsp;<span class="js__string">'验证通过时的提示信息'</span>,&nbsp;<br>&nbsp;&nbsp;<span class="js__string">'alertText'</span>:&nbsp;<span class="js__string">'验证不通过时的提示信息'</span>,&nbsp;<br>&nbsp;&nbsp;<span class="js__string">'alertTextLoad'</span>:&nbsp;<span class="js__string">'正在验证时的提示信息'</span>&nbsp;<br><span class="js__brace">}</span>&nbsp;<br><span class="js__ml_comment">/*&nbsp;<br>&nbsp;*&nbsp;例：&nbsp;<br>&nbsp;*&nbsp;&lt;input&nbsp;type="text"&nbsp;id="email"&nbsp;class="validate[ajax[ajaxName]]"&gt;&nbsp;<br>&nbsp;*&nbsp;假设填写的值为：ciaoca@gmail.com&nbsp;<br>&nbsp;*&nbsp;extraData&nbsp;设置为：'type=register&amp;verify=abcd'&nbsp;<br>&nbsp;*&nbsp;提交到后端的&nbsp;url&nbsp;为：phpajax/ajaxValidateFieldUser.php?email=ciaoca@gmail.com&amp;type=register&amp;verify=abcd&nbsp;<br>&nbsp;*/</span></code></pre>
+                    <p>传输方式：get</p>
+                    <p>传递参数："fieldId=" + field.attr("id") + "&amp;fieldValue=" + field.val()</p>
+                    <p>额外参数：extraData 可以设置为字符串或对象，会在参数结尾追加 "&amp;extraData"</p>
+                    <p>返回数据格式：json</p>
+                    <p>返回数据内容：[String,Boolean]</p>
+                    <p>第一个值类型为 String，是接收到 fieldId 的值；</p>
+                    <p>第二个值类型为 Boolean，验证通过返回 true，不通过返回 false</p>
+                    <p>具体请参考 demo</p>
+                </td>
+            </tr>
+            <tr>
+                <td>funcCall</td>
+                <td>validate[funcCall[functionName]]</td>
+                <td>调用外部函数验证
+                    <p>functionName(field, rules, i, options)</p>
+                </td>
+            </tr>
+            
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-small">
+        <h3>Ciaoca 增强版增加验证规则：</h3>
+        <table class="tb tb-b c-100 mt-small">
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>示例</th>
+                <th>说明</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>chinese</td>
+                <td>validate[custom[chinese]]</td>
+                <td>只接受中文汉字</td>
+            </tr>
+            <tr>
+                <td>chinaId</td>
+                <td>validate[custom[chinaId]]</td>
+                <td>验证身份证号码（仅支持 18 位的身份证号码）</td>
+            </tr>
+            <tr>
+                <td>chinaIdLoose</td>
+                <td>validate[custom[chinaIdLoose]]</td>
+                <td>验证身份证号码（支持 15 及 18 位的身份证号码）</td>
+            </tr>
+            <tr>
+                <td>chinaZip</td>
+                <td>validate[custom[chinaZip]]</td>
+                <td>验证邮政编码</td>
+            </tr>
+            <tr>
+                <td>qq</td>
+                <td>validate[custom[qq]]</td>
+                <td>验证 QQ 号码</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="mt-small">参数说明:</h3>
+    <div class="mt-small">
+        <table class="tb tb-b c-100">
+            <thead>
+            <tr>
+                <th width="200">名称</th>
+                <th width="120">默认值</th>
+                <th>说明</th>
+            </tr>
+            </thead>
+            <tbody><tr>
+                <td>validationEventTrigger</td>
+                <td>'blur'</td>
+                <td>触发验证的事件，支持事件可参考 jQuery 的事件说明。
+                    <p>PS：如果希望只在表单提交时验证，可以设置为空。或者设置参数 binded:false</p>
+                </td>
+            </tr>
+            <tr>
+                <td>binded</td>
+                <td>true</td>
+                <td>是否绑定即时验证</td>
+            </tr>
+            <tr>
+                <td>scroll</td>
+                <td>true</td>
+                <td>屏幕自动滚动到第一个验证不通过的位置。</td>
+            </tr>
+            <tr>
+                <td>focusFirstField</td>
+                <td>true</td>
+                <td>验证未通过时，是否给第一个不通过的控件获取焦点。</td>
+            </tr>
+            <tr>
+                <td>validateNonVisibleFields</td>
+                <td>false</td>
+                <td>是否验证不可见的元素（如 type="hidden" 的输入框，或多个输入控件在选项卡切换中）</td>
+            </tr>
+            <tr>
+                <td>showPrompts</td>
+                <td>true</td>
+                <td>是否显示提示信息</td>
+            </tr>
+            <tr class="unknown">
+                <td>showArrow</td>
+                <td>true</td>
+                <td>是否显示提示信息的箭头</td>
+            </tr>
+            <tr>
+                <td>promptPosition</td>
+                <td>'topRight'</td>
+                <td>
+                    <p>提示信息的位置，可设置为：'topRight', 'topLeft', 'bottomRight', 'bottomLeft', 'centerRight', 'centerLeft', 'inline'</p>
+                    <p>可设置更具体的位置，格式为："方向: X偏移值, Y偏移值"。如：<code>bottomLeft: -20, 5</code></p>
+                </td>
+            </tr>
+            <tr>
+                <td>autoPositionUpdate</td>
+                <td>false</td>
+                <td>是否自动调整提示层的位置</td>
+            </tr>
+            <tr>
+                <td>autoHidePrompt</td>
+                <td>false</td>
+                <td>是否自动隐藏提示信息</td>
+            </tr>
+            <tr>
+                <td>autoHideDelay</td>
+                <td>100000</td>
+                <td>自动隐藏提示信息的延迟时间 (ms)</td>
+            </tr>
+            <tr>
+                <td>fadeDuration</td>
+                <td>0.3</td>
+                <td>隐藏提示信息淡出的时间</td>
+            </tr>
+            <tr>
+                <td>addPromptClass</td>
+                <td>''</td>
+                <td>给提示信息增加 class
+                    <p>Ciaoca 增强版中，增加样式如下：</p>
+                    <p>'formError-noArrow' -- 无箭头样式</p>
+                    <p>'formError-text' -- 纯文字样式</p>
+                    <p>'formError-small' -- 精简版样式</p>
+                    <p>'formError-white' -- 白色版样式</p>
+                    <p>可以叠加使用，如：<code>addPromptClass: 'formError-noArrow formError-small'</code></p>
+                </td>
+            </tr>
+            <tr>
+                <td>custom_error_messages</td>
+                <td>{}</td>
+                <td>自定义错误信息内容</td>
+            </tr>
+            <tr>
+                <td>maxErrorsPerField</td>
+                <td>false</td>
+                <td>单个元素显示错误提示的最大数量，值设为数值。默认 false 表示不限制。</td>
+            </tr>
+            <tr>
+                <td>showOneMessage</td>
+                <td>false</td>
+                <td>是否只显示一个提示信息</td>
+            </tr>
+            <tr>
+                <td>doNotShowAllErrosOnSubmit</td>
+                <td>false</td>
+                <td>在提交表单时不显示所有的错误信息（建议使用参数 showOneMessage 替代）</td>
+            </tr>
+            <tr>
+                <td>addSuccessCssClassToField</td>
+                <td>''</td>
+                <td>验证通过时，给控件增加 class，当再次验证失败时，会去除。</td>
+            </tr>
+            <tr>
+                <td>addFailureCssClassToField</td>
+                <td>''</td>
+                <td>验证失败时，给控件增加 class，当再次验证通过时，会去除。</td>
+            </tr>
+            <tr>
+                <td>prettySelect</td>
+                <td>false</td>
+                <td>是否使用了美化过的 select 选择控件 </td>
+            </tr>
+
+            
+            <tr>
+                <td>onFieldSuccess</td>
+                <td>false</td>
+                <td>控件验证通过时的回调函数
+                    <p>function(field){}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>onFieldFailure</td>
+                <td>false</td>
+                <td>控件验证失败时的回调函数
+                    <p>function(field){}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>onSuccess</td>
+                <td>false</td>
+                <td>在表单验证结果为通过时的回调函数</td>
+            </tr>
+            <tr>
+                <td>onFailure</td>
+                <td>false</td>
+                <td>在表单验证结果为失败时的回调函数
+                    <p>PS：onSuccess 和 onFailure </p>
+                </td>
+            </tr>
+            <tr>
+                <td>onValidationComplete</td>
+                <td>false</td>
+                <td>表单提交验证完成时的回调函数
+                    <p>function(form, valid){}，参数：</p>
+                    <p>form：表单元素</p>
+                    <p>valid：验证结果（ture or false）</p>
+                    <p>PS：使用此方法后，表单即使验证通过也不会进行提交，交给定义的回调函数进行操作。</p>
+                </td>
+            </tr>
+
+            
+            <tr>
+                <td>ajaxFormValidation</td>
+                <td>false</td>
+                <td>是否使用 Ajax 提交表单（默认使用 GET 方式发送数据）</td>
+            </tr>
+            <tr>
+                <td>ajaxFormValidationURL</td>
+                <td>false</td>
+                <td>设置 Ajax 提交的 URL，默认使用 form 的 action 属性</td>
+            </tr>
+            <tr>
+                <td>ajaxFormValidationMethod</td>
+                <td>'get'</td>
+                <td>设置 Ajax 提交时，发送数据的方式</td>
+            </tr>
+            <tr>
+                <td>onAjaxFormComplete</td>
+                <td>$.noop</td>
+                <td>表单提交，Ajax 验证完成后的行为（Function）
+                    <p>function(status, form, json, options){}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>onBeforeAjaxFormValidation</td>
+                <td>$.noop</td>
+                <td>表单提交验证通过后，Ajax 提交之前的回调函数
+                    <p>function(form, options){}</p>
+                </td>
+            </tr>
+            <tr>
+                <td>ajaxValidCache</td>
+                <td>{}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>isError</td>
+                <td>false</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>InvalidFields</td>
+                <td>[]</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>isOverflown</td>
+                <td>false</td>
+                <td>表单是否在溢出滚动的元素内（即外部元素设置了 overflow:scroll）
+                    <p>PS：设置为 ture 后，提示内容的插入位置将更改为在验证的控件之前插入；</p>
+                    <p>　　此时需要在控件外层再套一个元素，并设置 class="inputContainer"</p>
+                </td>
+            </tr>
+            <tr>
+                <td>overflownDIV</td>
+                <td>''</td>
+                <td>设置了溢出滚动的元素，格式为 jQuery 的选择器。</td>
+            </tr>
+            <tr>
+                <td>usePrefix</td>
+                <td>''</td>
+                <td>使用 ID 前缀</td>
+            </tr>
+            <tr>
+                <td>useSuffix</td>
+                <td>''</td>
+                <td>使用 ID 后缀</td>
+            </tr>
+            <tr class="unknown">
+                <td>validateAttribute</td>
+                <td>'class'</td>
+                <td>存放验证规则的属性</td>
+            </tr>
+            <tr class="unknown">
+                <td>bindMethod</td>
+                <td>'bind'</td>
+                <td></td>
+            </tr>
+            <tr class="unknown">
+                <td>inlineAjax</td>
+                <td>false</td>
+                <td></td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="mt-small">HTML5 属性:</h3>
+    <div class="mt-small">
+        <table class="tb tb-b c-100">
+            <thead>
+            <tr>
+                <th width="280">属性名称</th>
+                <th>说明</th>
+            </tr>
+            </thead>
+            <tbody><tr>
+                <td>data-validation-engine</td>
+                <td>
+                    <p>设置验证规则</p>
+                    <p>除了使用 class 设置验证规则外，也可以使用该属性来设置验证规则。</p>
+                </td>
+            </tr>
+            <tr>
+                <td>data-validation-placeholder</td>
+                <td>
+                    <p>占位符</p>
+                    <p>当位置为必填的控件验证时，值不能为空，也不能为占位符。</p>
+                </td>
+            </tr>
+            <tr>
+                <td>data-prompt-position</td>
+                <td>
+                    <p>自定义提示信息的位置，可设置为："topRight", "topLeft", "bottomRight" "bottomLeft", "centerRight", "centerLeft", "inline"</p>
+                    <p>可设置更具体的位置，格式为："方向:X偏移值,Y偏移值"。如：data-prompt-position="bottomLeft:20,5"</p>
+                    <p>PS：偏移值可以为负数</p>
+                </td>
+            </tr>
+            <tr>
+                <td>data-prompt-target</td>
+                <td>
+                    <p>载入提示信息的容器，值为元素的 id</p>
+                    <p>仅在 promptPosition 或 data-prompt-position 设为 "inline" 是有效。</p>
+                    <p></p>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="mt-small">错误信息属性（实验的）: (属性值与验证规则相对应)</h3>
+    <div class="mt-small">
+<pre><code class="html c-break">
+    &lt;input type="email" name="email" id="email" data-validation-engine="validate[required,custom[email]]"
+    data-errormessage-value-missing="E-mail 不能为空"
+    data-errormessage-custom-error="E-mail 格式应为：someone@nowhere.com"
+    data-errormessage="通用的错误提示信息"&gt;
+</code></pre>
+    </div>
+
+    <table class="tb tb-b c-100 mt-small">
+        <thead>
+        <tr>
+            <th width="280">属性名称</th>
+            <th>对应验证规则</th>
+        </tr>
+        </thead>
+        <tbody><tr>
+            <td>data-errormessage-value-missing</td>
+            <td><ul>
+                <li>required</li>
+                <li>groupRequired</li>
+                <li>condRequired</li>
+            </ul></td>
+        </tr>
+        <tr>
+            <td>data-errormessage-type-mismatch</td>
+            <td><ul>
+                <li>past</li>
+                <li>future</li>
+                <li>dateRange</li>
+                <li>dateTimeRange</li>
+            </ul></td>
+        </tr>
+        <tr>
+            <td>data-errormessage-pattern-mismatch</td>
+            <td><ul>
+                <li>creditCard</li>
+                <li>equals</li>
+            </ul></td>
+        </tr>
+        <tr>
+            <td>data-errormessage-range-underflow</td>
+            <td><ul>
+                <li>minSize</li>
+                <li>min</li>
+                <li>minCheckbox</li>
+            </ul></td>
+        </tr>
+        <tr>
+            <td>data-errormessage-range-overflow</td>
+            <td><ul>
+                <li>maxSize</li>
+                <li>max</li>
+                <li>maxCheckbox</li>
+            </ul></td>
+        </tr>
+        <tr>
+            <td>data-errormessage-custom-error</td>
+            <td><ul>
+                <li>custom</li>
+                <li>ajax</li>
+                <li>funcCall</li>
+            </ul></td>
+        </tr>
+        <tr>
+            <td>data-errormessage</td>
+            <td>通用的错误提示信息</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h3 class="mt-small">API 接口: </h3>
+    <div class="mt-small">
+        <table class="tb tb-b c-100">
+            <thead>
+            <tr>
+                <th width="200">名称</th>
+                <th>示例</th>
+                <th>说明</th>
+            </tr>
+            </thead>
+            <tbody><tr>
+                <td>attach</td>
+                <td>$('#form_id').validationEngine('attach');</td>
+                <td>绑定表单验证</td>
+            </tr>
+            <tr>
+                <td>detach</td>
+                <td>$('#form_id').validationEngine('detach');</td>
+                <td>移除表单验证</td>
+            </tr>
+            <tr>
+                <td>validate</td>
+                <td>alert($('#id').validationEngine('validate'));</td>
+                <td>验证控件或表单，返回结果 true 或 false</td>
+            </tr>
+            <tr>
+                <td>showPrompt</td>
+                <td>$('#id').validationEngine('showPrompt','提示内容','load');</td>
+                <td>在该元素上创建一个提示，3 种状态：'pass', 'error', 'load'</td>
+            </tr>
+            <tr>
+                <td>hide</td>
+                <td>$('#id').validationEngine('hide');</td>
+                <td>隐藏改元素及元素内的提示</td>
+            </tr>
+            <tr>
+                <td>hideAll</td>
+                <td>$('#id').validationEngine('hideAll');</td>
+                <td>隐藏页面上的所有提示</td>
+            </tr>
+            <tr>
+                <td>updatePromptsPosition</td>
+                <td>$('#form_id').validationEngine('updatePromptsPosition')</td>
+                <td>更新提示层的位置</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3 class="mt-small">自定义事件: </h3>
+    <table class="tb tb-b c-100">
+        <thead>
+        <tr>
+            <th width="200">名称</th>
+            <th>示例</th>
+            <th>说明</th>
+        </tr>
+        </thead>
+        <tbody><tr>
+            <td>jqv.form.validating</td>
+            <td>$('#form_id').bind('jqv.form.validating', function(event){});</td>
+            <td>表单验证时</td>
+        </tr>
+        <tr>
+            <td>jqv.form.result</td>
+            <td>$('#form_id').bind('jqv.form.result', function(event, errorFound){});</td>
+            <td>表单验证完成。返回参数说明：<p></p>
+                <p>errorFound：表单验证不通过（true 或 false）</p>
+                <p></p>
+            </td>
+        </tr>
+        <tr>
+            <td>jqv.field.result</td>
+            <td>$('#field_id').bind('jqv.field.result', function(event, field, isError, promptText){});</td>
+            <td>单个控件验证完成。返回参数说明：<p></p>
+                <p>field：控件对象</p>
+                <p>isError：控件验证不通过（true 或 false）</p>
+                <p>promptText：提示信息</p>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
+<script type="text/javascript" src="../js/validation/validation.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+        jQuery('#formID').validationEngine();
+    });
+
+    function checkHELLO(field, rules, i, options){
+        if (field.val() != 'HELLO') {
+            // this allows to use i18 for the error msgs
+            return options.allrules.validate2fields.alertText;
+        };
+    }
+</script>
+</body>
+</html>
+

@@ -51,6 +51,10 @@ module.exports = {
         widget:{
             'src':'./src/widget/**/*.js',
             'dist':'./dist/js/'
+        },
+        jsAllExports:{
+            'src':'./src/jsAllExports/**/**',
+            'dist':'./dist/js/'
         }
     },
     opts: {

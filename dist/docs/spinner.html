@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>spinner</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/cross.css">
+    <link rel="stylesheet" href="../css/highlight.css">
+    <link rel="stylesheet" href="../css/spinner.css">
+</head>
+<body>
+<div class="p-medium">
+
+    <fieldset class="c-field">
+        <legend>引用</legend>
+        <div class="c-field-box">
+<pre><code class="html c-break">
+    &lt;link rel="stylesheet" href="../css/spinner.css" /&gt;
+    &lt;script type="text/javascript" src="../js/spinner/spinner.js"&gt;&lt;/script&gt;
+</code></pre>
+        </div>
+    </fieldset>
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div class="c-spinner clearfix" data-trigger="spinner" id="sdsd">
+            <input type="text" class="c-input fl c-t-center" value="1" data-min="10" data-max="20" data-rule="quantity">
+            <div class="c-spinner-addon fl">
+                <a href="javascript:;" class="c-spinner-up" data-spin="up"><i class="c-arrow c-arrow-t"></i></a>
+                <a href="javascript:;" class="c-spinner-down" data-spin="down"><i class="c-arrow c-arrow-b"></i></a>
+            </div>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">数字加减</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#spinner1" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                风格一
+            </div>
+        </div>
+
+        <div id="spinner1" class="c-panel-bd c-panel-collapse mt-medium">
+<pre><code class="html c-break">
+    &lt;div class="c-spinner clearfix" data-trigger="spinner" id="sdsd"&gt;
+        &lt;input type="text" class="c-input fl c-t-center" value="1" data-min="10" data-max="20" data-rule="quantity"&gt;
+        &lt;div class="c-spinner-addon fl"&gt;
+            &lt;a href="javascript:;" class="c-spinner-up" data-spin="up"&gt;&lt;i class="c-arrow c-arrow-t"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;a href="javascript:;" class="c-spinner-down" data-spin="down"&gt;&lt;i class="c-arrow c-arrow-b"&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div class="c-spinner" data-trigger="spinner">
+            <div class="c-spinner-box clearfix">
+                <a href="javascript:;" class="c-spinner-down fl" data-spin="down"><i class="iconfont icon-minus"></i></a>
+                <input type="text" class="c-input fl c-t-center" value="1" data-rule="quantity">
+                <a href="javascript:;" class="c-spinner-up fl" data-spin="up"><i class="iconfont icon-plus"></i></a>
+            </div>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">数字加减</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#spinner2" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                风格二
+            </div>
+        </div>
+
+        <div id="spinner2" class="c-panel-bd c-panel-collapse mt-medium">
+<pre><code class="html c-break">
+</code></pre>
+        </div>
+    </div>
+
+    <div class="mt-medium">
+        <h2 class="">参数：</h2>
+        <div class="">
+<pre><code class="javascript">
+    初始值 (值设置在"data-")：
+
+    min     //最小值
+
+    max     //最大值
+
+    step    //每一次的变化值。
+
+    precision   //保留小数点几位
+
+    例如：
+    &lt;input type="text" class="input-text" value="" data-min="100" data-max="100" data-step="1" data-precision="0" data-rule="quantity" /&gt;
+
+
+
+    预设几种格式的值：
+
+    currency: { min: 0.00, max: null, step: 0.01, precision: 2 },
+    quantity: { min: 1, max: 999, step: 1, precision:0 },
+    percent:  { min: 1, max: 100, step: 1, precision:0 },
+    month:    { min: 1, max: 12, step: 1, precision:0 },
+    day:      { min: 1, max: 31, step: 1, precision:0 },
+    hour:     { min: 0, max: 23, step: 1, precision:0 },
+    minute:   { min: 1, max: 59, step: 1, precision:0 },
+    second:   { min: 1, max: 59, step: 1, precision:0 }
+
+    例如：
+    &lt;input type="text" class="input-text" value="" data-rule="percent" /&gt;
+
+</code></pre>
+        </div>
+    </div>
+
+
+    <div class="mt-medium">
+        <h2 class="">方法：</h2>
+        <div class="mt-tiny">
+<pre><code class="javascript">
+
+    $("#spinner").spinner('delay', 200);
+
+
+    $("#spinner").spinner('changed', function(e, newVal, oldVal) {
+        // trigger lazed, depend on delay option.
+    });
+
+    $("#spinner").spinner('changing', function(e, newVal, oldVal) {
+        $('#spinner-value').html(newVal);
+    });
+
+    $("#spinner").spinner('step', function(dir) {
+        // 'this' references to the spinner object
+        if ((this.oldValue === 1 && dir === 'down') || (this.oldValue === -1 && dir === 'up')) {
+            return 2;
+        }
+        return 1;
+    });
+
+
+    $( "#spinner" ).spinner('setData',{ min: 1, max: 9, step: 1, precision: 0});
+</code></pre>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
+<script type="text/javascript" src="../js/spinner/spinner.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+
+    });
+</script>
+</body>
+</html>
+
