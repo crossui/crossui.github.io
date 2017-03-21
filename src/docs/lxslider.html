@@ -1,0 +1,1131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>lxslider</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../iconfont/iconfont.css" />
+    <link rel="stylesheet" href="../css/cross.css" />
+    <link rel="stylesheet" href="../css/highlight.css" />
+    <link rel="stylesheet" href="../css/lxslider.css" />
+
+    <style>
+        #lx-pager {
+            text-align:center;
+            margin-top:20px
+        }
+        #lx-pager a {
+            display:inline-block;
+            margin:0 10px;
+            border:#e1e1e1 1px solid;
+            padding:2px;
+        }
+        #lx-pager a img {
+            width:200px;
+            height:44px
+        }
+    </style>
+</head>
+<body>
+<div class="p-medium">
+
+    <fieldset class="c-field">
+        <legend>引用</legend>
+        <div class="c-field-box">
+<pre><code class="html c-break">
+    &lt;link rel="stylesheet" href="../css/lxslider.css" /&gt;
+    &lt;script type="text/javascript" src="../js/lxslider/lxslider.js"&gt;&lt;/script&gt;
+</code></pre>
+        </div>
+    </fieldset>
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+        <div style="width: 1000px">
+            <ul id="lxslider-11">
+                <li><img src="../images/demo/picto.png" /></li>
+                <li><img src="../images/demo/hillside.jpg" /></li>
+                <li><img src="../images/demo/houses.jpg" /></li>
+            </ul>
+        </div>
+
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">轮播</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#lxslider1" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                默认
+            </div>
+        </div>
+
+        <div id="lxslider1" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div style="width: 1000px"&gt;
+        &lt;ul id="lxslider-11"&gt;
+            &lt;li&gt;&lt;img src="../images/demo/picto.png" /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="../images/demo/hillside.jpg" /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="../images/demo/houses.jpg" /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#lxslider-11').lxSlider();
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+        <div style="width: 1000px">
+            <ul id="lxslider-12">
+                <li><img src="../images/demo/picto.png" title="111111111111111111111111111"/></li>
+                <li><img src="../images/demo/hillside.jpg" title="222222222222222222222222"/></li>
+                <li><img src="../images/demo/houses.jpg" title="33333333333333333333333"/></li>
+            </ul>
+        </div>
+
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">轮播</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#lxslider2" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                带标题
+            </div>
+        </div>
+
+        <div id="lxslider2" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div style="width: 1000px"&gt;
+        &lt;ul id="lxslider-12"&gt;
+            &lt;li&gt;&lt;img src="../images/demo/picto.png" title="111111111111111111111111111"/&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="../images/demo/hillside.jpg" title="222222222222222222222222"/&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="../images/demo/houses.jpg" title="33333333333333333333333"/&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#lxslider-12').lxSlider({
+        captions: true,
+        controlsHover:true
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+        <div style="width: 1000px">
+            <ul id="lxslider-13">
+                <li><img src="../images/demo/picto.png" /></li>
+                <li><img src="../images/demo/hillside.jpg" /></li>
+                <li><img src="../images/demo/houses.jpg" /></li>
+            </ul>
+        </div>
+
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">轮播</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#lxslider3" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                显示
+            </div>
+        </div>
+
+        <div id="lxslider3" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div style="width: 1000px"&gt;
+        &lt;ul id="lxslider-13"&gt;
+            &lt;li&gt;&lt;img src="../images/demo/picto.png" /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="../images/demo/hillside.jpg" /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="../images/demo/houses.jpg" /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#lxslider-13').lxSlider({
+        adaptiveHeight: true,
+        mode: 'fade'
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <ul class="slider1">
+            <li><img src="http://placehold.it/350x150&text=FooBar1"></li>
+            <li><img src="http://placehold.it/350x150&text=FooBar2"></li>
+            <li><img src="http://placehold.it/350x150&text=FooBar3"></li>
+            <li><img src="http://placehold.it/350x150&text=FooBar4"></li>
+            <li><img src="http://placehold.it/350x150&text=FooBar5"></li>
+            <li><img src="http://placehold.it/350x150&text=FooBar6"></li>
+            <li><img src="http://placehold.it/350x150&text=FooBar7"></li>
+            <li><img src="http://placehold.it/350x150&text=FooBar8"></li>
+            <li><img src="http://placehold.it/350x150&text=FooBar9"></li>
+        </ul>
+
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">轮播</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#lxslider4" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                多列
+            </div>
+        </div>
+
+        <div id="lxslider4" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;ul class="slider1"&gt;
+        &lt;li&gt;&lt;img src="http://placehold.it/350x150&text=FooBar1"&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src="http://placehold.it/350x150&text=FooBar2"&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src="http://placehold.it/350x150&text=FooBar3"&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src="http://placehold.it/350x150&text=FooBar4"&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src="http://placehold.it/350x150&text=FooBar5"&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src="http://placehold.it/350x150&text=FooBar6"&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src="http://placehold.it/350x150&text=FooBar7"&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src="http://placehold.it/350x150&text=FooBar8"&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src="http://placehold.it/350x150&text=FooBar9"&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('.slider1').lxSlider({
+        slideWidth: 200,
+        minSlides: 2,
+        maxSlides: 3,
+        slideMargin: 10
+    });
+
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div class="slider2">
+            <div class="slide"><img src="http://placehold.it/350x150&text=FooBar1"></div>
+            <div class="slide"><img src="http://placehold.it/350x150&text=FooBar2"></div>
+            <div class="slide"><img src="http://placehold.it/350x150&text=FooBar3"></div>
+            <div class="slide"><img src="http://placehold.it/350x150&text=FooBar4"></div>
+            <div class="slide"><img src="http://placehold.it/350x150&text=FooBar5"></div>
+            <div class="slide"><img src="http://placehold.it/350x150&text=FooBar6"></div>
+            <div class="slide"><img src="http://placehold.it/350x150&text=FooBar7"></div>
+            <div class="slide"><img src="http://placehold.it/350x150&text=FooBar8"></div>
+            <div class="slide"><img src="http://placehold.it/350x150&text=FooBar9"></div>
+        </div>
+
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">轮播</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#lxslider5" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                多列HTML
+            </div>
+        </div>
+
+        <div id="lxslider5" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div class="slider2"&gt;
+        &lt;div class="slide"&gt;&lt;img src="http://placehold.it/350x150&text=FooBar1"&gt;&lt;/div&gt;
+        &lt;div class="slide"&gt;&lt;img src="http://placehold.it/350x150&text=FooBar2"&gt;&lt;/div&gt;
+        &lt;div class="slide"&gt;&lt;img src="http://placehold.it/350x150&text=FooBar3"&gt;&lt;/div&gt;
+        &lt;div class="slide"&gt;&lt;img src="http://placehold.it/350x150&text=FooBar4"&gt;&lt;/div&gt;
+        &lt;div class="slide"&gt;&lt;img src="http://placehold.it/350x150&text=FooBar5"&gt;&lt;/div&gt;
+        &lt;div class="slide"&gt;&lt;img src="http://placehold.it/350x150&text=FooBar6"&gt;&lt;/div&gt;
+        &lt;div class="slide"&gt;&lt;img src="http://placehold.it/350x150&text=FooBar7"&gt;&lt;/div&gt;
+        &lt;div class="slide"&gt;&lt;img src="http://placehold.it/350x150&text=FooBar8"&gt;&lt;/div&gt;
+        &lt;div class="slide"&gt;&lt;img src="http://placehold.it/350x150&text=FooBar9"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('.slider2').lxSlider({
+        slideWidth: 200,
+        minSlides: 2,
+        maxSlides: 3,
+        slideMargin: 10
+    });
+
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div style="width:1000px">
+            <ul class="lxslider3">
+                <li><img src="../images/demo/picto.png" /></li>
+                <li><img src="../images/demo/hillside.jpg" /></li>
+                <li><img src="../images/demo/houses.jpg" /></li>
+            </ul>
+
+            <div id="lx-pager">
+                <a data-slide-index="0" href=""><img src="../images/demo/picto.png" /></a>
+                <a data-slide-index="1" href=""><img src="../images/demo/hillside.jpg" /></a>
+                <a data-slide-index="2" href=""><img src="../images/demo/houses.jpg" /></a>
+            </div>
+        </div>
+
+
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">轮播</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#lxslider6" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                带缩略图的
+            </div>
+        </div>
+
+        <div id="lxslider6" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div style="width: 1000px"&gt;
+        &lt;ul class="lxslider3"&gt;
+            &lt;li&gt;&lt;img src="../widget/lxslider/1.0/images/demo/picto.png" /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="../widget/lxslider/1.0/images/demo/hillside.jpg" /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="../widget/lxslider/1.0/images/demo/houses.jpg" /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;div id="lx-pager"&gt;
+            &lt;a data-slide-index="0" href=""&gt;&lt;img src="../widget/lxslider/1.0/images/demo/picto.png" /&gt;&lt;/a&gt;
+            &lt;a data-slide-index="1" href=""&gt;&lt;img src="../widget/lxslider/1.0/images/demo/hillside.jpg" /&gt;&lt;/a&gt;
+            &lt;a data-slide-index="2" href=""&gt;&lt;img src="../widget/lxslider/1.0/images/demo/houses.jpg" /&gt;&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('.lxslider3').lxSlider({
+        pager: true,
+        pagerCustom: '#lx-pager'
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <ul class="horse-slider">
+            <li><img src="http://placehold.it/350x150&text=FooBar1"></li>
+            <li><img src="http://placehold.it/350x150&text=FooBar2"></li>
+            <li><img src="http://placehold.it/350x150&text=FooBar3"></li>
+            <li><img src="http://placehold.it/350x150&text=FooBar4"></li>
+            <li><img src="http://placehold.it/350x150&text=FooBar5"></li>
+            <li><img src="http://placehold.it/350x150&text=FooBar6"></li>
+            <li><img src="http://placehold.it/350x150&text=FooBar7"></li>
+            <li><img src="http://placehold.it/350x150&text=FooBar8"></li>
+            <li><img src="http://placehold.it/350x150&text=FooBar9"></li>
+        </ul>
+
+
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">轮播</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#lxslider7" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                跑马灯
+            </div>
+        </div>
+
+        <div id="lxslider7" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('.horse-slider').lxSlider({
+        minSlides: 4,
+        maxSlides: 4,
+        slideWidth: 170,
+        slideMargin: 10,
+        ticker: true,
+        speed: 6000
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mt-big">
+        <h2>参数</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <tbody>
+            <tr>
+                <th>参数</th>
+                <th>数据类型</th>
+                <th>默认值</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>mode</td>
+                <td>String</td>
+                <td>'horizontal'</td>
+                <td>定义slider滚动的方向，有三个值可供选择 'horizontal', 'vertical', 'fade'</td>
+            </tr>
+            <tr>
+                <td>slideSelector</td>
+                <td>String</td>
+                <td>''</td>
+                <td>所选元素将作为一个滑块参与滑动；默认值为空，表示当前滑动容器的直接子元素都作为滑块参与滑动,任意jquery选择器，例如：’div.slide’</td>
+            </tr>
+            <tr>
+                <td>infiniteLoop</td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>点击“下一步”，而上一个幻灯片将过渡到第一个幻灯片，反之亦然</td>
+            </tr>
+            <tr>
+                <td>hideControlOnEnd</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>假如设置为 true，“下一步”控制将隐藏在最后的幻灯片，反之亦然; 注意，只有当 infiniteLoop: false</td>
+            </tr>
+            <tr>
+                <td>speed</td>
+                <td>integer</td>
+                <td>500</td>
+                <td>幻灯片滚动的速度，默认的单位为毫秒（MS）</td>
+            </tr>
+            <tr>
+                <td>easing</td>
+                <td>String</td>
+                <td>null</td>
+                <td>
+                    这个参数设置幻灯片切换的方式，如果使用 CSS transitions，包括一个值 transition-timing-function 属性。如果不使用 CSS transitions 你应该引入 plugins/jquery.easing.1.3.js 文件来配置切换方式
+                    <p>点击这里 <a href="http://gsgd.co.uk/sandbox/jquery/easing/" target="_blank">http://gsgd.co.uk/sandbox/jquery/easing/</a>  了解更多信息。</p>
+                </td>
+            </tr>
+            <tr>
+                <td>slideMargin</td>
+                <td>integer</td>
+                <td>0</td>
+                <td>每张幻灯片之间的间距</td>
+            </tr>
+            <tr>
+                <td>startSlide</td>
+                <td>integer</td>
+                <td>0</td>
+                <td>开始的第一张幻灯片的索引，值从0开始计数</td>
+            </tr>
+            <tr>
+                <td>randomStart</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>是否开启随机切换幻灯片</td>
+            </tr>
+            <tr>
+                <td>captions</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>包括图片的说明文字，标题是来自图像的 title 属性。</td>
+            </tr>
+            <tr>
+                <td>ticker</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>在代码模式下使用滑块（类似于新闻）</td>
+            </tr>
+            <tr>
+                <td>tickerHover</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>ticker 将暂停，当鼠标悬停在滑块。注：此功能不使用CSS过渡工作！</td>
+            </tr>
+            <tr>
+                <td>adaptiveHeight</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>根据每个滑块的高度动态调整滑块高度</td>
+            </tr>
+            <tr>
+                <td>adaptiveHeightSpeed</td>
+                <td>integer</td>
+                <td>500</td>
+                <td>幻灯片高度转换持续时间（毫秒）,注：此功能adaptiveHeight为true！</td>
+            </tr>
+            <tr>
+                <td>video</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>支持视频，当设置为true时，需要 <a href="http://fitvidsjs.com/" target="_blank">jquery.fitvids.js</a> 支持</td>
+            </tr>
+            <tr>
+                <td>useCSS</td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>如果true，将用 CSS transitions；如果false，将用jquery animate()</td>
+            </tr>
+            <tr>
+                <td>preloadImages</td>
+                <td>String</td>
+                <td>'visible'</td>
+                <td>如果“all”，所有的图像开始之前，滑块预紧力。如果“visible”，只有在最初预加载图像可见幻灯片开始前的滑块（提示：使用“visible”如果所有的幻灯片都是相同的尺寸）, 可选：all, visible</td>
+            </tr>
+            <tr>
+                <td>responsive</td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>启用或禁用滑块的自动调整大小。有用的，如果你需要使用固定宽度滑块。</td>
+            </tr>
+            <tr>
+                <td>slideZIndex</td>
+                <td>integer</td>
+                <td>50</td>
+                <td>控制手柄的层级数</td>
+            </tr>
+            <tr>
+                <td>wrapperClass</td>
+                <td>String</td>
+                <td> 'lx-wrapper'</td>
+                <td>slider最外层的类</td>
+            </tr>
+            <tr>
+                <td>fullScreenHeight</td>
+                <td>integer</td>
+                <td>0</td>
+                <td>全屏时一定要设置最大高度</td>
+            </tr>
+            <tr>
+                <td>touchEnabled</td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>是否允许触摸刷屏</td>
+            </tr>
+            <tr>
+                <td>swipeThreshold</td>
+                <td>integer</td>
+                <td>50</td>
+                <td>为了执行一个slide渐变需要突出的像素数量 [只当touchEnabled为true时起作用] </td>
+            </tr>
+            <tr>
+                <td>oneToOneTouch</td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>如果true，刷屏时无淡入淡出</td>
+            </tr>
+            <tr>
+                <td>preventDefaultSwipeX</td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>如果true，横向刷屏</td>
+            </tr>
+            <tr>
+                <td>preventDefaultSwipeY</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>如果true，纵向刷屏</td>
+            </tr>
+            <tr>
+                <td>pager</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>设置是否显示分页，设置为true时，会在滑动内容下方显示分页图标</td>
+            </tr>
+            <tr>
+                <td>pagerType</td>
+                <td>String</td>
+                <td>'full'</td>
+                <td>如果“full”，将为每个幻灯片生成一个链接。如果“short”，将使用一个X / Y（1 / 5）; 可选：full, short</td>
+            </tr>
+            <tr>
+                <td>pagerShortSeparator</td>
+                <td>string</td>
+                <td>’/’</td>
+                <td>分页链接下标的间隔(任意字符)</td>
+            </tr>
+            <tr>
+                <td>pagerSelector</td>
+                <td>selector</td>
+                <td>''</td>
+                <td>定义分页控制元素</td>
+            </tr>
+            <tr>
+                <td>buildPager</td>
+                <td>function(slideIndex)</td>
+                <td>null</td>
+                <td>
+                    自定义分页内容。   详细例子：
+<pre><code class="javascript">
+    $('.lxslider').lxSlider({
+        buildPager: function(slideIndex){
+            switch(slideIndex){
+                case 0:
+                    return '&lt;img src="/images/thumbs/tree_root.jpg"&gt;';
+                case 1:
+                    return '&lt;img src="/images/thumbs/houses.jpg"&gt;';
+                case 2:
+                    return '&lt;img src="/images/thumbs/hill_fence.jpg"&gt;';
+            }
+        }
+    });
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>pagerCustom</td>
+                <td>selector</td>
+                <td>null</td>
+                <td>分页内容是现成的DOM ，只要给定分页父级容器</td>
+            </tr>
+            <tr>
+                <td>iconfontPager</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>分页是否为iconfont字体生成</td>
+            </tr>
+            <tr>
+                <td>iconfontPagerUnicode</td>
+                <td>Unicode</td>
+                <td>'& #xe605;'</td>
+                <td>如果iconfontPager为true，分页内容就是此iconfont</td>
+            </tr>
+            <tr>
+                <td>controls</td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>是否添加“上一个”、“下一个”按钮</td>
+            </tr>
+            <tr>
+                <td>nextText</td>
+                <td>string</td>
+                <td>'Next'</td>
+                <td>“下一个”按钮上面的文字</td>
+            </tr>
+            <tr>
+                <td>prevText</td>
+                <td>string</td>
+                <td>’Prev’</td>
+                <td>“上一个”按钮上面的文字</td>
+            </tr>
+            <tr>
+                <td>nextSelector</td>
+                <td>string</td>
+                <td>null</td>
+                <td>“下一个”按钮HTML</td>
+            </tr>
+            <tr>
+                <td>prevSelector</td>
+                <td>string</td>
+                <td>null</td>
+                <td>“上一个”按钮HTML</td>
+            </tr>
+            <tr>
+                <td>autoControls</td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>是否添加“开始停止”按钮</td>
+            </tr>
+            <tr>
+                <td>startText</td>
+                <td>string</td>
+                <td>'Start'</td>
+                <td>“开始”按钮上面的文字</td>
+            </tr>
+            <tr>
+                <td>stopText</td>
+                <td>string</td>
+                <td>’Stop’</td>
+                <td>“停止”按钮上面的文字</td>
+            </tr>
+            <tr>
+                <td>autoControlsCombine</td>
+                <td>boolean </td>
+                <td>false</td>
+                <td>当幻灯片播放时只显示“停止”控件，反之亦然</td>
+            </tr>
+            <tr>
+                <td>controlsHover</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>如果是true，当鼠标经过时。。。</td>
+            </tr>
+            <tr>
+                <td>autoControlsSelector</td>
+                <td>selector</td>
+                <td>null</td>
+                <td>用于填充自动控件的元素</td>
+            </tr>
+            <tr>
+                <td>auto</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>是否自动渐变</td>
+            </tr>
+            <tr>
+                <td>pause</td>
+                <td>integer</td>
+                <td>4000</td>
+                <td>每两个自动渐变之间的时间间隔</td>
+            </tr>
+            <tr>
+                <td>autoStart</td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>是加载时还是点击start按钮时开始</td>
+            </tr>
+            <tr>
+                <td>autoDirection</td>
+                <td>string</td>
+                <td>’next’</td>
+                <td>自动滑动的方向 选：’next’, ‘prev’; </td>
+            </tr>
+            <tr>
+                <td>autoHover</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>鼠标放置是否暂停</td>
+            </tr>
+            <tr>
+                <td>autoDelay</td>
+                <td>integer</td>
+                <td>0</td>
+                <td>自动延时</td>
+            </tr>
+            <tr>
+                <td>autoSlideForOnePage</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>鼠标放置后是否自动向后一张滑动</td>
+            </tr>
+            <tr>
+                <td>clickAutoPlay</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>点击暂停后是否自动向后一张滑动</td>
+            </tr>
+            <tr>
+                <td>minSlides</td>
+                <td>integer</td>
+                <td>1</td>
+                <td>如果滑块数量比此值小，将按照从大到小排列</td>
+            </tr>
+            <tr>
+                <td>maxSlides</td>
+                <td>integer</td>
+                <td>1</td>
+                <td>如果滑块数量比此值大，将按照从小到大排列</td>
+            </tr>
+            <tr>
+                <td>moveSlides</td>
+                <td>integer</td>
+                <td>0</td>
+                <td>每次移动的滑块数量；如果为0，将默认为所有可视的滑块数量</td>
+            </tr>
+            <tr>
+                <td>slideWidth</td>
+                <td>integer</td>
+                <td>0</td>
+                <td>每个滑块的宽度，水平滑动必须有</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-big">
+        <h2>事件</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <tbody>
+            <tr>
+                <th>
+                    事件
+                </th>
+                <th>
+                    描述
+                </th>
+                <th>
+                    实例
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    onSliderLoad
+                </td>
+                <td>
+                    在滑块完全加载后立即执行
+                </td>
+                <td>
+<pre><code class="javascript">
+    function(currentIndex){ // your code here }
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    onSlideBefore
+                </td>
+                <td>
+                    在每个幻灯片转换之前立即执行。
+                </td>
+                <td>
+<pre><code class="javascript">
+    function($slideElement, oldIndex, newIndex){ // your code here }
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    onSlideAfter
+                </td>
+                <td>
+                    在每个幻灯片转换之后立即执行。
+                </td>
+                <td>
+<pre><code class="javascript">
+    function($slideElement, oldIndex, newIndex){ // your code here }
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    onSlideNext
+                </td>
+                <td>
+                    在每个“下一个”幻灯片转换之前立即执行。函数参数是目标（下一步）滑动元素。
+                </td>
+                <td>
+<pre><code class="javascript">
+    function($slideElement, oldIndex, newIndex){ // your code here }
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    onSlidePrev
+                </td>
+                <td>
+                    立即执行在每个“prev”幻灯片切换。函数的参数是目标（prev）滑动元件。
+                </td>
+                <td>
+<pre><code class="javascript">
+    function($slideElement, oldIndex, newIndex){ // your code here }
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    onSliderResize
+                </td>
+                <td>
+                    窗口大小发生变化时执行
+                </td>
+                <td>
+<pre><code class="javascript">
+    function($slideElement, index){ // your code here }
+</code></pre>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-big">
+        <h2>方法</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <tbody>
+            <tr>
+                <th>
+                    方法
+                </th>
+                <th>
+                    描述
+                </th>
+                <th>
+                    实例
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    goToSlide
+                </td>
+                <td>
+                    跳转到第几个
+                </td>
+                <td>
+<pre><code class="javascript">
+    slider.goToSlide(3);
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    goToNextSlide
+                </td>
+                <td>
+                    跳转到下一个
+                </td>
+                <td>
+<pre><code class="javascript">
+    slider.goToNextSlide();
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    goToPrevSlide
+                </td>
+                <td>
+                    跳转到上一个
+                </td>
+                <td>
+<pre><code class="javascript">
+    slider.goToPrevSlide();
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    startAuto
+                </td>
+                <td>
+                    开始自动轮播
+                </td>
+                <td>
+<pre><code class="javascript">
+    slider.startAuto();
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    stopAuto
+                </td>
+                <td>
+                    停止自动轮播
+                </td>
+                <td>
+<pre><code class="javascript">
+    slider.stopAuto();
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    getCurrentSlide
+                </td>
+                <td>
+                    获取当前在第几个
+                </td>
+                <td>
+<pre><code class="javascript">
+    var current = slider.getCurrentSlide();
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    getSlideCount
+                </td>
+                <td>
+                    返回滑块中的幻灯片总数
+                </td>
+                <td>
+<pre><code class="javascript">
+    var slideQty = slider.getSlideCount();
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    reloadSlider
+                </td>
+                <td>
+                    重新加载滑块。在添加幻灯片时有用。接受可选设置对象。
+                </td>
+                <td>
+<pre><code class="javascript">
+    slider.reloadSlider();
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    destroySlider
+                </td>
+                <td>
+                    消毁当前slider
+                </td>
+                <td>
+<pre><code class="javascript">
+    slider.destroySlider();
+</code></pre>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
+<script type="text/javascript" src="../js/lxslider/lxslider.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+
+        $('#lxslider-11').lxSlider();
+
+        $('#lxslider-12').lxSlider({
+            captions: true,
+            controlsHover:true
+        });
+
+        $('#lxslider-13').lxSlider({
+            adaptiveHeight: true,
+            mode: 'fade'
+        });
+
+        $('.slider1').lxSlider({
+            slideWidth: 200,
+            minSlides: 2,
+            maxSlides: 3,
+            slideMargin: 10
+        });
+
+        $('.slider2').lxSlider({
+            slideWidth: 200,
+            minSlides: 2,
+            maxSlides: 3,
+            slideMargin: 10
+        });
+
+        $('.lxslider3').lxSlider({
+            pager: true,
+            pagerCustom: '#lx-pager'
+        });
+
+        $('.horse-slider').lxSlider({
+            minSlides: 4,
+            maxSlides: 4,
+            slideWidth: 170,
+            slideMargin: 10,
+            ticker: true,
+            speed: 6000
+        });
+    });
+</script>
+</body>
+</html>
+

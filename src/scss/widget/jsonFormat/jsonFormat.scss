@@ -1,0 +1,65 @@
+.jsonformat-box {
+  font-family: Lucida Console, Georgia;
+  font-size: 14px;
+  background-color: #ECECEC;
+  color: #000;
+  padding: 20px;
+}
+
+.jsonformat-box pre {
+  display: block;
+  overflow: auto;
+}
+
+.jsonformat-box .ObjectBrace {
+  color: #00AA00;
+  font-weight: bold;
+}
+
+.jsonformat-box .ArrayBrace {
+  color: #0033FF;
+  font-weight: bold;
+}
+
+.jsonformat-box .PropertyName {
+  color: #CC0000;
+  font-weight: bold;
+}
+
+.jsonformat-box .String {
+  color: #007777;
+}
+
+.jsonformat-box .Number {
+  color: #AA00AA;
+}
+
+.jsonformat-box .Boolean {
+  color: #0000FF;
+}
+
+.jsonformat-box .Function {
+  color: #AA6633;
+  text-decoration: italic;
+}
+
+.jsonformat-box .Null {
+  color: #0000FF;
+}
+
+.jsonformat-box .Comma {
+  color: #000000;
+  font-weight: bold;
+}
+
+pre.CodeContainer {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+pre.CodeContainer img {
+  cursor: pointer;
+  border: none;
+  margin-bottom: -1px;
+  vertical-align: inherit;
+}

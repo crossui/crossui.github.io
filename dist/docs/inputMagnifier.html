@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>inputMagnifier</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/cross.css">
+    <link rel="stylesheet" href="../css/highlight.css">
+</head>
+<body>
+<div class="p-medium">
+
+    <fieldset class="c-field">
+        <legend>引用</legend>
+        <div class="c-field-box">
+<pre><code class="html c-break">
+    &lt;script type="text/javascript" src="../js/inputMagnifier/inputMagnifier.js"&gt;&lt;/script&gt;
+</code></pre>
+        </div>
+    </fieldset>
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div class="form-layout form-horizontal form-horizontal-narrow">
+            <div class="control-group">
+                <label class="control-label">身份证：</label>
+                <div class="control-form">
+                    <input type="text" placeholder="请输入身份证号码" class="c-input" id="inputElem1" autocomplete="off">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">手机号：</label>
+                <div class="control-form">
+                    <input type="text" placeholder="请输入手机号" class="c-input" id="inputElem2" autocomplete="off">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">银行卡号：</label>
+                <div class="control-form">
+                    <input type="text" placeholder="请输入银行卡号" class="c-input" id="inputElem3" autocomplete="off">
+                </div>
+            </div>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">表单放大镜</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#inputMagnifier1" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                内容区域
+            </div>
+        </div>
+
+        <div id="inputMagnifier1" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div class="form-layout form-horizontal form-horizontal-narrow"&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;身份证：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;input type="text" placeholder="请输入身份证号码" class="c-input" id="inputElem1" autocomplete="off" /&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;手机号：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;input type="text" placeholder="请输入手机号" class="c-input" id="inputElem2" autocomplete="off" /&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;银行卡号：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;input type="text" placeholder="请输入银行卡号" class="c-input" id="inputElem3" autocomplete="off" /&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div>
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    //身份证
+    new inputMagnifier({
+        inputElem: '#inputElem1',
+        align: 'bottom',
+        parentCls: '.control-form',
+        splitType: [3,3,8,4]
+    });
+
+    //手机号
+    new inputMagnifier({
+        inputElem: '#inputElem2',
+        align: 'right',
+        parentCls: '.control-form',
+        splitType: [3,4,4]
+    });
+
+    //银行卡号
+    new inputMagnifier({
+        inputElem: '#inputElem3',
+        align: 'top',
+        parentCls: '.control-form',
+        splitType: [4,4,4,4]
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mtb-medium">
+        <h2 class="mb-tiny">参数说明：</h2>
+<pre><code class="javascript">
+    inputElem          :     '.inputElem',     // 输入框目标元素
+    parentCls          :     '.parentCls',     // 目标元素的父类
+    align              :     'right',            // 对齐方式有 ['top','bottom','left','right']四种 默认为top
+    splitType          :     [3,4,4],          // 拆分规则
+    delimiter          :     '-'                // 分隔符可自定义
+</code></pre>
+    </div>
+
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
+<script type="text/javascript" src="../js/inputMagnifier/inputMagnifier.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+        new inputMagnifier({
+            inputElem: '#inputElem1',
+            align: 'bottom',
+            parentCls: '.control-form',
+            splitType: [3,3,8,4]
+        });
+
+        //手机号
+        new inputMagnifier({
+            inputElem: '#inputElem2',
+            align: 'right',
+            parentCls: '.control-form',
+            splitType: [3,4,4]
+        });
+
+        //银行卡号
+        new inputMagnifier({
+            inputElem: '#inputElem3',
+            align: 'top',
+            parentCls: '.control-form',
+            splitType: [4,4,4,4]
+        });
+    });
+</script>
+</body>
+</html>
+
