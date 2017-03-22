@@ -1,0 +1,625 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>colorpicker</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../iconfont/iconfont.css" />
+    <link rel="stylesheet" href="../css/cross.css" />
+    <link rel="stylesheet" href="../css/highlight.css" />
+    <link rel="stylesheet" href="../css/colorpicker.css" />
+</head>
+<body>
+<div class="p-medium">
+
+    <fieldset class="c-field">
+        <legend>引用</legend>
+        <div class="c-field-box">
+<pre><code class="html c-break">
+    &lt;link rel="stylesheet" href="../css/colorpicker.css" /&gt;
+    &lt;script type="text/javascript" src="../js/colorpicker/colorpicker.js"&gt;&lt;/script&gt;
+</code></pre>
+        </div>
+    </fieldset>
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div id="full"></div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">拾色器</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#colorpicker1" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                平面显示全部功能的
+            </div>
+        </div>
+
+        <div id="colorpicker1" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div id="full"&gt;&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#full').colorpicker({
+        color: "#000",
+        flat: true,
+        showInput: true,
+        showInitial: true,
+        showPalette: true,
+        showAlpha: true,
+        showSelectionPalette: true,
+        maxPaletteSize: 10,
+        preferredFormat: "hex"
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <input id="input" />
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">拾色器</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#colorpicker2" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                输入框调用显示全部功能的
+            </div>
+        </div>
+
+        <div id="colorpicker2" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input id="input" /&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $("#input").colorpicker({
+        flat: false,
+        showInput: true,
+        showInitial: true,
+        showPalette: true,
+        showAlpha: true,
+        showSelectionPalette: true,
+        maxPaletteSize: 10,
+        preferredFormat: "hex"
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <input id="inputSample" />
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">拾色器</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#colorpicker3" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                平面显示色板
+            </div>
+        </div>
+
+        <div id="colorpicker3" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input id="input" /&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-big">
+        <h2>参数</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <tbody>
+            <tr>
+                <th>参数</th>
+                <th>默认值</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td>false</td>
+                <td>初始化颜色 值('#000')</td>
+            </tr>
+            <tr>
+                <td>flat</td>
+                <td>false</td>
+                <td>定位一个inline-block元素</td>
+            </tr>
+            <tr>
+                <td>showInput</td>
+                <td>false</td>
+                <td>显示输入框</td>
+            </tr>
+            <tr>
+                <td>allowEmpty</td>
+                <td>false</td>
+                <td>允许为空,显示清楚颜色按钮</td>
+            </tr>
+            <tr>
+                <td>showButtons</td>
+                <td>true</td>
+                <td>隐藏选择取消按钮</td>
+            </tr>
+            <tr>
+                <td>clickoutFiresChange</td>
+                <td>true</td>
+                <td>单击选择器外部,如果颜色有改变则应用</td>
+            </tr>
+            <tr>
+                <td>showInitial</td>
+                <td>false</td>
+                <td>显示初始颜色,提供现在选择的颜色和初始颜色对比</td>
+            </tr>
+            <tr>
+                <td>showPalette</td>
+                <td>false</td>
+                <td>显示选择器面板</td>
+            </tr>
+            <tr>
+                <td>showPaletteOnly</td>
+                <td>false</td>
+                <td>只显示选择器面板</td>
+            </tr>
+            <tr>
+                <td>hideAfterPaletteSelect</td>
+                <td>false</td>
+                <td>选择颜色后自动隐藏面板</td>
+            </tr>
+            <tr>
+                <td>togglePaletteOnly</td>
+                <td>false</td>
+                <td>切换面板</td>
+            </tr>
+            <tr>
+                <td>showSelectionPalette</td>
+                <td>true</td>
+                <td>记住选择过的颜色</td>
+            </tr>
+            <tr>
+                <td>localStorageKey</td>
+                <td>false</td>
+                <td>把选择过的颜色存在浏览器上</td>
+            </tr>
+            <tr>
+                <td>appendTo</td>
+                <td>"body"</td>
+                <td>选择选择器容器是附加到哪个元素</td>
+            </tr>
+            <tr>
+                <td>maxSelectionSize</td>
+                <td>7</td>
+                <td>记住选择过的颜色的最大数量</td>
+            </tr>
+            <tr>
+                <td>cancelText</td>
+                <td>"取消"</td>
+                <td>取消按钮,按钮文字</td>
+            </tr>
+            <tr>
+                <td>chooseText</td>
+                <td>"确定"</td>
+                <td>确定按钮,按钮文字</td>
+            </tr>
+            <tr>
+                <td>togglePaletteMoreText</td>
+                <td>"展开"</td>
+                <td>展开面板,按钮文字</td>
+            </tr>
+            <tr>
+                <td>togglePaletteLessText</td>
+                <td>"收起"</td>
+                <td>收起面板,按钮文字</td>
+            </tr>
+            <tr>
+                <td>clearText</td>
+                <td>"清除"</td>
+                <td>清除,按钮文字</td>
+            </tr>
+            <tr>
+                <td>noColorSelectedText</td>
+                <td>"没有选择颜色"</td>
+                <td>未选择的提示语</td>
+            </tr>
+            <tr>
+                <td>preferredFormat</td>
+                <td>false</td>
+                <td>输入框颜色格式,(hex十六进制,hex3十六进制可以的话只显示3位,hsl,rgb三原色,name英文名显示)</td>
+            </tr>
+            <tr>
+                <td>className</td>
+                <td>""</td>
+                <td>添加父级CLASS</td>
+            </tr>
+            <tr>
+                <td>containerClassName</td>
+                <td>""</td>
+                <td>引用类选择器,可以改变颜色选择器面板的样式</td>
+            </tr>
+            <tr>
+                <td>replacerClassName</td>
+                <td>""</td>
+                <td>引用类选择器,可以改变颜色选择器的样式</td>
+            </tr>
+            <tr>
+                <td>showAlpha</td>
+                <td>false</td>
+                <td>显示透明度选择</td>
+            </tr>
+            <tr>
+                <td>theme</td>
+                <td>"c-light"</td>
+                <td>皮肤</td>
+            </tr>
+            <tr>
+                <td>palette</td>
+                <td>[["#ffffff", "#000000", "#ff0000", "#ff8000", "#ffff00", "#008000", "#0000ff", "#4b0082", "#9400d3"]]</td>
+                <td>选择器面板颜色设置</td>
+            </tr>
+            <tr>
+                <td>selectionPalette</td>
+                <td>[]</td>
+                <td>显示由用户先前选择的颜色的调色板。</td>
+            </tr>
+            <tr>
+                <td>disabled</td>
+                <td>false</td>
+                <td>禁用选择器</td>
+            </tr>
+            <tr>
+                <td>offset</td>
+                <td>null</td>
+                <td>设置调色板跟随某个元素</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="mt-big">
+        <h2>事件</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <tbody>
+            <tr>
+                <th>
+                    事件
+                </th>
+                <th>
+                    描述
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    beforeShow
+                </td>
+                <td>
+                    选择器面板显示之前触发,返回false时不显示
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    move
+                </td>
+                <td>
+                    选择器右边面板移动时触发
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    change
+                </td>
+                <td>
+                    关闭面板或点击选择按钮,颜色变化时触发
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    show
+                </td>
+                <td>
+                    选择器面板显示时触发
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    hide
+                </td>
+                <td>
+                    选择器面板隐藏时触发
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <div class="mt-big">
+        <h2>方法</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <tbody>
+            <tr>
+                <th>
+                    方法
+                </th>
+                <th>
+                    描述
+                </th>
+                <th>
+                    实例
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    show
+                </td>
+                <td>
+                    显示面板
+                </td>
+                <td>
+<pre><code class="javascript">
+    $("#picker").colorpicker("show");
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    hide
+                </td>
+                <td>
+                    隐藏面板
+                </td>
+                <td>
+<pre><code class="javascript">
+    $("#picker").colorpicker("hide");
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    toggle
+                </td>
+                <td>
+                    切换面板
+                </td>
+                <td>
+<pre><code class="javascript">
+    $("#picker").colorpicker("toggle");
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    get
+                </td>
+                <td>
+                    得到选择器当前颜色
+                </td>
+                <td>
+<pre><code class="javascript">
+    $("#picker").colorpicker("get");
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    set
+                </td>
+                <td>
+                    设置选择器当前颜色
+                </td>
+                <td>
+<pre><code class="javascript">
+    $("#picker").colorpicker("set", colorString);
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    container
+                </td>
+                <td>
+                    检索器的容器元素
+                </td>
+                <td>
+<pre><code class="javascript">
+    $("#picker").colorpicker("container");
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    reflow
+                </td>
+                <td>
+                    重置容器元素的定位
+                </td>
+                <td>
+<pre><code class="javascript">
+    $("#picker").colorpicker("reflow");
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    destroy
+                </td>
+                <td>
+                    选择器初始化
+                </td>
+                <td>
+<pre><code class="javascript">
+    $("#picker").colorpicker("destroy");
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    enable
+                </td>
+                <td>
+                    启用
+                </td>
+                <td>
+<pre><code class="javascript">
+    $("#picker").colorpicker("enable");
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    disable
+                </td>
+                <td>
+                    禁用
+                </td>
+                <td>
+<pre><code class="javascript">
+    $("#picker").colorpicker("disable");
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    option
+                </td>
+                <td>
+                    得到属性值
+                </td>
+                <td>
+<pre><code class="javascript">
+    $("#picker").colorpicker("option", optionName);
+</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    option,newOptionValue
+                </td>
+                <td>
+                    设置属性值
+                </td>
+                <td>
+<pre><code class="javascript">
+    $("#picker").colorpicker("option", optionName, newOptionValue);
+</code></pre>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
+<script type="text/javascript" src="../js/colorpicker/colorpicker.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+        $('#full').colorpicker({
+            color: "#000",
+            flat: true,
+            showInput: true,
+            showInitial: true,
+            showPalette: true,
+            showAlpha: true,
+            showSelectionPalette: true,
+            maxPaletteSize: 10,
+            preferredFormat: "hex"
+        });
+
+
+        $("#input").colorpicker({
+            flat: false,
+            showInput: true,
+            showInitial: true,
+            showPalette: true,
+            showAlpha: true,
+            showSelectionPalette: true,
+            maxPaletteSize: 10,
+            preferredFormat: "hex"
+        });
+
+
+        $("#inputSample").colorpicker({
+            flat: true,
+            preferredFormat: "rgb",
+            showPalette: true,
+            showPaletteOnly: true,
+            palette: [
+                ["#000000", "#434343", "#666666", "#999999", "#b7b7b7", "#cccccc", "#d9d9d9", "#efefef", "#f3f3f3", "#ffffff"],
+                ["#980000", "#ff0000", "#ff9900", "#ffff00", "#00ff00", "#00ffff", "#4a86e8", "#0000ff", "#9900ff", "#ff00ff"],
+                ["#e6b8af", "#f4cccc", "#fce5cd", "#fff2cc", "#d9ead3", "#d9ead3", "#c9daf8", "#cfe2f3", "#d9d2e9", "#ead1dc"],
+                ["#dd7e6b", "#ea9999", "#f9cb9c", "#ffe599", "#b6d7a8", "#a2c4c9", "#a4c2f4", "#9fc5e8", "#b4a7d6", "#d5a6bd"],
+                ["#cc4125", "#e06666", "#f6b26b", "#ffd966", "#93c47d", "#76a5af", "#6d9eeb", "#6fa8dc", "#8e7cc3", "#c27ba0"],
+                ["#a61c00", "#cc0000", "#e69138", "#f1c232", "#6aa84f", "#45818e", "#3c78d8", "#3d85c6", "#674ea7", "#a64d79"],
+                ["#85200c", "#990000", "#b45f06", "#bf9000", "#38761d", "#134f5c", "#1155cc", "#0b5394", "#351c75", "#741b47"],
+                ["#5b0f00", "#660000", "#783f04", "#7f6000", "#274e13", "#0c343d", "#1c4587", "#073763", "#20124d", "#4c1130"]
+            ]
+        });
+    });
+</script>
+
+</body>
+</html>
+
