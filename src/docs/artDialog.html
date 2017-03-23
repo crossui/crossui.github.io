@@ -235,6 +235,66 @@
 
             <div class="c-border p-small border-radius-rounded mt-medium">
 
+                <a href="javascript:;" id="artDialogposition-lt" class="button button-primary button-rounded button-small">左上角</a>
+                <a href="javascript:;" id="artDialogposition-rt" class="button button-primary button-rounded button-small">右上角</a>
+                <a href="javascript:;" id="artDialogposition-lb" class="button button-primary button-rounded button-small">左下角</a>
+                <a href="javascript:;" id="artDialogposition-rb" class="button button-primary button-rounded button-small">右下角</a>
+
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">弹出层</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#art7" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        指定窗口显示位置，参数值 0%~100%;
+                    </div>
+                </div>
+
+                <div id="art7" class="c-panel-bd c-panel-collapse mt-medium">
+<pre><code class="javascript">
+
+    dialog({
+        content: '我在左上角显示哦-_-!!',
+        position:{
+            x: '1%',
+            y: '1%'
+        }
+    }).show().closedtime(3);
+
+
+    dialog({
+        content: '我在右上角显示哦-_-!!',
+        position:{
+            x: '99%',
+            y: '1%'
+        }
+    }).show().closedtime(3);
+
+
+    dialog({
+        content: '我在左下角显示哦-_-!!',
+        position:{
+            x: '1%',
+            y: '99%'
+        }
+    }).show().closedtime(3);
+
+
+    dialog({
+        content: '我在右下角显示哦-_-!!',
+        position:{
+            x: '99%',
+            y: '99%'
+        }
+    }).show().closedtime(3);
+</code></pre>
+                </div>
+            </div>
+
+            <div class="c-border p-small border-radius-rounded mt-medium">
+
                 <a href="javascript:;" id="artDialogFollow" class="button button-primary button-rounded button-small">测试</a>
 
                 <fieldset class="c-field c-field-title mt-medium">
@@ -242,14 +302,14 @@
                 </fieldset>
                 <div class="c-field-box c-position-r">
                     <div class="c-position-a" style="top: 0; right: 0">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#art5" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#art9" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
                     </div>
                     <div class="introduce">
                         窗口跟随，“确定”按钮阻止窗口关闭 <span class="c-blue">return false;</span>
                     </div>
                 </div>
 
-                <div id="art7" class="c-panel-bd c-panel-collapse mt-medium">
+                <div id="art9" class="c-panel-bd c-panel-collapse mt-medium">
                     <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
                         <div class="tabs-hd clearfix">
                             <a href="javascript:;" class="curr"><span>HTML</span></a>
@@ -419,9 +479,10 @@
                 </div>
             </div>
 
+
             <div class="c-border p-small border-radius-rounded mt-medium">
 
-                <input type="text" class="c-input" value="传入值1" id="artDialog-iframe-data" /> <a href="javascript:;" id="artDialogIframeData" class="button button-primary button-rounded">测试</a>
+                <a href="javascript:;" id="artDialogEvent" class="button button-primary button-rounded button-small">测试</a>
 
                 <fieldset class="c-field c-field-title mt-medium">
                     <legend class="fs6">弹出层</legend>
@@ -431,11 +492,67 @@
                         <a data-toggle="collapse" data-parent="#accordion" href="#art8" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
                     </div>
                     <div class="introduce">
-                        请在服务端预览（部分浏览器本地 iframe 会跨域无权限）
+                        事件
                     </div>
                 </div>
 
                 <div id="art8" class="c-panel-bd c-panel-collapse mt-medium">
+                    <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                        <div class="tabs-hd clearfix">
+                            <a href="javascript:;" class="curr"><span>Javascript</span></a>
+                        </div>
+                        <div class="tabs-bd">
+                            <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="javascript">
+    var d = dialog({
+        title: '提示',
+        content: 'loading',
+        onshow: function () {
+            this.content('dialog ready');
+        },
+        onclose: function () {
+            alert('对话框已经关闭');
+        },
+        onbeforeremove: function(){
+            this.content('dialog begin remove');
+        },
+        onremove: function(){
+            alert('对话框已经删除');
+        },
+        onfocus: function(){
+            alert('对话框已经被激活');
+        },
+        onblur: function(){
+            alert('对话框已经失去焦点');
+        },
+        onreset: function(){
+            console.info('dialog is reset');
+        }
+    }).showModal();
+</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="c-border p-small border-radius-rounded mt-medium">
+
+                <input type="text" class="c-input" value="传入值1" id="artDialog-iframe-data" /> <a href="javascript:;" id="artDialogIframeData" class="button button-primary button-rounded">测试</a>
+
+                <fieldset class="c-field c-field-title mt-medium">
+                    <legend class="fs6">弹出层</legend>
+                </fieldset>
+                <div class="c-field-box c-position-r">
+                    <div class="c-position-a" style="top: 0; right: 0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#art10" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+                    </div>
+                    <div class="introduce">
+                        请在服务端预览（部分浏览器本地 iframe 会跨域无权限）
+                    </div>
+                </div>
+
+                <div id="art10" class="c-panel-bd c-panel-collapse mt-medium">
                     <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
                         <div class="tabs-hd clearfix">
                             <a href="javascript:;" class="curr"><span>Javascript</span></a>
@@ -641,6 +758,15 @@
                 <td>String</td>
             </tr>
             <tr>
+                <th>position <span class="c-red">（改造后）</span></th>
+                <td>object</td>
+                <td>null</td>
+                <td>
+                    <p>相对于可视区域的X,Y轴的坐标。</p>
+                    <p>可以使用'0%' ~ '100%'作为相对坐标，如果浏览器窗口大小被改变其也会进行相应的调整</p>
+                </td>
+            </tr>
+            <tr>
                 <th class="separate" colspan="4">视觉</th>
             </tr>
             <tr>
@@ -679,6 +805,12 @@
                 <td>Boolean</td>
                 <td>false</td>
                 <td>是否支持快捷关闭（点击遮罩层自动关闭）</td>
+            </tr>
+            <tr>
+                <th>drag <span class="c-red">（改造后）</span></th>
+                <td>Boolean</td>
+                <td>true</td>
+                <td>是否支持用户拖拽</td>
             </tr>
             <tr>
                 <th class="separate" colspan="4">
@@ -936,6 +1068,14 @@
             </tr>
             <tr>
                 <td>
+                    closedtime(n) <span class="c-red">（改造后）</span>
+                </td>
+                <td>
+                    让对话框多少秒后自动关闭。
+                </td>
+            </tr>
+            <tr>
+                <td>
                     addEventListener(type, callback)
                 </td>
                 <td>
@@ -1067,6 +1207,7 @@
         $('#artDialogstatusbar').on('click',function(){
             var d = dialog({
                 title: '欢迎',
+                drag: false,
                 content: '欢迎使用 artDialog 对话框组件！',
                 ok: function () {},
                 statusbar: '<label><input type="checkbox">不再提醒</label>'
@@ -1159,6 +1300,75 @@
                     console.log('onremove');
                 }
             }).showModal();
+        });
+
+
+        $('#artDialogEvent').on('click',function(){
+            var d = dialog({
+                title: '提示',
+                content: 'loading',
+                onshow: function () {
+                    this.content('dialog ready');
+                },
+                onclose: function () {
+                    alert('对话框已经关闭');
+                },
+                onbeforeremove: function(){
+                    this.content('dialog begin remove');
+                },
+                onremove: function(){
+                    alert('对话框已经删除');
+                },
+                onfocus: function(){
+                    alert('对话框已经被激活');
+                },
+                onblur: function(){
+                    alert('对话框已经失去焦点');
+                },
+                onreset: function(){
+                    console.info('dialog is reset');
+                }
+            }).showModal();
+        });
+
+        $('#artDialogposition-lt').on('click',function(){
+            dialog({
+                content: '我在左上角显示哦-_-!!',
+                position:{
+                    x: '1%',
+                    y: '1%'
+                }
+            }).show().closedtime(3);
+        });
+
+        $('#artDialogposition-rt').on('click',function(){
+            dialog({
+                content: '我在右上角显示哦-_-!!',
+                position:{
+                    x: '99%',
+                    y: '1%'
+                }
+            }).show().closedtime(3);
+        });
+
+        $('#artDialogposition-lb').on('click',function(){
+            dialog({
+                content: '我在左下角显示哦-_-!!',
+                position:{
+                    x: '1%',
+                    y: '99%'
+                }
+            }).show().closedtime(3);
+        });
+
+        $('#artDialogposition-rb').on('click',function(){
+            dialog({
+                content: '我在右下角显示哦-_-!!',
+                position:{
+                    x: '99%',
+                    y: '99%'
+                }
+            }).show().closedtime(3);
         });
     });
 </script>

@@ -332,7 +332,9 @@ $.extend(Popup.prototype, {
 
         if (elem) {
             this.__follow(elem);
-        } else {
+        } else if(this.position){
+            this.__position(this.position);
+        }else{
             this.__center();
         }
 
@@ -620,6 +622,57 @@ $.extend(Popup.prototype, {
 
     },
 
+    //位置(相对于可视区域)
+    __position: function (p) {
+        var that = this,
+            popup = that.__popup,
+            $window = $(window),
+            $document = $(document),
+            winWidth = $window.width(),
+            winHeight = $window.height(),
+            docLeft =  this.fixed ? 0 : $document.scrollLeft(),
+            docTop = this.fixed ? 0 : $document.scrollTop(),
+            width = popup ? popup.outerWidth() : 0,
+            height = popup ? popup.outerHeight() : 0,
+            left = p.x,
+            top = p.y;
+
+        if (left || left === 0) {
+            left = that._toNumber(left, winWidth - width);
+            if (typeof left === 'number') {
+                popup.css('left',Math.max(left, docLeft) + 'px');
+            } else if (typeof left === 'string') {
+                popup.css('left',left);
+            }
+        }
+
+        if (top || top === 0) {
+            top = that._toNumber(top, winHeight - height);
+            if (typeof top === 'number') {
+                popup.css('top',Math.max(top, docTop+top) + 'px');
+            } else if (typeof top === 'string') {
+                popup.css('top',top);
+            }
+        }
+    },
+
+    // px与%单位转换成数值 (百分比单位按照最大值换算)
+    // 其他的单位返回原值
+    _toNumber: function (thisValue, maxValue) {
+        if (!thisValue && thisValue !== 0 || typeof thisValue === 'number') {
+            return thisValue;
+        }
+
+        var last = thisValue.length - 1;
+        if (thisValue.lastIndexOf('px') === last) {
+            thisValue = parseInt(thisValue);
+        } else if (thisValue.lastIndexOf('%') === last) {
+            thisValue = parseInt(maxValue * thisValue.split('%')[0] / 100);
+        }
+
+        return thisValue;
+    },
+
 
     // 获取元素相对于页面的位置（包括iframe内的元素）
     // 暂时不支持两层以上的 iframe 套嵌
@@ -730,6 +783,9 @@ define("dialog-config", {
 
     // 是否支持快捷关闭（点击遮罩层自动关闭）
     quickClose: false,
+
+    //是否允许用户拖动位置
+    drag: true,
 
     // css 文件路径，留空则不会使用 js 自动加载样式
     // 注意：css 只允许加载一个
@@ -1634,8 +1690,8 @@ dialog.oncreate = function (api) {
 
     // 拖拽支持
     $(api.node).on(drag.types.start, '[i=title]', function (event) {
-        // 排除气泡类型的对话框
-        if (!api.follow) {
+        // 排除气泡类型的对话框及支持用户拖拽
+        if (!api.follow && api.drag) {
             api.focus();
             drag.create(api.node, event);
         }
