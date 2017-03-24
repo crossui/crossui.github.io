@@ -28,10 +28,23 @@
 
     <div class="c-border p-small border-radius-rounded mt-medium">
 
-        <input id="ex1" data-slider-id="ex1Slider" type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14">
+        <div class="c-row">
+            <div class="c-33">
+                <input class="ex1" data-provide="slider" data-slider-id="ex1Slider" type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14">
+            </div>
+            <div class="c-33">
+                <input class="ex1" data-provide="slider" type="text" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]">
+            </div>
+            <div class="c-33">
+                <input class="ex1" data-provide="slider" type="text" data-slider-reversed="true" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="-3" data-slider-orientation="vertical">
+            </div>
+        </div>
+
+
+
 
         <fieldset class="c-field c-field-title mt-medium">
-            <legend class="fs6">标题</legend>
+            <legend class="fs6">滑动输入条</legend>
         </fieldset>
         <div class="c-field-box c-position-r">
             <div class="c-position-a" style="top: 0; right: 0">
@@ -51,12 +64,16 @@
                 <div class="tabs-bd">
                     <div class="tabs-bd-box c-hide curr p-small">
 <pre><code class="html c-break">
-    &lt;input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/&gt;
+    &lt;input class="ex1" data-provide="slider" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/&gt;
+
+    &lt;input class="ex1" data-provide="slider" type="text" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]"/&gt;
+
+    &lt;input class="ex1" data-provide="slider" type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="-3" data-slider-orientation="vertical"/&gt;
 </code></pre>
                     </div>
                     <div class="tabs-bd-box c-hide p-small">
 <pre><code class="javascript">
-    $('#ex1').slider({
+    $('.ex1').slider({
         formatter: function(value) {
             return 'value: ' + value;
         }
@@ -68,6 +85,550 @@
         </div>
     </div>
 
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <input id="ex2" data-provide="slider" data-slider-enabled="false" type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14">
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">滑动输入条</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#slider2" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                禁用状态
+            </div>
+        </div>
+
+        <div id="slider2" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input id="ex2" data-provide="slider" data-slider-enabled="false" type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#ex2').slider();
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <input id="ex3" type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="3">
+        <span id="ex3InputSpan" class="ml-small">Slider Value: <input id="ex3SliderVal" class="c-input c-10" value="3"></span>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">滑动输入条</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#slider3" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                和 数字输入框 组件保持同步。
+            </div>
+        </div>
+
+        <div id="slider3" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input id="ex3" type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="3"/&gt;
+    &lt;span id="ex3InputSpan" class="ml-small"&gt;Slider Value: &lt;input id="ex3SliderVal" class="c-input c-10" value="3" /&gt;&lt;/span&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    var slider = new Slider("#ex3");
+    slider.on("slide", function(sliderValue) {
+        $("#ex3SliderVal").val(sliderValue);
+    });
+    $("#ex3SliderVal").on('keyup',function(){
+        var _val = $(this).val();
+        if(!isNaN(_val) && _val&gt;=-5 && _val&lt;=20){
+            slider.setValue(_val);
+        }else{
+            alert("请输入-5~20之间的数字");
+        }
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <input id="ex4" type="text" data-provide="slider" data-slider-ticks="[1, 2, 3]" data-slider-ticks-labels='["0°C", "50°C", "100°C"]' data-slider-min="1" data-slider-max="3" data-slider-step="1" data-slider-value="3" data-slider-tooltip="hide">
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">滑动输入条</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#slider4" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                分段式滑块。
+            </div>
+        </div>
+
+        <div id="slider4" class="c-panel-bd c-panel-collapse mt-medium">
+<pre><code class="html c-break">
+    &lt;input id="ex4" type="text"
+           data-provide="slider"
+           data-slider-ticks="[1, 2, 3]"
+           data-slider-ticks-labels='["0°C", "50°C", "100°C"]'
+           data-slider-min="1"
+           data-slider-max="3"
+           data-slider-step="1"
+           data-slider-value="3"
+           data-slider-tooltip="hide" /&gt;
+</code></pre>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div class="c-row">
+            <div class="c-50">
+                <input id="ex5" data-slider-id="ex1Slider" type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14">
+            </div>
+            <div class="c-50">
+                <input id="ex6" type="text" data-slider-reversed="true" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="-3" data-slider-orientation="vertical">
+            </div>
+        </div>
+
+
+
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">滑动输入条</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#slider5" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                带提示
+            </div>
+        </div>
+
+        <div id="slider5" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input id="ex5" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/&gt;
+
+    &lt;input id="ex6" type="text" data-slider-min="-5" data-slider-max="20" data-slider-step="1" data-slider-value="-3" data-slider-orientation="vertical"/&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#ex5').slider({
+        formatter: function(value) {
+            return 'Current value: ' + value;
+        },
+        tooltip_position: 'bottom'
+    });
+
+    $('#ex6').slider({
+        formatter: function(value) {
+            return 'Current value: ' + value;
+        },
+        tooltip_position: 'left'
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-big">
+        <h2>参数</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <thead>
+            <tr>
+                <th>
+                    参数名称</th>
+                <th>
+                    参数类型</th>
+                <th>
+                    默认值</th>
+                <th>
+                    描述</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    id</td>
+                <td>
+                    string</td>
+                <td>
+                    ' '</td>
+                <td>
+                    设置slider元素的id</td>
+            </tr>
+            <tr>
+                <td>
+                    min</td>
+                <td>
+                    float</td>
+                <td>
+                    0</td>
+                <td>
+                    slider允许的最小值</td>
+            </tr>
+            <tr>
+                <td>
+                    max</td>
+                <td>
+                    float</td>
+                <td>
+                    10</td>
+                <td>
+                    slider允许的最大值</td>
+            </tr>
+            <tr>
+                <td>
+                    step</td>
+                <td>
+                    float</td>
+                <td>
+                    1</td>
+                <td>
+                    slider的步长</td>
+            </tr>
+            <tr>
+                <td>
+                    precision</td>
+                <td>
+                    float</td>
+                <td>
+                    小数的位数</td>
+                <td>
+                    slider数值的精度。</td>
+            </tr>
+            <tr>
+                <td>
+                    orientation</td>
+                <td>
+                    string</td>
+                <td>
+                    'horizontal'</td>
+                <td>
+                    设置slider的初始值，设置为数组表示一个范围。的方向。可选值：'vertical' 或 'horizontal'</td>
+            </tr>
+            <tr>
+                <td>
+                    value</td>
+                <td>
+                    float,array</td>
+                <td>
+                    5</td>
+                <td>
+                    slider的初始值，设置为数组表示一个范围。</td>
+            </tr>
+            <tr>
+                <td>
+                    range</td>
+                <td>
+                    bool</td>
+                <td>
+                    false</td>
+                <td>
+                    是否设置一个范围slider。如果初始化值为一个数组，该选项可选。如果初始化值为scalar，最大值将使用第二个值。</td>
+            </tr>
+            <tr>
+                <td>
+                    selection</td>
+                <td>
+                    string</td>
+                <td>
+                    'before'</td>
+                <td>
+                    选择配置。接收：'before', 'after' 或 'none'。在范围slider中，selection 被放置在两个手柄中间。</td>
+            </tr>
+            <tr>
+                <td>
+                    tooltip</td>
+                <td>
+                    string</td>
+                <td>
+                    'show'</td>
+                <td>
+                    在拖动手柄时是否显示tooltip，隐藏tooltip，或者总是显示tooltip。可选值：'show', 'hide' 或 'always'</td>
+            </tr>
+            <tr>
+                <td>
+                    tooltip_split</td>
+                <td>
+                    bool</td>
+                <td>
+                    false</td>
+                <td>
+                    如果是flase显示一个tooltip，如果设置为true，显示两个tooltip，每个手柄显示一个。</td>
+            </tr>
+            <tr>
+                <td>
+                    handle</td>
+                <td>
+                    string</td>
+                <td>
+                    'round'</td>
+                <td>
+                    手柄的形状。可选值： 'round', 'square', 'triangle' 或 'custom'</td>
+            </tr>
+            <tr>
+                <td>
+                    reversed</td>
+                <td>
+                    bool</td>
+                <td>
+                    false</td>
+                <td>
+                    slider是否反向</td>
+            </tr>
+            <tr>
+                <td>
+                    enabled</td>
+                <td>
+                    bool</td>
+                <td>
+                    true</td>
+                <td>
+                    slider是否可用</td>
+            </tr>
+            <tr>
+                <td>
+                    formatter</td>
+                <td>
+                    function</td>
+                <td>
+                    返回文本值</td>
+                <td>
+                    回调函数。返回想在tooltip中显示的文字。</td>
+            </tr>
+            <tr>
+                <td>
+                    natural_arrow_keys</td>
+                <td>
+                    bool</td>
+                <td>
+                    false</td>
+                <td>
+                    是否允许使用键盘的方向键来控制slider。默认情况下，right/up键是slider数值增大，left/down键使slider数值减少。</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-big">
+        <h2>事件</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <tbody>
+            <tr>
+                <th>
+                    事件
+                </th>
+                <th>
+                    描述
+                </th>
+                <th>
+                    实例
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    slide</td>
+                <td>
+                    当slider被拖动时触发</td>
+                <td>
+                    新的slider值</td>
+            </tr>
+            <tr>
+                <td>
+                    slideStart</td>
+                <td>
+                    当slider开始拖动时触发</td>
+                <td>
+                    新的slider值</td>
+            </tr>
+            <tr>
+                <td>
+                    slideStop</td>
+                <td>
+                    当slider停止拖动或slider被点击时触发</td>
+                <td>
+                    新的slider值</td>
+            </tr>
+            <tr>
+                <td>
+                    change</td>
+                <td>
+                    slider的值改变时触发</td>
+                <td>
+                    带有两个属性的对象："oldValue"和"newValue"</td>
+            </tr>
+            <tr>
+                <td>
+                    slideEnabled</td>
+                <td>
+                    当设置slider为可用时触发</td>
+                <td>
+                    N/A</td>
+            </tr>
+            <tr>
+                <td>
+                    slideDisabled</td>
+                <td>
+                    当设置slider为不可用时触发</td>
+                <td>
+                    N/A</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-big">
+        <h2>方法</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <thead>
+            <tr>
+                <th>
+                    方法</th>
+                <th>
+                    参数</th>
+                <th>
+                    描述</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    getValue</td>
+                <td>
+                    ---</td>
+                <td>
+                    获取slider的当前值</td>
+            </tr>
+            <tr>
+                <td>
+                    setValue</td>
+                <td>
+                    newValue, triggerSlideEvent</td>
+                <td>
+                    为slider设置一个新值。如果可选的triggerSlideEvent参数为true，'slide'事件将被触发。</td>
+            </tr>
+            <tr>
+                <td>
+                    destroy</td>
+                <td>
+                    ---</td>
+                <td>
+                    移除和销毁slider实例</td>
+            </tr>
+            <tr>
+                <td>
+                    disable</td>
+                <td>
+                    ---</td>
+                <td>
+                    使slider不可用，用户不能修改slider的值</td>
+            </tr>
+            <tr>
+                <td>
+                    enable</td>
+                <td>
+                    ---</td>
+                <td>
+                    使slider可用</td>
+            </tr>
+            <tr>
+                <td>
+                    toggle</td>
+                <td>
+                    ---</td>
+                <td>
+                    在slider可用与不可用之间切换</td>
+            </tr>
+            <tr>
+                <td>
+                    isEnabled</td>
+                <td>
+                    ---</td>
+                <td>
+                    如果slider可用返回true，否则返回false</td>
+            </tr>
+            <tr>
+                <td>
+                    setAttribute</td>
+                <td>
+                    attribute, value</td>
+                <td>
+                    更新slider的属性</td>
+            </tr>
+            <tr>
+                <td>
+                    getAttribute</td>
+                <td>
+                    attribute</td>
+                <td>
+                    获取slider的属性</td>
+            </tr>
+            <tr>
+                <td>
+                    refresh</td>
+                <td>
+                    ---</td>
+                <td>
+                    刷新当前的slider</td>
+            </tr>
+            <tr>
+                <td>
+                    on</td>
+                <td>
+                    eventType, callback</td>
+                <td>
+                    当slider的<code style="font-size:14.49px; padding:2px 4px; font-family:Menlo,Monaco,Consolas,'Courier New',monospace; color:rgb(199,37,78); background-color:rgb(249,242,244)">eventType</code>事件被触发，回调函数将被调用</td>
+            </tr>
+            <tr>
+                <td>
+                    relayout</td>
+                <td>
+                    ---</td>
+                <td>
+                    在初始化之后重新渲染tooltip。这在slider和tooltip在初始化时是隐藏的时候非常有用</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/cross.js"></script>
@@ -82,10 +643,33 @@
 </script>
 <script type="text/javascript">
     $(function(){
-        $('#ex1').slider({
-            formatter: function(value) {
-                return 'value: ' + value;
+
+        var slider = new Slider("#ex3");
+        slider.on("slide", function(sliderValue) {
+            $("#ex3SliderVal").val(sliderValue);
+        });
+        $("#ex3SliderVal").on('keyup',function(){
+            var _val = $(this).val();
+            if(!isNaN(_val) && _val>=-5 && _val<=20){
+                slider.setValue(_val);
+            }else{
+                alert("请输入-5~20之间的数字");
             }
+        });
+
+
+        $('#ex5').slider({
+            formatter: function(value) {
+                return 'Current value: ' + value;
+            },
+            tooltip_position: 'bottom'
+        });
+
+        $('#ex6').slider({
+            formatter: function(value) {
+                return 'Current value: ' + value;
+            },
+            tooltip_position: 'left'
         });
     });
 </script>

@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1486972229159'); /* IE9*/
-  src: url('iconfont.eot?t=1486972229159#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1486972229159') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1486972229159') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1486972229159#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1490347130080'); /* IE9*/
+  src: url('iconfont.eot?t=1490347130080#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1490347130080') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1490347130080') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1490347130080#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -1074,6 +1074,8 @@
 .icon-cube1:before { content: "\e669"; }
 
 .icon-489-codepen:before { content: "\e6f4"; }
+
+.icon-file-code-o:before { content: "\e689"; }
 
 .icon-Warning:before { content: "\e64c"; }
 
