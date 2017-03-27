@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>dragsort</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../iconfont/iconfont.css" />
+    <link rel="stylesheet" href="../css/cross.css" />
+    <link rel="stylesheet" href="../css/highlight.css" />
+    <style type="text/css">
+        .dragSort-list {list-style: none;}
+        .dragSort-list li {line-height:24px; border:#909090 1px solid; margin:10px 0;  padding:10px}
+        #list1, #list2 { width:350px; list-style:none; margin:0px; }
+        #list1 li, #list2 li { float:left; padding:5px; width:100px; height:100px; }
+        #list1 div, #list2 div { width:90px; height:90px; border:solid 1px black; background-color:#E0E0E0; text-align:center; padding-top:40px; }
+        #list2 { float:right; }
+        .placeHolder div { background-color:white !important; border:dashed 1px gray !important; }
+
+        /* dragsort */
+        .dragsort-ver li{height:30px;line-height:30px;}
+        .dragsort{width:350px;list-style-type:none;margin:0px;}
+        .dragsort li{float:left;padding:5px;width:100px;height:100px;}
+        .dragsort div{width:90px;height:90px;border:solid 1px black;background-color:#E0E0E0;text-align:center;padding-top:40px;}
+        .placeHolder div{background-color:#fff !important; border:dashed 1px #000 !important;}
+    </style>
+
+</head>
+<body>
+<div class="p-medium">
+
+    <fieldset class="c-field">
+        <legend>引用</legend>
+        <div class="c-field-box">
+<pre><code class="html c-break">
+    &lt;script type="text/javascript" src="../js/dragsort/dragsort.js"&gt;&lt;/script&gt;
+</code></pre>
+        </div>
+    </fieldset>
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div class="clearfix">
+            <ul class="dragSort-list">
+                <li>bread</li>
+                <li>vegetables</li>
+                <li>meat</li>
+                <li>milk</li>
+                <li>butter</li>
+                <li>ice cream</li>
+            </ul>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">拖拽排序</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#dragsort1" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                一列
+            </div>
+        </div>
+
+        <div id="dragsort1" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div class="clearfix"&gt;
+        &lt;ul class="dragSort-list"&gt;
+            &lt;li&gt;bread&lt;/li&gt;
+            &lt;li&gt;vegetables&lt;/li&gt;
+            &lt;li&gt;meat&lt;/li&gt;
+            &lt;li&gt;milk&lt;/li&gt;
+            &lt;li&gt;butter&lt;/li&gt;
+            &lt;li&gt;ice cream&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $("ul.dragSort-list").dragsort();
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div class="clearfix">
+            <ul id="list2">
+                <li><div>10</div></li>
+                <li><div>11</div></li>
+                <li><div>12</div></li>
+                <li><div>13</div></li>
+                <li><div>14</div></li>
+                <li><div>15</div></li>
+                <li><div>16</div></li>
+                <li><div>17</div></li>
+                <li><div>18</div></li>
+            </ul>
+
+            <ul id="list1">
+                <li><div>1</div></li>
+                <li><div>2</div></li>
+                <li><div>3</div></li>
+                <li><div>4</div></li>
+                <li><div>5</div></li>
+                <li><div>6</div></li>
+                <li><div>7</div></li>
+                <li><div>8</div></li>
+                <li><div>9</div></li>
+            </ul>
+
+            <input name="list1SortOrder" type="hidden" />
+        </div>
+
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">拖拽排序</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#dragsort2" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                两列
+            </div>
+        </div>
+
+        <div id="dragsort2" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div class="clearfix"&gt;
+        &lt;ul id="list2"&gt;
+            &lt;li&gt;&lt;div&gt;10&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;11&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;12&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;13&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;14&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;15&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;16&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;17&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;18&lt;/div&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;ul id="list1"&gt;
+            &lt;li&gt;&lt;div&gt;1&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;2&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;3&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;4&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;5&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;6&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;7&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;8&lt;/div&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;div&gt;9&lt;/div&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;input name="list1SortOrder" type="hidden" /&gt;
+    &lt;/div&gt;
+
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $("#list1, #list2").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "&lt;li class='placeHolder'&gt;&lt;div&gt;&lt;/div&gt;&lt;/li&gt;" });
+
+    function saveOrder() {
+        var data = $("#list1 li").map(function() { return $(this).children().html(); }).get();
+        $("input[name=list1SortOrder]").val(data.join("|"));
+    };
+
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
+<script type="text/javascript" src="../js/dragsort/dragsort.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+        $("ul.dragSort-list").dragsort();
+
+        $("#list1, #list2").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "<li class='placeHolder'><div></div></li>" });
+
+        function saveOrder() {
+            var data = $("#list1 li").map(function() { return $(this).children().html(); }).get();
+            $("input[name=list1SortOrder]").val(data.join("|"));
+        };
+
+    });
+</script>
+</body>
+</html>
+

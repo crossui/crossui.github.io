@@ -1,5 +1,7 @@
 // text-layout
-
+.#{$namespace}text ul, .#{$namespace}text ol {
+  list-style: none;
+}
 .#{$namespace}text li:after {
   visibility: hidden;
   display: block;
