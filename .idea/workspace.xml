@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b556d0bc-d101-4c17-ad4a-fb89a19c3a07" name="默认的" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/cross.css" afterPath="$PROJECT_DIR$/dist/css/cross.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/docs/editormd.html" afterPath="$PROJECT_DIR$/dist/docs/editormd.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/docs/editormd.html" afterPath="$PROJECT_DIR$/src/docs/editormd.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/datatables/dataTables.js" afterPath="$PROJECT_DIR$/dist/js/datatables/dataTables.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/widget/datatables/dataTables.js" afterPath="$PROJECT_DIR$/src/widget/datatables/dataTables.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/css/datatables.css" afterPath="$PROJECT_DIR$/dist/css/datatables.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/docs/datatables.html" afterPath="$PROJECT_DIR$/dist/docs/datatables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/docs/datatables.html" afterPath="$PROJECT_DIR$/src/docs/datatables.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scss/exports/datatables.scss" afterPath="$PROJECT_DIR$/src/scss/exports/datatables.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/docs/dragsort.html" afterPath="$PROJECT_DIR$/dist/docs/dragsort.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/docs/dragsort.html" afterPath="$PROJECT_DIR$/src/docs/dragsort.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/js/dragsort/dragsort.js" afterPath="$PROJECT_DIR$/dist/js/dragsort/dragsort.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/widget/dragsort/dragsort.js" afterPath="$PROJECT_DIR$/src/widget/dragsort/dragsort.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/docs/index.html" afterPath="$PROJECT_DIR$/dist/docs/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/docs/index.html" afterPath="$PROJECT_DIR$/src/docs/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scss/base/reset.scss" afterPath="$PROJECT_DIR$/src/scss/base/reset.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scss/ui/text-layout/text-layout.scss" afterPath="$PROJECT_DIR$/src/scss/ui/text-layout/text-layout.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/docs/ztree.html" afterPath="$PROJECT_DIR$/dist/docs/ztree.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/docs/ztree.html" afterPath="$PROJECT_DIR$/src/docs/ztree.html" />
     </list>
     <ignored path="crossui.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,46 +43,58 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/docs/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.942858" vertical-offset="11739" max-vertical-offset="16575">
-              <caret line="318" column="72" selection-start-line="318" selection-start-column="72" selection-end-line="318" selection-end-column="72" />
+            <state vertical-scroll-proportion="-10.771428" vertical-offset="10114" max-vertical-offset="17160">
+              <caret line="269" column="97" selection-start-line="269" selection-start-column="97" selection-end-line="269" selection-end-column="97" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dragsort.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/docs/dragsort.html">
+      <file leaf-file-name="datatables_select_row.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/docs/datatables_select_row.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14408867" vertical-offset="780" max-vertical-offset="9048">
-              <caret line="23" column="17" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.3514793" vertical-offset="4929" max-vertical-offset="9477">
+              <caret line="1972" column="16" selection-start-line="1972" selection-start-column="16" selection-end-line="1977" selection-end-column="41" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#tbody#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dragsort.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widget/dragsort/dragsort.js">
+      <file leaf-file-name="buttons.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/docs/buttons.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.545455" vertical-offset="4671" max-vertical-offset="14586">
-              <caret line="127" column="102" selection-start-line="127" selection-start-column="94" selection-end-line="127" selection-end-column="102" />
+            <state vertical-scroll-proportion="-5.571429" vertical-offset="936" max-vertical-offset="22113">
+              <caret line="29" column="56" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="datatables.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/docs/datatables.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.19" vertical-offset="1948" max-vertical-offset="4524">
+              <caret line="978" column="12" selection-start-line="978" selection-start-column="12" selection-end-line="983" selection-end-column="37" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#tbody#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pagination.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/docs/pagination.html">
+      <file leaf-file-name="TPL.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/docs/TPL.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.028571" vertical-offset="8654" max-vertical-offset="19617">
-              <caret line="438" column="4" selection-start-line="438" selection-start-column="4" selection-end-line="572" selection-end-column="10" />
-              <folding>
-                <element signature="n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="-3.3428571" vertical-offset="468" max-vertical-offset="4758">
+              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="22" selection-end-column="15" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -88,16 +107,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/docs/inputMagnifier.html" />
-        <option value="$PROJECT_DIR$/src/scss/exports/jsonFormat.scss" />
-        <option value="$PROJECT_DIR$/src/scss/widget/jsonFormat/jsonFormat.scss" />
-        <option value="$PROJECT_DIR$/src/widget/jsonFormat/jsonFormat.js" />
-        <option value="$PROJECT_DIR$/src/docs/jsonFormat.html" />
-        <option value="$PROJECT_DIR$/src/scss/exports/lxslider.scss" />
-        <option value="$PROJECT_DIR$/src/widget/lxslider/lxslider.js" />
-        <option value="$PROJECT_DIR$/src/scss/widget/lxslider/lxslider.scss" />
-        <option value="$PROJECT_DIR$/src/docs/lxslider.html" />
-        <option value="$PROJECT_DIR$/src/docs/choose-person.html" />
         <option value="$PROJECT_DIR$/src/scss/exports/imgareaselect.scss" />
         <option value="$PROJECT_DIR$/src/scss/widget/imgareaselect/imgareaselect.scss" />
         <option value="$PROJECT_DIR$/src/docs/imgareaselect.html" />
@@ -132,13 +141,23 @@
         <option value="$PROJECT_DIR$/src/jsAllExports/editormd/plugins/emoji-dialog/emoji-dialog.js" />
         <option value="$PROJECT_DIR$/src/jsAllExports/editormd/plugins/table-dialog/table-dialog.js" />
         <option value="$PROJECT_DIR$/src/scss/widget/editormd/editormd.preview.scss" />
-        <option value="$PROJECT_DIR$/src/scss/base/reset.scss" />
         <option value="$PROJECT_DIR$/src/scss/ui/text-layout/text-layout.scss" />
         <option value="$PROJECT_DIR$/src/docs/editormd.html" />
         <option value="$PROJECT_DIR$/src/docs/draggabilly.html" />
         <option value="$PROJECT_DIR$/src/docs/draggable.html" />
-        <option value="$PROJECT_DIR$/src/docs/index.html" />
+        <option value="$PROJECT_DIR$/src/widget/dragsort/dragsort.js" />
         <option value="$PROJECT_DIR$/src/docs/dragsort.html" />
+        <option value="$PROJECT_DIR$/src/scss/base/reset.scss" />
+        <option value="$PROJECT_DIR$/src/docs/ztree.html" />
+        <option value="$PROJECT_DIR$/src/widget/datatables/dataTables.js" />
+        <option value="$PROJECT_DIR$/src/scss/exports/datatables.scss" />
+        <option value="$PROJECT_DIR$/src/scss/widget/datatables/editor.dataTables.scss" />
+        <option value="$PROJECT_DIR$/src/docs/index.html" />
+        <option value="$PROJECT_DIR$/src/scss/widget/datatables/editor/lightbox.scss" />
+        <option value="$PROJECT_DIR$/src/scss/widget/datatables/select.dataTables.scss" />
+        <option value="$PROJECT_DIR$/src/scss/widget/datatables/dataTables.scss" />
+        <option value="$PROJECT_DIR$/src/docs/datatables.html" />
+        <option value="$PROJECT_DIR$/src/docs/datatables_select_row.html" />
       </list>
     </option>
   </component>
@@ -211,6 +230,24 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crossui.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crossui.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="widget" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -230,43 +267,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="widget" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dragsort" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crossui.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crossui.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crossui.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crossui.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="datatables" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -284,7 +293,37 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="docs" />
+              <option name="myItemId" value="scss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="widget" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="datatables" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="editor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crossui.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crossui.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scss" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -366,12 +405,14 @@
     <layout>
       <window_info id="更改" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21424802" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -379,10 +420,8 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="运行" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="找到" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46486485" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="调试" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -409,111 +448,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/scss/exports/colorpicker.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6" vertical-offset="0" max-vertical-offset="507">
-          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/docs/colorpicker.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35" vertical-offset="23829" max-vertical-offset="24609">
-          <caret line="618" column="11" selection-start-line="618" selection-start-column="11" selection-end-line="618" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/widget/colorpicker/colorpicker.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.712195" vertical-offset="9912" max-vertical-offset="18057">
-          <caret line="92" column="38" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/base/variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09363745" vertical-offset="4797" max-vertical-offset="6084">
-          <caret line="125" column="18" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widget/colorpicker/colorpicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33293977" vertical-offset="42774" max-vertical-offset="91338">
-          <caret line="1104" column="26" selection-start-line="1104" selection-start-column="20" selection-end-line="1104" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/docs/artDialog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.132353" vertical-offset="41109" max-vertical-offset="53937">
-          <caret line="1070" column="66" selection-start-line="1070" selection-start-column="66" selection-end-line="1070" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widget/artdialog/artdialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55930233" vertical-offset="19487" max-vertical-offset="47307">
-          <caret line="637" column="22" selection-start-line="637" selection-start-column="22" selection-end-line="637" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/exports/slider.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65" vertical-offset="0" max-vertical-offset="273">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widget/slider/slider.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.545455" vertical-offset="28695" max-vertical-offset="72540">
-          <caret line="743" column="83" selection-start-line="743" selection-start-column="76" selection-end-line="743" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/widget/slider/_tooltip.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.2131147" vertical-offset="3965" max-vertical-offset="4758">
-          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/widget/slider/slider.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14045618" vertical-offset="0" max-vertical-offset="833">
-          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/docs/slider.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2" vertical-offset="8723" max-vertical-offset="13182">
-          <caret line="228" column="0" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/widget/slider/_rules.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7490909" vertical-offset="9510" max-vertical-offset="10335">
-          <caret line="228" column="51" selection-start-line="228" selection-start-column="45" selection-end-line="228" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/widget/slider/_mixins.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.04" vertical-offset="33" max-vertical-offset="1170">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/widget/slider/_variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="858">
-          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/exports/editormd.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.65" vertical-offset="0" max-vertical-offset="273">
@@ -609,6 +543,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3325" vertical-offset="11668" max-vertical-offset="30771">
           <caret line="306" column="43" selection-start-line="306" selection-start-column="41" selection-end-line="306" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -682,13 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scss/base/reset.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8" vertical-offset="2028" max-vertical-offset="4992">
-          <caret line="64" column="1" selection-start-line="64" selection-start-column="1" selection-end-line="64" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scss/common/lists.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1755">
@@ -746,11 +674,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/docs/index.html">
+    <entry file="file://$PROJECT_DIR$/src/widget/dragsort/dragsort.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.942858" vertical-offset="11739" max-vertical-offset="16575">
-          <caret line="318" column="72" selection-start-line="318" selection-start-column="72" selection-end-line="318" selection-end-column="72" />
-          <folding />
+        <state vertical-scroll-proportion="-13.848485" vertical-offset="13778" max-vertical-offset="14625">
+          <caret line="365" column="18" selection-start-line="365" selection-start-column="8" selection-end-line="365" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -765,22 +695,164 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/widget/dragsort/dragsort.js">
+    <entry file="file://$PROJECT_DIR$/src/docs/dragsort.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.545455" vertical-offset="4671" max-vertical-offset="14586">
-          <caret line="127" column="102" selection-start-line="127" selection-start-column="94" selection-end-line="127" selection-end-column="102" />
+        <state vertical-scroll-proportion="1.4153847" vertical-offset="6721" max-vertical-offset="13299">
+          <caret line="203" column="90" selection-start-line="203" selection-start-column="90" selection-end-line="203" selection-end-column="90" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/docs/dragsort.html">
+    <entry file="file://$PROJECT_DIR$/src/scss/base/reset.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14408867" vertical-offset="780" max-vertical-offset="9048">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="17" />
+        <state vertical-scroll-proportion="-14.316667" vertical-offset="3704" max-vertical-offset="4992">
+          <caret line="117" column="11" selection-start-line="117" selection-start-column="11" selection-end-line="117" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/docs/ueditor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.171429" vertical-offset="8541" max-vertical-offset="15015">
+          <caret line="238" column="17" selection-start-line="230" selection-start-column="4" selection-end-line="238" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widget/datatables/dataTables.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33293977" vertical-offset="275526" max-vertical-offset="315198">
+          <caret line="7072" column="63" selection-start-line="7072" selection-start-column="63" selection-end-line="7072" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/common/spacing.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28091237" vertical-offset="0" max-vertical-offset="3900">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/exports/datatables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.114286" vertical-offset="649" max-vertical-offset="1560">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/widget/datatables/editor/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7566">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/widget/datatables/editor/datatable.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3822">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/docs/ztree.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3147929" vertical-offset="22978" max-vertical-offset="38961">
+          <caret line="596" column="4" selection-start-line="596" selection-start-column="4" selection-end-line="602" selection-end-column="17" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/widget/datatables/editor.dataTables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.93637455" vertical-offset="0" max-vertical-offset="1014">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/docs/TPL.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.3428571" vertical-offset="468" max-vertical-offset="4758">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="22" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/docs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.771428" vertical-offset="10114" max-vertical-offset="17160">
+          <caret line="269" column="97" selection-start-line="269" selection-start-column="97" selection-end-line="269" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/docs/buttons.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.571429" vertical-offset="936" max-vertical-offset="22113">
+          <caret line="29" column="56" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/widget/datatables/editor/lightbox.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.25" vertical-offset="936" max-vertical-offset="5967">
+          <caret line="29" column="39" selection-start-line="28" selection-start-column="16" selection-end-line="29" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/widget/datatables/select.dataTables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3" vertical-offset="0" max-vertical-offset="3432">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scss/widget/datatables/dataTables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34307498" vertical-offset="2733" max-vertical-offset="18486">
+          <caret line="77" column="28" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/docs/datatables.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.19" vertical-offset="1948" max-vertical-offset="4524">
+          <caret line="978" column="12" selection-start-line="978" selection-start-column="12" selection-end-line="983" selection-end-column="37" />
+          <folding>
+            <element signature="n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#tbody#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/docs/datatables_select_row.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3514793" vertical-offset="4929" max-vertical-offset="9477">
+          <caret line="1972" column="16" selection-start-line="1972" selection-start-column="16" selection-end-line="1977" selection-end-column="41" />
+          <folding>
+            <element signature="n#tbody#0;n#table#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#table#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

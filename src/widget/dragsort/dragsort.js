@@ -111,8 +111,8 @@
 					}
 
 					//create placeholder item
-					var h = list.draggedItem.height();
-					var w = list.draggedItem.width();
+					var h = list.draggedItem.height()+opts.divPadding;
+					var w = list.draggedItem.width()+opts.divPadding;
 					if (opts.itemSelector == "tr") {
 						list.draggedItem.children().each(function() { $(this).width($(this).width()); });
 						list.placeHolderItem = list.draggedItem.clone().attr("data-placeholder", true);
@@ -362,7 +362,8 @@
 		dragBetween: false,
 		placeHolderTemplate: "",
 		scrollContainer: window,
-		scrollSpeed: 5
+		scrollSpeed: 5,
+        divPadding: 10
 	};
 
 })(jQuery);

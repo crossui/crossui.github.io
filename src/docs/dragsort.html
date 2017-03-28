@@ -11,14 +11,15 @@
     <link rel="stylesheet" href="../css/highlight.css" />
     <style type="text/css">
         .dragSort-list {list-style: none;}
-        .dragSort-list li {line-height:24px; border:#909090 1px solid; margin:10px 0;  padding:10px}
+        .dragSort-list li {line-height:24px; border:#909090 1px solid; margin:10px 0;  padding:10px;}
+
+
+        /* dragsort */
         #list1, #list2 { width:350px; list-style:none; margin:0px; }
         #list1 li, #list2 li { float:left; padding:5px; width:100px; height:100px; }
         #list1 div, #list2 div { width:90px; height:90px; border:solid 1px black; background-color:#E0E0E0; text-align:center; padding-top:40px; }
         #list2 { float:right; }
         .placeHolder div { background-color:white !important; border:dashed 1px gray !important; }
-
-        /* dragsort */
         .dragsort-ver li{height:30px;line-height:30px;}
         .dragsort{width:350px;list-style-type:none;margin:0px;}
         .dragsort li{float:left;padding:5px;width:100px;height:100px;}
@@ -69,6 +70,7 @@
             <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
                 <div class="tabs-hd clearfix">
                     <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>CSS</span></a>
                     <a href="javascript:;"><span>Javascript</span></a>
                 </div>
                 <div class="tabs-bd">
@@ -85,6 +87,12 @@
         &lt;/ul&gt;
     &lt;/div&gt;
 
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="css">
+    .dragSort-list {list-style: none;}
+    .dragSort-list li {line-height:24px; border:#909090 1px solid; margin:10px 0;  padding:10px;}
 </code></pre>
                     </div>
                     <div class="tabs-bd-box c-hide p-small">
@@ -129,6 +137,7 @@
         </div>
 
 
+
         <fieldset class="c-field c-field-title mt-medium">
             <legend class="fs6">拖拽排序</legend>
         </fieldset>
@@ -145,6 +154,7 @@
             <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
                 <div class="tabs-hd clearfix">
                     <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>CSS</span></a>
                     <a href="javascript:;"><span>Javascript</span></a>
                 </div>
                 <div class="tabs-bd">
@@ -181,6 +191,20 @@
 </code></pre>
                     </div>
                     <div class="tabs-bd-box c-hide p-small">
+<pre><code class="css">
+    #list1, #list2 { width:350px; list-style:none; margin:0px; }
+    #list1 li, #list2 li { float:left; padding:5px; width:100px; height:100px; }
+    #list1 div, #list2 div { width:90px; height:90px; border:solid 1px black; background-color:#E0E0E0; text-align:center; padding-top:40px; }
+    #list2 { float:right; }
+    .placeHolder div { background-color:white !important; border:dashed 1px gray !important; }
+    .dragsort-ver li{height:30px;line-height:30px;}
+    .dragsort{width:350px;list-style-type:none;margin:0px;}
+    .dragsort li{float:left;padding:5px;width:100px;height:100px;}
+    .dragsort div{width:90px;height:90px;border:solid 1px black;background-color:#E0E0E0;text-align:center;padding-top:40px;}
+    .placeHolder div{background-color:#fff !important; border:dashed 1px #000 !important;}
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
 <pre><code class="javascript">
     $("#list1, #list2").dragsort({ dragSelector: "div", dragBetween: true, dragEnd: saveOrder, placeHolderTemplate: "&lt;li class='placeHolder'&gt;&lt;div&gt;&lt;/div&gt;&lt;/li&gt;" });
 
@@ -194,6 +218,91 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="mt-big">
+        <h2>参数</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <tbody>
+            <tr>
+                <th>参数</th>
+                <th>默认值</th>
+                <th>描述</th>
+            </tr>
+            <tr>
+                <td>dragSelector</td>
+                <td>"li"</td>
+                <td>CSS选择器内的元素的列表项的拖动手柄。</td>
+            </tr>
+            <tr>
+                <td>dragSelectorExclude</td>
+                <td>"input, textarea"</td>
+                <td>CSS选择器的元素内的dragSelector不会触发dragsort的。</td>
+            </tr>
+            <tr>
+                <td>dragEnd</td>
+                <td>null</td>
+                <td>拖动结束后将被调用的回调函数.</td>
+            </tr>
+            <tr>
+                <td>dragBetween</td>
+                <td>false</td>
+                <td>设置为“true”，如果你要启用多组列表之间拖动选定的列表。</td>
+            </tr>
+            <tr>
+                <td>placeHolderTemplate</td>
+                <td>"&lt;li&gt;&lt;/li&gt;"</td>
+                <td>拖动列表的HTML部分。</td>
+            </tr>
+            <tr>
+                <td>scrollContainer</td>
+                <td>window</td>
+                <td>CSS选择器的元素，作为滚动容器，例如溢出的div设置为自动。</td>
+            </tr>
+            <tr>
+                <td>scrollSpeed</td>
+                <td>5</td>
+                <td>一个数字，它代表了速度，页面拖动某一项时，将滚动容器外，较高使用价值的是速度和较低的值是较慢的。 如果设置为"0"以禁用滚动。</td>
+            </tr>
+            <tr>
+                <td>divPadding</td>
+                <td>10</td>
+                <td>元素窗口的内留白。</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="mt-big">
+        <h2>方法</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <tbody>
+            <tr>
+                <th>
+                    方法
+                </th>
+                <th>
+                    描述
+                </th>
+                <th>
+                    实例
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    destroy
+                </td>
+                <td>
+                    消毁当前拖拽排序功能
+                </td>
+                <td>
+<pre><code class="javascript">
+    $("ul").dragsort("destroy");
+</code></pre>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 
 </div>

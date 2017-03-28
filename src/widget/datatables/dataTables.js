@@ -7070,7 +7070,7 @@
 	
 		"sAjaxSource": null,
 	
-		"sDom": 't<"dataTables_footer_operate clearfix mt15"ilp>',
+		"sDom": 't<"dataTables_footer_operate clearfix mt-small"ilp>',
 	
 		"searchDelay": null,
 	
