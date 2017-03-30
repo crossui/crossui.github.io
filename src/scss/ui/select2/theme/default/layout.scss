@@ -85,7 +85,7 @@
   }
 
   .select2-results__option--highlighted[aria-selected] {
-    background-color: #5897fb;
+    background-color: $form-select2-active-color;
     color: white;
   }
 

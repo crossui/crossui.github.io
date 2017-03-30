@@ -89,7 +89,7 @@
 }
 
 .#{$namespace}step .#{$namespace}step-active .#{$namespace}step-icon .#{$namespace}step-text {
-  color: #4DB2EE;
+  color: $step-active-color;
 }
 
 .#{$namespace}step li .#{$namespace}step-line {
@@ -133,17 +133,17 @@
 }
 
 .#{$namespace}step .#{$namespace}step-active {
-  color: #4DB2EE;
+  color: $step-active-color;
 }
 
 .#{$namespace}step .#{$namespace}step-active .iconfont {
-  color: #4DB2EE;
+  color: $step-active-color;
 }
 
 .#{$namespace}step .#{$namespace}step-done .iconfont {
-  color: #4DB2EE;
+  color: $step-active-color;
 }
 
 .#{$namespace}step .#{$namespace}step-done .#{$namespace}step-line {
-  background: #4DB2EE;
+  background: $step-active-color;
 }
