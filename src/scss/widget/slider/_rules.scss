@@ -205,7 +205,7 @@
   top: 0;
   width:  $slider-line-height;
   height: $slider-line-height;
-  background-color: #4893d4;
+  background-color: $slider-active-bg-color;
   border: 0px solid transparent;
 
   &.round {

@@ -1,8 +1,9 @@
 .WdateDiv{
 	width:220px;
 	background-color:#FFFFFF;
-    border:1px solid #bbb;
+    border:1px solid $form-focus-color;
     padding:2px;
+  border-radius: $border-radius-base;
   *{
     font-size:9pt;
   }
@@ -50,7 +51,7 @@
     font-weight:bold;
     height:30px;
     color:blue;
-    border:#ccc 1px solid;
+    border:$form-focus-color 1px solid;
     width:50px;
     margin-left: 15px;
   }
@@ -58,7 +59,7 @@
     z-index:1;
     position:absolute;
     background-color:#FFFFFF;
-    border:#ccc 1px solid;
+    border:$form-focus-color 1px solid;
     display:none;
   }
   .menu{
@@ -67,7 +68,7 @@
   }
   .menuOn{
     cursor:pointer;
-    background-color:#178fe5;
+    background-color:$my97-on-color;
     color: #fff;
   }
   .invalidMenu{
@@ -119,7 +120,7 @@
   }
   .WdayOn{
     cursor:pointer;
-    background-color:#178FE5;
+    background-color:$my97-on-color;
     color: #fff;
   }
   .Wwday{
@@ -129,26 +130,26 @@
   .WwdayOn{
     cursor:pointer;
     color:#fff;
-    background-color:#178FE5;
+    background-color:$my97-on-color;
   }
   .Wtoday{
     cursor:pointer;
     color:blue;
   }
   td.Wselday{
-    background-color:#33AAFF;
+    background-color:$my97-active-color;
     color: #fff;
   }
   td.WspecialDay{
-    background-color:#6A6AFF;
+    background-color:$my97-wother-color;
   }
   .WotherDay{
     cursor:pointer;
-    color:#6A6AFF;
+    color:$my97-wother-color;
   }
   .WotherDayOn{
     cursor:pointer;
-    background-color:#178FE5;
+    background-color:$my97-on-color;
     color: #fff;
   }
   .WinvalidDay{
@@ -166,7 +167,7 @@
     width:26px;
     height:30px;
     text-align:center;
-    border:#ccc 1px solid;
+    border:$form-focus-color 1px solid;
   }
   #dpTime .tB{
     border-right:0px;
@@ -207,7 +208,7 @@
   .dpButton{
     height:30px;
     width:45px;
-    border:#ccc 1px solid;
+    border:$form-focus-color 1px solid;
     margin-top:2px;
     margin-right:1px;
     cursor: pointer;

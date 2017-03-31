@@ -3,7 +3,9 @@
 %ml20{
   margin-left: 20px;
 }
-
+.#{$namespace}list-none {
+  list-style-type: none;
+}
 .#{$namespace}list-disc {
   @extend %ml20;
   list-style-type:disc;

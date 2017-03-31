@@ -58,7 +58,7 @@
   padding: 4px 10px;
   border: 2px solid #ddd;
   border-radius: 6px;
-  background-color: #ee0101;
+  background-color: $form-validation-errorbg-color;
   box-shadow: 0 0 6px #000;
   color: #fff;
   font: 12px/18px "\5b8b\4f53",Tahoma;
@@ -71,7 +71,7 @@
 }
 
 .greenPopup .formErrorContent {
-  background-color: #33be40;
+  background-color: $form-validation-tipbg-color;
 }
 
 .blackPopup .formErrorContent {
@@ -102,7 +102,7 @@ body.rtl .formError .formErrorArrow {
   margin: 0 auto;
   border-right: 2px solid #ddd;
   border-left: 2px solid #ddd;
-  background-color: #ee0101;
+  background-color: $form-validation-errorbg-color;
   box-shadow: 0 2px 3px #444;
   font-size: 0;
   font-size: 0;
@@ -114,7 +114,7 @@ body.rtl .formError .formErrorArrow {
 }
 
 .greenPopup .formErrorArrow div {
-  background-color: #33be40;
+  background-color: $form-validation-tipbg-color;
 }
 
 .blackPopup .formErrorArrow div {
@@ -185,7 +185,7 @@ body.rtl .formError .formErrorArrow {
 }
 
 .formError-text.greenPopup .formErrorContent {
-  color: #33be40;
+  color: $form-validation-tipbg-color;
 }
 
 .formError-text.blackPopup .formErrorContent {
@@ -226,7 +226,7 @@ body.rtl .formError .formErrorArrow {
 
 .formError-small .formErrorArrow .line3 {
   border-width: 0 1px 0 1px;
-  border-color: #333;
+  border-color: $border-color;
 }
 
 .formError-small .formErrorArrow .line1 {
@@ -241,14 +241,14 @@ body.rtl .formError .formErrorArrow {
 }
 
 .formError-white.greenPopup .formErrorContent {
-  border-color: #333;
-  background-color: #33be40;
+  border-color: $border-color;
+  background-color: $form-validation-tipbg-color;
   color: #fff;
   box-shadow: 0 0 2px #333;
 }
 
 .formError-white.blackPopup .formErrorContent {
-  border-color: #333;
+  border-color: $border-color;
   background-color: #393939;
   color: #fff;
   box-shadow: 0 0 2px #333;
@@ -261,12 +261,12 @@ body.rtl .formError .formErrorArrow {
 }
 
 .formError-white.greenPopup .formErrorArrow div {
-  border-color: #333;
-  background-color: #33be40;
+  border-color: $border-color;
+  background-color: $form-validation-tipbg-color;
 }
 
 .formError-white.blackPopup .formErrorArrow div {
-  border-color: #333;
+  border-color: $border-color;
   background-color: #393939;
 }
 

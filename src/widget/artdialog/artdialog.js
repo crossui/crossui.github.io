@@ -1261,7 +1261,8 @@ $.extend(prototype, {
                 + ' i-id="' + id + '"'
                 + style
                 + (val.disabled ? ' disabled' : '')
-                + (val.autofocus ? ' autofocus class="ui-dialog-autofocus"' : '')
+                + (val.autofocus ? ' autofocus ' : '')
+                + ' class="button button-small '+(val.autofocus ? ' ui-dialog-autofocus button-primary ' : '')+ (val.disabled ? ' disabled' : '') +'"'
                 + '>'
                 +   val.value
                 + '</button>';

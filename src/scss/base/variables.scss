@@ -131,18 +131,20 @@ $form-disabled-bg-color:      #f4f4f4 !default;
 $form-disabled-text-color:    #f7f7f7 !default;
 $form-disabled-hover-color:   #e1e1e1 !default;
 $form-readonly-bg-color:      #f9f9f9 !default;
+//select2
 $form-select2-active-color:   #e02222 !default;
-
-
-//$form-group-addon-text-color
-
-//$form-group-addon-bg-color
-
-//$form-group-addon-border-color
-
+//validation
+$form-validation-errorbg-color:   #e02222 !default;
+$form-validation-tipbg-color:   #33be40 !default;
 //== step
 // --------------------------------------------------
 $step-active-color: #4DB2EE !default;
+
+//== step
+// --------------------------------------------------
+$my97-active-color: #e02222 !default;
+$my97-wother-color: #6A6AFF !default;
+$my97-on-color: #178FE5 !default;
 
 //== icheck
 // --------------------------------------------------
