@@ -16,15 +16,97 @@
 </head>
 <body>
 <div class="p-medium">
-    <div class="form-layout form-horizontal form-horizontal-narrow">
-        <div class="control-group">
-            <label class="control-label"><sub class="control-sub">*</sub> 人员选择：</label>
-            <div class="control-form">
-                <textarea class="c-input" rows="5" cols="65" placeholder="请选择人员" data-name="林仙花,林毅" data-id="B06AAE3CB22D45BCB1F88F8CD6CD3C54,662ABB18D95542CF8979A53226AFA53B" id="choose-person-input">林仙花,林毅</textarea>
-                <a class="button button-primary button-rounded" href="javascript:;" id="choose-person-btn">选择</a>
+    <fieldset class="c-field">
+        <legend>引用</legend>
+        <div class="c-field-box">
+<pre><code class="html c-break">
+    &lt;link rel="stylesheet" href="../css/ztree.css" /&gt;
+    &lt;link rel="stylesheet" href="../css/artdialog.css" /&gt;
+    &lt;link rel="stylesheet" href="../css/chooseperson.css" /&gt;
+    &lt;script type="text/javascript" src="../js/ztree/ztree.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="../js/artdialog/artdialog.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="../js/chooseperson/chooseperson.js"&gt;&lt;/script&gt;
+</code></pre>
+        </div>
+    </fieldset>
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div class="form-layout form-horizontal form-horizontal-narrow">
+            <div class="control-group">
+                <label class="control-label"><sub class="control-sub">*</sub> 人员选择：</label>
+                <div class="control-form">
+                    <textarea class="c-input" rows="5" cols="65" placeholder="请选择人员" data-name="林仙花,林毅" data-id="B06AAE3CB22D45BCB1F88F8CD6CD3C54,662ABB18D95542CF8979A53226AFA53B" id="choose-person-input">林仙花,林毅</textarea>
+                    <a class="button button-primary button-rounded" href="javascript:;" id="choose-person-btn">选择</a>
+                </div>
+            </div>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">人员选择</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                内容区域
+            </div>
+        </div>
+
+        <div id="collapseTwo" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div class="form-layout form-horizontal form-horizontal-narrow"&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;&lt;sub class="control-sub"&gt;*&lt;/sub&gt; 人员选择：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;textarea class="c-input" rows="5" cols="65" placeholder="请选择人员" data-name="林仙花,林毅" data-id="B06AAE3CB22D45BCB1F88F8CD6CD3C54,662ABB18D95542CF8979A53226AFA53B" id="choose-person-input"&gt;林仙花,林毅&lt;/textarea&gt;
+                &lt;a class="button button-primary button-rounded" href="javascript:;" id="choose-person-btn"&gt;选择&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#choose-person-btn').on('click',function(){
+        chooseperson({
+            initDataId:$('#choose-person-input').attr('data-id'),
+            initDataName:$('#choose-person-input').attr('data-name'),
+            initDataParent:$('#choose-person-input').attr('data-parent'),
+            ztreeJsonUrl:'../json/chooseperson/choosepersonztree.json',
+            searchJsonUrl:'../json/chooseperson/choosepersonsearch.json',
+            artDialogTitle: '请选择人员',
+            callBack:function(value){
+                filledData(value,'#choose-person-input');
+            }
+        });
+    });
+
+    function filledData(value,dom){
+        var _name=_id='';
+        $(value).each(function(i,v){
+            _name+= v.name+",";
+            _id+= v.id+",";
+        });
+        _name=_name.substring(0,_name.length-1);
+        _id=_id.substring(0,_id.length-1);
+        $(dom).val(_name).attr({'data-name':_name,'data-id':_id});
+    }
+</code></pre>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    
 </div>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/cross.js"></script>
