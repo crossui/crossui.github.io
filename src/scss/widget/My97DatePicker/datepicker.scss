@@ -137,19 +137,19 @@
     color:blue;
   }
   td.Wselday{
-    background-color:$my97-active-color;
+    background-color: $my97-active-color;
     color: #fff;
   }
   td.WspecialDay{
-    background-color:$my97-wother-color;
+    background-color: $my97-wother-color;
   }
   .WotherDay{
     cursor:pointer;
-    color:$my97-wother-color;
+    color: $my97-wother-color;
   }
   .WotherDayOn{
     cursor:pointer;
-    background-color:$my97-on-color;
+    background-color: $my97-on-color;
     color: #fff;
   }
   .WinvalidDay{

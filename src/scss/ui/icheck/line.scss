@@ -29,11 +29,11 @@
 .#{$icheckcheckbox}line.hover,
 .#{$icheckcheckbox}line.checked.hover,
 .#{$icheckradio}line.hover {
-  background: #444;
+  background: map_get(map_get($icheck-line-list,$icheck-skin),hover);
 }
 .#{$icheckcheckbox}line.checked,
 .#{$icheckradio}line.checked {
-  background: #000;
+  background: map_get(map_get($icheck-line-list,$icheck-skin),bg);
 }
 .#{$icheckcheckbox}line.checked .line-icon,
 .#{$icheckradio}line.checked .line-icon {
@@ -41,7 +41,7 @@
 }
 .#{$icheckcheckbox}line.disabled,
 .#{$icheckradio}line.disabled {
-  background: #ccc;
+  background: map_get(map_get($icheck-line-list,$icheck-skin),disabled);
   cursor: default;
 }
 .#{$icheckcheckbox}line.disabled .line-icon,
@@ -50,7 +50,7 @@
 }
 .#{$icheckcheckbox}line.checked.disabled,
 .#{$icheckradio}line.checked.disabled {
-  background: #ccc;
+  background: map_get(map_get($icheck-line-list,$icheck-skin),disabled);
 }
 .#{$icheckcheckbox}line.checked.disabled .line-icon,
 .#{$icheckradio}line.checked.disabled .line-icon {

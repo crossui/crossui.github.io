@@ -4,7 +4,7 @@ ul.c-nav-ul > li {
   a {
     @include clearfix();
     i.iconfont {
-      color: #969696;
+      color: $nav-iconfont-color;
       margin-right: 5px;
       text-shadow:none;
       float: left;
@@ -32,7 +32,7 @@ ul.c-nav-ul > li {
     }
     .arrow{
       border-right-style: solid;
-      border-right-color: #e1e1e1;
+      border-right-color: $nav-arrow-color;
     }
     .arrow:before, .arrow.open:before{
       content: ' ';
@@ -40,23 +40,23 @@ ul.c-nav-ul > li {
       display: block;
     }
     .arrow:before{
-      border-right-color: #3d3d3d;
+      border-right-color: $nav-arrow-before-color;
       top: -5px;
       right: -6px;
     }
     .arrow.open {
       border-top-style: solid;
-      border-top-color: #e1e1e1;
+      border-top-color: $nav-arrow-open-color;
     }
     .arrow.open:before {
-      border-top-color: #575757;
+      border-top-color: $nav-arrow-open-before-color;
       right: auto;
       top: auto;
       bottom: -4px;
       left: -5px;
     }
     &:hover .arrow:before, &:hover .arrow.open:before {
-      border-right-color: #303030;
+      border-right-color: $nav-arrow-open-before-color1;
     }
     &:hover .arrow.open:before {
       border-right-color: inherit;
@@ -64,15 +64,26 @@ ul.c-nav-ul > li {
   }
   &.open{
     a:hover .arrow:before {
-      border-right-color: #575757;
+      border-right-color: $nav-arrow-open-before-color;
+    }
+    a .arrow.open {
+      border-top-color: $nav-arrow-open;
     }
     a .arrow.open:before {
       border-right-color: inherit;
-      border-top-color: #575757;
+      border-top-color: $nav-arrow-open-before-color;
     }
     > a .arrow.open:before {
       border-right-color: inherit;
-      border-top-color: #303030;
+      border-top-color: $nav-arrow-open-before-color1;
+    }
+    > ul.sub-ul {
+      a .arrow.open {
+        border-top-color: $nav-subul-arrow !important;
+      }
+      a .arrow.open:before {
+        border-top-color: $nav-subul-arrow-open !important;
+      }
     }
   }
   &.start > a {
@@ -87,8 +98,8 @@ ul.c-nav-ul > li {
     text-decoration: none;
     font-size: $font-size-h6;
     font-weight: 300;
-    border-top: 1px solid #5c5c5c !important;
-    color: #fff !important;
+    border-top: 1px solid $nav-a-border !important;
+    color: $nav-a-color;
   }
   &:first-child > a{
     border-top-color: transparent !important;
@@ -99,7 +110,7 @@ ul.c-nav-ul > li {
   &.open > a,
   > a:hover,
   &:hover > a {
-    background: #303030;
+    background: $nav-a-hover;
   }
   > ul.sub-ul {
     display: none;
@@ -116,13 +127,13 @@ ul.c-nav-ul > li {
         font-weight: 300;
         background: none;
         line-height: 2;
-        color: #bdbdbd;
+        color: $nav-sub-a-color;
       }
       > ul.sub-ul > li.active > a,
       > ul.sub-ul > li > a:hover,
       &.open > a {
-        color: #ffffff !important;
-        background: #575757 !important;
+        color: $nav-a-color !important;
+        background: $nav-open-a-bg !important;
       }
     }
     > li {
@@ -132,8 +143,8 @@ ul.c-nav-ul > li {
       margin-top: 1px !important;
       &.active > a,
       > a:hover {
-        color: #ffffff !important;
-        background: #575757 !important;
+        color: $nav-a-color;
+        background: $nav-open-a-bg;
       }
       > a {
         display: block;
@@ -145,7 +156,7 @@ ul.c-nav-ul > li {
         font-weight: 300;
         background: none;
         line-height: 2;
-        color: #bdbdbd;
+        color: $nav-sub-a-color;
       }
       ul.sub-ul {
         display: none;
@@ -172,8 +183,16 @@ ul.c-nav-ul > li {
     }
   }
   &.active {
+    &.open {
+      .arrow.open{
+        border-top-color: $nav-arrow-active-open-top;
+      }
+    }
+    .arrow {
+      border-right-color: $nav-arrow-active;
+    }
     a .selected {
-      border-right-color: #fff;
+      border-right-color: $nav-a-selected;
       position: absolute;
       right:0px;
       top:14px;
@@ -182,19 +201,19 @@ ul.c-nav-ul > li {
     > a {
       border: none;
       text-shadow:none;
-      background: #e02222 !important;
+      background: $nav-active-a-bg !important;
       border-top-color: transparent !important;
       border-bottom-color: transparent !important;
-      color: #ffffff;
+      color: $nav-active-a-color;
       i.iconfont {
-        color: #fff;
+        color: $nav-active-iconfont-color;
       }
       .arrow:before {
-        border-right-color: #e02222;
+        border-right-color: $nav-arrow-active-before;
       }
       .arrow.open:before {
         border-right-color: inherit;
-        border-top-color: #e02222;
+        border-top-color: $nav-arrow-active-open;
       }
     }
     > ul.sub-ul {
@@ -210,6 +229,7 @@ ul.c-nav-ul > li {
       display: block;
     }
   }
+
 }
 
 .sidebar-closed {
@@ -255,14 +275,14 @@ ul.c-nav-ul > li {
         display: inline-block !important;
       }
       a:hover .arrow:before {
-        border-right-color: #575757;
+        border-right-color: $nav-arrow-open-before-color;
       }
       a:hover .arrow.open:before {
         border-right-color: inherit;
-        border-top-color: #575757;
+        border-top-color: $nav-arrow-open-before-color;
       }
       .sub-ul {
-        background-color: #3d3d3d;
+        background-color: $nav-subul-bg;
       }
       > .sub-ul {
         width: 189px;
