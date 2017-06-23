@@ -106,7 +106,96 @@
             </div>
         </div>
     </div>
-    
+
+    <div class="mt-big">
+        <h2>参数</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <thead>
+            <tr>
+                <th class="parameter">名称</th>
+                <th class="default">默认值</th>
+                <th class="note">描述</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>htmlId</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>parmOrgData</td>
+                    <td>{}</td>
+                    <td>组织POST data</td>
+                </tr>
+                <tr>
+                    <td>artDialogTitle</td>
+                    <td>‘请选择管理人’</td>
+                    <td>弹出窗标题</td>
+                </tr>
+                <tr>
+                    <td>initDataId</td>
+                    <td>null</td>
+                    <td>初始选中人员id</td>
+                </tr>
+                <tr>
+                    <td>initDataName</td>
+                    <td>null</td>
+                    <td>初始选中人员name</td>
+                </tr>
+                <tr>
+                    <td>ztreeJsonUrl</td>
+                    <td>‘’</td>
+                    <td>组织json ajax 地址</td>
+                </tr>
+                <tr>
+                    <td>searchJsonUrl</td>
+                    <td>‘’</td>
+                    <td>查询json ajax 地址</td>
+                </tr>
+                <tr>
+                    <td>checkType</td>
+                    <td>2</td>
+                    <td>0无 1单选 2 多选</td>
+                </tr>
+                <tr>
+                    <td>selectNumber</td>
+                    <td>10</td>
+                    <td>checkType为2时 最多选择几个 默认10个</td>
+                </tr>
+                <tr>
+                    <td>selectPrompt</td>
+                    <td>“最多只能选择”</td>
+                    <td>checkType为2时 提示语 </td>
+                </tr>
+                <tr>
+                    <td>async</td>
+                    <td>false</td>
+                    <td>是否异步加载ZTREE</td>
+                </tr>
+                <tr>
+                    <td>ztreeFun</td>
+                    <td>
+                        <pre>
+    {
+        Check:null,
+        AsyncSuccess:null,
+        Click:null
+    }
+                        </pre>
+
+                    </td>
+                    <td>三个函数 {Check:function(){},AsyncSuccess:function(){},Click:function(){}}</td>
+                </tr>
+                <tr>
+                    <td>callBack</td>
+                    <td>null</td>
+                    <td>回调函数</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </div>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/cross.js"></script>
