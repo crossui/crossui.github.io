@@ -3,7 +3,9 @@
 
 // mixins
 @import "../../base/mixins.scss";
-
+.select2-width-default{
+  width: 147px;
+}
 .select2-container {
   box-sizing: border-box;
   display: inline-block;

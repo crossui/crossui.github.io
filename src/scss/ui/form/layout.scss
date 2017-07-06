@@ -92,6 +92,17 @@
     display: inline;
     float: left;
   }
+
+  &.form-mb-tiny .control-label {
+    padding-top: 1px;
+  }
+  &.form-mb-small .control-label {
+    padding-top: 5px;
+  }
+  &.form-mb-lagre .control-label {
+    padding-top: 15px;
+  }
+
   &.form-mb-tiny .control-group {
     margin-bottom: 5px;
   }
@@ -102,7 +113,6 @@
     margin-bottom: 30px;
   }
 }
-
 
 
 

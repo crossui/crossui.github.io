@@ -1,19 +1,3 @@
-/**
- * chooseperson --选择人员--
- * @param htmlId
- * @param parmOrgData 组织POST data
- * @param artDialogTitle 弹出窗标题
- * @param initDataId 初始选中人员id
- * @param initDataName 初始选中人员name
- * @param ztreeJsonUrl 组织json ajax 地址
- * @param searchJsonUrl 查询json ajax 地址
- * @param checkType 0无 1单选 2 多选
- * @param selectNumber checkType为2时 最多选择几个 默认10个
- * @param selectPrompt checkType为2时 提示语 默认提示“最多只能选择”
- * @param async 是否异步加载ZTREE
- * @param ztreeFun 三个函数 {Check:function(){},AsyncSuccess:function(){},Click:function(){}}
- * @param callBack 回调函数
- */
 var chooseperson = function(options){
 	chooseperson.init(options);
 };
@@ -26,10 +10,18 @@ chooseperson.defaults = {
 	initDataName:null,
 	ztreeJsonUrl:'',
 	searchJsonUrl:'',
+    searchTitle: {
+        name : '\u59d3\u540d',
+        numb  : '\u5de5\u53f7',
+        org  : '\u7ec4\u7ec7'
+    },
+    searchNameKey:'userName',
+    searchRendHtml:null,
 	checkType:2,
 	selectNumber:10,
 	selectPrompt:'\u6700\u591a\u53ea\u80fd\u9009\u62e9\uff1a',
 	async:false,
+    ztreeDataFilter:null,
 	ztreeFun:{
 		Check:null,
 		AsyncSuccess:null,
@@ -94,7 +86,11 @@ chooseperson.ztreeOnClick = function(event,treeId, treeNode, msg){
 };
 //----------ztree 异步请求
 chooseperson.ztreeFilter = function (treeId, parentNode, responseData) {
-	return responseData;
+    if(chooseperson.opts.ztreeDataFilter){
+        return eval('responseData.'+chooseperson.opts.ztreeDataFilter);
+    }else{
+        return responseData;
+    }
 };
 //----------选中的人员超出提示
 chooseperson.orerunDialog = function(){
@@ -193,7 +189,7 @@ chooseperson.ztreeSetting = function(){
 				eval("chooseperson.ztreeOnClick(event,treeId, treeNode, msg)");
 			}
 		}
-	};
+	}
 	if(chooseperson.opts.async){
 		if(chooseperson.opts.checkType==1){
 			var _ztreeSettingVal = {
@@ -294,7 +290,7 @@ chooseperson.search = function(){
         $('#searchLoadingTips').show();
 		var _val= $.trim(dom.val());
 		if(_val=='') return false;
-		chooseperson.opts.parmOrgData.userName=_val;
+        eval('chooseperson.opts.parmOrgData.'+chooseperson.opts.searchNameKey+'=_val');
 		$.ajax({
 			dataType: "json",
 			type: "POST",
@@ -303,13 +299,18 @@ chooseperson.search = function(){
 			url: chooseperson.opts.searchJsonUrl,
 			success: function(data){
 				var Html='';
-				for(var i=0; i<data.Result.length; i++){
-					if(chooseperson.opts.checkType==1){
-						Html+='<tr><td><label><input type="radio" class="radio person-search-radio" data-name="'+data.Result[i].CNAME+'" data-id="'+data.Result[i].USEid+'"></label></td><td class="c-t-center"><span class="c-nowrap">'+data.Result[i].CNAME+'</span></td><td><span class="c-nowrap">'+data.Result[i].JOBNUMBER+'</span></td><td><span class="c-nowrap">'+data.Result[i].ORGNAME+'</span></td></tr>';
-					}else{
-						Html+='<tr><td><label><input type="checkbox" class="checkbox person-search-checkbox" data-name="'+data.Result[i].CNAME+'" data-id="'+data.Result[i].USEid+'"></label></td><td class="c-t-center"><span class="c-nowrap">'+data.Result[i].CNAME+'</span></td><td><span class="c-nowrap">'+data.Result[i].JOBNUMBER+'</span></td><td><span class="c-nowrap">'+data.Result[i].ORGNAME+'</span></td></tr>';
-					}
-				}
+                if(chooseperson.opts.searchRendHtml){
+                    Html += chooseperson.opts.searchRendHtml(data,chooseperson.opts.checkType);
+                }else{
+                    for(var i=0; i<data.Result.length; i++){
+                        if(chooseperson.opts.checkType==1){
+                            Html+='<tr><td><label><input type="radio" class="radio person-search-radio" data-name="'+data.Result[i].CNAME+'" data-id="'+data.Result[i].USEid+'"></label></td><td class="c-t-center"><span class="c-nowrap">'+data.Result[i].CNAME+'</span></td><td><span class="c-nowrap">'+data.Result[i].JOBNUMBER+'</span></td><td><span class="c-nowrap">'+data.Result[i].ORGNAME+'</span></td></tr>';
+                        }else{
+                            Html+='<tr><td><label><input type="checkbox" class="checkbox person-search-checkbox" data-name="'+data.Result[i].CNAME+'" data-id="'+data.Result[i].USEid+'"></label></td><td class="c-t-center"><span class="c-nowrap">'+data.Result[i].CNAME+'</span></td><td><span class="c-nowrap">'+data.Result[i].JOBNUMBER+'</span></td><td><span class="c-nowrap">'+data.Result[i].ORGNAME+'</span></td></tr>';
+                        }
+                    }
+                }
+
 				$('#adminSearchTbody').html(Html);
                 $('#searchLoadingTips').hide();
 			}
@@ -344,56 +345,58 @@ chooseperson.search = function(){
 	});
 };
 //----------弹出框内容HTML
-chooseperson.htmlWrap = '' +
-'<div id="popMangChoo" class="c-hide">'+
-	'<div class="c-main auth-org-w">'+
-		'<div class="clearfix">'+
-			'<div class="fl w420 bgc-fff">'+
-				'<div class="c-border list">'+
-					'<div class="fs6 c-shallowblack c-border-b c-position-r">'+
-						'<div class="list-search c-position-r searchuser pr-big">'+
-							'<input type="text" placeholder="搜索部门人名或用户凭证..." class="c-input list-search-input">'+
-							'<i class="iconfont list-search-clear c-hide icon-clear c-shallowgray" title="清空"></i>'+
-							'<i class="iconfont list-search-icon icon-search c-shallowgray" title="搜索"></i>'+
-						'</div>'+
-						'<div class="search-overlay">'+
-							'<div class="">'+
-								'<table class="tb c-100">'+
-									'<thead>'+
-										'<tr>'+
-											'<th><label><input type="checkbox" class="checkbox" id="searchCheckboxAll"></label></th>'+
-											'<th>姓名</th>'+
-											'<th>工号</th>'+
-											'<th>组织名称</th>'+
-										'</tr>'+
-									'</thead>'+
-									'<tbody id="adminSearchTbody"></tbody>'+
-								'</table>'+
-                                '<div class="pt-giant c-t-center c-shallowgray fs6 c-hide" id="searchLoadingTips">数据正在加载中。。。</div>'+
-							'</div>'+
-						'</div>'+
-					'</div>'+
-					'<div class="ptb-small" style="height:280px; overflow:auto;">'+
-						'<div class="pt-giant c-t-center c-shallowgray fs6" id="ztreeLoadingTips">数据正在加载中。。。</div>'+
-						'<ul id="choosepersonTree" class="ztree ztree-slack ztree-slack-arrow"></ul>'+
-					'</div>'+
-				'</div>'+
-			'</div>'+
-			'<div class="fl add-del-w">'+
-				'<a class="button button-primary button-rounded button-tiny" href="javascript:;" onclick="chooseperson.rightShift()">选择右移<em class="c-simsun ml5">&gt;</em></a>'+
-                '<a class="button button-primary button-rounded button-tiny mt-small" href="javascript:;" onclick="chooseperson.delselectall()"><em class="c-simsun ml5">&lt;</em>清空已选</a>'+
-			'</div>'+
-			'<div class="fl w420 bgc-fff">'+
-				'<div class="c-border list">'+
-					'<div class="p-mini fs6 c-darkgray c-border-b">选择人员信息</div>'+
-					'<div class="ptb10" style="height:280px; overflow:auto;">'+
-						'<ul class="selectedorg c-shallowblack" id="selecteBox"></ul>'+
-					'</div>'+
-				'</div>'+
-			'</div>'+
-		'</div>'+
-	'</div>'+
-'</div>';
+chooseperson.htmlWrap = function() {
+    var _htmlwrap = '<div id="popMangChoo" class="c-hide">' +
+        '<div class="c-main auth-org-w">' +
+        '<div class="clearfix">' +
+        '<div class="fl w420 bgc-fff">' +
+        '<div class="c-border list">' +
+        '<div class="fs6 c-shallowblack c-border-b c-position-r">' +
+        '<div class="list-search c-position-r searchuser pr-big">' +
+        '<input type="text" placeholder="搜索部门人名或用户凭证..." class="c-input list-search-input">' +
+        '<i class="iconfont list-search-clear c-hide icon-clear c-shallowgray" title="清空"></i>' +
+        '<i class="iconfont list-search-icon icon-search c-shallowgray" title="搜索"></i>' +
+        '</div>' +
+        '<div class="search-overlay">' +
+        '<div class="">' +
+        '<table class="tb c-100">' +
+        '<thead>' +
+        '<tr>' +
+        '<th><label><input type="checkbox" class="checkbox" id="searchCheckboxAll"></label></th>' +
+        '<th>' + chooseperson.opts.searchTitle.name + '</th>' +
+        '<th>' + chooseperson.opts.searchTitle.numb + '</th>' +
+        '<th>' + chooseperson.opts.searchTitle.org + '</th>' +
+        '</tr>' +
+        '</thead>' +
+        '<tbody id="adminSearchTbody"></tbody>' +
+        '</table>' +
+        '<div class="pt-giant c-t-center c-shallowgray fs6 c-hide" id="searchLoadingTips">数据正在加载中。。。</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '<div class="ptb-small" style="height:280px; overflow:auto;">' +
+        '<div class="pt-giant c-t-center c-shallowgray fs6" id="ztreeLoadingTips">数据正在加载中。。。</div>' +
+        '<ul id="choosepersonTree" class="ztree ztree-slack ztree-slack-arrow"></ul>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '<div class="fl add-del-w">' +
+        '<a class="button button-primary button-rounded button-tiny" href="javascript:;" onclick="chooseperson.rightShift()">选择右移<em class="c-simsun ml5">&gt;</em></a>' +
+        '<a class="button button-primary button-rounded button-tiny mt-small" href="javascript:;" onclick="chooseperson.delselectall()"><em class="c-simsun ml5">&lt;</em>清空已选</a>' +
+        '</div>' +
+        '<div class="fl w420 bgc-fff">' +
+        '<div class="c-border list">' +
+        '<div class="p-mini fs6 c-darkgray c-border-b">选择人员信息</div>' +
+        '<div class="ptb10" style="height:280px; overflow:auto;">' +
+        '<ul class="selectedorg c-shallowblack" id="selecteBox"></ul>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
+    return _htmlwrap;
+};
 //----------右移
 chooseperson.rightShift=function(){
 	var _value=chooseperson.choosedPersonVal(),
@@ -516,7 +519,7 @@ chooseperson.dialogClose = function(){
 //----------构造弹出框内容
 chooseperson.initHtmlWrap = function () {
 	if($('#popMangChoo').length<=0){
-		$('body').append(this.htmlWrap);
+		$('body').append(this.htmlWrap());
 	}
 };
 //----------删除弹出框内容

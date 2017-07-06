@@ -14,361 +14,435 @@
 <body>
 <div class="p-medium">
 
-
     <div class="c-border p-small border-radius-rounded mt-medium">
-        
-        <div class="p-medium">
-            <input type="text" placeholder="mini size" class="c-input c-input-mini c-30">
-            <select class="c-30" id="a">
-                <option value="">Select a state</option>
-                <option value="a">aa</option>
-                <option value="b">bb</option>
-                <option value="c">cc</option>
-                <option value="d">dd</option>
-                <option value="e">ee</option>
-                <option value="f">ff</option>
-                <option value="g">gg</option>
-            </select>
-            <a class="button button-primary button-rounded button-tiny" href="#">确定</a>
-        </div>
 
         <div class="p-medium">
-            <input type="text" placeholder="small size" class="c-input c-input-small c-30">
-
-            <select class="c-30" id="b">
-                <option value="">Select a state</option>
-                <option value="a">aa</option>
-                <option value="b">bb</option>
-                <option value="c">cc</option>
-                <option value="d">dd</option>
-                <option value="e">ee</option>
-                <option value="f">ff</option>
-                <option value="g">gg</option>
-            </select>
-
-            <a class="button button-primary button-rounded button-small" href="#">确定</a>
+            <div class="form-layout form-horizontal">
+                <div class="control-group">
+                    <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
+                    <div class="control-form">
+                        <input type="text" placeholder="请输入用户名" class="c-input">
+                        <span class="control-hlep">用户名最多16位</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
+                    <div class="control-form">
+                        <input type="text" placeholder="请输入用户名" class="c-input">
+                        <a class="button button-primary button-rounded" href="#">确定</a>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">文字内容：</label>
+                    <div class="control-text">文字文字文字文字文字文字文字</div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">文字内容：</label>
+                    <div class="control-form">
+                        <label class="icheck">
+                            <input type="checkbox" name="quux" class="a">
+                            文字
+                        </label>
+                        <label class="icheck">
+                            <input type="checkbox" name="quux" class="a">
+                            内容
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="p-medium">
-            <input type="text" placeholder="medium size" class="c-input c-input-medium c-50">
-
-            <select class="c-30" id="c">
-                <option value="">Select a state</option>
-                <option value="a">aa</option>
-                <option value="b">bb</option>
-                <option value="c">cc</option>
-                <option value="d">dd</option>
-                <option value="e">ee</option>
-                <option value="f">ff</option>
-                <option value="g">gg</option>
-            </select>
-
-            <a class="button button-primary button-rounded" href="#">确定</a>
-        </div>
-
-        <div class="p-medium">
-            <input type="text" placeholder="large size" class="c-input c-input-large c-50">
-
-            <select class="c-30" id="d">
-                <option value="">Select a state</option>
-                <option value="a">aa</option>
-                <option value="b">bb</option>
-                <option value="c">cc</option>
-                <option value="d">dd</option>
-                <option value="e">ee</option>
-                <option value="f">ff</option>
-                <option value="g">gg</option>
-            </select>
-
-            <a class="button button-primary button-rounded button-large" href="#">确定</a>
-        </div>
-        
         <fieldset class="c-field c-field-title mt-medium">
             <legend class="fs6">表单</legend>
         </fieldset>
         <div class="c-field-box c-position-r">
             <div class="c-position-a" style="top: 0; right: 0">
-                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+                <a data-toggle="collapse" data-parent="#accordion" href="#form1" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
             </div>
             <div class="introduce">
-                大小
+                左侧自适应 <span class="c-blue ml-big">向下间距： form-mb-tiny ， form-mb-small ， form-mb-lagre</span><span class="c-red ml-tiny">配合着输入框的大小一起使用</span>
             </div>
         </div>
 
-        <div id="collapseOne" class="c-panel-bd c-panel-collapse mt-medium">
+        <div id="form1" class="c-panel-bd c-panel-collapse mt-medium">
 <pre><code class="html c-break">
-    &lt;div class="p-medium"&gt;
-        &lt;input type="text" placeholder="mini size" class="c-input c-input-mini c-30" /&gt;
-        &lt;select class="c-30" id="a"&gt;
-            &lt;option value=""&gt;Select a state&lt;/option&gt;
-            &lt;option value="a"&gt;aa&lt;/option&gt;
-            &lt;option value="b"&gt;bb&lt;/option&gt;
-            &lt;option value="c"&gt;cc&lt;/option&gt;
-            &lt;option value="d"&gt;dd&lt;/option&gt;
-            &lt;option value="e"&gt;ee&lt;/option&gt;
-            &lt;option value="f"&gt;ff&lt;/option&gt;
-            &lt;option value="g"&gt;gg&lt;/option&gt;
-        &lt;/select&gt;
-        &lt;a class="button button-primary button-rounded button-tiny" href="#"&gt;确定&lt;/a&gt;
-    &lt;/div&gt;
-
-    &lt;div class="p-medium"&gt;
-        &lt;input type="text" placeholder="small size" class="c-input c-input-small c-30" /&gt;
-
-        &lt;select class="c-30" id="b"&gt;
-            &lt;option value=""&gt;Select a state&lt;/option&gt;
-            &lt;option value="a"&gt;aa&lt;/option&gt;
-            &lt;option value="b"&gt;bb&lt;/option&gt;
-            &lt;option value="c"&gt;cc&lt;/option&gt;
-            &lt;option value="d"&gt;dd&lt;/option&gt;
-            &lt;option value="e"&gt;ee&lt;/option&gt;
-            &lt;option value="f"&gt;ff&lt;/option&gt;
-            &lt;option value="g"&gt;gg&lt;/option&gt;
-        &lt;/select&gt;
-
-        &lt;a class="button button-primary button-rounded button-small" href="#"&gt;确定&lt;/a&gt;
-    &lt;/div&gt;
-
-    &lt;div class="p-medium"&gt;
-        &lt;input type="text" placeholder="medium size" class="c-input c-input-medium c-50" /&gt;
-
-        &lt;select class="c-30" id="c"&gt;
-            &lt;option value=""&gt;Select a state&lt;/option&gt;
-            &lt;option value="a"&gt;aa&lt;/option&gt;
-            &lt;option value="b"&gt;bb&lt;/option&gt;
-            &lt;option value="c"&gt;cc&lt;/option&gt;
-            &lt;option value="d"&gt;dd&lt;/option&gt;
-            &lt;option value="e"&gt;ee&lt;/option&gt;
-            &lt;option value="f"&gt;ff&lt;/option&gt;
-            &lt;option value="g"&gt;gg&lt;/option&gt;
-        &lt;/select&gt;
-
-        &lt;a class="button button-primary button-rounded" href="#"&gt;确定&lt;/a&gt;
-    &lt;/div&gt;
-
-    &lt;div class="p-medium"&gt;
-        &lt;input type="text" placeholder="large size" class="c-input c-input-large c-50" /&gt;
-
-        &lt;select class="c-30" id="d"&gt;
-            &lt;option value=""&gt;Select a state&lt;/option&gt;
-            &lt;option value="a"&gt;aa&lt;/option&gt;
-            &lt;option value="b"&gt;bb&lt;/option&gt;
-            &lt;option value="c"&gt;cc&lt;/option&gt;
-            &lt;option value="d"&gt;dd&lt;/option&gt;
-            &lt;option value="e"&gt;ee&lt;/option&gt;
-            &lt;option value="f"&gt;ff&lt;/option&gt;
-            &lt;option value="g"&gt;gg&lt;/option&gt;
-        &lt;/select&gt;
-
-        &lt;a class="button button-primary button-rounded button-large" href="#"&gt;确定&lt;/a&gt;
+    &lt;div class="form-layout form-horizontal"&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;&lt;sub class="control-sub"&gt;*&lt;/sub&gt; 文本框：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;input type="text" placeholder="请输入用户名" class="c-input"&gt;
+                &lt;span class="control-hlep"&gt;用户名最多16位&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;&lt;sub class="control-sub"&gt;*&lt;/sub&gt; 文本框：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;input type="text" placeholder="请输入用户名" class="c-input"&gt;
+                &lt;a class="button button-primary button-rounded" href="#"&gt;确定&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;文字内容：&lt;/label&gt;
+            &lt;div class="control-text"&gt;文字文字文字文字文字文字文字&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;文字内容：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;label class="icheck"&gt;
+                    &lt;input type="checkbox" name="quux" class="a" /&gt;
+                    文字
+                &lt;/label&gt;
+                &lt;label class="icheck"&gt;
+                    &lt;input type="checkbox" name="quux" class="a" /&gt;
+                    内容
+                &lt;/label&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
     &lt;/div&gt;
 </code></pre>
         </div>
     </div>
 
 
-    
+    <div class="c-border p-small border-radius-rounded mt-medium">
 
-    
-
-    
-    
-    
-    
-    
-    
-    <div class="p-medium">
-    	<input type="text" placeholder="input disabled" class="c-input" disabled="disabled">
-    </div>
-
-	<div class="p-medium">
-    	<input type="text" placeholder="input readonly" class="c-input" readonly="readonly">
-    </div>
-
-
-	<div class="p-medium">
-    	<textarea class="c-input" placeholder="textarea disabled" disabled="disabled"></textarea>
-    </div>
-
-    <div class="p-medium">
-        <textarea class="c-input" placeholder="textarea disabled" disabled="disabled"></textarea>
-    </div>
-
-
-
-
-
-    <div class="p-medium">
-        <h2 class="pb-medium">自适应:</h2>
-        <div class="form-layout form-horizontal">
-            <div class="control-group">
-                <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
-                <div class="control-form">
-                    <input type="text" placeholder="请输入用户名" class="c-input">
-                    <span class="control-hlep">用户名最多16位</span>
+        <div class="p-medium">
+            <div class="form-layout form-horizontal form-horizontal-wider">
+                <div class="control-group">
+                    <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
+                    <div class="control-form">
+                        <input type="text" placeholder="请输入用户名" class="c-input">
+                        <span class="control-hlep">用户名最多16位</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
+                    <div class="control-form">
+                        <input type="text" placeholder="请输入用户名" class="c-input">
+                        <a class="button button-primary button-rounded" href="#">确定</a>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">文字内容：</label>
+                    <div class="control-text">文字文字文字文字文字文字文字</div>
                 </div>
             </div>
-            <div class="control-group">
-                <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
-                <div class="control-form">
-                    <input type="text" placeholder="请输入用户名" class="c-input">
-                    <a class="button button-primary button-rounded" href="#">确定</a>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">表单</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#form2" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                左侧10-12个字
+            </div>
+        </div>
+
+        <div id="form2" class="c-panel-bd c-panel-collapse mt-medium">
+<pre><code class="html c-break">
+    &lt;div class="form-layout form-horizontal form-horizontal-wider"&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;&lt;sub class="control-sub"&gt;*&lt;/sub&gt; 文本框：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;input type="text" placeholder="请输入用户名" class="c-input"&gt;
+                &lt;span class="control-hlep"&gt;用户名最多16位&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;&lt;sub class="control-sub"&gt;*&lt;/sub&gt; 文本框：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;input type="text" placeholder="请输入用户名" class="c-input"&gt;
+                &lt;a class="button button-primary button-rounded" href="#"&gt;确定&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;文字内容：&lt;/label&gt;
+            &lt;div class="control-text"&gt;文字文字文字文字文字文字文字&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+        </div>
+    </div>
+
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div class="p-medium">
+            <div class="form-layout form-horizontal form-horizontal-narrow">
+                <div class="control-group">
+                    <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
+                    <div class="control-form">
+                        <input type="text" placeholder="请输入用户名" class="c-input">
+                        <span class="control-hlep">用户名最多16位</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
+                    <div class="control-form">
+                        <input type="text" placeholder="请输入用户名" class="c-input">
+                        <a class="button button-primary button-rounded" href="#">确定</a>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">文字内容：</label>
+                    <div class="control-form">
+                        <textarea class="c-input" placeholder="请输入您的指导"></textarea>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">文字内容：</label>
+                    <div class="control-text">文字文字文字文字文字文字文字</div>
                 </div>
             </div>
-            <div class="control-group">
-                <label class="control-label">文字内容：</label>
-                <div class="control-text">文字文字文字文字文字文字文字</div>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">表单</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#form3" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
             </div>
-            <div class="control-group">
-                <label class="control-label">文字内容：</label>
-                <div class="control-form">
-                    <label class="icheck">
-                        <input type="checkbox" name="quux" class="a">
-                        文字
-                    </label>
-                    <label class="icheck">
-                        <input type="checkbox" name="quux" class="a">
-                        内容
-                    </label>
-                </div>
+            <div class="introduce">
+                左侧4-6个字
             </div>
+        </div>
+
+        <div id="form3" class="c-panel-bd c-panel-collapse mt-medium">
+<pre><code class="html c-break">
+    &lt;div class="form-layout form-horizontal form-horizontal-narrow"&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;&lt;sub class="control-sub"&gt;*&lt;/sub&gt; 文本框：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;input type="text" placeholder="请输入用户名" class="c-input"&gt;
+                &lt;span class="control-hlep"&gt;用户名最多16位&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;&lt;sub class="control-sub"&gt;*&lt;/sub&gt; 文本框：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;input type="text" placeholder="请输入用户名" class="c-input"&gt;
+                &lt;a class="button button-primary button-rounded" href="#"&gt;确定&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;文字内容：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;textarea class="c-input" placeholder="请输入您的指导"&gt;&lt;/textarea&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;文字内容：&lt;/label&gt;
+            &lt;div class="control-text"&gt;文字文字文字文字文字文字文字&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
         </div>
     </div>
 
 
 
 
-    <div class="p-medium">
-        <h2 class="pb-medium">左侧10-12个字:</h2>
-        <div class="form-layout form-horizontal form-horizontal-wider">
-            <div class="control-group">
-                <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
-                <div class="control-form">
-                    <input type="text" placeholder="请输入用户名" class="c-input">
-                    <span class="control-hlep">用户名最多16位</span>
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div class="p-medium">
+            <div class="form-layout form-blocks">
+                <div class="control-group">
+                    <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
+                    <div class="control-form">
+                        <input type="text" placeholder="请输入用户名" class="c-input">
+                        <span class="control-hlep">用户名最多16位</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
+                    <div class="control-form">
+                        <input type="text" placeholder="请输入用户名" class="c-input">
+                        <a class="button button-primary button-rounded" href="#">确定</a>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">文字内容：</label>
+                    <div class="control-text">222222222222222222222222222222223</div>
                 </div>
             </div>
-            <div class="control-group">
-                <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
-                <div class="control-form">
-                    <input type="text" placeholder="请输入用户名" class="c-input">
-                    <a class="button button-primary button-rounded" href="#">确定</a>
-                </div>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">表单</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#form4" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
             </div>
-            <div class="control-group">
-                <label class="control-label">文字内容：</label>
-                <div class="control-text">文字文字文字文字文字文字文字</div>
+            <div class="introduce">
+                上下类型
             </div>
+        </div>
+
+        <div id="form4" class="c-panel-bd c-panel-collapse mt-medium">
+<pre><code class="html c-break">
+    &lt;div class="form-layout form-blocks"&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;&lt;sub class="control-sub"&gt;*&lt;/sub&gt; 文本框：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;input type="text" placeholder="请输入用户名" class="c-input"&gt;
+                &lt;span class="control-hlep"&gt;用户名最多16位&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;&lt;sub class="control-sub"&gt;*&lt;/sub&gt; 文本框：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;input type="text" placeholder="请输入用户名" class="c-input"&gt;
+                &lt;a class="button button-primary button-rounded" href="#"&gt;确定&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;文字内容：&lt;/label&gt;
+            &lt;div class="control-text"&gt;222222222222222222222222222222223&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
         </div>
     </div>
 
 
 
-    <div class="p-medium">
-        <h2 class="pb-medium">左侧4-6个字:</h2>
-        <div class="form-layout form-horizontal form-horizontal-narrow">
-            <div class="control-group">
-                <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
-                <div class="control-form">
-                    <input type="text" placeholder="请输入用户名" class="c-input">
-                    <span class="control-hlep">用户名最多16位</span>
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div class="p-medium">
+            <div class="form-layout form-inline">
+                <div class="control-group">
+                    <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
+                    <div class="control-form">
+                        <input type="text" placeholder="请输入用户名" class="c-input">
+                        <span class="control-hlep">用户名最多16位</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
+                    <div class="control-form">
+                        <input type="text" placeholder="请输入用户名" class="c-input">
+                        <a class="button button-primary button-rounded" href="#">确定</a>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">文字内容：</label>
+                    <div class="control-text">文字文字文字文字文字文字文字</div>
                 </div>
             </div>
-            <div class="control-group">
-                <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
-                <div class="control-form">
-                    <input type="text" placeholder="请输入用户名" class="c-input">
-                    <a class="button button-primary button-rounded" href="#">确定</a>
-                </div>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">表单</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#form5" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
             </div>
-            <div class="control-group">
-                <label class="control-label">文字内容：</label>
-                <div class="control-form">
-                    <textarea class="c-input" placeholder="请输入您的指导"></textarea>
-                </div>
+            <div class="introduce">
+                一行类型
             </div>
-            <div class="control-group">
-                <label class="control-label">文字内容：</label>
-                <div class="control-text">文字文字文字文字文字文字文字</div>
-            </div>
+        </div>
+
+        <div id="form5" class="c-panel-bd c-panel-collapse mt-medium">
+<pre><code class="html c-break">
+    &lt;div class="form-layout form-inline"&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;&lt;sub class="control-sub"&gt;*&lt;/sub&gt; 文本框：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;input type="text" placeholder="请输入用户名" class="c-input"&gt;
+                &lt;span class="control-hlep"&gt;用户名最多16位&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;&lt;sub class="control-sub"&gt;*&lt;/sub&gt; 文本框：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;input type="text" placeholder="请输入用户名" class="c-input"&gt;
+                &lt;a class="button button-primary button-rounded" href="#"&gt;确定&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;文字内容：&lt;/label&gt;
+            &lt;div class="control-text"&gt;文字文字文字文字文字文字文字&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
         </div>
     </div>
 
 
+    <div class="c-border p-small border-radius-rounded mt-medium">
 
-    <div class="p-medium">
-        <h2 class="pb-medium">上下类型:</h2>
-        <div class="form-layout form-blocks">
-            <div class="control-group">
-                <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
-                <div class="control-form">
-                    <input type="text" placeholder="请输入用户名" class="c-input">
-                    <span class="control-hlep">用户名最多16位</span>
+        <div class="p-medium">
+            <div class="form-layout form-auto">
+                <div class="control-group">
+                    <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
+                    <div class="control-form">
+                        <input type="text" placeholder="请输入用户名" class="c-input">
+                        <span class="control-hlep">用户名最多16位</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
+                    <div class="control-form">
+                        <input type="text" placeholder="请输入用户名" class="c-input">
+                        <a class="button button-primary button-rounded" href="#">确定</a>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">文字内容：</label>
+                    <div class="control-text">文字文字文字文字文字文字文字</div>
                 </div>
             </div>
-            <div class="control-group">
-                <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
-                <div class="control-form">
-                    <input type="text" placeholder="请输入用户名" class="c-input">
-                    <a class="button button-primary button-rounded" href="#">确定</a>
-                </div>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">表单</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#form6" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
             </div>
-            <div class="control-group">
-                <label class="control-label">文字内容：</label>
-                <div class="control-text">222222222222222222222222222222223</div>
+            <div class="introduce">
+                自定义类型:(样式全由自己控制)
             </div>
+        </div>
+
+        <div id="form6" class="c-panel-bd c-panel-collapse mt-medium">
+<pre><code class="html c-break">
+    &lt;div class="form-layout form-auto"&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;&lt;sub class="control-sub"&gt;*&lt;/sub&gt; 文本框：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;input type="text" placeholder="请输入用户名" class="c-input"&gt;
+                &lt;span class="control-hlep"&gt;用户名最多16位&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;&lt;sub class="control-sub"&gt;*&lt;/sub&gt; 文本框：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;input type="text" placeholder="请输入用户名" class="c-input"&gt;
+                &lt;a class="button button-primary button-rounded" href="#"&gt;确定&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;文字内容：&lt;/label&gt;
+            &lt;div class="control-text"&gt;文字文字文字文字文字文字文字&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
         </div>
     </div>
 
 
-    <div class="p-medium">
-        <h2 class="pb-medium">一行类型:</h2>
-        <div class="form-layout form-inline">
-            <div class="control-group">
-                <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
-                <div class="control-form">
-                    <input type="text" placeholder="请输入用户名" class="c-input">
-                    <span class="control-hlep">用户名最多16位</span>
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
-                <div class="control-form">
-                    <input type="text" placeholder="请输入用户名" class="c-input">
-                    <a class="button button-primary button-rounded" href="#">确定</a>
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label">文字内容：</label>
-                <div class="control-text">文字文字文字文字文字文字文字</div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="p-medium">
-        <h2 class="pb-medium">自定义类型:(样式全由自己控制):</h2>
-        <div class="form-layout form-auto">
-            <div class="control-group">
-                <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
-                <div class="control-form">
-                    <input type="text" placeholder="请输入用户名" class="c-input">
-                    <span class="control-hlep">用户名最多16位</span>
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label"><sub class="control-sub">*</sub> 文本框：</label>
-                <div class="control-form">
-                    <input type="text" placeholder="请输入用户名" class="c-input">
-                    <a class="button button-primary button-rounded" href="#">确定</a>
-                </div>
-            </div>
-            <div class="control-group">
-                <label class="control-label">文字内容：</label>
-                <div class="control-text">文字文字文字文字文字文字文字</div>
-            </div>
-        </div>
-    </div>
 </div>
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/cross.js"></script>

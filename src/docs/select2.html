@@ -35,6 +35,7 @@
             </div>
             <div class="introduce">
                 单一的选择框， <span class="c-blue">大小参数 "height"（mini，small，medium，large）</span>
+                <span class="c-red">与输入一至宽度 select2-width-default</span>
             </div>
         </div>
 
@@ -62,6 +63,149 @@
                     <div class="tabs-bd-box c-hide p-small">
 <pre><code class="javascript">
     $("#a").select2();
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div class="mb-small">
+            <select class="c-50" id="sizemini">
+                <option value="a">aa</option>
+                <option value="b">bb</option>
+                <option value="c">cc</option>
+                <option value="d">dd</option>
+                <option value="e">ee</option>
+                <option value="f">ff</option>
+                <option value="g">gg</option>
+            </select>
+        </div>
+
+        <div class="mb-small">
+            <select class="c-50" id="sizesmall">
+                <option value="a">aa</option>
+                <option value="b">bb</option>
+                <option value="c">cc</option>
+                <option value="d">dd</option>
+                <option value="e">ee</option>
+                <option value="f">ff</option>
+                <option value="g">gg</option>
+            </select>
+        </div>
+
+        <div class="mb-small">
+            <select class="c-50" id="sizemedium">
+                <option value="a">aa</option>
+                <option value="b">bb</option>
+                <option value="c">cc</option>
+                <option value="d">dd</option>
+                <option value="e">ee</option>
+                <option value="f">ff</option>
+                <option value="g">gg</option>
+            </select>
+        </div>
+
+
+        <div class="mb-small">
+            <select class="c-50" id="sizelarge">
+                <option value="a">aa</option>
+                <option value="b">bb</option>
+                <option value="c">cc</option>
+                <option value="d">dd</option>
+                <option value="e">ee</option>
+                <option value="f">ff</option>
+                <option value="g">gg</option>
+            </select>
+        </div>
+
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">下拉框 select2</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#select211" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                <span class="c-blue">大小参数 "height"（mini，small，medium，large）</span>
+            </div>
+        </div>
+
+        <div id="select211" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;select class="c-50" id="sizemini"&gt;
+        &lt;option value=""&gt;&lt;/option&gt;
+        &lt;option value="a"&gt;aa&lt;/option&gt;
+        &lt;option value="b"&gt;bb&lt;/option&gt;
+        &lt;option value="c"&gt;cc&lt;/option&gt;
+        &lt;option value="d"&gt;dd&lt;/option&gt;
+        &lt;option value="e"&gt;ee&lt;/option&gt;
+        &lt;option value="f"&gt;ff&lt;/option&gt;
+        &lt;option value="g"&gt;gg&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;select class="c-50" id="sizesmall"&gt;
+        &lt;option value=""&gt;&lt;/option&gt;
+        &lt;option value="a"&gt;aa&lt;/option&gt;
+        &lt;option value="b"&gt;bb&lt;/option&gt;
+        &lt;option value="c"&gt;cc&lt;/option&gt;
+        &lt;option value="d"&gt;dd&lt;/option&gt;
+        &lt;option value="e"&gt;ee&lt;/option&gt;
+        &lt;option value="f"&gt;ff&lt;/option&gt;
+        &lt;option value="g"&gt;gg&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;select class="c-50" id="sizemedium"&gt;
+        &lt;option value=""&gt;&lt;/option&gt;
+        &lt;option value="a"&gt;aa&lt;/option&gt;
+        &lt;option value="b"&gt;bb&lt;/option&gt;
+        &lt;option value="c"&gt;cc&lt;/option&gt;
+        &lt;option value="d"&gt;dd&lt;/option&gt;
+        &lt;option value="e"&gt;ee&lt;/option&gt;
+        &lt;option value="f"&gt;ff&lt;/option&gt;
+        &lt;option value="g"&gt;gg&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;select class="c-50" id="sizelarge"&gt;
+        &lt;option value=""&gt;&lt;/option&gt;
+        &lt;option value="a"&gt;aa&lt;/option&gt;
+        &lt;option value="b"&gt;bb&lt;/option&gt;
+        &lt;option value="c"&gt;cc&lt;/option&gt;
+        &lt;option value="d"&gt;dd&lt;/option&gt;
+        &lt;option value="e"&gt;ee&lt;/option&gt;
+        &lt;option value="f"&gt;ff&lt;/option&gt;
+        &lt;option value="g"&gt;gg&lt;/option&gt;
+    &lt;/select&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $("#sizemini").select2({
+        placeholder: "Select a state",
+        height:'mini'
+    });
+    $("#sizesmall").select2({
+        placeholder: "Select a state",
+        height:'small'
+    });
+    $("#sizemedium").select2({
+        placeholder: "Select a state",
+        height:'medium'
+    });
+    $("#sizelarge").select2({
+        placeholder: "Select a state",
+        height:'large'
+    });
 </code></pre>
                     </div>
                 </div>
@@ -1213,6 +1357,24 @@
             return $state;
         };
 
+
+
+        $("#sizemini").select2({
+            placeholder: "Select a state",
+            height:'mini'
+        });
+        $("#sizesmall").select2({
+            placeholder: "Select a state",
+            height:'small'
+        });
+        $("#sizemedium").select2({
+            placeholder: "Select a state",
+            height:'medium'
+        });
+        $("#sizelarge").select2({
+            placeholder: "Select a state",
+            height:'large'
+        });
 
 
         var $example = $("#access-a").select2();
