@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Lightbox图片展示</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../iconfont/iconfont.css" />
+    <link rel="stylesheet" href="../css/cross.css" />
+    <link rel="stylesheet" href="../css/highlight.css" />
+    <link rel="stylesheet" href="../css/lightbox.css" />
+</head>
+<body>
+<div class="p-medium">
+
+    <fieldset class="c-field">
+        <legend>引用</legend>
+        <div class="c-field-box">
+<pre><code class="html c-break">
+    &lt;link rel="stylesheet" href="../css/lightbox.css" /&gt;
+    &lt;script type="text/javascript" src="../js/lightbox/lightbox.js"&gt;&lt;/script&gt;
+</code></pre>
+        </div>
+    </fieldset>
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+        <div id="demo-lightbox-box">
+            <a class="example-image-link" data-lightbox="example-set" href="../images/demo/big/mm1.jpg" data-title="张含韵小美女">
+                <img class="example-image" src="../images/demo/small/mm1.jpg" />
+            </a>
+            <a class="example-image-link" data-lightbox="example-set" href="../images/demo/big/mm2.jpg" data-title="某不知名美女2">
+                <img class="example-image" src="../images/demo/small/mm2.jpg" />
+            </a>
+            <a class="example-image-link" data-lightbox="example-set" href="../images/demo/big/mm3.jpg" data-title="某不知名美女3">
+                <img class="example-image" src="../images/demo/small/mm3.jpg" />
+            </a>
+            <a class="example-image-link" data-lightbox="example-set" href="../images/demo/big/mm4.jpg" data-title="某不知名美女4">
+                <img class="example-image" src="../images/demo/small/mm4.jpg" />
+            </a>
+            <a class="example-image-link" data-lightbox="example-set" href="../images/demo/big/mm5.jpg" data-title="某不知名美女5">
+                <img class="example-image" src="../images/demo/small/mm5.jpg" />
+            </a>
+        </div>
+
+
+        <div class="mt-small">
+            <a href="javascript:;" class="button button-primary" id="demoLightbox">动态生成</a>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">Lightbox图片展示</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                Lightbox图片展示
+            </div>
+        </div>
+
+        <div id="collapseOne" class="c-panel-bd c-panel-collapse mt-medium">
+<pre><code class="html c-break">
+
+    &lt;a class="example-image-link" data-lightbox="example-set" href="../images/demo/big/mm1.jpg" data-title="张含韵小美女"&gt;
+        &lt;img class="example-image" src="../images/demo/small/mm1.jpg" /&gt;
+    &lt;/a&gt;
+    &lt;a class="example-image-link" data-lightbox="example-set" href="../images/demo/big/mm2.jpg" data-title="某不知名美女2"&gt;
+        &lt;img class="example-image" src="../images/demo/small/mm2.jpg" /&gt;
+    &lt;/a&gt;
+    &lt;a class="example-image-link" data-lightbox="example-set" href="../images/demo/big/mm3.jpg" data-title="某不知名美女3"&gt;
+        &lt;img class="example-image" src="../images/demo/small/mm3.jpg" /&gt;
+    &lt;/a&gt;
+    &lt;a class="example-image-link" data-lightbox="example-set" href="../images/demo/big/mm4.jpg" data-title="某不知名美女4"&gt;
+        &lt;img class="example-image" src="../images/demo/small/mm4.jpg" /&gt;
+    &lt;/a&gt;
+    &lt;a class="example-image-link" data-lightbox="example-set" href="../images/demo/big/mm5.jpg" data-title="某不知名美女5"&gt;
+        &lt;img class="example-image" src="../images/demo/small/mm5.jpg" /&gt;
+    &lt;/a&gt;
+    
+</code></pre>
+        </div>
+    </div>
+
+
+
+    <h2 class="mt-medium mb-tiny">参数：</h2>
+    <table class="tb tb-b options-table">
+        <thead>
+        <tr>
+            <th>参数</th>
+            <th>默认值</th>
+            <th>描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>alwaysShowNavOnTouchDevices</td>
+            <td data-label="Default:" class="default-row">false</td>
+            <td>如果是true，在观看图像集时出现在鼠标悬停的左右的导航箭头，将在支持触摸的设备上看到。</td>
+        </tr>
+        <tr>
+            <td>albumLabel</td>
+            <td data-label="Default:" class="default-row">"Image %1 of %2"</td>
+            <td>当查看图像集时，该文本显示如下。默认的文本显示当前图像数字和设置的图像总数。</td>
+        </tr>
+        <tr>
+            <td>disableScrolling</td>
+            <td data-label="Default:" class="default-row">false</td>
+            <td>如果是true，阻止页面滚动事件。这样图片会隐藏在元素内。</td>
+        </tr>
+        <tr>
+            <td>fadeDuration</td>
+            <td data-label="Default:" class="default-row">500</td>
+            <td>淡入和淡出的时间，以毫秒为单位</td>
+        </tr>
+        <tr>
+            <td>fitImagesInViewport</td>
+            <td data-label="Default:" class="default-row">true</td>
+            <td>如果是true，大小的图像，将使他们适合在视口里面。这样就可以将用户从滚动到滚动来查看整个图像。</td>
+        </tr>
+        <tr>
+            <td>maxWidth</td>
+            <td data-label="Default:" class="default-row">&nbsp;</td>
+            <td>如果设置，图像高度将被限制在这个数字像素。方面的比例将无法维持</td>
+        </tr>
+        <tr>
+            <td>maxHeight</td>
+            <td data-label="Default:" class="default-row">&nbsp;</td>
+            <td>如果设置，图像宽度将被限制在这个数字像素。方面的比例将无法维持</td>
+        </tr>
+        <tr>
+            <td>positionFromTop</td>
+            <td data-label="Default:" class="default-row">50</td>
+            <td>从顶部的视口，灯箱容器会出现距离，以像素为单位。</td>
+        </tr>
+        <tr>
+            <td>resizeDuration</td>
+            <td data-label="Default:" class="default-row">700</td>
+            <td>The time it takes for the Lightbox container to animate its width and height when transition between different size images, in milliseconds.</td>
+        </tr>
+        <tr>
+            <td>showImageNumberLabel</td>
+            <td data-label="Default:" class="default-row">true</td>
+            <td>它需要灯箱的容器使其宽度和高度时，不同大小的图像之间的过渡时间，以毫秒为单位。</td>
+        </tr>
+        <tr>
+            <td>wrapAround</td>
+            <td data-label="Default:" class="default-row">false</td>
+            <td>如果是真的，当用户在一组中到达最后一个图像时，右键导航箭头将出现，并且它们将继续向前移动，将把它们带回到集合中的第一图像。</td>
+        </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/lightbox/lightbox.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+        $('#demoLightbox').on('click',function(){
+            $('#demo-lightbox-box').append('<a class="example-image-link" data-lightbox="example-set" href="../images/demo/big/mm2.jpg" data-title="某不知名美女2">'+
+            '<img class="example-image" src="../images/demo/small/mm2.jpg" />'+
+            '</a>');
+        });
+    });
+</script>
+</body>
+</html>
+
