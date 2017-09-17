@@ -27,11 +27,13 @@ chooseperson.defaults = {
 		AsyncSuccess:null,
 		Click:null
 	},
+    structureStaff:null,
+    structureStaffBackArray:null,
 	callBack:null
 };
 //----------入口 带参数
 chooseperson.init = function(options){
-	chooseperson.opts=$.extend(this.defaults,options || {});
+	chooseperson.opts=$.extend({},this.defaults,options || {});
 	if(chooseperson.opts.async){
 		chooseperson.asyncInit=true;
 	}
@@ -148,11 +150,18 @@ chooseperson.ztreeCheckNode = function(idData,Checked,nameData){
 						oldList=false;
 					}
 				}
-				if(oldList){
+				if(oldList && chooseperson.opts.structureStaff==null){
 					listHtml+='<li data-id="'+listArray[n].id+'" data-name="'+listArray[n].name+'"><a href="javascript:;" class="alinks-line alinks-black" onclick="chooseperson.delselect(this)">'+listArray[n].name+'</a></li>';
-				}
+				}else{
+                    listHtml+=chooseperson.opts.structureStaff(listArray[n].id,listArray[n].name);
+                }
 			}else{
-				listHtml+='<li data-id="'+listArray[n].id+'" data-name="'+listArray[n].name+'"><a href="javascript:;" class="alinks-line alinks-black" onclick="chooseperson.delselect(this)">'+listArray[n].name+'</a></li>';
+                if(chooseperson.opts.structureStaff==null){
+                    listHtml+='<li data-id="'+listArray[n].id+'" data-name="'+listArray[n].name+'"><a href="javascript:;" class="alinks-line alinks-black" onclick="chooseperson.delselect(this)">'+listArray[n].name+'</a></li>';
+                }else{
+                    listHtml+=chooseperson.opts.structureStaff(listArray[n].id,listArray[n].name);
+                }
+
 			}
 		}
 		$('#selecteBox').append(listHtml);
@@ -438,8 +447,12 @@ chooseperson.makeArray=function (id,Name,personArray){
 	}
 	if(repeated){
 		var	valArray=new Array();
-		valArray['id']=id;
-		valArray['name']=Name;
+        if(chooseperson.opts.structureStaffBackArray){
+            valArray=chooseperson.opts.structureStaffBackArray(id,Name);
+        }else{
+            valArray['id']=id;
+            valArray['name']=Name;
+        }
 		personArray.push(valArray);
 	}
 	return personArray;

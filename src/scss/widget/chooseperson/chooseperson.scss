@@ -45,6 +45,14 @@
   border-top: 0;
 }
 .selectedorg li {
+  list-style: none;
   padding:5px 15px;
   font-size:14px;
+  height: 30px;
+}
+.selectedorg li i.iconfont {
+  color: #999;
+  &.active,&:hover{
+    color: $color-active;
+  }
 }

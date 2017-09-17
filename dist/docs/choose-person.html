@@ -36,7 +36,7 @@
             <div class="control-group">
                 <label class="control-label"><sub class="control-sub">*</sub> 人员选择：</label>
                 <div class="control-form">
-                    <textarea class="c-input" rows="5" cols="65" placeholder="请选择人员" data-name="林仙花,林毅" data-id="B06AAE3CB22D45BCB1F88F8CD6CD3C54,662ABB18D95542CF8979A53226AFA53B" id="choose-person-input">林仙花,林毅</textarea>
+                    <textarea class="c-input" rows="5" cols="65" placeholder="请选择人员" data-name="林仙花1,林毅1" data-id="B06AAE3CB22D45BCB1F88F8CD6CD3C54,662ABB18D95542CF8979A53226AFA53B" id="choose-person-input">林仙花,林毅</textarea>
                     <a class="button button-primary button-rounded" href="javascript:;" id="choose-person-btn">选择</a>
                 </div>
             </div>
@@ -67,7 +67,7 @@
         &lt;div class="control-group"&gt;
             &lt;label class="control-label"&gt;&lt;sub class="control-sub"&gt;*&lt;/sub&gt; 人员选择：&lt;/label&gt;
             &lt;div class="control-form"&gt;
-                &lt;textarea class="c-input" rows="5" cols="65" placeholder="请选择人员" data-name="林仙花,林毅" data-id="B06AAE3CB22D45BCB1F88F8CD6CD3C54,662ABB18D95542CF8979A53226AFA53B" id="choose-person-input"&gt;林仙花,林毅&lt;/textarea&gt;
+                &lt;textarea class="c-input" rows="5" cols="65" placeholder="请选择人员" data-name="林仙花1,林毅1" data-id="B06AAE3CB22D45BCB1F88F8CD6CD3C54,662ABB18D95542CF8979A53226AFA53B" id="choose-person-input"&gt;林仙花,林毅&lt;/textarea&gt;
                 &lt;a class="button button-primary button-rounded" href="javascript:;" id="choose-person-btn"&gt;选择&lt;/a&gt;
             &lt;/div&gt;
         &lt;/div&gt;
@@ -106,6 +106,140 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <div class="form-layout form-horizontal form-horizontal-narrow">
+            <div class="control-group">
+                <label class="control-label"><sub class="control-sub">*</sub> 人员选择（设置队长）：</label>
+                <div class="control-form">
+                    <textarea class="c-input" rows="5" cols="65" placeholder="请选择人员" data-captain="B06AAE3CB22D45BCB1F88F8CD6CD3C54" data-name="林仙花,林毅" data-id="B06AAE3CB22D45BCB1F88F8CD6CD3C54,662ABB18D95542CF8979A53226AFA53B" id="choose-person-input2">林仙花,林毅</textarea>
+                    <a class="button button-primary button-rounded" href="javascript:;" id="choose-person-btn2">选择</a>
+                </div>
+            </div>
+        </div>
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">人员选择</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo2" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                内容区域
+            </div>
+        </div>
+
+        <div id="collapseTwo2" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div class="form-layout form-horizontal form-horizontal-narrow"&gt;
+        &lt;div class="control-group"&gt;
+            &lt;label class="control-label"&gt;&lt;sub class="control-sub"&gt;*&lt;/sub&gt; 人员选择：&lt;/label&gt;
+            &lt;div class="control-form"&gt;
+                &lt;textarea class="c-input" rows="5" cols="65" placeholder="请选择人员" data-captain="B06AAE3CB22D45BCB1F88F8CD6CD3C54" data-name="林仙花,林毅" data-id="B06AAE3CB22D45BCB1F88F8CD6CD3C54,662ABB18D95542CF8979A53226AFA53B" id="choose-person-input2"&gt;林仙花,林毅&lt;/textarea&gt;
+                &lt;a class="button button-primary button-rounded" href="javascript:;" id="choose-person-btn2"&gt;选择&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#choose-person-btn2').on('click',function(){
+        chooseperson({
+            initDataId:$('#choose-person-input2').attr('data-id'),
+            initDataName:$('#choose-person-input2').attr('data-name'),
+            initDataParent:$('#choose-person-input2').attr('data-parent'),
+            ztreeJsonUrl:'../json/chooseperson/choosepersonztree.json',
+            searchJsonUrl:'../json/chooseperson/choosepersonsearch.json',
+            artDialogTitle: '请选择人员',
+            structureStaff:function(id,name){
+                var listHtml='';
+
+                if($('#choose-person-input2').attr('data-captain')==id){
+                    listHtml+=structureStaffHtml(id,name,true);
+                }else{
+                    listHtml+=structureStaffHtml(id,name,false);
+                }
+
+                return listHtml;
+            },
+            structureStaffBackArray:function(id,name){
+                var valArray =new Array();
+                var _captain=$('#selecteBox').find('li.active').length;
+                valArray['id']=id;
+                valArray['name']=name;
+                if(_captain){
+                    valArray['captain']=true;
+                }else{
+                    valArray['captain']=false;
+                }
+                return valArray;
+            },
+            callBack:function(value){
+                filledData2(value,'#choose-person-input2');
+            }
+        });
+    });
+
+    function structureStaffHtml(id,name,captain){
+        var _captain = captain ? 'active' : '';
+        var listHtml='&lt;li data-id="'+id+'" data-name="'+name+'" class="'+ _captain +'"&gt;'+
+        '&lt;div class="clearfix staff"&gt;'+
+            '&lt;span class="fl"&gt;'+name+'&lt;/span&gt;'+
+            '&lt;span class="fr"&gt;'+
+                                '&lt;i class="iconfont icon-flag c-cursor-p mr-small '+ _captain +'" title="设置为队长" onclick="chooseperson.setCaptainStaff(this)"&gt;&lt;/i&gt;' +
+                                '&lt;i class="iconfont icon-close c-cursor-p"  title="删除" onclick="chooseperson.delSelectStaff(this)"&gt;&lt;/i&gt;'+
+                            '&lt;/span&gt;'+
+            '&lt;/div&gt;&lt;/li&gt;';
+        return listHtml;
+    }
+
+    chooseperson.setCaptainStaff =function(dom){
+        var $ul = $('#selecteBox');
+        var $li = $(dom).parents('li');
+        $ul.find('li.active').find('i.icon-flag').removeClass('active');
+        $ul.find('li.active').removeClass('active');
+        $li.addClass('active').find('i.icon-flag').addClass('active');
+    };
+    chooseperson.delSelectStaff = function(dom){
+        var $div = $(dom).parents('div.staff');
+        chooseperson.delselect($div.get(0));
+    };
+    function filledData2(value,dom){
+        var _name=_id=captain='';
+        $(value).each(function(i,v){
+            _name+= v.name+",";
+            _id+= v.id+",";
+            if(v.captain){
+                captain=v.id;
+            }
+        });
+        _name=_name.substring(0,_name.length-1);
+        _id=_id.substring(0,_id.length-1);
+        $(dom).val(_name).attr({'data-name':_name,'data-id':_id,'data-captain':captain});
+    }
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
     <div class="mt-big">
         <h2>参数</h2>
@@ -216,6 +350,16 @@
                     <td>用于对 Ajax 返回数据进行预处理的函数。例如值是 "data";</td>
                 </tr>
                 <tr>
+                    <td>structureStaff</td>
+                    <td>null</td>
+                    <td>自定义选择后人员列表，返回值(id,name)</td>
+                </tr>
+                <tr>
+                    <td>structureStaffBackArray</td>
+                    <td>null</td>
+                    <td>自定义选择后人员的返回JSON处理，返回值(id,name)</td>
+                </tr>
+                <tr>
                     <td>callBack</td>
                     <td>null</td>
                     <td>回调函数</td>
@@ -253,7 +397,6 @@
                 }
             });
         });
-
         function filledData(value,dom){
             var _name=_id='';
             $(value).each(function(i,v){
@@ -263,6 +406,84 @@
             _name=_name.substring(0,_name.length-1);
             _id=_id.substring(0,_id.length-1);
             $(dom).val(_name).attr({'data-name':_name,'data-id':_id});
+        }
+
+
+
+
+        $('#choose-person-btn2').on('click',function(){
+            chooseperson({
+                initDataId:$('#choose-person-input2').attr('data-id'),
+                initDataName:$('#choose-person-input2').attr('data-name'),
+                initDataParent:$('#choose-person-input2').attr('data-parent'),
+                ztreeJsonUrl:'../json/chooseperson/choosepersonztree.json',
+                searchJsonUrl:'../json/chooseperson/choosepersonsearch.json',
+                artDialogTitle: '请选择人员',
+                structureStaff:function(id,name){
+                    var listHtml='';
+
+                    if($('#choose-person-input2').attr('data-captain')==id){
+                        listHtml+=structureStaffHtml(id,name,true);
+                    }else{
+                        listHtml+=structureStaffHtml(id,name,false);
+                    }
+
+                    return listHtml;
+                },
+                structureStaffBackArray:function(id,name){
+                    var valArray =new Array();
+                    var _captain=$('#selecteBox').find('li.active').length;
+                    valArray['id']=id;
+                    valArray['name']=name;
+                    if(_captain){
+                        valArray['captain']=true;
+                    }else{
+                        valArray['captain']=false;
+                    }
+                    return valArray;
+                },
+                callBack:function(value){
+                    filledData2(value,'#choose-person-input2');
+                }
+            });
+        });
+
+        function structureStaffHtml(id,name,captain){
+            var _captain = captain ? 'active' : '';
+            var listHtml='<li data-id="'+id+'" data-name="'+name+'" class="'+ _captain +'">'+
+                    '<div class="clearfix staff">'+
+                        '<span class="fl">'+name+'</span>'+
+                        '<span class="fr">'+
+                            '<i class="iconfont icon-flag c-cursor-p mr-small '+ _captain +'" title="设置为队长" onclick="chooseperson.setCaptainStaff(this)"></i>' +
+                            '<i class="iconfont icon-close c-cursor-p"  title="删除" onclick="chooseperson.delSelectStaff(this)"></i>'+
+                        '</span>'+
+                    '</div></li>';
+            return listHtml;
+        }
+
+        chooseperson.setCaptainStaff =function(dom){
+            var $ul = $('#selecteBox');
+            var $li = $(dom).parents('li');
+            $ul.find('li.active').find('i.icon-flag').removeClass('active');
+            $ul.find('li.active').removeClass('active');
+            $li.addClass('active').find('i.icon-flag').addClass('active');
+        };
+        chooseperson.delSelectStaff = function(dom){
+            var $div = $(dom).parents('div.staff');
+            chooseperson.delselect($div.get(0));
+        };
+        function filledData2(value,dom){
+            var _name=_id=captain='';
+            $(value).each(function(i,v){
+                _name+= v.name+",";
+                _id+= v.id+",";
+                if(v.captain){
+                    captain=v.id;
+                }
+            });
+            _name=_name.substring(0,_name.length-1);
+            _id=_id.substring(0,_id.length-1);
+            $(dom).val(_name).attr({'data-name':_name,'data-id':_id,'data-captain':captain});
         }
     });
 </script>
