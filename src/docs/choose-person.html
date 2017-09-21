@@ -80,7 +80,6 @@
         chooseperson({
             initDataId:$('#choose-person-input').attr('data-id'),
             initDataName:$('#choose-person-input').attr('data-name'),
-            initDataParent:$('#choose-person-input').attr('data-parent'),
             ztreeJsonUrl:'../json/chooseperson/choosepersonztree.json',
             searchJsonUrl:'../json/chooseperson/choosepersonsearch.json',
             artDialogTitle: '请选择人员',
@@ -161,7 +160,6 @@
         chooseperson({
             initDataId:$('#choose-person-input2').attr('data-id'),
             initDataName:$('#choose-person-input2').attr('data-name'),
-            initDataParent:$('#choose-person-input2').attr('data-parent'),
             ztreeJsonUrl:'../json/chooseperson/choosepersonztree.json',
             searchJsonUrl:'../json/chooseperson/choosepersonsearch.json',
             artDialogTitle: '请选择人员',
@@ -350,6 +348,16 @@
                     <td>用于对 Ajax 返回数据进行预处理的函数。例如值是 "data";</td>
                 </tr>
                 <tr>
+                    <td>postAutoParam</td>
+                    <td>'id'</td>
+                    <td>异步请求POST的KEY值</td>
+                </tr>
+                <tr>
+                    <td>view</td>
+                    <td>{}</td>
+                    <td>自定义树插件view参数</td>
+                </tr>
+                <tr>
                     <td>structureStaff</td>
                     <td>null</td>
                     <td>自定义选择后人员列表，返回值(id,name)</td>
@@ -358,6 +366,16 @@
                     <td>structureStaffBackArray</td>
                     <td>null</td>
                     <td>自定义选择后人员的返回JSON处理，返回值(id,name)</td>
+                </tr>
+                <tr>
+                    <td>callBackExist</td>
+                    <td>null</td>
+                    <td>根据条件是否关闭选择人员弹出窗函数</td>
+                </tr>
+                <tr>
+                    <td>statusbar</td>
+                    <td>''</td>
+                    <td>自定义复选框</td>
                 </tr>
                 <tr>
                     <td>callBack</td>
@@ -388,10 +406,10 @@
             chooseperson({
                 initDataId:$('#choose-person-input').attr('data-id'),
                 initDataName:$('#choose-person-input').attr('data-name'),
-                initDataParent:$('#choose-person-input').attr('data-parent'),
                 ztreeJsonUrl:'../json/chooseperson/choosepersonztree.json',
                 searchJsonUrl:'../json/chooseperson/choosepersonsearch.json',
                 artDialogTitle: '请选择人员',
+                async:true,
                 callBack:function(value){
                     filledData(value,'#choose-person-input');
                 }
@@ -415,7 +433,6 @@
             chooseperson({
                 initDataId:$('#choose-person-input2').attr('data-id'),
                 initDataName:$('#choose-person-input2').attr('data-name'),
-                initDataParent:$('#choose-person-input2').attr('data-parent'),
                 ztreeJsonUrl:'../json/chooseperson/choosepersonztree.json',
                 searchJsonUrl:'../json/chooseperson/choosepersonsearch.json',
                 artDialogTitle: '请选择人员',

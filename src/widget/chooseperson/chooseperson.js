@@ -1,6 +1,7 @@
 var chooseperson = function(options){
 	chooseperson.init(options);
 };
+
 //----------chooseperson 默认参数
 chooseperson.defaults = {
 	htmlId:'',
@@ -22,13 +23,17 @@ chooseperson.defaults = {
 	selectPrompt:'\u6700\u591a\u53ea\u80fd\u9009\u62e9\uff1a',
 	async:false,
     ztreeDataFilter:null,
+    postAutoParam:'id',
 	ztreeFun:{
 		Check:null,
 		AsyncSuccess:null,
 		Click:null
 	},
+	view:{},
     structureStaff:null,
     structureStaffBackArray:null,
+	callBackExist:null,
+    statusbar:'',
 	callBack:null
 };
 //----------入口 带参数
@@ -89,7 +94,7 @@ chooseperson.ztreeOnClick = function(event,treeId, treeNode, msg){
 //----------ztree 异步请求
 chooseperson.ztreeFilter = function (treeId, parentNode, responseData) {
     if(chooseperson.opts.ztreeDataFilter){
-        return eval('responseData.'+chooseperson.opts.ztreeDataFilter);
+        return chooseperson.opts.ztreeDataFilter(treeId, parentNode, responseData);
     }else{
         return responseData;
     }
@@ -107,7 +112,7 @@ chooseperson.orerunDialog = function(){
 chooseperson.ztreeCheckNode = function(idData,Checked,nameData){
 	if(idData && idData!=''){
 		var treeObj = $.fn.zTree.getZTreeObj("choosepersonTree");
-		var	nodes_array = treeObj.transformToArray (treeObj.getNodes()[0].children);
+		var	nodes_array = treeObj.transformToArray (treeObj.getNodes());
 		var listHtml='',listArray=new Array(),sdata={};
 		if(idData.indexOf(",")>0){
 			idData=idData.split(",");
@@ -150,15 +155,18 @@ chooseperson.ztreeCheckNode = function(idData,Checked,nameData){
 						oldList=false;
 					}
 				}
-				if(oldList && chooseperson.opts.structureStaff==null){
-					listHtml+='<li data-id="'+listArray[n].id+'" data-name="'+listArray[n].name+'"><a href="javascript:;" class="alinks-line alinks-black" onclick="chooseperson.delselect(this)">'+listArray[n].name+'</a></li>';
-				}else{
-                    listHtml+=chooseperson.opts.structureStaff(listArray[n].id,listArray[n].name);
-                }
+				
+				if(oldList){
+					if(chooseperson.opts.structureStaff==null){
+						listHtml+='<li data-id="'+listArray[n].id+'" data-name="'+listArray[n].name+'"><a href="javascript:;" class="alinks-line alinks-black" onclick="chooseperson.delselect(this)">'+listArray[n].name+'</a></li>';
+					}else{
+						listHtml+=chooseperson.opts.structureStaff(listArray[n].id,listArray[n].name);
+					}
+				}
 			}else{
                 if(chooseperson.opts.structureStaff==null){
                     listHtml+='<li data-id="'+listArray[n].id+'" data-name="'+listArray[n].name+'"><a href="javascript:;" class="alinks-line alinks-black" onclick="chooseperson.delselect(this)">'+listArray[n].name+'</a></li>';
-                }else{
+                }else{			
                     listHtml+=chooseperson.opts.structureStaff(listArray[n].id,listArray[n].name);
                 }
 
@@ -198,75 +206,91 @@ chooseperson.ztreeSetting = function(){
 				eval("chooseperson.ztreeOnClick(event,treeId, treeNode, msg)");
 			}
 		}
-	}
+	};
+    var _ztreeSettingVal;
 	if(chooseperson.opts.async){
-		if(chooseperson.opts.checkType==1){
-			var _ztreeSettingVal = {
-				async: {
-					enable: true,
-					url:chooseperson.opts.ztreeJsonUrl,
-					autoParam: ["id"],
-					otherParam:chooseperson.opts.parmOrgData,
-					dataFilter: chooseperson.ztreeFilter,
-					type: "post"
-				},
-				check: {
-					enable: true,
-					chkStyle: "radio",
-					radioType: "all"
-				},
-				callback:callbackFun
-			};
-		}else if(chooseperson.opts.checkType==2){
-			var _ztreeSettingVal = {
-				async: {
-					enable: true,
-					url:chooseperson.opts.ztreeJsonUrl,
-					autoParam: ["id"],
-					otherParam:chooseperson.opts.parmOrgData,
-					dataFilter: chooseperson.ztreeFilter,
-					type: "post"
-				},
-				check: {
-					enable: true
-				},
-				callback: callbackFun
-			};
-		}else{
-			var _ztreeSettingVal = {
-				async: {
-					enable: true,
-					url:chooseperson.opts.ztreeJsonUrl,
-					autoParam: ["id"],
-					otherParam:chooseperson.opts.parmOrgData,
-					dataFilter: chooseperson.ztreeFilter,
-					type: "post"
-				},
-				callback:callbackFun
-			};
-		}
+        switch (chooseperson.opts.checkType){
+            case 1:
+                _ztreeSettingVal = {
+                    async: {
+                        enable: true,
+                        url:chooseperson.opts.ztreeJsonUrl,
+                        autoParam: ['id='+chooseperson.opts.postAutoParam],
+                        otherParam:chooseperson.opts.parmOrgData,
+                        dataFilter: chooseperson.ztreeFilter,
+                        type: "post"
+                    },
+                    check: {
+                        enable: true,
+                        chkStyle: "radio",
+                        radioType: "all"
+                    },
+					view:chooseperson.opts.view,
+                    callback:callbackFun
+                };
+                break;
+            case 2:
+                _ztreeSettingVal = {
+                    async: {
+                        enable: true,
+                        url:chooseperson.opts.ztreeJsonUrl,
+                        autoParam: ['id='+chooseperson.opts.postAutoParam],
+                        otherParam:chooseperson.opts.parmOrgData,
+                        dataFilter: chooseperson.ztreeFilter,
+                        type: "post"
+                    },
+                    check: {
+                        enable: true
+                    },
+					view:chooseperson.opts.view,
+                    callback: callbackFun
+                };
+                break;
+            case 3:
+                _ztreeSettingVal = {
+                    async: {
+                        enable: true,
+                        url:chooseperson.opts.ztreeJsonUrl,
+                        autoParam: ['id='+chooseperson.opts.postAutoParam],
+                        otherParam:chooseperson.opts.parmOrgData,
+                        dataFilter: chooseperson.ztreeFilter,
+                        type: "post"
+                    },
+					view:chooseperson.opts.view,
+                    callback:callbackFun
+                };
+                break;
+        }
 	}else{
-		if(chooseperson.opts.checkType==1){
-			var _ztreeSettingVal = {
-				check: {
-					enable: true,
-					chkStyle: "radio",
-					radioType: "all"
-				},
-				callback:callbackFun
-			};
-		}else if(chooseperson.opts.checkType==2){
-			var _ztreeSettingVal = {
-				check: {
-					enable: true
-				},
-				callback: callbackFun
-			};
-		}else{
-			var _ztreeSettingVal = {
-				callback:callbackFun
-			};
-		}
+
+        switch (chooseperson.opts.checkType){
+            case 1:
+                _ztreeSettingVal = {
+                    check: {
+                        enable: true,
+                        chkStyle: "radio",
+                        radioType: "all"
+                    },
+					view:chooseperson.opts.view,
+                    callback:callbackFun
+                };
+                break;
+            case 2:
+                _ztreeSettingVal = {
+                    check: {
+                        enable: true
+                    },
+					view:chooseperson.opts.view,
+                    callback: callbackFun
+                };
+                break;
+            case 3:
+                _ztreeSettingVal = {
+					view:chooseperson.opts.view,
+                    callback:callbackFun
+                };
+                break;
+        }
 	}
 	return _ztreeSettingVal;
 };
@@ -504,18 +528,29 @@ chooseperson.artDialog = {
 			title:chooseperson.opts.artDialogTitle,
 			content: $('#popMangChoo').get(0),
 			ok: function(){
-				if(chooseperson.opts.callBack){
-					if($('#selecteBox>li').length>0){
-						var _value=chooseperson.selectAdminer();
-					}
-					chooseperson.opts.callBack(_value);
+				var _exist = false;
+				if(chooseperson.opts.callBackExist){
+					_exist = chooseperson.opts.callBackExist();
 				}
-
-				chooseperson.dialogClose();
+				
+				if(_exist){
+					if(chooseperson.opts.callBack){
+						if($('#selecteBox>li').length>0){
+							var _value=chooseperson.selectAdminer();
+						}
+						chooseperson.opts.callBack(_value);
+					}
+	
+					chooseperson.dialogClose();
+				}else{
+					return false;	
+				}
+				
 			},
 			cancel:function(){
 				chooseperson.dialogClose();
-			}
+			},
+            statusbar: chooseperson.opts.statusbar
 		}).showModal();
 	},
 	obj : null
