@@ -1,0 +1,26 @@
+{
+  "name": "crossui",
+  "version": "1.0.0",
+  "description": "crossui framework",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crossui/crossui.github.io.git"
+  },
+  "keywords": [
+    "ui",
+    "web"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crossui/crossui.github.io/issues"
+  },
+  "homepage": "https://github.com/crossui/crossui.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
