@@ -531,6 +531,8 @@ chooseperson.artDialog = {
 				var _exist = false;
 				if(chooseperson.opts.callBackExist){
 					_exist = chooseperson.opts.callBackExist();
+				}else{
+					_exist = true;
 				}
 				
 				if(_exist){
