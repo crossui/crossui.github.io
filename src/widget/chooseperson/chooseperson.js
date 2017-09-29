@@ -23,7 +23,7 @@ chooseperson.defaults = {
 	selectPrompt:'\u6700\u591a\u53ea\u80fd\u9009\u62e9\uff1a',
 	async:false,
     ztreeDataFilter:null,
-    postAutoParam:'id',
+    postAutoParam:[],
 	ztreeFun:{
 		Check:null,
 		AsyncSuccess:null,
@@ -215,7 +215,7 @@ chooseperson.ztreeSetting = function(){
                     async: {
                         enable: true,
                         url:chooseperson.opts.ztreeJsonUrl,
-                        autoParam: ['id='+chooseperson.opts.postAutoParam],
+                        autoParam: chooseperson.opts.postAutoParam,
                         otherParam:chooseperson.opts.parmOrgData,
                         dataFilter: chooseperson.ztreeFilter,
                         type: "post"
@@ -234,7 +234,7 @@ chooseperson.ztreeSetting = function(){
                     async: {
                         enable: true,
                         url:chooseperson.opts.ztreeJsonUrl,
-                        autoParam: ['id='+chooseperson.opts.postAutoParam],
+                        autoParam: chooseperson.opts.postAutoParam,
                         otherParam:chooseperson.opts.parmOrgData,
                         dataFilter: chooseperson.ztreeFilter,
                         type: "post"
@@ -251,7 +251,7 @@ chooseperson.ztreeSetting = function(){
                     async: {
                         enable: true,
                         url:chooseperson.opts.ztreeJsonUrl,
-                        autoParam: ['id='+chooseperson.opts.postAutoParam],
+                        autoParam: chooseperson.opts.postAutoParam,
                         otherParam:chooseperson.opts.parmOrgData,
                         dataFilter: chooseperson.ztreeFilter,
                         type: "post"
