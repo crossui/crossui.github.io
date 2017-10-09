@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>datetimepicker</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../iconfont/iconfont.css" />
+    <link rel="stylesheet" href="../css/cross.css" />
+    <link rel="stylesheet" href="../css/highlight.css" />
+    <link rel="stylesheet" href="../css/datetimepicker.css" />
+</head>
+<body>
+<div class="p-medium">
+    <fieldset class="c-field">
+        <legend>引用</legend>
+        <div class="c-field-box">
+<pre><code class="html c-break">
+    &lt;link rel="stylesheet" href="../css/datetimepicker.css" /&gt;
+    &lt;script type="text/javascript" src="../js/datetimepicker/datetimepicker.js"&gt;&lt;/script&gt;
+</code></pre>
+        </div>
+    </fieldset>
+
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <input type="text" placeholder="" class="c-input c-input-mini date-picker date-picker-demo">
+
+        <input type="text" placeholder="" class="c-input c-input-small date-picker date-picker-demo">
+
+        <input type="text" placeholder="" class="c-input c-input-medium date-picker date-picker-demo">
+
+        <input type="text" placeholder="" class="c-input c-input-large date-picker date-picker-demo">
+
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">datetimepicker 日期控件</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#datetimepicker1" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                基本使用 ， 大小
+            </div>
+        </div>
+
+        <div id="datetimepicker1" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input type="text" placeholder="" class="c-input c-input-mini date-picker date-picker-demo"&gt;
+
+    &lt;input type="text" placeholder="" class="c-input c-input-small date-picker date-picker-demo"&gt;
+
+    &lt;input type="text" placeholder="" class="c-input c-input-medium date-picker date-picker-demo"&gt;
+
+    &lt;input type="text" placeholder="" class="c-input c-input-large date-picker date-picker-demo"&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('.date-picker').datetimepicker();
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <input type="text" placeholder="" class="c-input date-picker" id="DatePickerDemo">
+
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">datetimepicker 日期控件</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#datetimepicker2" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                年-月-日
+            </div>
+        </div>
+
+        <div id="datetimepicker2" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input type="text" placeholder="" class="c-input date-picker" id="DatePickerDemo"&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#DatePickerDemo').datetimepicker({
+        timepicker:false,
+        format:'Y-m-d'
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <input type="text" placeholder="" class="c-input date-picker" id="inlineDatePickerDemo">
+
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">datetimepicker 日期控件</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#datetimepicker3" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                平面显示
+            </div>
+        </div>
+
+        <div id="datetimepicker3" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input type="text" placeholder="" class="c-input date-picker" id="inlineDatePickerDemo"&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#inlineDatePickerDemo').datetimepicker({
+        inline:true,
+        weeks:true
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <input type="text" placeholder="" class="c-input date-picker" id="minMaxDatePickerDemo">
+
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">datetimepicker 日期控件</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#datetimepicker4" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                时间段
+            </div>
+        </div>
+
+        <div id="datetimepicker4" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;input type="text" placeholder="" class="c-input date-picker" id="minMaxDatePickerDemo"&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#minMaxDatePickerDemo').datetimepicker({
+        timepicker:false,
+        formatDate:'Y/m/d',
+        format:'Y-m-d',
+        minDate:'-1970/01/02',
+        maxDate:'+1970/01/02'
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+        <span>从</span>
+        <input type="text" placeholder="" id="startDatePickerDemo" class="c-input c-input-medium date-picker">
+        <span>到</span>
+        <input type="text" placeholder="" id="endDatePickerDemo" class="c-input c-input-medium date-picker">
+
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">datetimepicker 日期控件</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#datetimepicker5" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                开始时间到结束时间
+            </div>
+        </div>
+
+        <div id="datetimepicker5" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;span&gt;从&lt;/span&gt;
+    &lt;input type="text" placeholder="" id="startDatePickerDemo" class="c-input c-input-medium date-picker"&gt;
+    &lt;span&gt;到&lt;/span&gt;
+    &lt;input type="text" placeholder="" id="endDatePickerDemo" class="c-input c-input-medium date-picker"&gt;
+
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#startDatePickerDemo').datetimepicker({
+        format:'Y-m-d',
+        onShow:function( ct ){
+            this.setOptions({
+                maxDate:$('#endDatePickerDemo').val()?$('#endDatePickerDemo').val():false
+            })
+        },
+        timepicker:false
+    });
+
+    $('#endDatePickerDemo').datetimepicker({
+        format:'Y-m-d',
+        onShow:function( ct ){
+            this.setOptions({
+                minDate:$('#startDatePickerDemo').val()?$('#startDatePickerDemo').val():false
+            })
+        },
+        timepicker:false
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
+<script type="text/javascript" src="../js/datetimepicker/datetimepicker.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+        $('.date-picker-demo').datetimepicker();
+
+        $('#DatePickerDemo').datetimepicker({
+            timepicker:false,
+            format:'Y-m-d'
+        });
+        $('#inlineDatePickerDemo').datetimepicker({
+            inline:true,
+            weeks:true
+        });
+        $('#minMaxDatePickerDemo').datetimepicker({
+            timepicker:false,
+            formatDate:'Y/m/d',
+            format:'Y-m-d',
+            minDate:'-1970/01/02',
+            maxDate:'+1970/01/02'
+        });
+
+        $('#startDatePickerDemo').datetimepicker({
+            format:'Y-m-d',
+            onShow:function( ct ){
+                this.setOptions({
+                    maxDate:$('#endDatePickerDemo').val()?$('#endDatePickerDemo').val():false
+                })
+            },
+            timepicker:false
+        });
+        $('#endDatePickerDemo').datetimepicker({
+            format:'Y-m-d',
+            onShow:function( ct ){
+                this.setOptions({
+                    minDate:$('#startDatePickerDemo').val()?$('#startDatePickerDemo').val():false
+                })
+            },
+            timepicker:false
+        });
+    });
+</script>
+</body>
+</html>
+
