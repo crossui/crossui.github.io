@@ -4,6 +4,7 @@
 .ztree * {
   padding: 0;
   margin: 0;
+  font-family: Verdana, Arial, Helvetica, AppleGothic, sans-serif;
 }
 
 .ztree {
@@ -92,8 +93,7 @@
 }
 
 .ztree li a input.rename {
-  height: 18px;
-  line-height: 1;
+  height: 14px;
   width: 80px;
   padding: 0;
   margin: 0;
@@ -453,20 +453,17 @@ ul.ztree.zTreeDragUL {
 .ztree-people li span.ztree-button.company_ico_open, .ztree-people li span.ztree-button.company_ico_close, .ztree-people li span.ztree-button.company_ico_docu{
   background-position: 2px -108px;
   position: relative;
-  top: -2px;
   margin-right: 2px;
 }
 .ztree-people li span.ztree-button.branch_ico_open, .ztree-people li span.ztree-button.branch_ico_close, .ztree-people li span.ztree-button.branch_ico_docu{
   background-position: -28px -108px;
   position: relative;
-  top: -2px;
   margin-right: 2px;
 }
 
 .ztree-people li span.ztree-button.people_ico_docu, .ztree-people li span.ztree-button.people_ico_close, .ztree-people li span.ztree-button.people_ico_open {
   background-position: -13px -108px;
   position: relative;
-  top: -2px;
   margin-right: 2px;
 }
 
