@@ -46,7 +46,7 @@
         if (this.transitioning || this.$element.hasClass('in')) return;
 
         var activesData;
-        var actives = this.$parent && this.$parent.find('> .panel').children('.in, .c-panel-collapsing');
+        var actives = this.$parent && this.$parent.find('> .c-panel').children('.in, .c-panel-collapsing');
 
         if (actives && actives.length) {
             activesData = actives.data('collapse');
