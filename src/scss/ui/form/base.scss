@@ -39,11 +39,12 @@
   &[readonly] {
     background-color: $form-readonly-bg-color;
     cursor: default;
+    color: #909090;
   }
   &[disabled] {
     background-color: $form-disabled-bg-color;
     cursor: not-allowed;
-    color: $form-disabled-text-color;
+    color: #909090;
   }
   &[disabled]:hover {
     border-color: $form-disabled-hover-color;
