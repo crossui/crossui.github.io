@@ -392,21 +392,31 @@ cityPicker.prototype.init = function(){
         title[k]	= '<option value="">'+v+'</option>';
     });
     _this.province.append(title[0]).select2();
-    _this.city.append(title[1]).select2();
-    _this.town.append(title[2]).select2();
+    if(_this.city){
+        _this.city.append(title[1]).select2();
+    }
+    if(_this.town){
+        _this.town.append(title[2]).select2();
+    }
+
+
 
     _this.fillOption(this.province,'0');
 
     _this.province.change(function() {
-        _this.city.empty();
-        _this.city.append(title[1]);
-        _this.fillOption(_this.city , _this.province.select2('val'));
-        _this.city.change();
+        if(_this.city){
+            _this.city.empty();
+            _this.city.append(title[1]);
+            _this.fillOption(_this.city , _this.province.select2('val'));
+            _this.city.change();
+        }
     });
     _this.city.change(function() {
-        _this.town.empty();
-        _this.town.append(title[2]);
-        _this.fillOption(_this.town ,  _this.city.select2('val'));
+        if(_this.town){
+            _this.town.empty();
+            _this.town.append(title[2]);
+            _this.fillOption(_this.town ,  _this.city.select2('val'));
+        }
     });
 };
 
@@ -445,18 +455,18 @@ cityPicker.prototype.setValue = function(elId,val){
 cityPicker.prototype.getValue = function(d){
     var val = '';
     if(typeof (d)=="undefined"){
-        if(this.town.select2('val')){
+        if(this.town && this.town.select2('val')){
             val = this.town.select2('val');
-        }else if(this.city.select2('val')) {
+        }else if(this.city && this.city.select2('val')) {
             val = this.city.select2('val');
         }else{
             val = this.province.select2('val');
         }
     }else {
-        if(this.town.select2('val')){
+        if(this.town && this.town.select2('val')){
             val = d+this.town.select2('val');
         }
-        if(this.city.select2('val')){
+        if(this.city && this.city.select2('val')){
             val = d + this.city.select2('val') + val;
         }
         if(this.province.select2('val')){
