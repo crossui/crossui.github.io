@@ -29,7 +29,7 @@
 
         <select id="cityPickerCity" class="w150"></select>
 
-        <!--<select id="cityPickerTown" class="w150"></select>-->
+        <select id="cityPickerTown" class="w150"></select>
 
 
 
@@ -73,15 +73,13 @@
     var citySelect = new cityPicker("#cityPickerProvince","#cityPickerCity","#cityPickerTown");
 
     $('#getval').click(function(){
-        var d = citySelect.getValue(',');
+        var d = citySelect.getValue();
         alert(d);
     });
-
     $('#getval2').click(function(){
         var d = citySelect.getValue(',');
         alert(d);
     });
-
     $('#setval').click(function(){
         citySelect.setValue("province","350000");
         citySelect.setValue("city","350100");
@@ -110,7 +108,7 @@
 </script>
 <script type="text/javascript">
     $(function(){
-        var citySelect = new cityPicker("#cityPickerProvince","#cityPickerCity");   //,"#cityPickerTown"
+        var citySelect = new cityPicker("#cityPickerProvince","#cityPickerCity","#cityPickerTown");
 
         $('#getval').click(function(){
             var d = citySelect.getValue();
@@ -123,7 +121,7 @@
         $('#setval').click(function(){
             citySelect.setValue("province","350000");
             citySelect.setValue("city","350100");
-            //citySelect.setValue("town","350102");
+            citySelect.setValue("town","350102");
         });
     });
 
