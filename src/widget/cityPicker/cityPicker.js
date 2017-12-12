@@ -447,8 +447,10 @@ cityPicker.prototype.getValue = function(d){
     if(typeof (d)=="undefined"){
         if(this.town.select2('val')){
             val = this.town.select2('val');
-        }else {
+        }else if(this.city.select2('val')) {
             val = this.city.select2('val');
+        }else{
+            val = this.province.select2('val');
         }
     }else {
         if(this.town.select2('val')){
@@ -458,7 +460,7 @@ cityPicker.prototype.getValue = function(d){
             val = d + this.city.select2('val') + val;
         }
         if(this.province.select2('val')){
-            val = this.city.select2('val') + val;
+            val = this.province.select2('val') + val;
         }
     }
     return val;
