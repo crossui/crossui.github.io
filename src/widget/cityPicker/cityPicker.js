@@ -444,14 +444,22 @@ cityPicker.prototype.setValue = function(elId,val){
 };
 cityPicker.prototype.getValue = function(d){
     var val = '';
-    if(this.town.select2('val')){
-        val = d+this.town.select2('val');
-    }
-    if(this.city.select2('val')){
-        val = d + this.city.select2('val') + val;
-    }
-    if(this.province.select2('val')){
-        val = this.city.select2('val') + val;
+    if(typeof (d)=="undefined"){
+        if(this.town.select2('val')){
+            val = this.town.select2('val');
+        }else {
+            val = this.city.select2('val');
+        }
+    }else {
+        if(this.town.select2('val')){
+            val = d+this.town.select2('val');
+        }
+        if(this.city.select2('val')){
+            val = d + this.city.select2('val') + val;
+        }
+        if(this.province.select2('val')){
+            val = this.city.select2('val') + val;
+        }
     }
     return val;
 };

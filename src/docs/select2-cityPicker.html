@@ -36,7 +36,7 @@
         <br><br><br><br>
 
         <a id="getval" href="javascript:;" class="button button-primary">取值</a>
-
+        <a id="getval2" href="javascript:;" class="button button-primary">取值2</a>
         <a id="setval" href="javascript:;" class="button button-primary">设值</a>
 
 
@@ -71,9 +71,17 @@
                     <div class="tabs-bd-box c-hide p-small">
 <pre><code class="javascript">
     var citySelect = new cityPicker("#cityPickerProvince","#cityPickerCity","#cityPickerTown");
+
     $('#getval').click(function(){
-        citySelect.getValue(',');
+        var d = citySelect.getValue(',');
+        alert(d);
     });
+
+    $('#getval2').click(function(){
+        var d = citySelect.getValue(',');
+        alert(d);
+    });
+
     $('#setval').click(function(){
         citySelect.setValue("province","350000");
         citySelect.setValue("city","350100");
@@ -105,6 +113,10 @@
         var citySelect = new cityPicker("#cityPickerProvince","#cityPickerCity","#cityPickerTown");
 
         $('#getval').click(function(){
+            var d = citySelect.getValue();
+            alert(d);
+        });
+        $('#getval2').click(function(){
             var d = citySelect.getValue(',');
             alert(d);
         });
