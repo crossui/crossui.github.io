@@ -437,20 +437,23 @@ cityPicker.prototype.fillOption	= function(elId , cityId) {
     }
     el.select2("val", "");
 };
-cityPicker.prototype.setValue = function(elId,val){
-    var el	= null;
-    switch (elId){
-        case 'province':
-            el = this.province;
-            break;
-        case 'city':
-            el = this.city;
-            break;
-        case 'town':
-            el = this.town;
-            break;
-    }
-    el.val(val).trigger("change");
+cityPicker.prototype.setValue = function(val){
+    var connector = val[6];
+    var selectVal = val.split(connector);
+    var _this = this;
+    $(selectVal).each(function(i,v) {
+        switch (i){
+            case 0:
+                _this.province.val(v).trigger("change");
+                break;
+            case 1:
+                _this.city.val(v).trigger("change");
+                break;
+            case 2:
+                _this.town.val(v).trigger("change");
+                break;
+        }
+    });
 };
 cityPicker.prototype.getValue = function(d){
     var val = '';
@@ -474,4 +477,26 @@ cityPicker.prototype.getValue = function(d){
         }
     }
     return val;
+};
+cityPicker.prototype.reset = function(){
+    this.province.val("0").trigger("change");
+};
+cityPicker.prototype.validate = function(cityVal,connector,level) {
+    var b = true;
+    var re = eval("/" + connector + "/ig");
+
+    if (cityVal.indexOf(connector) == -1) {
+        b = false;
+    } else if (level == 3 && cityVal.match(re).length == 1) {
+        var _cityVal = cityVal.split(connector);
+        if (_cityVal[0] < 820000) {
+            b = false;
+        }
+    }
+
+    if(b){
+        return true;
+    }else{
+        return false;
+    }
 };

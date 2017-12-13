@@ -38,7 +38,8 @@
         <a id="getval" href="javascript:;" class="button button-primary">取值</a>
         <a id="getval2" href="javascript:;" class="button button-primary">取值2</a>
         <a id="setval" href="javascript:;" class="button button-primary">设值</a>
-
+        <a id="reset" href="javascript:;" class="button button-primary">重置</a>
+        <a id="validate" href="javascript:;" class="button button-primary">验证</a>
 
         <fieldset class="c-field c-field-title mt-medium">
             <legend class="fs6">城市三级联动</legend>
@@ -70,21 +71,27 @@
                     </div>
                     <div class="tabs-bd-box c-hide p-small">
 <pre><code class="javascript">
+    //初始
     var citySelect = new cityPicker("#cityPickerProvince","#cityPickerCity","#cityPickerTown");
 
-    $('#getval').click(function(){
-        var d = citySelect.getValue();
-        alert(d);
-    });
-    $('#getval2').click(function(){
-        var d = citySelect.getValue(',');
-        alert(d);
-    });
-    $('#setval').click(function(){
-        citySelect.setValue("province","350000");
-        citySelect.setValue("city","350100");
-        citySelect.setValue("town","350102");
-    });
+    //取最后一个值
+    var d = citySelect.getValue();
+    alert(d);
+
+    //取全部的值 并设置连接符
+    var d = citySelect.getValue(',');
+    alert(d);
+
+    //设值
+    citySelect.setValue("350000,350100,350102");
+
+    //重置
+    citySelect.reset();
+
+    //验证
+    var cityVal = citySelect.getValue(',');
+    var b = citySelect.validate(cityVal,',',3);
+    alert(b);
 </code></pre>
                     </div>
                 </div>
@@ -119,9 +126,16 @@
             alert(d);
         });
         $('#setval').click(function(){
-            citySelect.setValue("province","350000");
-            citySelect.setValue("city","350100");
-            citySelect.setValue("town","350102");
+            citySelect.setValue("350000,350100,350102");
+        });
+
+        $('#reset').on('click',function(){
+            citySelect.reset();
+        });
+        $('#validate').on('click',function(){
+            var cityVal = citySelect.getValue(',');
+            var b = citySelect.validate(cityVal,',',3);
+            alert(b);
         });
     });
 
