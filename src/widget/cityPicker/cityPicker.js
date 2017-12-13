@@ -438,6 +438,10 @@ cityPicker.prototype.fillOption	= function(elId , cityId) {
     el.select2("val", "");
 };
 cityPicker.prototype.setValue = function(val){
+    if(val == null || val == 'undefined' || val == ''){
+        this.province.val("0").trigger("change");
+        return;
+    }
     var connector = val[6];
     var selectVal = val.split(connector);
     var _this = this;
