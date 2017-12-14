@@ -4465,12 +4465,12 @@
                 // English
                 return {
                     errorLoading: function () {
-                        return 'The results could not be loaded.';
+                        return '\u65E0\u6CD5\u52A0\u8F7D\u7ED3\u679C.';
                     },
                     inputTooLong: function (args) {
                         var overChars = args.input.length - args.maximum;
 
-                        var message = 'Please delete ' + overChars + ' character';
+                        var message = '\u8BF7\u5220\u9664 ' + overChars + ' \u5B57\u7B26';
 
                         if (overChars != 1) {
                             message += 's';
@@ -4481,15 +4481,15 @@
                     inputTooShort: function (args) {
                         var remainingChars = args.minimum - args.input.length;
 
-                        var message = 'Please enter ' + remainingChars + ' or more characters';
+                        var message = '\u8BF7\u8F93\u5165 ' + remainingChars + ' \u6216\u591A\u4E2A\u5B57\u7B26';
 
                         return message;
                     },
                     loadingMore: function () {
-                        return 'Loading more results…';
+                        return '\u6570\u636E\u52A0\u8F7D\u4E2D\uFF0C\u8BF7\u7A0D\u5019...';
                     },
                     maximumSelected: function (args) {
-                        var message = 'You can only select ' + args.maximum + ' item';
+                        var message = '\u60A8\u53EA\u80FD\u9009\u62E9 ' + args.maximum + ' \u9879';
 
                         if (args.maximum != 1) {
                             message += 's';
@@ -4498,10 +4498,10 @@
                         return message;
                     },
                     noResults: function () {
-                        return 'No results found';
+                        return '\u6CA1\u6709\u4EFB\u4F55\u8BB0\u5F55';
                     },
                     searching: function () {
-                        return 'Searching…';
+                        return '\u641C\u7D22\u4E2D...';
                     }
                 };
             });
