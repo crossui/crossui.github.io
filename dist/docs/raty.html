@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>star</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="../iconfont/iconfont.css">
+    <link rel="stylesheet" href="../css/cross.css">
+    <link rel="stylesheet" href="../css/highlight.css">
+</head>
+<body>
+<div class="p-medium">
+
+    <fieldset class="c-field">
+        <legend>引用</legend>
+        <div class="c-field-box">
+<pre><code class="html c-break">
+    &lt;script type="text/javascript" src="../js/raty/raty.js"&gt;&lt;/script&gt;
+</code></pre>
+        </div>
+    </fieldset>
+
+    <div class="c-border p-small border-radius-rounded mt-small">
+
+
+        <div id="ratyDemo1"></div>
+
+
+        <fieldset class="c-field c-field-title mt-small">
+            <legend class="fs6">星级评分</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#raty1" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                默认
+            </div>
+        </div>
+
+        <div id="raty1" class="c-panel-bd c-panel-collapse mt-small">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div id="ratyDemo1"&gt;&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#ratyDemo1').raty();
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-small">
+
+
+        <div id="ratyDemo2"></div>
+
+
+        <fieldset class="c-field c-field-title mt-small">
+            <legend class="fs6">星级评分</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#raty2" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                带历史记录
+            </div>
+        </div>
+
+        <div id="raty2" class="c-panel-bd c-panel-collapse mt-small">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div id="ratyDemo2"&gt;&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#ratyDemo2').raty({
+        score: 3
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-small">
+
+
+        <div id="ratyDemo3"></div>
+
+
+        <fieldset class="c-field c-field-title mt-small">
+            <legend class="fs6">星级评分</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#raty3" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                自动生成 input:hidden 并设置name
+            </div>
+        </div>
+
+        <div id="raty3" class="c-panel-bd c-panel-collapse mt-small">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div id="ratyDemo3"&gt;&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#ratyDemo3').raty({
+        scoreName: 'entity[score]'
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-small">
+
+
+        <div id="ratyDemo4"></div>
+
+
+        <fieldset class="c-field c-field-title mt-small">
+            <legend class="fs6">星级评分</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#raty4" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                改变星星的个数
+            </div>
+        </div>
+
+        <div id="raty4" class="c-panel-bd c-panel-collapse mt-small">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div id="ratyDemo4"&gt;&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#ratyDemo4').raty({
+        number: 10
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="c-border p-small border-radius-rounded mt-small">
+
+
+        <div id="ratyDemo5"></div>
+
+
+        <fieldset class="c-field c-field-title mt-small">
+            <legend class="fs6">星级评分</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#raty5" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                只读模式
+            </div>
+        </div>
+
+        <div id="raty5" class="c-panel-bd c-panel-collapse mt-small">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div id="ratyDemo5"&gt;&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#ratyDemo5').raty({
+        readOnly: true,
+        score: 3
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-small">
+
+
+        <div id="ratyDemo6"></div>
+
+
+        <fieldset class="c-field c-field-title mt-small">
+            <legend class="fs6">星级评分</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#raty6" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                半星：
+                <ul class="c-list-square">
+                    <li>小于等于 X.25的星星将下调；</li>
+
+                    <li>大于等于 X.26 和 小于等于 X.75星星将半星；</li>
+
+                    <li>等于 x.76 星星将上调。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="raty6" class="c-panel-bd c-panel-collapse mt-small">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div id="ratyDemo6"&gt;&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#ratyDemo6').raty({
+        half: true
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-small">
+
+
+        <div id="ratyDemo7"></div>
+
+
+        <fieldset class="c-field c-field-title mt-small">
+            <legend class="fs6">星级评分</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#raty7" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                半星带历史记录
+            </div>
+        </div>
+
+        <div id="raty7" class="c-panel-bd c-panel-collapse mt-small">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div id="ratyDemo7"&gt;&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#ratyDemo7').raty({
+        half: true,
+        score: 3.26
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-small">
+
+
+        <div id="ratyDemo8"></div>
+
+
+        <fieldset class="c-field c-field-title mt-small">
+            <legend class="fs6">星级评分</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#raty8" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                设置半星评份规则
+            </div>
+        </div>
+
+        <div id="raty8" class="c-panel-bd c-panel-collapse mt-small">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div id="ratyDemo8"&gt;&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#ratyDemo8').raty({
+        half: true,
+        round : { down: .3, full: .5, up: .8 },
+        score : 2.5
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-small">
+
+
+        <div id="ratyDemo9"></div>
+
+
+        <fieldset class="c-field c-field-title mt-small">
+            <legend class="fs6">星级评分</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#raty9" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                带取消按钮
+            </div>
+        </div>
+
+        <div id="raty9" class="c-panel-bd c-panel-collapse mt-small">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div id="ratyDemo9"&gt;&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#ratyDemo9').raty({
+        cancel  : true
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-small">
+
+
+        <div id="ratyDemo10"></div>
+
+
+        <fieldset class="c-field c-field-title mt-small">
+            <legend class="fs6">星级评分</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#raty10" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                大星星
+            </div>
+        </div>
+
+        <div id="raty10" class="c-panel-bd c-panel-collapse mt-small">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div id="ratyDemo10"&gt;&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#ratyDemo10').raty({
+        starOff : 'star-off-big.png',
+        starOn  : 'star-on-big.png'
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-small">
+
+
+        <div id="ratyDemo11"></div>
+
+
+        <fieldset class="c-field c-field-title mt-small">
+            <legend class="fs6">星级评分</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#raty11" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                自定义星星图片
+            </div>
+        </div>
+
+        <div id="raty11" class="c-panel-bd c-panel-collapse mt-small">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div id="ratyDemo11"&gt;&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#ratyDemo11').raty({
+        starOff : 'off.png',
+        starOn  : 'on.png'
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="c-border p-small border-radius-rounded mt-small">
+
+
+        <div id="ratyDemo12"></div>
+
+
+        <fieldset class="c-field c-field-title mt-small">
+            <legend class="fs6">星级评分</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#raty12" class="border-radius-circle c-border"><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                自定义星星图片组
+            </div>
+        </div>
+
+        <div id="raty12" class="c-panel-bd c-panel-collapse mt-small">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;div id="ratyDemo12"&gt;&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+    $('#ratyDemo12').raty({
+        iconRange: [
+            { range: 1, on: '1.png', off: '0.png' },
+            { range: 2, on: '2.png', off: '0.png' },
+            { range: 3, on: '3.png', off: '0.png' },
+            { range: 4, on: '4.png', off: '0.png' },
+            { range: 5, on: '5.png', off: '0.png' }
+        ]
+    });
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mt-big">
+        <h2>参数</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <thead>
+            <tr>
+                <th width="25%">参数</th>
+                <th>描述</th>
+                <th width="10%">默认值</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr>
+                <td align="center">cancel</td>
+                <td>是否创建取消按钮</td>
+                <td align="center">false</td>
+            </tr>
+            <tr>
+                <td align="center">cancelClass</td>
+                <td>取消按钮样式</td>
+                <td align="center">raty-cancel</td>
+            </tr>
+            <tr>
+                <td align="center">cancelHint</td>
+                <td>取消按钮提示</td>
+                <td align="center">\u53D6\u6D88\u6B64\u8BC4\u7EA7\uFF01</td>
+            </tr>
+            <tr>
+                <td align="center">hints</td>
+                <td>每颗星星的提示 ['不合格', '合格', '中等', '良好', '优秀']</td>
+                <td align="center">-</td>
+            </tr>
+            <tr>
+                <td align="center">click</td>
+                <td>点击事件</td>
+                <td align="center">-</td>
+            </tr>
+            <tr>
+                <td align="center">mouseout</td>
+                <td>鼠标离开</td>
+                <td align="center">-</td>
+            </tr>
+            <tr>
+                <td align="center">mouseove</td>
+                <td>鼠标悬浮</td>
+                <td align="center">-</td>
+            </tr>
+            <tr>
+                <td align="center">half</td>
+                <td>半颗星</td>
+                <td align="center">false</td>
+            </tr>
+            <tr>
+                <td align="center">number</td>
+                <td>星星数量</td>
+                <td align="center">5</td>
+            </tr>
+            <tr>
+                <td align="center">numberMax</td>
+                <td>最大数量</td>
+                <td align="center">-</td>
+            </tr>
+            <tr>
+                <td align="center">path</td>
+                <td>星星图片存放文件位置</td>
+                <td align="center">../images/raty/</td>
+            </tr>
+            <tr>
+                <td align="center">precision</td>
+                <td>是否精确到小数</td>
+                <td align="center">false</td>
+            </tr>                            <tr>
+                <td align="center">readOnly</td>
+                <td>是否只读</td>
+                <td align="center">false</td>
+            </tr>
+            <tr>
+                <td align="center">round</td>
+                <td>分数小数范围决定星星半颗或满星{ down: .25, full: .6, up: .76 }</td>
+                <td align="center">-</td>
+            </tr>
+            <tr>
+                <td align="center">score</td>
+                <td>初始化星星分数</td>
+                <td align="center">-</td>
+            </tr>
+            <tr>
+                <td align="center">space</td>
+                <td>每颗星星间距</td>
+                <td align="center">true</td>
+            </tr>
+            <tr>
+                <td align="center">starHalf</td>
+                <td>默认状态下星星图片</td>
+                <td align="center">star-half.png</td>
+            </tr>
+            <tr>
+                <td align="center">starOff</td>
+                <td>鼠标悬浮星星图片</td>
+                <td align="center">star-off.png</td>
+            </tr>
+            <tr>
+                <td align="center">starOn</td>
+                <td>鼠标离开星星图片</td>
+                <td align="center">star-on.png</td>
+            </tr>
+            <tr>
+                <td align="center">target</td>
+                <td>传参到目标地址</td>
+                <td align="center">-</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2 class="mt-small">回调方法</h2>
+        <table class="tb tb-b c-100 mt-small">
+            <thead>
+            <tr>
+                <th width="25%">参数</th>
+                <th>描述</th>
+                <th width="10%">默认值</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td align="center">$('div').raty('score');</td>
+                <td>获得当前分数</td>
+                <td align="center">-</td>
+            </tr>
+            <tr>
+                <td align="center">$('div').raty('score', number);</td>
+                <td>设置分数</td>
+                <td align="center">-</td>
+            </tr>
+            <tr>
+                <td align="center">$('div').raty('click', number);</td>
+                <td>点击星星</td>
+                <td align="center">-</td>
+            </tr>
+            <tr>
+                <td align="center">$('div').raty('readOnly', boolean);</td>
+                <td>改变星星只读状态</td>
+                <td align="center">-</td>
+            </tr>
+            <tr>
+                <td align="center">$('div').raty('cancel', boolean);</td>
+                <td>是否显示取消按钮</td>
+                <td align="center">-</td>
+            </tr>
+            <tr>
+                <td align="center">$('div').raty('reload');</td>
+                <td>重置星星状态</td>
+                <td align="center">-</td>
+            </tr>
+            <tr>
+                <td align="center">$('div').raty('set', { option: value });</td>
+                <td>重新设置</td>
+                <td align="center">-</td>
+            </tr>
+            <tr>
+                <td align="center">$('div').raty('destroy');</td>
+                <td>销毁绑定事件</td>
+                <td align="center">-</td>
+            </tr>
+            <tr>
+                <td align="center">$('div').raty('move', number);</td>
+                <td>移动位置</td>
+                <td align="center">-</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/cross.js"></script>
+<script type="text/javascript" src="../js/highlight/highlight.js"></script>
+<script type="text/javascript" src="../js/raty/raty.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('pre code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+    });
+</script>
+<script type="text/javascript">
+    $(function(){
+        $('#ratyDemo1').raty();
+
+        $('#ratyDemo2').raty({
+            score: 3
+        });
+
+        $('#ratyDemo3').raty({
+            scoreName: 'entity[score]'
+        });
+
+        $('#ratyDemo4').raty({
+            number: 10
+        });
+
+        $('#ratyDemo5').raty({
+            readOnly: true,
+            score: 3
+        });
+
+        $('#ratyDemo6').raty({
+            half: true
+        });
+
+        $('#ratyDemo7').raty({
+            half: true,
+            score: 3.26
+        });
+
+        $('#ratyDemo8').raty({
+            half: true,
+            round : { down: .3, full: .5, up: .8 },
+            score : 2.5
+        });
+
+        $('#ratyDemo9').raty({
+            cancel  : true
+        });
+
+        $('#ratyDemo10').raty({
+            starOff : 'star-off-big.png',
+            starOn  : 'star-on-big.png'
+        });
+
+        $('#ratyDemo11').raty({
+            starOff : 'off.png',
+            starOn  : 'on.png'
+        });
+
+        $('#ratyDemo12').raty({
+            iconRange: [
+                { range: 1, on: '1.png', off: '0.png' },
+                { range: 2, on: '2.png', off: '0.png' },
+                { range: 3, on: '3.png', off: '0.png' },
+                { range: 4, on: '4.png', off: '0.png' },
+                { range: 5, on: '5.png', off: '0.png' }
+            ]
+        });
+    });
+</script>
+</body>
+</html>
+
