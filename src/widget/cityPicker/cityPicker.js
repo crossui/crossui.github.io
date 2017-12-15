@@ -506,18 +506,19 @@ cityPicker.prototype.validate = function(cityVal,connector,level) {
 };
 cityPicker.prototype.listener = function(connector,level,callback){
     var _this = this;
-    if(level == 3){
-        this.town.change(function() {
-            _back();
-        });
-    }else{
+    if(this.city){
         this.city.change(function() {
             _back();
         });
     }
+    if(this.town){
+        this.town.change(function() {
+            _back();
+        });
+    }
     function _back(){
-        if(_this.validate(_this.getValue(connector),connector,level) && callback){
-            callback(_this.getValue(connector));
+        if(callback){
+            callback(_this.validate(_this.getValue(connector),connector,level));
         }
     }
 };
