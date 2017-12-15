@@ -40,6 +40,7 @@
         <a id="setval" href="javascript:;" class="button button-primary">设值</a>
         <a id="reset" href="javascript:;" class="button button-primary">重置</a>
         <a id="validate" href="javascript:;" class="button button-primary">验证</a>
+        <a id="listener" href="javascript:;" class="button button-primary">监听</a>
 
         <fieldset class="c-field c-field-title mt-medium">
             <legend class="fs6">城市三级联动</legend>
@@ -92,6 +93,11 @@
     var cityVal = citySelect.getValue(',');
     var b = citySelect.validate(cityVal,',',3);
     alert(b);
+
+    //监听
+    citySelect.listener(',',3,function(val){
+        alert(val);
+    })
 </code></pre>
                     </div>
                 </div>
@@ -136,6 +142,12 @@
             var cityVal = citySelect.getValue(',');
             var b = citySelect.validate(cityVal,',',3);
             alert(b);
+        });
+
+        $('#listener').on('click',function(){
+            citySelect.listener(',',3,function(val){
+                alert(val);
+            })
         });
     });
 

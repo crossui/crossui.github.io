@@ -504,3 +504,20 @@ cityPicker.prototype.validate = function(cityVal,connector,level) {
         return false;
     }
 };
+cityPicker.prototype.listener = function(connector,level,callback){
+    var _this = this;
+    if(level == 3){
+        this.town.change(function() {
+            _back();
+        });
+    }else{
+        this.city.change(function() {
+            _back();
+        });
+    }
+    function _back(){
+        if(_this.validate(_this.getValue(connector),connector,level) && callback){
+            callback(_this.getValue(connector));
+        }
+    }
+};
