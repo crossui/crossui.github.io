@@ -149,6 +149,7 @@
 		hours12:false,
 		next:	'xdsoft_next',
 		prev : 'xdsoft_prev',
+		clear: 'xdsoft_clear',
 		dayOfWeekStart:0,
 		timeHeightInTimePicker:25,
 		timepickerScrollbar:true,
@@ -302,9 +303,9 @@
 				var datetimepicker = $('<div '+(options.id?'id="'+options.id+'"':'')+' '+(options.style?'style="'+options.style+'"':'')+' class="xdsoft_datetimepicker xdsoft_noselect '+options.className+'"></div>'),
 					xdsoft_copyright = $('<div class="xdsoft_copyright"></div>'),
 					datepicker = $('<div class="xdsoft_datepicker active"></div>'),
-					mounth_picker = $('<div class="xdsoft_mounthpicker"><button type="button" class="xdsoft_prev"></button><button type="button" class="xdsoft_today_button"></button><div class="xdsoft_label xdsoft_month"><span></span></div><div class="xdsoft_label xdsoft_year"><span></span></div><button type="button" class="xdsoft_next"></button></div>'),
+					mounth_picker = $('<div class="xdsoft_mounthpicker"><button type="button" class="xdsoft_prev"></button><button type="button" class="xdsoft_today_button"></button><div class="xdsoft_label xdsoft_month"><span></span></div><div class="xdsoft_label xdsoft_year"><span></span></div><button type="button" class="xdsoft_clear"></button><button type="button" class="xdsoft_next"></button></div>'),
 					calendar = $('<div class="xdsoft_calendar"></div>'),
-					timepicker = $('<div class="xdsoft_timepicker active"><button type="button" class="xdsoft_prev"></button><div class="xdsoft_time_box"></div><button type="button" class="xdsoft_next"></button></div>'),
+					timepicker = $('<div class="xdsoft_timepicker active"><button type="button" class="xdsoft_prev"></button><div class="xdsoft_time_box"></div><button type="button" class="xdsoft_clear"><button type="button" class="xdsoft_next"></button></div>'),
 					timeboxparent = timepicker.find('.xdsoft_time_box').eq(0),
 					timebox = $('<div class="xdsoft_time_variant"></div>'),
 					scrollbar = $('<div class="xdsoft_scrollbar"></div>'),
@@ -376,6 +377,7 @@
 					if( options.inverseButton ) {
 						options.next = 'xdsoft_prev';
 						options.prev = 'xdsoft_next';
+						options.clear = 'xdsoft_clear';
 					}
 
 					if( options.datepicker )
@@ -668,6 +670,11 @@
 							input.val( _xdsoft_datetime.str() );
 							datetimepicker.trigger('close.xdsoft');
 						});
+				mounth_picker
+					.find('.xdsoft_clear')
+					.on('mousedown.xdsoft',function() {
+						datetimepicker.data('input').val( '' );
+					});
 				mounth_picker
 					.find('.xdsoft_prev,.xdsoft_next')
 						.on('mousedown.xdsoft',function() {
