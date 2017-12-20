@@ -674,6 +674,10 @@
 					.find('.xdsoft_clear')
 					.on('mousedown.xdsoft',function() {
 						datetimepicker.data('input').val( '' );
+						!options.inline&&datetimepicker.trigger('close.xdsoft');
+						datetimepicker.data('changed',true);
+						datetimepicker.trigger('xchange.xdsoft');
+						datetimepicker.trigger('changedatetime.xdsoft');
 					});
 				mounth_picker
 					.find('.xdsoft_prev,.xdsoft_next')
