@@ -691,6 +691,52 @@
         </div>
     </div>
 
+
+    <div class="c-border p-small border-radius-rounded mt-medium">
+
+<div id="dddd" class="c-hide">
+    <select class="js-data-example-ajax w200" id="select2AjaxDemo"></select>
+</div>
+
+
+        <div class="mt-small">
+            <a href="javascript:;" id="defaultSelct2Ajax" class="button button-primary button-rounded">预设值</a>
+        </div>
+
+
+        <fieldset class="c-field c-field-title mt-medium">
+            <legend class="fs6">下拉框 select2</legend>
+        </fieldset>
+        <div class="c-field-box c-position-r">
+            <div class="c-position-a" style="top: 0; right: 0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#select27" class="border-radius-circle c-border "><i class="iconfont icon-angledown c-gray"></i></a>
+            </div>
+            <div class="introduce">
+                Ajax
+            </div>
+        </div>
+
+        <div id="select27" class="c-panel-bd c-panel-collapse mt-medium">
+            <div class="tabs tabs-thr tabs-thr-medium c-position-r" data-toggle="tabs">
+                <div class="tabs-hd clearfix">
+                    <a href="javascript:;" class="curr"><span>HTML</span></a>
+                    <a href="javascript:;"><span>Javascript</span></a>
+                </div>
+                <div class="tabs-bd">
+                    <div class="tabs-bd-box c-hide curr p-small">
+<pre><code class="html c-break">
+    &lt;select class="js-data-example-ajax w200" id="select2AjaxDemo"&gt;&lt;/select&gt;
+</code></pre>
+                    </div>
+                    <div class="tabs-bd-box c-hide p-small">
+<pre><code class="javascript">
+
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="mt-big">
         <h2>参数</h2>
         <table class="tb tb-b c-100 mt-small">
@@ -1396,6 +1442,67 @@
         $("#access-btn-set2").on("click", function () { $exampleMulti.val(["c", "d"]).trigger("change"); });
         //清空
         $("#access-btn-clear").on("click", function () { $exampleMulti.val(null).trigger("change"); });
+
+
+
+        var select2Ajax = $("#select2AjaxDemo").select2({
+            ajax: {
+                url: "../json/select2Ajax.json",
+                dataType: 'json',
+                delay: 250,
+                data: function (params) {
+                    return {
+                        param: params.term,
+                        page: params.page
+                    };
+                },
+                placeholder: '搜索人员',
+                processResults: function (data, params) {
+                    params.page = params.page || 1;
+                    return {
+                        results: data.items,
+                        pagination: {
+                            more: (params.page * 30) < data.total_count
+                        }
+                    };
+                },
+                cache: false
+            },
+            escapeMarkup: function (markup) { return markup; },
+            minimumInputLength: 1,
+            templateResult: formatRepo,
+            templateSelection: formatRepoSelection
+        });
+        function formatRepo (repo) {
+            if (repo.loading) {
+                return repo.text;
+            }
+            var markup = '<div class="">'+
+                            '<ul class="c-list-none">'+
+                                '<li class="clearfix">'+
+                                    '<div class="fl">姓名：</div>'+
+                                    '<div class="fl">'+repo.text+'</div>'+
+                                '</li>'+
+                                '<li class="clearfix">'+
+                                    '<div class="fl">手机号：</div>'+
+                                    '<div class="fl">'+repo.phone+'</div>'+
+                                '</li>'+
+                            '</ul>'+
+                        '</div>';
+
+            return markup;
+        }
+
+        function formatRepoSelection (repo) {
+            return repo.full_name || repo.text;
+        }
+        $('#defaultSelct2Ajax').on('click',function(){
+            var newOption = new Option('aab', '23', true, true);
+            $("#select2AjaxDemo").append(newOption).trigger('change');
+            $('#dddd').show()
+            alert(select2Ajax.select2('val'))
+        });
+        //$('#engineerSelect').append(new Option(infodata.community_manager_name, infodata.community_manager_id, true, true)).trigger('change');
     });
 </script>
 </body>

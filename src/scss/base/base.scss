@@ -63,3 +63,12 @@
 .#{$namespace}cursor-d {
   cursor: default;
 }
+
+.#{$namespace}nodata{
+  width: 100%;
+  padding-top: 200px;
+  color: $color-gray;
+  background-image: url("nodata.png");
+  background-position: center top;
+  background-repeat: no-repeat;
+}
