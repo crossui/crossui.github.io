@@ -55,6 +55,7 @@
                 var $lis = $(this);
                 if($lis.find('.sub-ul').length>0){
                     $closedBox.html($lis.children('.sub-ul').clone());
+                    $closedBox.find('.sub-ul').removeAttr('style');
                 }else {
                     $closedBox.html($lis.html());
                 }
