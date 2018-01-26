@@ -4,20 +4,20 @@
 +function ($) {
     $.fn.nav = function (){
         var $this = $(this),
-            $sidebartoggler = $('a.sidebar-toggler'),
-            $sidebar = $sidebartoggler.parent(),
-            $container = $sidebar.parent();
+            $sidebar = $this.parent(),
+            $navicon = $('#navicon'),
+            $container = $sidebar.parent(),
+            $closedWrap = $('<div class="sidebar-closed-wrap"></div>').appendTo($sidebar),
+            $closedBox = $('<div class="sidebar-closed-box"></div>').appendTo($closedWrap);
 
+        $closedBox.niceScroll({cursorborder:"",cursorcolor:"#dbdbdb"});
         $this.on('click', 'li > a', function (e) {
-
             var parentLi = $(this).parents('li.c-nav-li'),
                 parentUl = $(this).parent().parent();
 
             parentUl.children('li.open').children('a').children('.arrow').removeClass('open');
             parentUl.children('li.open').children('.sub-ul').slideUp(200);
             parentUl.children('li.open').removeClass('open');
-
-
 
             var sub = $(this).next();
             if(sub.length){
@@ -47,17 +47,38 @@
                     return;
                 }
             }
-
             e.preventDefault();
         });
 
-        $sidebartoggler.on('click',function(){
+        $this.on('mouseenter', '.c-nav-li', function (e) {
+            if($this.is('.sidebar-closed')){
+                var $lis = $(this);
+                if($lis.find('.sub-ul').length>0){
+                    $closedBox.html($lis.children('.sub-ul').clone());
+                }else {
+                    $closedBox.html($lis.html());
+                }
+                $closedWrap.show().css('top',$lis.offset().top+2);
+            }
+        });
+        $sidebar.on('mouseleave', function (e) {
+            $closedWrap.hide();
+        });
+
+        $closedWrap.on('click','a',function(){
+            if($(this).data('src')){
+                $this.find('a[data-src="'+$(this).data('src')+'"]').click();
+            }else{
+                return;
+            }
+        });
+
+        $navicon.on('click',function(){
+            $(this).toggleClass('indent');
             if($container.hasClass('closed')){
-                $sidebartoggler.html('<i class="iconfont icon-chevroncircleleft"></i>');
                 $this.removeClass('sidebar-closed');
                 $container.removeClass('closed');
             }else{
-                $sidebartoggler.html('<i class="iconfont icon-chevroncircleright"></i>');
                 $this.addClass('sidebar-closed');
                 $container.addClass('closed');
             }

@@ -40,20 +40,6 @@
   border-right-width: $side-border-right-width;
   border-right-color: $side-border-right-color;
 }
-.sidebar-toggler {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  padding-top: 5px;
-  background-color: $sidebar-toggler-bg;
-  overflow: hidden;
-  i.iconfont {
-    font-size: $font-size-h4;
-    color: $menu-iconfont-color;
-  }
-}
 .container {
   .content {
     margin-left: 225px;

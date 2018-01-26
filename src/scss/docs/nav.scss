@@ -1,4 +1,9 @@
 // nav
+.navicon.indent {
+  position: relative;
+  top:7px;
+  transform: rotateZ(180deg);
+}
 ul.c-nav-ul > li {
   display: block;
   a {
@@ -233,9 +238,6 @@ ul.c-nav-ul > li {
 }
 
 .sidebar-closed {
-  .sidebar-toggler {
-    margin-right: 3px;
-  }
   ul.c-nav-ul {
     width: 35px !important;
     > li {
@@ -305,7 +307,34 @@ ul.c-nav-ul > li {
 
 
 
-
+.sidebar-closed-wrap {
+  position: fixed;
+  left: 35px;
+  top: 45px;
+  z-index: 11111;
+  padding: 0 5px;
+  width: 240px;
+}
+.sidebar-closed-box{
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 5px #888888;
+  a{
+    line-height: 35px;
+    color: $nav-a-color;
+    padding-left: 15px;
+  }
+  ul{
+    list-style: none;
+    li{
+      ul{
+        margin-left: 15px;
+      }
+    }
+  }
+}
 
 
 
