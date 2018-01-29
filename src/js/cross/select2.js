@@ -1757,11 +1757,12 @@
                 };
 
                 AllowClear.prototype._handleClear = function (_, evt) {
+
+                    evt.stopPropagation();
                     // Ignore the event if it is disabled
                     if (this.options.get('disabled')) {
                         return;
                     }
-
                     var $clear = this.$selection.find('.select2-selection__clear');
 
                     // Ignore the event if nothing has been selected
@@ -1769,9 +1770,10 @@
                         return;
                     }
 
-                    evt.stopPropagation();
+                    /*
 
                     var data = $clear.data('data');
+
 
                     for (var d = 0; d < data.length; d++) {
                         var unselectData = {
@@ -1789,8 +1791,10 @@
                     }
 
                     this.$element.val(this.placeholder.id).trigger('change');
-
                     this.trigger('toggle', {});
+
+                    */
+                    this.$element.attr('value','').trigger('change');
                 };
 
                 AllowClear.prototype._handleKeyboardClear = function (_, evt, container) {
@@ -1812,12 +1816,12 @@
                     }
 
                     var $remove = $(
-                        '<span class="select2-selection__clear">' +
+                        '<span class="select2-selection__clear" title="\u6E05\u7A7A">' +
                         '&times;' +
                         '</span>'
                     );
                     $remove.data('data', data);
-
+                    //console.info($remove.data('data'))
                     this.$selection.find('.select2-selection__rendered').prepend($remove);
                 };
 

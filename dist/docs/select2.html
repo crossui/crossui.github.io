@@ -1423,7 +1423,9 @@
         });
 
 
-        var $example = $("#access-a").select2();
+        var $example = $("#access-a").select2({
+                allowClear: true
+        });
         var $exampleMulti = $("#access-b").select2();
         //设值
         $("#access-btn-set").on("click", function () { $example.val("2").trigger("change"); });
