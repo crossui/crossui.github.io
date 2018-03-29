@@ -196,3 +196,22 @@ $nav-active-a-color: #fff !default;
 $nav-active-iconfont-color: #fff !default;
 $nav-subul-bg: #3d3d3d !default;
 
+//index
+//------------------------------------
+$zindex-dropdown:          1000;
+
+//cursor
+//----------------------------------------------------
+$cursor-disabled:                not-allowed;
+
+//dropdown
+//------------------------------------
+$dropdown-bg:                    #fff;
+$dropdown-fallback-border:       #ccc;
+$dropdown-border:                rgba(0,0,0,.15);
+$dropdown-link-color:            map-get($bgc-color, 'gray');
+$dropdown-link-hover-color:       map-get($bgc-color, 'shallowgray');
+$dropdown-link-hover-bg:         #f5f5f5;
+$dropdown-link-active-color:     $color-active;
+$dropdown-link-active-bg:        #ccc;
+$dropdown-link-disabled-color:   map-get($bgc-color, 'shallowgray');

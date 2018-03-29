@@ -1,0 +1,45 @@
+
+/**/
+.welcome-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f8f8f8;
+}
+.welcome-box {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  overflow: hidden;
+  background-color: #fff;
+}
+.welcome-text {
+  position: absolute;
+  width: 660px;
+  height: 400px;
+  top:50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -330px;
+  background: url("welcome.png") no-repeat 220px top;
+  overflow: hidden;
+  div {
+    padding-top: 110px;
+    span{
+      font-size: 30px;
+      color: #999;
+    }
+    p{
+      font-size: 60px;
+      color: #666;
+      em{
+        font-size: 30px;
+      }
+    }
+  }
+
+}

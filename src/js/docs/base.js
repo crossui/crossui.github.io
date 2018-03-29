@@ -1,7 +1,7 @@
 $(function() {
     // 页面初始化
     function pageInit(){
-        $('#iframe').height($(window).height()-45);
+        $('#iframe').height($(window).height()-76);
         $('.sidebar').css('height',$(window).height()-45);
         $(".sidebar").niceScroll({cursorborder:"",cursorcolor:"#dbdbdb"});
     }
@@ -19,4 +19,11 @@ function throttle(fn, delay){
             fn.apply(context, args);
         }, delay);
     };
+}
+//用于生成uuid
+function S4() {
+    return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+}
+function guid() {
+    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
 }

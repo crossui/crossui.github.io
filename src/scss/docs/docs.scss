@@ -9,7 +9,7 @@
 }
 .logo {
   padding: 0 20px;
-  background-color: $logo-bg;
+  /*background-color: $logo-bg;*/
   .brand {
     color: $color-white;
     font-size: $font-size-h5;
@@ -49,5 +49,80 @@
   }
   &.closed .content{
     margin-left: 35px;
+  }
+}
+
+.iframe-menu {
+  height: 31px;
+  background: #f0f0f0;
+  border-bottom: #E5E5E5 1px solid;
+  overflow: hidden;
+}
+.iframe-menu-left_scroll , .iframe-menu-right_scroll {
+  z-index: 11;
+  display: none;
+}
+.iframe-menu-left_scroll {
+  left: 0;
+}
+.iframe-menu-right_scroll {
+  right: 0;
+}
+.iframe-menu-left_scroll a, .iframe-menu-right_scroll a {
+    display: inline-block;
+    width: 24px;
+    height: 30px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 30px;
+    color: #333;
+}
+
+
+
+.iframe-menu-list {
+  left:0;
+  top:0;
+  li {
+    float:left;
+    display:inline;
+    height:30px;
+    overflow:hidden;
+    a {
+      display:inline-block;
+      width:100px;
+      height:30px;
+      line-height:30px;
+      position:relative;
+      font-size:12px;
+      color:#666;
+      overflow:hidden;
+      background-color:#f0f0f0;
+      border-right:#E5E5E5 1px solid;
+      span {
+        display:block;
+        padding-left:10px;
+        width:80px;
+        height: 30px;
+        line-height: 30px;
+        i.icon-home {
+          position: relative;
+          top: -1px;
+        }
+        & + i.iconfont{
+          position: absolute;
+          right: 5px;
+          top: 1px;
+          font-size: 12px;
+          color:#999;
+          &:hover{
+            color: $color-active;
+          }
+        }
+      }
+      &.curr {
+        background-color: #fff;
+      }
+    }
   }
 }
